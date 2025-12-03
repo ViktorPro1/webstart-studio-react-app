@@ -1,0 +1,180 @@
+@media (max-width: 768px) {
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 30px;
+        gap: 30px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .title-accent {
+        display: inline;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    /* Statistics */
+    .stats-section {
+        padding: 30px 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
+
+    /* Services */
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px 25px;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-title {
+        font-size: 20px;
+    }
+
+    /* Benefits */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefit-card {
+        padding: 30px 25px;
+    }
+
+    .benefit-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* Features */
+    .features-section {
+        padding: 40px 30px;
+    }
+
+    .features-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .features-left h2 {
+        font-size: 28px;
+    }
+
+    .features-list li {
+        font-size: 16px;
+    }
+
+    .feature-highlight {
+        padding: 25px;
+    }
+
+    .feature-highlight h3 {
+        font-size: 20px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding: 50px 30px;
+    }
+
+    .final-cta h2 {
+        font-size: 28px;
+    }
+
+    .final-cta p {
+        font-size: 16px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .circle-1,
+    .circle-2,
+    .circle-3 {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 30px 20px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .stats-section {
+        padding: 20px 15px;
+    }
+
+    .stat-number {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .service-card,
+    .benefit-card {
+        padding: 25px 20px;
+    }
+
+    .features-section {
+        padding: 30px 20px;
+    }
+
+    .final-cta {
+        padding: 40px 20px;
+    }
+
+    .final-cta h2 {
+        font-size: 24px;
+    }
+}

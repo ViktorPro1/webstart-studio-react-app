@@ -1,0 +1,94 @@
+/* Основні стилі для десктопу */
+
+.home-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 50px;
+    background-color: #f5f5f5;
+}
+
+.hero-title {
+    font-size: 40px;
+    margin: 0 0 20px 0;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Services Section */
+.services-section {
+    padding: 60px 50px;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    padding: 40px 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.service-icon {
+    margin-bottom: 15px;
+}
+
+.service-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Features Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 60px 50px;
+}
+
+.feature-item {
+    text-align: center;
+}

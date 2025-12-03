@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+    .footer {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}

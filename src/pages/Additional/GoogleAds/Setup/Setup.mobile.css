@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+    .steps-list {
+        padding: 0;
+    }
+
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-number {
+        margin: 0 auto;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
