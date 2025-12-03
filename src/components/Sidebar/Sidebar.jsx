@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText, Users, Mail, ChevronDown, ChevronUp, Bot, Code, Palette } from 'lucide-react';
+import { Home, Briefcase, FileText, Users, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -29,6 +29,16 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       label: 'Головна' 
     },
     { 
+      id: 'web-development',
+      icon: Briefcase, 
+      label: 'Портфоліо',
+      submenu: [
+        { path: '/landing', label: 'Лендінги' },
+        { path: '/portfolio', label: 'Портфоліо' },
+        { path: '/resume', label: 'Резюме' },
+      ]
+    },
+    { 
       id: 'ai-services',
       icon: Bot, 
       label: 'AI Сервіси',
@@ -37,17 +47,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/ai-prompting', label: 'AI Промптинг' },
         { path: '/personal-prompting', label: 'Персональний промптинг' },
         { path: '/create-ai-agent', label: 'Створення AI агента' }
-      ]
-    },
-    { 
-      id: 'web-development',
-      icon: Code, 
-      label: 'Веб-розробка',
-      submenu: [
-        { path: '/landing', label: 'Лендінги' },
-        { path: '/portfolio', label: 'Портфоліо' },
-        { path: '/resume', label: 'Резюме' },
-        { path: '/corporate', label: 'Корпоративні сайти' }
       ]
     },
     { 
@@ -78,7 +77,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   const additionalItems = [
     {
       id: 'google-ads',
-      icon: Briefcase,
+      icon: Target,
       label: 'Реклама в Google',
       submenu: [
         { path: '/google-ads/setup', label: 'Налаштування Google Ads' },
@@ -91,7 +90,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
     {
       id: 'facebook-ads',
-      icon: Briefcase,
+      icon: Megaphone,
       label: 'Реклама у Facebook',
       submenu: [
         { path: '/facebook-ads/setup', label: 'Налаштування Facebook Ads' },

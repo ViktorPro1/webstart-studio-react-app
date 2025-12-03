@@ -45,7 +45,7 @@ const Home = () => {
         </section>
 
         <section className="services-section">
-          <h2 className="section-title">Наші послуги</h2>
+          <h2 className="section-title">Що ми створюємо</h2>
           <div className="services-grid">
             {services.map((service, index) => (
               <div className="service-card" key={index}>

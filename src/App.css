@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   transition: margin-left 0.3s ease;
+  margin-left: 280px;
 }
 
 .main-wrapper {
@@ -21,6 +22,7 @@
 .main-wrapper.sidebar-closed {
   margin-left: 0;
 }
+
 
 @media (max-width: 768px) {
   .main-wrapper {

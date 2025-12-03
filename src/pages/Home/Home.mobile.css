@@ -1,5 +1,13 @@
 @media (max-width: 768px) {
 
+    .home-page {
+        margin-left: 0 !important;
+        margin-top: 70px;
+        /* або скільки треба під мобільний хедер */
+        padding: 20px;
+        /* якщо хочеш відступи по боках */
+    }
+
     /* Hero Section */
     .hero-section {
         flex-direction: column;

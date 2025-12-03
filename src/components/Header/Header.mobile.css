@@ -22,3 +22,35 @@
         height: 35px;
     }
 }
+
+@media (max-width: 420px) {
+    .header {
+        left: 0;
+        width: 100%;
+        padding: 0 10px;
+        /* ще менший відступ */
+    }
+
+    .burger-menu {
+        display: block;
+        /* бургер завжди видно */
+    }
+
+    .search-bar {
+        display: none;
+        /* пошук схований */
+    }
+
+    .header-btn {
+        padding: 6px 12px;
+        /* компактні кнопки */
+        font-size: 11px;
+        /* менший шрифт */
+    }
+
+    .user-icon {
+        width: 30px;
+        /* менша іконка */
+        height: 30px;
+    }
+}

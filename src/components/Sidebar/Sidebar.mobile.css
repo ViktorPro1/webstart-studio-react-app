@@ -18,3 +18,16 @@
         z-index: 999;
     }
 }
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-wrapper,
+    .app-content,
+    .home-page {
+        margin-left: 0 !important;
+        padding: 15px;
+    }
+}
