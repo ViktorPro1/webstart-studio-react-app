@@ -1,0 +1,24 @@
+@media screen and (max-width: 420px) {
+    .blog-resume-tips-header {
+        padding: 15px;
+    }
+
+    .blog-resume-tips-h1 {
+        font-size: 1.5em;
+    }
+
+    .blog-resume-tips-article {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    .blog-resume-tips-btn-home {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .blog-resume-tips-p {
+        font-size: 0.9em;
+    }
+}

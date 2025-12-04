@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users,HelpCircle, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Lock, Target } from 'lucide-react';
+import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users,HelpCircle,Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Lock, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -101,6 +101,16 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
      icon: HelpCircle,
     label: 'FAQ'
     },
+    {
+     id: 'blog',
+     icon: Newspaper, // або BookOpen
+     label: 'Блог / Дайджест',
+     submenu: [
+      { path: '/blog/landing-trends', label: 'Тренди лендінгів 2025' },
+      { path: '/blog/portfolio-tips', label: 'Портфоліо, яке продає' },
+      { path: '/blog/resume-tips', label: 'Поради для резюме' }
+      ]
+   },
     { 
       id: 'about', 
       path: '/about', 

@@ -1,0 +1,50 @@
+.blog-page-trends {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+.blog-page-trends-header {
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.blog-page-trends-h1 {
+    margin: 0;
+}
+
+.blog-page-trends-article {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-page-trends-btn-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.blog-page-trends-btn-home:hover {
+    background: #45a049;
+}
+
+.blog-page-trends-h2 {
+    color: #333;
+}
+
+.blog-page-trends-p {
+    margin-bottom: 15px;
+}

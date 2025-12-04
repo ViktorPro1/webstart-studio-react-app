@@ -1,0 +1,24 @@
+@media screen and (max-width: 420px) {
+    .blog-page-trends-header {
+        padding: 15px;
+    }
+
+    .blog-page-trends-h1 {
+        font-size: 1.5em;
+    }
+
+    .blog-page-trends-article {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    .blog-page-trends-btn-home {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .blog-page-trends-p {
+        font-size: 0.9em;
+    }
+}
