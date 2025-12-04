@@ -9,6 +9,9 @@ import Home from './pages/Home/Home';
 // ForWhom
 import ForWhom from './pages/ForWhom/ForWhom';
 
+// TechnicalDetails
+import TechnicalDetails from './pages/TechnicalDetails/TechnicalDetails';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -78,6 +81,9 @@ function App() {
 
             {/* ForWhom */}
             <Route path="/for-whom" element={<ForWhom />} />
+
+            { /* TechnicalDetails */}
+            <Route path="/technical-details" element={<TechnicalDetails />} />
 
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />

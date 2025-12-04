@@ -1,0 +1,68 @@
+@media (max-width: 768px) {
+    .tech-header {
+        padding: 30px 15px;
+    }
+
+    .tech-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .tech-main {
+        padding: 25px 20px;
+        margin: 20px 15px;
+    }
+
+    .tech-main h2 {
+        font-size: 1.3rem;
+    }
+
+    .tech-main h3 {
+        font-size: 1.1rem;
+    }
+
+    .tech-illustrations {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tech-box {
+        padding: 25px;
+    }
+
+    .tech-box svg {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tech-checklist {
+        padding: 15px 20px;
+    }
+
+    .toggle-cost-btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .tech-main {
+        padding: 20px 15px;
+    }
+
+    .tech-main h2 {
+        font-size: 1.2rem;
+    }
+
+    .tech-box {
+        padding: 20px;
+    }
+
+    .tech-box svg {
+        width: 70px;
+        height: 70px;
+    }
+}
