@@ -21,6 +21,12 @@ import DiyVsUs from './pages/DiyVsUs/DiyVsUs';
 // CommonMistakes
 import CommonMistakes from './pages/CommonMistakes/CommonMistakes';
 
+// FAQ
+import FAQ from './pages/FAQ/FAQ';
+
+// SecurityTips
+// import SecurityTips from './pages/SecurityTips/SecurityTips';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -102,6 +108,12 @@ function App() {
 
             {/* CommonMistakes */}
             <Route path="/common-mistakes" element={<CommonMistakes />} />
+
+            {/* FAQ */}
+            <Route path="/faq" element={<FAQ />} />
+
+            {/* SecurityTips */}
+            {/* <Route path="/security-tips" element={<SecurityTips />} /> */}
 
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />

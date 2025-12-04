@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Target } from 'lucide-react';
+import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users,HelpCircle, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Lock, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -51,24 +51,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
      label: 'Технічні можливості' 
     },
     { 
-      id: 'comparison', 
-      path: '/platform-comparison', 
-      icon: BarChart, 
-      label: 'Порівняння платформ' 
-    },
-    {
-     id: 'diyvsus',
-     path: '/diy-vs-us',
-     icon: BarChart2,
-     label: 'DIY vs З нами'
-    },
-    { 
-     id: 'common-mistakes', 
-     path: '/common-mistakes', 
-     icon: XCircle, // або інша іконка схожа на “❌” 
-     label: 'Часті помилки' 
-    },
-    { 
       id: 'ai-services',
       icon: Bot, 
       label: 'AI Сервіси',
@@ -88,6 +70,36 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/logo', label: 'Логотипи' },
         { path: '/branding', label: 'Брендинг' }
       ]
+    },
+    {
+      id: 'security',
+      path: '/security-tips',
+      icon: Lock,
+      label: 'Кібербезпека'
+    },
+        { 
+      id: 'comparison', 
+      path: '/platform-comparison', 
+      icon: BarChart, 
+      label: 'Порівняння платформ' 
+    },
+    {
+     id: 'diyvsus',
+     path: '/diy-vs-us',
+     icon: BarChart2,
+     label: 'DIY vs З нами'
+    },
+    { 
+     id: 'common-mistakes', 
+     path: '/common-mistakes', 
+     icon: XCircle, 
+     label: 'Часті помилки' 
+    },
+    {
+     id: 'faq',
+     path: '/faq',
+     icon: HelpCircle,
+    label: 'FAQ'
     },
     { 
       id: 'about', 

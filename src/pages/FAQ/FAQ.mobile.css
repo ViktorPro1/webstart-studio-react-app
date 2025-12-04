@@ -1,0 +1,31 @@
+@media (max-width: 420px) {
+    .faq-section {
+        padding: 1.5rem 1rem;
+        margin: 2rem 1rem;
+    }
+
+    .faq-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .faq-section details {
+        padding: .8rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .faq-section summary {
+        font-size: 1rem;
+        padding-left: 2.4rem;
+    }
+
+    .faq-section summary::before {
+        font-size: 1.3rem;
+        left: .3rem;
+    }
+
+    .faq-section p {
+        font-size: .9rem;
+        line-height: 1.4;
+    }
+}
