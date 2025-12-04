@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText,BarChart,BarChart2, Settings,Users, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Target } from 'lucide-react';
+import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -53,7 +53,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { 
       id: 'comparison', 
       path: '/platform-comparison', 
-      icon: BarChart, // або TrendingUp
+      icon: BarChart, 
       label: 'Порівняння платформ' 
     },
     {
@@ -61,6 +61,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
      path: '/diy-vs-us',
      icon: BarChart2,
      label: 'DIY vs З нами'
+    },
+    { 
+     id: 'common-mistakes', 
+     path: '/common-mistakes', 
+     icon: XCircle, // або інша іконка схожа на “❌” 
+     label: 'Часті помилки' 
     },
     { 
       id: 'ai-services',

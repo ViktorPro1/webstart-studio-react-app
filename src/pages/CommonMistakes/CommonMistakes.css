@@ -1,0 +1,137 @@
+.mistakes-section {
+    padding: 60px 20px;
+}
+
+.mistakes-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #c41e3a;
+}
+
+.mistakes-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mistakes-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mistake-item {
+    display: block;
+    padding: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.mistake-item summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #333;
+    cursor: pointer;
+    list-style: none;
+}
+
+.mistake-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.mistake-item summary::marker {
+    display: none;
+}
+
+.mistake-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.mistake-title {
+    flex: 1;
+}
+
+.mistake-item summary::after {
+    content: '▼';
+    font-size: 1.2rem;
+    color: #c41e3a;
+    transition: transform 0.3s;
+}
+
+.mistake-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.mistake-content {
+    padding: 0 25px 25px 25px;
+    border-top: 1px solid #f0f0f0;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mistake-content p {
+    margin: 15px 0;
+    color: #666;
+    line-height: 1.8;
+}
+
+.mistake-content p:first-child {
+    margin-top: 20px;
+}
+
+.mistake-content strong {
+    color: #c41e3a;
+    font-weight: 600;
+}
+
+.mistake-content a {
+    color: #c41e3a;
+    text-decoration: underline;
+}
+
+.mistake-content a:hover {
+    color: #a01729;
+}
+
+.btn-primary {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    padding: 15px 40px;
+    background: #c41e3a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #a01729;
+}

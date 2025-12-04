@@ -1,0 +1,40 @@
+@media (max-width: 768px) {
+    .mistakes-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .mistakes-intro {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .mistake-item summary {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    .mistake-icon {
+        font-size: 2rem;
+    }
+
+    .mistake-title {
+        font-size: 1.1rem;
+    }
+
+    .mistake-item summary::after {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .mistake-item[open] summary::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .mistake-content {
+        padding: 0 15px 20px 15px;
+    }
+}

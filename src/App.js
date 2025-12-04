@@ -18,6 +18,9 @@ import PlatformComparison from './pages/PlatformComparison/PlatformComparison';
 // DiyVsUs
 import DiyVsUs from './pages/DiyVsUs/DiyVsUs';
 
+// CommonMistakes
+import CommonMistakes from './pages/CommonMistakes/CommonMistakes';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -96,6 +99,9 @@ function App() {
 
             { /* DiyVsUs */}
             <Route path="/diy-vs-us" element={<DiyVsUs />} />
+
+            {/* CommonMistakes */}
+            <Route path="/common-mistakes" element={<CommonMistakes />} />
 
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />
