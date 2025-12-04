@@ -35,6 +35,9 @@ import LandingTrends from './pages/Blog/LandingTrends/LandingTrends';
 import PortfolioTips from './pages/Blog/PortfolioTips/PortfolioTips';
 import ResumeTips from './pages/Blog/ResumeTips/ResumeTips';
 
+// Instruction
+import Instruction from './pages/Instruction/Instruction';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -124,6 +127,9 @@ function App() {
             <Route path="/blog/landing-trends" element={<LandingTrends />} />
             <Route path="/blog/portfolio-tips" element={<PortfolioTips />} />
             <Route path="/blog/resume-tips" element={<ResumeTips />} />
+
+            {/* Instruction */}
+            <Route path="/instruction" element={<Instruction />} />
 
             {/* SecurityTips */}
             {/* <Route path="/security-tips" element={<SecurityTips />} /> */}

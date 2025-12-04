@@ -1,0 +1,72 @@
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.6em;
+    }
+
+    .header p {
+        font-size: 0.95em;
+    }
+
+    .tab {
+        font-size: 0.9em;
+        padding: 15px 10px;
+    }
+
+    .tab-text {
+        display: none;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+    .tab-content h2 {
+        font-size: 1.4em;
+    }
+
+    .step-header {
+        font-size: 1em;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navigation-buttons {
+        gap: 10px;
+    }
+
+    .nav-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 25px 15px;
+    }
+
+    .header h1 {
+        font-size: 1.3em;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9em;
+    }
+
+    .step-details {
+        padding-left: 40px;
+    }
+}
