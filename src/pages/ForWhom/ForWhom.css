@@ -1,0 +1,70 @@
+.for-whom-page {
+    animation: fadeIn 0.6s ease;
+}
+
+/* Для кого ми */
+.audience-section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    /* ← ДОДАНО: обмежує ширину секції */
+    margin: 0 auto;
+    /* ← ДОДАНО: центрує секцію */
+}
+
+.audience-section h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    color: #0066cc;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.audience-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.audience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 25px rgba(0, 102, 204, 0.2);
+}
+
+.audience-emoji {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.audience-card h3 {
+    font-size: 1.4rem;
+    margin: 0 0 15px 0;
+    color: #0066cc;
+}
+
+.audience-card p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

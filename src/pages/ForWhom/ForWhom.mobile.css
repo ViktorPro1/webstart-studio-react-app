@@ -1,0 +1,52 @@
+@media (max-width: 768px) {
+    .audience-section {
+        padding: 40px 20px;
+    }
+
+    .audience-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .audience-card {
+        padding: 25px;
+    }
+
+    .audience-emoji {
+        font-size: 2.5rem;
+    }
+
+    .audience-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .audience-section {
+        padding: 30px 15px;
+    }
+
+    .audience-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .audience-card {
+        padding: 20px;
+    }
+
+    .audience-emoji {
+        font-size: 2rem;
+    }
+
+    .audience-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .audience-card p {
+        font-size: 0.95rem;
+    }
+}

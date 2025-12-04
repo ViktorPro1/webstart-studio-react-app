@@ -5,6 +5,9 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 
+// ForWhom
+import ForWhom from './pages/ForWhom/ForWhom';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -71,6 +74,9 @@ function App() {
         <main className={`main-wrapper ${isSidebarOpen ? '' : 'sidebar-closed'}`}>
           <Routes>
             <Route path="/" element={<Home />} />
+
+            {/* ForWhom */}
+            <Route path="/for-whom" element={<ForWhom />} />
             
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />

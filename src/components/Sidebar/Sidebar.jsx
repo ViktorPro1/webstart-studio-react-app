@@ -29,6 +29,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       label: 'Головна' 
     },
     { 
+    id: 'for-whom',   
+    path: '/for-whom', 
+    icon: Users,     
+    label: 'Для кого ми' 
+    },
+    { 
       id: 'web-development',
       icon: Briefcase, 
       label: 'Портфоліо',
