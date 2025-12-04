@@ -1,9 +1,13 @@
 .header {
-    position: fixed;
-    top: 0;
-    margin-left: 280px;
-    right: 0;
+    position: relative;
+    /* замість fixed */
+    top: auto;
+    /* прибираємо прив’язку до верху */
+    margin-left: 0;
+    /* якщо був відступ від сайдбару */
+    right: auto;
     height: 70px;
+    /* можна залишити */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
@@ -11,8 +15,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
-    z-index: 999;
-    transition: left 0.3s ease;
+    z-index: 1;
+    /* або взагалі можна прибрати */
+    transition: none;
+    /* якщо більше немає анімації позиції */
 }
 
 .header.full-width {

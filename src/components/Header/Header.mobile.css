@@ -1,7 +1,15 @@
 @media (max-width: 768px) {
     .header {
+        margin-left: 0;
+        /* скидаємо бічний відступ */
         left: 0;
+        /* фіксуємо початок у лівому краю */
+        width: 100%;
+        /* займає всю ширину */
         padding: 0 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .burger-menu {
@@ -25,32 +33,43 @@
 
 @media (max-width: 420px) {
     .header {
-        left: 0;
+        position: relative;
+        /* більше не фіксований */
         width: 100%;
-        padding: 0 10px;
-        /* ще менший відступ */
+        padding: 0 8px;
+        /* менший padding */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-left {
+        gap: 8px;
+        display: flex;
+        align-items: center;
     }
 
     .burger-menu {
         display: block;
-        /* бургер завжди видно */
     }
 
     .search-bar {
         display: none;
-        /* пошук схований */
+    }
+
+    .header-right {
+        gap: 8px;
+        display: flex;
+        align-items: center;
     }
 
     .header-btn {
-        padding: 6px 12px;
-        /* компактні кнопки */
-        font-size: 11px;
-        /* менший шрифт */
+        padding: 4px 8px;
+        font-size: 10px;
     }
 
     .user-icon {
-        width: 30px;
-        /* менша іконка */
-        height: 30px;
+        width: 26px;
+        height: 26px;
     }
 }

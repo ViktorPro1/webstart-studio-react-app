@@ -1,19 +1,80 @@
 @media (max-width: 768px) {
     .footer {
         margin-left: 0;
-        padding: 30px 20px;
+        padding: 20px 10px;
+        /* менше відступи */
     }
 
     .footer-content {
         flex-direction: column;
-        gap: 20px;
+        gap: 12px;
+        /* ще менше відстань між блоками */
+        align-items: center;
     }
 
     .footer-text {
         text-align: center;
     }
 
+    .footer-text p {
+        font-size: 11px;
+        /* менший шрифт */
+    }
+
+    .footer-subtitle {
+        font-size: 9px;
+    }
+
     .social-links {
         justify-content: center;
+        gap: 8px;
+        /* менший gap між іконками */
+    }
+
+    .social-link {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 420px) {
+    .footer {
+        padding: 8px 6px;
+        /* мінімальні горизонтальні відступи */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 4px;
+        /* менше відстань між блоками */
+        align-items: center;
+        max-width: 320px;
+        /* звужуємо по горизонталі */
+        margin: 0 auto;
+        /* центроване */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer-text p {
+        font-size: 9px;
+        text-align: center;
+    }
+
+    .footer-subtitle {
+        font-size: 7px;
+    }
+
+    .social-links {
+        gap: 4px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        width: 20px;
+        height: 20px;
     }
 }
