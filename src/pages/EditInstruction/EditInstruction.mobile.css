@@ -1,0 +1,133 @@
+/* Мобільні стилі для EditInstruction */
+@media (max-width: 768px) {
+    .guide-header {
+        padding: 25px 15px;
+    }
+
+    .guide-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .step-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .step-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .code-example pre {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .help-card {
+        padding: 25px;
+    }
+
+    .help-card h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 10px;
+    }
+
+    .guide-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .step-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .step-content h2 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .step-content p,
+    .step-content li {
+        font-size: 0.9rem;
+    }
+
+    .code-example pre {
+        font-size: 0.75rem;
+        padding: 8px;
+        word-break: break-all;
+        white-space: pre-wrap;
+    }
+
+    .download-btn,
+    .back-btn,
+    .help-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .help-card {
+        padding: 20px 15px;
+    }
+
+    .help-icon {
+        font-size: 3rem;
+    }
+
+    .help-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .help-card p {
+        font-size: 0.95rem;
+    }
+
+    .help-card ul {
+        padding: 0 10px;
+    }
+
+    .help-card li {
+        font-size: 0.9rem;
+    }
+
+    .tip {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    code {
+        font-size: 0.8rem;
+        word-break: break-word;
+    }
+
+    kbd {
+        font-size: 0.75rem;
+        padding: 2px 6px;
+    }
+}

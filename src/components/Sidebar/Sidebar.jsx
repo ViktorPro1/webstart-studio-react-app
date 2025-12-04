@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users,HelpCircle,Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone,MessageCircle, Lock,BookOpen, Target } from 'lucide-react';
+import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users,HelpCircle,Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone,MessageCircle, Lock,BookOpen,Monitor, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -77,7 +77,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: Lock,
       label: 'Кібербезпека'
     },
-        { 
+    { 
       id: 'comparison', 
       path: '/platform-comparison', 
       icon: BarChart, 
@@ -122,6 +122,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: BookOpen, 
       label: 'Реєстрація на Netlify',
       path: '/instruction'
+    },
+    {
+     id: 'edit-instruction',
+     path: '/edit-instruction',
+     icon: Monitor,
+     label: 'Редагування проекту у VSCode'
     },
     { 
       id: 'about', 

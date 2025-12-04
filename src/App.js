@@ -38,6 +38,9 @@ import ResumeTips from './pages/Blog/ResumeTips/ResumeTips';
 // Instruction
 import Instruction from './pages/Instruction/Instruction';
 
+// EditInstruction
+import EditInstruction from './pages/EditInstruction/EditInstruction';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -130,6 +133,9 @@ function App() {
 
             {/* Instruction */}
             <Route path="/instruction" element={<Instruction />} />
+
+            {/* EditInstruction */}
+            <Route path="/edit-instruction" element={<EditInstruction />} />
 
             {/* SecurityTips */}
             {/* <Route path="/security-tips" element={<SecurityTips />} /> */}
