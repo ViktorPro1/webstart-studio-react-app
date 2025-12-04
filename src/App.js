@@ -12,6 +12,9 @@ import ForWhom from './pages/ForWhom/ForWhom';
 // TechnicalDetails
 import TechnicalDetails from './pages/TechnicalDetails/TechnicalDetails';
 
+// PlatformComparison
+import PlatformComparison from './pages/PlatformComparison/PlatformComparison';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -84,6 +87,9 @@ function App() {
 
             { /* TechnicalDetails */}
             <Route path="/technical-details" element={<TechnicalDetails />} />
+
+            { /* PlatformComparison */}
+            <Route path="/platform-comparison" element={<PlatformComparison />} />
 
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />

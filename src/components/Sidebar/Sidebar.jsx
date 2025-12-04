@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText, Settings,Users, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Target } from 'lucide-react';
+import { Home, Briefcase, FileText,BarChart, Settings,Users, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -35,12 +35,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     label: 'Для кого ми' 
     },
     { 
-     id: 'technical', 
-     path: '/technical-details', 
-     icon: Settings, // або Wrench
-     label: 'Технічні можливості' 
-    },
-    { 
       id: 'web-development',
       icon: Briefcase, 
       label: 'Портфоліо',
@@ -49,6 +43,18 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/portfolio', label: 'Портфоліо' },
         { path: '/resume', label: 'Резюме' },
       ]
+    },
+        { 
+     id: 'technical', 
+     path: '/technical-details', 
+     icon: Settings, 
+     label: 'Технічні можливості' 
+    },
+    { 
+      id: 'comparison', 
+      path: '/platform-comparison', 
+      icon: BarChart, // або TrendingUp
+      label: 'Порівняння платформ' 
     },
     { 
       id: 'ai-services',

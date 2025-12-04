@@ -1,0 +1,95 @@
+.platform-comparison-page {
+    animation: fadeIn 0.6s ease;
+    padding: 40px 20px;
+}
+
+.comparison-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.centered-header {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.centered-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.highlight-start {
+    color: #f5576c;
+    font-weight: 700;
+}
+
+/* Table wrapper для скролу на мобільних */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* Порівняльна таблиця */
+.comparison-table {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #0d1b2a;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.comparison-table td,
+.comparison-table th {
+    border: 1px solid #3a6186;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: #1e3a8a;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #e0e7ff;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #bdd7ff;
+    transition: background-color 0.3s ease;
+}
+
+.comparison-table td:first-child {
+    font-weight: 600;
+    background-color: #f0f4ff;
+}
+
+/* Анімація */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

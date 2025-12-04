@@ -1,0 +1,69 @@
+@media (max-width: 768px) {
+    .centered-header {
+        font-size: 1.8rem;
+    }
+
+    .centered-text {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .comparison-table {
+        font-size: 12px;
+    }
+
+    .comparison-table td,
+    .comparison-table th {
+        padding: 8px 10px;
+    }
+
+    .table-wrapper {
+        margin: 0 -20px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .platform-comparison-page {
+        padding: 30px 15px;
+    }
+
+    .centered-header {
+        font-size: 1.5rem;
+    }
+
+    .centered-text {
+        font-size: 0.95rem;
+    }
+
+    .comparison-table {
+        font-size: 11px;
+    }
+
+    .comparison-table td,
+    .comparison-table th {
+        padding: 6px 8px;
+        white-space: normal;
+    }
+
+    /* На дуже маленьких екранах - вертикальний скрол */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 375px) {
+    .centered-header {
+        font-size: 1.3rem;
+    }
+
+    .comparison-table {
+        font-size: 10px;
+    }
+
+    .comparison-table td,
+    .comparison-table th {
+        padding: 5px 6px;
+    }
+}
