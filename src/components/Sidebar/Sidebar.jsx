@@ -119,8 +119,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
     {
       id: 'instruction',
-      icon: BookOpen, // або інша іконка з react-icons/heroicons
-      label: 'Інструкція',
+      icon: BookOpen, 
+      label: 'Реєстрація на Netlify',
       path: '/instruction'
     },
     { 
