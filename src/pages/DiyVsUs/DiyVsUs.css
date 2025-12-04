@@ -1,0 +1,65 @@
+.comparison-table-section {
+    padding: 60px 20px;
+}
+
+.comparison-table-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #1e40af;
+}
+
+.vs-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
+}
+
+.vs-table thead {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: #0f172a;
+}
+
+.vs-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.vs-table th:first-child {
+    width: 25%;
+}
+
+.vs-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.2s;
+}
+
+.vs-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.vs-table td {
+    padding: 18px 20px;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.vs-table td:first-child {
+    font-weight: 600;
+    color: #1e40af;
+}
+
+.vs-cta {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e40af;
+    margin-top: 30px;
+}

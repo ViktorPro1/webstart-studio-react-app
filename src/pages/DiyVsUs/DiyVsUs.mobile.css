@@ -1,0 +1,37 @@
+@media (max-width: 768px) {
+    .comparison-table-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .vs-table {
+        font-size: 0.9rem;
+    }
+
+    .vs-table th,
+    .vs-table td {
+        padding: 12px 10px;
+    }
+
+    .vs-table th {
+        font-size: 1rem;
+    }
+
+    .vs-cta {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vs-table {
+        font-size: 0.8rem;
+    }
+
+    .vs-table th,
+    .vs-table td {
+        padding: 10px 8px;
+    }
+
+    .vs-table th {
+        font-size: 0.9rem;
+    }
+}

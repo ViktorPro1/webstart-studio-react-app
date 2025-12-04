@@ -15,6 +15,9 @@ import TechnicalDetails from './pages/TechnicalDetails/TechnicalDetails';
 // PlatformComparison
 import PlatformComparison from './pages/PlatformComparison/PlatformComparison';
 
+// DiyVsUs
+import DiyVsUs from './pages/DiyVsUs/DiyVsUs';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -90,6 +93,9 @@ function App() {
 
             { /* PlatformComparison */}
             <Route path="/platform-comparison" element={<PlatformComparison />} />
+
+            { /* DiyVsUs */}
+            <Route path="/diy-vs-us" element={<DiyVsUs />} />
 
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />
