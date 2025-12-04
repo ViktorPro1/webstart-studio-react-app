@@ -27,6 +27,9 @@ import FAQ from './pages/FAQ/FAQ';
 // SecurityTips
 // import SecurityTips from './pages/SecurityTips/SecurityTips';
 
+// Testimonials
+import Testimonials from './pages/Testimonials/Testimonials';
+
 // Blog
 import LandingTrends from './pages/Blog/LandingTrends/LandingTrends';
 import PortfolioTips from './pages/Blog/PortfolioTips/PortfolioTips';
@@ -124,6 +127,9 @@ function App() {
 
             {/* SecurityTips */}
             {/* <Route path="/security-tips" element={<SecurityTips />} /> */}
+
+            {/* Testimonials */}
+            <Route path="/testimonials" element={<Testimonials />} />
 
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />

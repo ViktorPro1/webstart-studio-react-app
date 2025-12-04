@@ -1,0 +1,188 @@
+.testimonials-page {
+    animation: fadeIn 0.6s ease;
+}
+
+/* ======================================== */
+/*   ВІДГУКИ - СТИЛЬ МЕСЕНДЖЕРІВ           */
+/* ======================================== */
+
+#testimonials {
+    background: #f5f7fa;
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#testimonials-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+#testimonials-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#testimonials-title:hover {
+    transform: scale(1.03);
+}
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Контейнер як скриншот месенджера */
+.testimonial {
+    background: #ffffff;
+    padding: 0;
+    max-width: 340px;
+    width: 100%;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Хедер месенджера */
+.testimonial::before {
+    content: '';
+    display: block;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Wrapper для контенту */
+.testimonial-wrapper {
+    padding: 20px;
+    background: #f8f9fa;
+    min-height: 180px;
+}
+
+/* Бульбашка повідомлення */
+.testimonial-message {
+    background: #ffffff;
+    padding: 15px 18px;
+    border-radius: 18px 18px 18px 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    margin-bottom: 12px;
+    position: relative;
+    text-align: left;
+}
+
+/* Хвостик бульбашки */
+.testimonial-message::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 12px 12px;
+    border-color: transparent transparent #ffffff transparent;
+}
+
+.testimonial p {
+    font-style: normal;
+    margin: 0 0 8px 0;
+    color: #2d3748;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Мета-інфо (час, статус прочитання) */
+.testimonial-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 8px;
+    padding: 0 5px;
+}
+
+.testimonial-time::before {
+    content: '✓✓ ';
+    color: #0088cc;
+    margin-right: 3px;
+}
+
+.testimonial cite {
+    color: #667eea;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 13px;
+}
+
+/* Фото як аватар в месенджері */
+.testimonial-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+.testimonial-photo.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Ім'я в хедері */
+.testimonial-header-name {
+    position: absolute;
+    top: 15px;
+    left: 65px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Анімація */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
