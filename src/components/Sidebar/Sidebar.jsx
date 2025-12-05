@@ -136,10 +136,10 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       label: 'Про нас' 
     },
     { 
-      id: 'skills',    // ← НОВИЙ ПОК
+      id: 'skills', 
       path: '/skills', 
-      icon: Code2,     // ← Іконка коду
-      label: 'Навички'
+      icon: Code2,  
+      label: 'Наші навички'
     },
     { 
       id: 'contact', 
