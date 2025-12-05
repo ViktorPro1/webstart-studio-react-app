@@ -1,6 +1,6 @@
-import React, { useState }from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users,HelpCircle,Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,Code2, Palette,Megaphone,MessageCircle, Lock,BookOpen,Monitor, Target } from 'lucide-react';
+import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2, Palette, Megaphone, MessageCircle, Lock, BookOpen, Monitor, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -22,18 +22,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   const menuItems = [
-    { 
-      id: 'home', 
-      path: '/', 
-      icon: Home, 
-      label: 'Головна' 
-    },
-    { 
-    id: 'for-whom',   
-    path: '/for-whom', 
-    icon: Users,     
-    label: 'Для кого ми' 
-    },
+    { id: 'home', path: '/', icon: Home, label: 'Головна' },
+    { id: 'for-whom', path: '/for-whom', icon: Users, label: 'Для кого ми' },
     { 
       id: 'web-development',
       icon: Briefcase, 
@@ -44,12 +34,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/resume', label: 'Резюме' },
       ]
     },
-        { 
-     id: 'technical', 
-     path: '/technical-details', 
-     icon: Settings, 
-     label: 'Технічні можливості' 
-    },
+    { id: 'technical', path: '/technical-details', icon: Settings, label: 'Технічні можливості' },
     { 
       id: 'ai-services',
       icon: Bot, 
@@ -71,85 +56,26 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/branding', label: 'Брендинг' }
       ]
     },
-    {
-      id: 'security',
-      path: '/security-tips',
-      icon: Lock,
-      label: 'Кібербезпека'
-    },
+    { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
+    { id: 'comparison', path: '/platform-comparison', icon: BarChart, label: 'Порівняння платформ' },
+    { id: 'diyvsus', path: '/diy-vs-us', icon: BarChart2, label: 'DIY vs З нами' },
+    { id: 'common-mistakes', path: '/common-mistakes', icon: XCircle, label: 'Часті помилки' },
+    { id: 'faq', path: '/faq', icon: HelpCircle, label: 'FAQ' },
     { 
-      id: 'comparison', 
-      path: '/platform-comparison', 
-      icon: BarChart, 
-      label: 'Порівняння платформ' 
-    },
-    {
-     id: 'diyvsus',
-     path: '/diy-vs-us',
-     icon: BarChart2,
-     label: 'DIY vs З нами'
-    },
-    { 
-     id: 'common-mistakes', 
-     path: '/common-mistakes', 
-     icon: XCircle, 
-     label: 'Часті помилки' 
-    },
-    {
-     id: 'faq',
-     path: '/faq',
-     icon: HelpCircle,
-    label: 'FAQ'
-    },
-    {
-     id: 'blog',
-     icon: Newspaper, 
-     label: 'Блог / Дайджест',
-     submenu: [
-      { path: '/blog/landing-trends', label: 'Тренди лендінгів 2025' },
-      { path: '/blog/portfolio-tips', label: 'Портфоліо, яке продає' },
-      { path: '/blog/resume-tips', label: 'Поради для резюме' }
+      id: 'blog',
+      icon: Newspaper, 
+      label: 'Блог / Дайджест',
+      submenu: [
+        { path: '/blog/landing-trends', label: 'Тренди лендінгів 2025' },
+        { path: '/blog/portfolio-tips', label: 'Портфоліо, яке продає' },
+        { path: '/blog/resume-tips', label: 'Поради для резюме' }
       ]
     },
-    { 
-     id: 'testimonials', 
-     path: '/testimonials', 
-     icon: MessageCircle,
-     label: 'Відгуки про нас' 
-    },
-    {
-      id: 'instruction',
-      icon: BookOpen, 
-      label: 'Реєстрація на Netlify',
-      path: '/instruction'
-    },
-    {
-     id: 'edit-instruction',
-     path: '/edit-instruction',
-     icon: Monitor,
-     label: 'Редагування проекту у VSCode'
-    },
-    { 
-      id: 'about', 
-      path: '/about', 
-      icon: Users, 
-      label: 'Про нас' 
-    },
-    { 
-      id: 'skills', 
-      path: '/skills', 
-      icon: Code2,  
-      label: 'Наші навички'
-    },
-    { 
-      id: 'contact', 
-      path: '/contact', 
-      icon: Mail, 
-      label: 'Контакти' 
-    }
+    { id: 'testimonials', path: '/testimonials', icon: MessageCircle, label: 'Відгуки про нас' },
+    { id: 'instruction', path: '/instruction', icon: BookOpen, label: 'Реєстрація на Netlify' },
+    { id: 'edit-instruction', path: '/edit-instruction', icon: Monitor, label: 'Редагування проекту у VSCode' },
   ];
 
-  // Додаткові можливості (окрема секція)
   const additionalItems = [
     {
       id: 'google-ads',
@@ -201,6 +127,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     }
   ];
 
+  const aboutItems = [
+    { id: 'about', path: '/about', icon: Users, label: 'Про нас' },
+    { id: 'skills', path: '/skills', icon: Code2, label: 'Наші навички' },
+    { id: 'contact', path: '/contact', icon: Mail, label: 'Контакти' }
+  ];
+
   return (
     <>
       {isOpen && <div className="sidebar-overlay" onClick={toggleSidebar}></div>}
@@ -213,7 +145,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           {menuItems.map(item => (
             <div key={item.id}>
               {item.submenu ? (
-                // Меню з підменю (dropdown)
                 <div className="nav-item-wrapper">
                   <div
                     className={`nav-item dropdown-item ${openDropdowns[item.id] ? 'open' : ''}`}
@@ -239,7 +170,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                   </div>
                 </div>
               ) : (
-                // Звичайне меню без підменю
                 <Link
                   to={item.path}
                   className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
@@ -254,11 +184,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
           {/* Роздільник */}
           <div className="menu-divider"></div>
-          
-          {/* Заголовок секції "Додаткові можливості" */}
-          <div className="menu-section-title">Додаткові можливості</div>
 
-          {/* Додаткові можливості */}
+          {/* Секція "Додаткові можливості" */}
+          <div className="menu-section-title">Додаткові можливості</div>
           {additionalItems.map(item => (
             <div key={item.id}>
               <div className="nav-item-wrapper">
@@ -287,6 +215,24 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               </div>
             </div>
           ))}
+
+          {/* Роздільник */}
+          <div className="menu-divider"></div>
+
+          {/* Секція "Про нас" */}
+          <div className="menu-section-title">Платформа</div>
+          {aboutItems.map(item => (
+            <Link
+              key={item.id}
+              to={item.path}
+              className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+              onClick={handleLinkClick}
+            >
+              <item.icon size={20} />
+              <span>{item.label}</span>
+            </Link>
+          ))}
+
         </nav>
       </aside>
     </>
