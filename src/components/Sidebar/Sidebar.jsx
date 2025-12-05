@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users,HelpCircle,Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Palette,Megaphone,MessageCircle, Lock,BookOpen,Monitor, Target } from 'lucide-react';
+import { Home, Briefcase, FileText,BarChart,BarChart2,XCircle, Settings,Users,HelpCircle,Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,Code2, Palette,Megaphone,MessageCircle, Lock,BookOpen,Monitor, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -134,6 +134,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       path: '/about', 
       icon: Users, 
       label: 'Про нас' 
+    },
+    { 
+      id: 'skills',    // ← НОВИЙ ПОК
+      path: '/skills', 
+      icon: Code2,     // ← Іконка коду
+      label: 'Навички'
     },
     { 
       id: 'contact', 

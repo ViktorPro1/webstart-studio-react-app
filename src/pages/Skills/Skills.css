@@ -1,0 +1,151 @@
+.skills-page {
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    background: #4848a1;
+    color: #eee;
+    overflow-x: hidden;
+    position: relative;
+    border-radius: 20px;
+}
+
+.skills-main {
+    position: relative;
+    z-index: 10;
+    max-width: 960px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.skills-h1 {
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #7f8fff;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.skills-skill {
+    background: linear-gradient(135deg, #3949ab, #1a237e);
+    padding: 1rem 1.5rem;
+    border-radius: 14px;
+    cursor: pointer;
+    width: 140px;
+    box-shadow: 0 0 12px #2c3eaa88;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    user-select: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+    transition: all 0.4s ease;
+    outline: none;
+}
+
+.skills-skill:hover,
+.skills-skill:focus {
+    background: linear-gradient(135deg, #6e8eff, #3a59ff);
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #6e8eff;
+    z-index: 2;
+}
+
+.skills-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+}
+
+.skills-text {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.skills-time {
+    font-weight: 400;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    color: #b0c7ff;
+}
+
+.skills-description {
+    margin-top: 2rem;
+    min-height: 3rem;
+    font-size: 1.1rem;
+    color: #a9b6ff;
+    font-style: italic;
+    transition: opacity 0.3s ease;
+}
+
+.skills-quote {
+    margin-top: 3rem;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #6b7bc9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 5px #1f274d;
+}
+
+.skills-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 13, 43, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 9999;
+}
+
+.skills-modal[open] {
+    display: flex;
+}
+
+.skills-modal-content {
+    background: #1a1a40;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    max-width: 450px;
+    color: #c8d0ff;
+    box-shadow: 0 0 30px #4e5effcc;
+    position: relative;
+    text-align: center;
+}
+
+.skills-close-modal {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #7fa1ff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.skills-close-modal:hover {
+    color: #a4c1ff;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

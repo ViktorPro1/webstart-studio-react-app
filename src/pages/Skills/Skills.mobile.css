@@ -1,0 +1,92 @@
+@media (max-width: 640px) {
+    .skills-page {
+        border-radius: 15px;
+        padding: 0.8rem;
+    }
+
+    .skills-container {
+        gap: 1rem;
+    }
+
+    .skills-skill {
+        width: 120px;
+        padding: 0.8rem 1rem;
+    }
+
+    .skills-main {
+        margin: 1rem auto 3rem;
+    }
+
+    .skills-h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .skills-page {
+        border-radius: 12px;
+        padding: 0.5rem;
+    }
+
+    .skills-container {
+        gap: 0.8rem;
+    }
+
+    .skills-skill {
+        width: 100px;
+        padding: 0.6rem 0.8rem;
+    }
+
+    .skills-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.3rem;
+    }
+
+    .skills-text {
+        font-size: 1rem;
+    }
+
+    .skills-time {
+        font-size: 0.75rem;
+    }
+
+    .skills-main {
+        padding: 0 0.5rem;
+        margin: 0.8rem auto 2rem;
+    }
+
+    .skills-h1 {
+        font-size: 1.6rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.2rem;
+    }
+
+    .skills-description {
+        font-size: 1rem;
+        min-height: 2rem;
+    }
+
+    .skills-quote {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .skills-modal-content {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .skills-modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .skills-modal-content p {
+        font-size: 0.9rem;
+    }
+
+    .skills-close-modal {
+        font-size: 1.6rem;
+        top: 0.3rem;
+        right: 0.5rem;
+    }
+}
