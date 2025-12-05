@@ -25,7 +25,7 @@ import CommonMistakes from './pages/CommonMistakes/CommonMistakes';
 import FAQ from './pages/FAQ/FAQ';
 
 // SecurityTips
-// import SecurityTips from './pages/SecurityTips/SecurityTips';
+import SecurityTips from './pages/SecurityTips/SecurityTips';
 
 // Testimonials
 import Testimonials from './pages/Testimonials/Testimonials';
@@ -138,7 +138,7 @@ function App() {
             <Route path="/edit-instruction" element={<EditInstruction />} />
 
             {/* SecurityTips */}
-            {/* <Route path="/security-tips" element={<SecurityTips />} /> */}
+            <Route path="/security-tips" element={<SecurityTips />} />
 
             {/* Testimonials */}
             <Route path="/testimonials" element={<Testimonials />} />
