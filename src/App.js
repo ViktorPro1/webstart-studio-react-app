@@ -62,6 +62,9 @@ import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import About from './pages/About/About';
 // import Contact from './pages/Contact/Contact';
 
+// About
+import About from './pages/About/About';
+
 // Google Ads
 import GoogleAdsSetup from './pages/Additional/GoogleAds/Setup/Setup';
 // import GoogleAdsOptimization from './pages/Additional/GoogleAds/Optimization/Optimization';
@@ -163,6 +166,9 @@ function App() {
             {/* Other Routes */}
             {/* <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} /> */}
+
+            {/*About*/}
+            <Route path="/about" element={<About />} />
 
             {/* Google Ads Routes */}
             <Route path="/google-ads/setup" element={<GoogleAdsSetup />} />
