@@ -1,0 +1,51 @@
+.bonus-offer-page {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.bonus-box {
+    max-width: 600px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    border: 2px solid #e8e8e8;
+}
+
+.bonus-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.bonus-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.bonus-subtext {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.bonus-button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    background: #0088cc;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.bonus-button:hover {
+    background: #006ba2;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,15 @@
+@media (max-width: 480px) {
+    .bonus-box {
+        padding: 22px;
+    }
+
+    .bonus-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .bonus-button {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 1.05rem;
+    }
+}

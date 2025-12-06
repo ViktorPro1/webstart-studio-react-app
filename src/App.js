@@ -44,6 +44,9 @@ import EditInstruction from './pages/EditInstruction/EditInstruction';
 // Briefs
 import Briefs from './pages/Briefs/Briefs';
 
+// Bonus
+import Bonus from "./pages/Bonus/Bonus";
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -156,6 +159,9 @@ function App() {
 
             {/* Briefs */}
             <Route path="/briefs" element={<Briefs />} />
+
+            {/* Bonus */}
+            <Route path="/bonus" element={<Bonus />} />
 
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />
