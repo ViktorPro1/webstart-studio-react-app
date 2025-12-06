@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2,Award, FileDown, Palette, Megaphone, MessageCircle, Lock, Gift, BookOpen, Monitor,Globe, Target } from 'lucide-react';
+import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2, Award, FileDown, Palette, Megaphone, MessageCircle, Lock, Gift, BookOpen, Monitor, Globe, Globe2, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -24,9 +24,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   const menuItems = [
     { id: 'home', path: '/', icon: Home, label: 'Головна' },
     { id: 'for-whom', path: '/for-whom', icon: Users, label: 'Для кого ми' },
-    { 
+    {
       id: 'web-development',
-      icon: Briefcase, 
+      icon: Briefcase,
       label: 'Портфоліо',
       submenu: [
         { path: '/landing', label: 'Лендінги' },
@@ -35,9 +35,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       ]
     },
     { id: 'technical', path: '/technical-details', icon: Settings, label: 'Технічні можливості' },
-    { 
+    {
       id: 'ai-services',
-      icon: Bot, 
+      icon: Bot,
       label: 'AI Сервіси',
       submenu: [
         { path: '/ai-automation', label: 'AI Автоматизація' },
@@ -46,9 +46,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/create-ai-agent', label: 'Створення AI агента' }
       ]
     },
-    { 
+    {
       id: 'design',
-      icon: Palette, 
+      icon: Palette,
       label: 'Дизайн',
       submenu: [
         { path: '/ui-ux', label: 'UI/UX Дизайн' },
@@ -61,9 +61,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { id: 'diyvsus', path: '/diy-vs-us', icon: BarChart2, label: 'DIY vs З нами' },
     { id: 'common-mistakes', path: '/common-mistakes', icon: XCircle, label: 'Часті помилки' },
     { id: 'faq', path: '/faq', icon: HelpCircle, label: 'FAQ' },
-    { 
+    {
       id: 'blog',
-      icon: Newspaper, 
+      icon: Newspaper,
       label: 'Блог / Дайджест',
       submenu: [
         { path: '/blog/landing-trends', label: 'Тренди лендінгів 2025' },
@@ -71,20 +71,33 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/blog/resume-tips', label: 'Поради для резюме' }
       ]
     },
-    
+
     { id: 'instruction', path: '/instruction', icon: BookOpen, label: 'Реєстрація на Netlify' },
     { id: 'edit-instruction', path: '/edit-instruction', icon: Monitor, label: 'Редагування проекту у VSCode' },
-    { 
-      id: 'briefs', 
-      path: '/briefs', 
+    {
+      id: 'briefs',
+      path: '/briefs',
       icon: FileDown,
-      label: 'Замовити проект' 
+      label: 'Замовити проект'
     },
     {
       id: 'bonus',
       path: '/bonus',
       icon: Gift,
       label: 'Бонус'
+    },
+    {
+      id: 'international',
+      icon: Globe2,
+      label: 'International',
+      submenu: [
+        { path: '/international/en', label: 'English' },
+        { path: '/international/fr', label: 'Français' },
+        { path: '/international/pl', label: 'Polski' },
+        { path: '/international/de', label: 'Deutsch' },
+        { path: '/international/cz', label: 'Čeština' },
+        { path: '/international/sv', label: 'Svenska' },
+      ]
     }
   ];
 
@@ -143,17 +156,17 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { id: 'about', path: '/about', icon: Users, label: 'Про нас' },
     { id: 'testimonials', path: '/testimonials', icon: MessageCircle, label: 'Відгуки' },
     { id: 'skills', path: '/skills', icon: Code2, label: 'Наші навички' },
-    { 
-      id: 'achievements', 
-      path: '/achievements', 
+    {
+      id: 'achievements',
+      path: '/achievements',
       icon: Award,
-      label: 'Досягнення' 
+      label: 'Досягнення'
     },
     { id: 'contact', path: '/contact', icon: Mail, label: 'Контакти' },
     {
       id: 'social',
       path: '/social',
-      icon: Globe, // можеш будь-який значок
+      icon: Globe,
       label: 'Соцмережі'
     }
   ];

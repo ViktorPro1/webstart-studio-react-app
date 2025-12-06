@@ -107,6 +107,14 @@ import GoogleAdsSetup from './pages/Additional/GoogleAds/Setup/Setup';
 // import PCCleaningOptimization from './pages/Additional/PCCleaning/Optimization/Optimization';
 // import PCCleaningSupport from './pages/Additional/PCCleaning/Support/Support';
 
+// International
+import English from './pages/international/English/English';
+import Francais from './pages/international/Français/Français';
+import Polski from './pages/international/Polski/Polski';
+import Cestina from './pages/international/Cestina/Cestina';
+import Svenska from './pages/international/Svenska/Svenska';
+import Deutsch from './pages/international/Deutsch/Deutsch';
+
 import './App.css';
 
 function App() {
@@ -225,6 +233,15 @@ function App() {
             <Route path="/pc-cleaning/virus-removal" element={<PCCleaningVirusRemoval />} />
             <Route path="/pc-cleaning/optimization" element={<PCCleaningOptimization />} />
             <Route path="/pc-cleaning/support" element={<PCCleaningSupport />} /> */}
+
+            {/* International Routes */}
+            <Route path="/international/en" element={<English />} />
+            <Route path="/international/fr" element={<Francais />} />
+            <Route path="/international/pl" element={<Polski />} />
+            <Route path="/international/cz" element={<Cestina />} />
+            <Route path="/international/sv" element={<Svenska />} />
+            <Route path="/international/de" element={<Deutsch />} />
+
           </Routes>
         </main>
         <Footer isSidebarOpen={isSidebarOpen} />

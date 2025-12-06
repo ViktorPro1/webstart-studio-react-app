@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+    .cz-page header {
+        padding: 24px 0;
+    }
+
+    .cz-page header h1 {
+        font-size: 1.8rem;
+    }
+
+    .cz-page section {
+        margin: 20px 12px;
+        padding: 24px 18px;
+        border-radius: 14px;
+    }
+
+    .cz-page h2 {
+        font-size: 1.4rem;
+    }
+}

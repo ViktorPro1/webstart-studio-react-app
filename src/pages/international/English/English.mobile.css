@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+    .en-page header {
+        padding: 24px 0;
+    }
+
+    .en-page header h1 {
+        font-size: 1.9rem;
+    }
+
+    .en-page section {
+        margin: 20px 12px;
+        padding: 26px 18px;
+        border-radius: 16px;
+    }
+
+    .en-page h2 {
+        font-size: 1.4rem;
+    }
+}

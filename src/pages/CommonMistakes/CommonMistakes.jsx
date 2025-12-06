@@ -54,7 +54,7 @@ const CommonMistakes = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Часті помилки при створенні резюме/портфоліо"
         description="Топ-5 помилок при створенні резюме/портфоліо та як їх уникнути"
         keywords="помилки, резюме, портфоліо, UX, дизайн"
@@ -78,8 +78,6 @@ const CommonMistakes = () => {
             </details>
           ))}
         </div>
-
-        <a href="#briefs" className="btn-primary">Уникнути цих помилок →</a>
       </section>
     </>
   );

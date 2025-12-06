@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+    .pl-page header {
+        padding: 24px 0;
+    }
+
+    .pl-page header h1 {
+        font-size: 1.9rem;
+    }
+
+    .pl-page section {
+        margin: 20px 12px;
+        padding: 26px 18px;
+        border-radius: 16px;
+    }
+
+    .pl-page h2 {
+        font-size: 1.4rem;
+    }
+}
