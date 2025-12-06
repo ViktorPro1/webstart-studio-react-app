@@ -174,8 +174,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       path: '/certificate-gift',
       icon: GiftIcon,
       label: 'Сертифікат-сувенір'
+    },
+    {
+      id: 'assistant',
+      path: '/assistant',
+      icon: Bot, // або MessageCircle
+      label: 'Гід Djon'
     }
-
   ];
 
   return (

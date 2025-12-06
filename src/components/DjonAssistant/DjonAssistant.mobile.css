@@ -1,0 +1,114 @@
+/* DjonAssistant.mobile.css - Мобільні стилі */
+
+@media (max-width: 768px) {
+
+    /* Попап */
+    .djon-popup-overlay {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .djon-popup-container {
+        max-width: 280px;
+        padding: 16px;
+    }
+
+    .djon-popup-text {
+        font-size: 14px;
+    }
+
+    /* Кнопка чату */
+    .djon-chat-button {
+        width: 56px;
+        height: 56px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    /* Вікно чату */
+    .djon-chat-window {
+        bottom: 85px;
+        right: 15px;
+        width: calc(100vw - 30px);
+        max-width: 360px;
+        height: 500px;
+    }
+
+    .djon-chat-header {
+        padding: 16px;
+    }
+
+    .djon-chat-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .djon-chat-name {
+        font-size: 16px;
+    }
+
+    .djon-chat-status {
+        font-size: 13px;
+    }
+
+    .djon-chat-messages {
+        padding: 16px;
+    }
+
+    .djon-message-bubble {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .djon-chat-input-container {
+        padding: 12px;
+    }
+
+    .djon-chat-input {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .djon-chat-send {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Дуже маленькі екрани */
+    .djon-popup-container {
+        max-width: 260px;
+        padding: 14px;
+    }
+
+    .djon-popup-text {
+        font-size: 13px;
+    }
+
+    .djon-chat-window {
+        width: calc(100vw - 20px);
+        right: 10px;
+        bottom: 75px;
+        height: 450px;
+    }
+
+    .djon-chat-button {
+        width: 50px;
+        height: 50px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Landscape орієнтація на мобільних */
+@media (max-width: 768px) and (orientation: landscape) {
+    .djon-chat-window {
+        height: 380px;
+    }
+
+    .djon-popup-container {
+        max-width: 300px;
+    }
+}
