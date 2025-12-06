@@ -1,0 +1,193 @@
+.certificate-gift-section {
+    padding: 40px 20px;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-gift-section::before {
+    content: '🎓';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 3rem;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.certificate-gift-section::after {
+    content: '✨';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 2.5rem;
+    opacity: 0.1;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.certificate-gift-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.certificate-image-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.certificate-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 123, 255, 0.15), 0 0 0 8px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.certificate-image:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 123, 255, 0.25), 0 0 0 8px rgba(0, 123, 255, 0.1);
+}
+
+.certificate-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #ff5050, #e04444);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 13px;
+    box-shadow: 0 4px 12px rgba(255, 80, 80, 0.4);
+    transform: rotate(10deg);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: rotate(10deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(10deg) scale(1.05);
+    }
+}
+
+.certificate-content {
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.certificate-title {
+    font-size: 1.8rem;
+    color: #044d9b;
+    margin-bottom: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.certificate-description {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.certificate-description strong {
+    color: rgb(4, 75, 126);
+    font-weight: 600;
+}
+
+.certificate-cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 25px 0 15px;
+}
+
+.certificate-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+}
+
+.certificate-btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.4);
+}
+
+.certificate-btn-secondary {
+    background: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+
+.certificate-btn-secondary:hover {
+    background: #007bff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.3);
+}
+
+.certificate-note {
+    font-size: 13px;
+    color: #333232;
+    font-style: italic;
+    margin-top: 12px;
+}

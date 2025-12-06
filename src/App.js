@@ -79,6 +79,9 @@ import Achievements from './pages/Achievements/Achievements';
 // Social
 import Social from "./pages/Social/Social";
 
+// Certificate Gift
+import CertificateGift from './pages/CertificateGift/CertificateGift';
+
 // Google Ads
 import GoogleAdsSetup from './pages/Additional/GoogleAds/Setup/Setup';
 // import GoogleAdsOptimization from './pages/Additional/GoogleAds/Optimization/Optimization';
@@ -174,6 +177,9 @@ function App() {
             {/* Bonus */}
             <Route path="/bonus" element={<Bonus />} />
 
+            {/* Certificate Gift */}
+            <Route path="/certificate-gift" element={<CertificateGift />} />
+
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />
             {/* <Route path="/ai-prompting" element={<AIPrompting />} />
@@ -205,6 +211,7 @@ function App() {
 
             {/*Social*/}
             <Route path="/social" element={<Social />} />
+
 
             {/* Google Ads Routes */}
             <Route path="/google-ads/setup" element={<GoogleAdsSetup />} />
