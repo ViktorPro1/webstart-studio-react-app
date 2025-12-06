@@ -1,0 +1,263 @@
+.briefs-page {
+    animation: fadeIn 0.6s ease;
+}
+
+/* Основна секція */
+.briefs {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    min-height: calc(100vh - 70px);
+}
+
+.briefs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.briefs-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #222;
+    text-align: center;
+    font-weight: 700;
+}
+
+.briefs-description {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #555;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.viber-link {
+    color: #7360f2;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.viber-link:hover {
+    color: #5a4bc9;
+    text-decoration: underline;
+}
+
+/* Сітка брифів */
+.briefs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.brief-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brief-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.brief-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.brief-resume .brief-icon {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.brief-portfolio .brief-icon {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+.brief-site .brief-icon {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+}
+
+.brief-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.brief-card-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Кнопки брифів */
+.brief-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.brief-resume-btn {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.brief-resume-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003d82);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.brief-portfolio-btn {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+.brief-portfolio-btn:hover {
+    background: linear-gradient(135deg, #1e7e34, #155724);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+.brief-site-btn {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: #212529;
+}
+
+.brief-site-btn:hover {
+    background: linear-gradient(135deg, #e0a800, #c69500);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Інформаційна секція */
+.briefs-info {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.briefs-info h3 {
+    font-size: 1.8rem;
+    color: #222;
+    margin-bottom: 25px;
+}
+
+.steps-list {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.steps-list li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+}
+
+/* Контакти */
+.contact-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+}
+
+.contact-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.viber-btn {
+    background: #7360f2;
+    color: white;
+}
+
+.viber-btn:hover {
+    background: #5a4bc9;
+    transform: translateY(-3px);
+}
+
+.telegram-btn {
+    background: #0088cc;
+    color: white;
+}
+
+.telegram-btn:hover {
+    background: #006699;
+    transform: translateY(-3px);
+}
+
+.email-btn {
+    background: white;
+    color: #667eea;
+}
+
+.email-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+}
+
+/* Анімація */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

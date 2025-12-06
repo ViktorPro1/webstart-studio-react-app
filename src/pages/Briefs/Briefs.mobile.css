@@ -1,0 +1,97 @@
+@media (max-width: 768px) {
+    .briefs {
+        padding: 40px 15px;
+    }
+
+    .briefs-title {
+        font-size: 1.8rem;
+    }
+
+    .briefs-description {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .briefs-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .brief-card {
+        padding: 30px 25px;
+    }
+
+    .brief-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .brief-title {
+        font-size: 1.3rem;
+    }
+
+    .briefs-info {
+        padding: 30px 25px;
+    }
+
+    .briefs-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .steps-list li {
+        font-size: 1rem;
+    }
+
+    .contact-section {
+        padding: 30px 20px;
+    }
+
+    .contact-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .briefs-title {
+        font-size: 1.5rem;
+    }
+
+    .briefs-description {
+        font-size: 0.95rem;
+    }
+
+    .brief-card {
+        padding: 25px 20px;
+    }
+
+    .brief-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .brief-title {
+        font-size: 1.2rem;
+    }
+
+    .brief-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .briefs-info {
+        padding: 25px 20px;
+    }
+
+    .contact-section {
+        padding: 25px 15px;
+    }
+}

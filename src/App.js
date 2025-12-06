@@ -41,6 +41,9 @@ import Instruction from './pages/Instruction/Instruction';
 // EditInstruction
 import EditInstruction from './pages/EditInstruction/EditInstruction';
 
+// Briefs
+import Briefs from './pages/Briefs/Briefs';
+
 // AI Services
 import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import AIPrompting from './pages/AIServices/AIPrompting/AIPrompting';
@@ -148,6 +151,9 @@ function App() {
 
             {/* Testimonials */}
             <Route path="/testimonials" element={<Testimonials />} />
+
+            {/* Briefs */}
+            <Route path="/briefs" element={<Briefs />} />
 
             {/* AI Services Routes */}
             <Route path="/ai-automation" element={<AIAutomation />} />
