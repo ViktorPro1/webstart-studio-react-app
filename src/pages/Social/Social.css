@@ -1,0 +1,129 @@
+.socials {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.socials h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.social-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-list a {
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+    transition: background-color .3s;
+}
+
+.telegram {
+    background-color: #08c;
+}
+
+.telegram:hover {
+    background-color: #0077b0;
+}
+
+.viber {
+    background-color: #7360f2;
+}
+
+.viber:hover {
+    background-color: #5e49da;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.facebook:hover {
+    background-color: #2d4373;
+}
+
+.whatsapp {
+    background-color: #25d366;
+}
+
+.whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+.social-subscribe {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.social-subscribe a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.instagram-subscribe {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.tiktok-subscribe {
+    background-color: #010101;
+}
+
+.share-platform {
+    background-color: #fff;
+    padding: 20px 16px;
+    margin: 20px auto;
+    max-width: 600px;
+    border: 2px dashed #ced4da;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.share-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    justify-items: center;
+}
+
+.share-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px;
+    background: #f1f3f5;
+    border-radius: 12px;
+    color: #212529;
+    font-size: 13px;
+    width: 90px;
+    height: 90px;
+    transition: .3s;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.share-btn:hover {
+    background: #e9ecef;
+    transform: scale(1.05);
+}

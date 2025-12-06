@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2,Award, FileDown, Palette, Megaphone, MessageCircle, Lock, Gift, BookOpen, Monitor, Target } from 'lucide-react';
+import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2,Award, FileDown, Palette, Megaphone, MessageCircle, Lock, Gift, BookOpen, Monitor,Globe, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -149,7 +149,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: Award,
       label: 'Досягнення' 
     },
-    { id: 'contact', path: '/contact', icon: Mail, label: 'Контакти' }
+    { id: 'contact', path: '/contact', icon: Mail, label: 'Контакти' },
+    {
+      id: 'social',
+      path: '/social',
+      icon: Globe, // можеш будь-який значок
+      label: 'Соцмережі'
+    }
   ];
 
   return (

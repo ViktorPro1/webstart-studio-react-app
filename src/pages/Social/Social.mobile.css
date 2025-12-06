@@ -1,0 +1,43 @@
+@media (max-width: 768px) {
+    .social-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .social-list a {
+        width: 100%;
+        max-width: 300px;
+        font-size: 16px;
+    }
+
+    .share-buttons {
+        gap: 20px;
+    }
+
+    .share-btn {
+        width: 80px;
+        height: 80px;
+        font-size: 12px;
+        padding: 12px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .social-list a {
+        font-size: 15px;
+        padding: 10px 5px;
+    }
+
+    .share-btn {
+        width: 90px;
+        height: 75px;
+    }
+}
