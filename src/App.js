@@ -61,9 +61,8 @@ import AIAutomation from './pages/AIServices/AIAutomation/AIAutomation';
 // import Logo from './pages/Design/Logo/Logo';
 // import Branding from './pages/Design/Branding/Branding';
 
-// Other
-// import About from './pages/About/About';
-// import Contact from './pages/Contact/Contact';
+// Contact
+import Contact from './pages/Contact/Contact';
 
 // About
 import About from './pages/About/About';
@@ -175,9 +174,8 @@ function App() {
             <Route path="/logo" element={<Logo />} />
             <Route path="/branding" element={<Branding />} /> */}
 
-            {/* Other Routes */}
-            {/* <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} /> */}
+            {/* Contact */}
+            <Route path="/contact" element={<Contact />} />
 
             {/*About*/}
             <Route path="/about" element={<About />} />

@@ -1,0 +1,77 @@
+@media (max-width: 768px) {
+    #contact-gift-wrapper {
+        flex-direction: column;
+        padding: 30px 15px;
+        gap: 25px;
+    }
+
+    .contact-block,
+    .gift-block {
+        max-width: 100%;
+        padding: 25px;
+    }
+
+    .contact-block h2,
+    .gift-block h3 {
+        font-size: 1.6rem;
+    }
+
+    .contact-form-section {
+        padding: 40px 15px;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .hours-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact-gift-wrapper {
+        padding: 20px 10px;
+    }
+
+    .contact-block,
+    .gift-block {
+        padding: 20px;
+    }
+
+    .contact-block h2,
+    .gift-block h3 {
+        font-size: 1.4rem;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .viber-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-links {
+        flex-direction: column;
+    }
+
+    .social-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+    }
+
+    .contact-form-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .working-hours h2 {
+        font-size: 1.6rem;
+    }
+}
