@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2,FileDown, Palette, Megaphone, MessageCircle, Lock, BookOpen, Monitor, Target } from 'lucide-react';
+import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2,Award, FileDown, Palette, Megaphone, MessageCircle, Lock, BookOpen, Monitor, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -71,7 +71,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/blog/resume-tips', label: 'Поради для резюме' }
       ]
     },
-    { id: 'testimonials', path: '/testimonials', icon: MessageCircle, label: 'Відгуки про нас' },
+    
     { id: 'instruction', path: '/instruction', icon: BookOpen, label: 'Реєстрація на Netlify' },
     { id: 'edit-instruction', path: '/edit-instruction', icon: Monitor, label: 'Редагування проекту у VSCode' },
     { 
@@ -135,7 +135,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   const aboutItems = [
     { id: 'about', path: '/about', icon: Users, label: 'Про нас' },
+    { id: 'testimonials', path: '/testimonials', icon: MessageCircle, label: 'Відгуки' },
     { id: 'skills', path: '/skills', icon: Code2, label: 'Наші навички' },
+    { 
+      id: 'achievements', 
+      path: '/achievements', 
+      icon: Award,
+      label: 'Досягнення' 
+    },
     { id: 'contact', path: '/contact', icon: Mail, label: 'Контакти' }
   ];
 

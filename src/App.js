@@ -71,6 +71,9 @@ import About from './pages/About/About';
 // About Skills
 import Skills from './pages/Skills/Skills';
 
+// Achievements
+import Achievements from './pages/Achievements/Achievements';
+
 // Google Ads
 import GoogleAdsSetup from './pages/Additional/GoogleAds/Setup/Setup';
 // import GoogleAdsOptimization from './pages/Additional/GoogleAds/Optimization/Optimization';
@@ -181,6 +184,9 @@ function App() {
 
             {/*About Skills*/}
             <Route path="/skills" element={<Skills />} />
+
+            {/*Achievements*/}
+            <Route path="/achievements" element={<Achievements />} />
 
             {/* Google Ads Routes */}
             <Route path="/google-ads/setup" element={<GoogleAdsSetup />} />
