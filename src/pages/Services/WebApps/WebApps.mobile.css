@@ -1,0 +1,49 @@
+@media (max-width: 768px) {
+    .webapp-page {
+        padding: 20px 15px;
+    }
+
+    .webapp-container {
+        padding: 30px 20px;
+    }
+
+    .webapp-icon-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .webapp-icon-large svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .webapp-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .webapp-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .webapp-container {
+        padding: 25px 15px;
+    }
+
+    .webapp-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .webapp-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .webapp-intro {
+        font-size: 1rem;
+    }
+}

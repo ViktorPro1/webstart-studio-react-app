@@ -22,6 +22,16 @@ import Achievements from '../pages/Achievements/Achievements';
 import Social from '../pages/Social/Social';
 import CertificateGift from '../pages/CertificateGift/CertificateGift';
 
+// Services
+import WebApps from '../pages/Services/WebApps/WebApps';
+// import SEOInfo from './pages/Services/SEO/SEOInfo';
+// import SocialMedia from './pages/Services/SocialMedia/SocialMedia';
+// import Animations from './pages/Services/Animations/Animations';
+// import Ecommerce from './pages/Services/Ecommerce/Ecommerce';
+// import Blog from './pages/Services/Blog/Blog';
+// import PersonalizedLanding from './pages/Services/PersonalizedLanding/PersonalizedLanding';
+
+
 // Blog
 import LandingTrends from '../pages/Blog/LandingTrends/LandingTrends';
 import PortfolioTips from '../pages/Blog/PortfolioTips/PortfolioTips';
@@ -59,6 +69,15 @@ const AppRoutes = () => {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/security-tips" element={<SecurityTips />} />
             <Route path="/testimonials" element={<Testimonials />} />
+
+            {/* Services */}
+            <Route path="/services/web-apps" element={<WebApps />} />
+            {/* <Route path="/services/seo" element={<SEOInfo />} />
+            <Route path="/services/social-media" element={<SocialMedia />} />
+            <Route path="/services/animations" element={<Animations />} />
+            <Route path="/services/ecommerce" element={<Ecommerce />} />
+            <Route path="/services/blog" element={<Blog />} />
+            <Route path="/services/personalized-landing" element={<PersonalizedLanding />} /> */}
 
             {/* Instructions */}
             <Route path="/instruction" element={<Instruction />} />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2, Award, FileDown, Palette, Megaphone, MessageCircle, Lock, Gift, GiftIcon, BookOpen, Monitor, Globe, Globe2, Target } from 'lucide-react';
+import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2, Award, FileDown, Palette, Megaphone, MessageCircle, Lock, Gift, GiftIcon, BookOpen, Monitor, Globe, Globe2, Target } from 'lucide-react';
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -24,6 +24,20 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   const menuItems = [
     { id: 'home', path: '/', icon: Home, label: 'Головна' },
     { id: 'for-whom', path: '/for-whom', icon: Users, label: 'Для кого ми' },
+    {
+      id: 'services',
+      icon: Boxes,
+      label: 'Що ми створюємо',
+      submenu: [
+        { path: '/services/web-apps', label: 'Веб-додатки' },
+        { path: '/services/seo', label: 'SEO-оптимізація' },
+        { path: '/services/social-media', label: 'Інтеграція з соцмережами' },
+        { path: '/services/animations', label: 'Динамічні анімації' },
+        { path: '/services/ecommerce', label: 'Інтернет-магазини' },
+        { path: '/services/blog', label: 'Блоги та новини' },
+        { path: '/services/personalized-landing', label: 'Персоналізовані лендінги' }
+      ]
+    },
     {
       id: 'web-development',
       icon: Briefcase,
