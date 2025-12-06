@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users, Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code, Code2, Award, FileDown, Palette, Megaphone, MessageCircle, Lock, Gift, GiftIcon, BookOpen, Monitor, Globe, Globe2, Target } from 'lucide-react';
+import {
+  Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users,
+  Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
+  Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
+  BookOpen, Monitor, Globe, Globe2, Star, Target
+} from 'lucide-react';
+
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
@@ -9,10 +15,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   const [openDropdowns, setOpenDropdowns] = useState({});
 
   const toggleDropdown = (id) => {
-    setOpenDropdowns(prev => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
+    setOpenDropdowns(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
   const handleLinkClick = () => {
@@ -24,6 +27,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   const menuItems = [
     { id: 'home', path: '/', icon: Home, label: 'Головна' },
     { id: 'for-whom', path: '/for-whom', icon: Users, label: 'Для кого ми' },
+
     {
       id: 'services',
       icon: Boxes,
@@ -38,6 +42,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/services/personalized-landing', label: 'Персоналізовані лендінги' }
       ]
     },
+
     {
       id: 'web-development',
       icon: Briefcase,
@@ -48,7 +53,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/resume', label: 'Резюме' },
       ]
     },
+
     { id: 'technical', path: '/technical-details', icon: Settings, label: 'Технічні можливості' },
+
     {
       id: 'ai-services',
       icon: Bot,
@@ -60,21 +67,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/create-ai-agent', label: 'Створення AI агента' }
       ]
     },
-    {
-      id: 'design',
-      icon: Palette,
-      label: 'Дизайн',
-      submenu: [
-        { path: '/ui-ux', label: 'UI/UX Дизайн' },
-        { path: '/logo', label: 'Логотипи' },
-        { path: '/branding', label: 'Брендинг' }
-      ]
-    },
+
     { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
     { id: 'comparison', path: '/platform-comparison', icon: BarChart, label: 'Порівняння платформ' },
     { id: 'diyvsus', path: '/diy-vs-us', icon: BarChart2, label: 'DIY vs З нами' },
     { id: 'common-mistakes', path: '/common-mistakes', icon: XCircle, label: 'Часті помилки' },
     { id: 'faq', path: '/faq', icon: HelpCircle, label: 'FAQ' },
+
     {
       id: 'blog',
       icon: Newspaper,
@@ -88,30 +87,15 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
     { id: 'instruction', path: '/instruction', icon: BookOpen, label: 'Реєстрація на Netlify' },
     { id: 'edit-instruction', path: '/edit-instruction', icon: Monitor, label: 'Редагування проекту у VSCode' },
+
+    { id: 'briefs', path: '/briefs', icon: FileDown, label: 'Отримати проект' },
+    { id: 'bonus', path: '/bonus', icon: Gift, label: 'Бонус' },
+
     {
-      id: 'briefs',
-      path: '/briefs',
-      icon: FileDown,
-      label: 'Замовити проект'
-    },
-    {
-      id: 'bonus',
-      path: '/bonus',
-      icon: Gift,
-      label: 'Бонус'
-    },
-    {
-      id: 'international',
-      icon: Globe2,
-      label: 'International',
-      submenu: [
-        { path: '/international/en', label: 'English' },
-        { path: '/international/fr', label: 'Français' },
-        { path: '/international/pl', label: 'Polski' },
-        { path: '/international/de', label: 'Deutsch' },
-        { path: '/international/cz', label: 'Čeština' },
-        { path: '/international/sv', label: 'Svenska' },
-      ]
+      id: 'interactiveQuiz',
+      path: '/interactive-quiz',
+      icon: Star,
+      label: 'Вікторина'
     }
   ];
 
@@ -129,6 +113,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/google-ads/remarketing', label: 'Ремаркетинг' }
       ]
     },
+
     {
       id: 'facebook-ads',
       icon: Megaphone,
@@ -142,6 +127,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/facebook-ads/conversion', label: 'Оптимізація конверсій' }
       ]
     },
+
     {
       id: 'tax-refund',
       icon: FileText,
@@ -153,6 +139,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/tax-refund/consultation', label: 'Консультація' }
       ]
     },
+
     {
       id: 'pc-cleaning',
       icon: Code,
@@ -170,42 +157,64 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { id: 'about', path: '/about', icon: Users, label: 'Про нас' },
     { id: 'testimonials', path: '/testimonials', icon: MessageCircle, label: 'Відгуки' },
     { id: 'skills', path: '/skills', icon: Code2, label: 'Наші навички' },
+
     {
       id: 'achievements',
       path: '/achievements',
       icon: Award,
       label: 'Досягнення'
     },
+
     { id: 'contact', path: '/contact', icon: Mail, label: 'Контакти' },
+
     {
       id: 'social',
       path: '/social',
       icon: Globe,
       label: 'Соцмережі'
     },
+
     {
       id: 'certificate-gift',
       path: '/certificate-gift',
       icon: GiftIcon,
       label: 'Сертифікат-сувенір'
     },
+
     {
       id: 'assistant',
       path: '/assistant',
-      icon: Bot, // або MessageCircle
+      icon: Bot,
       label: 'Гід Djon'
+    },
+
+    {
+      id: 'international',
+      icon: Globe2,
+      label: 'International',
+      submenu: [
+        { path: '/international/en', label: 'English' },
+        { path: '/international/fr', label: 'Français' },
+        { path: '/international/pl', label: 'Polski' },
+        { path: '/international/de', label: 'Deutsch' },
+        { path: '/international/cz', label: 'Čeština' },
+        { path: '/international/sv', label: 'Svenska' }
+      ]
     }
   ];
 
   return (
     <>
       {isOpen && <div className="sidebar-overlay" onClick={toggleSidebar}></div>}
+
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
           <div className="logo-text">WebStart Studio</div>
           <div className="logo-subtitle">Digital Solutions</div>
         </div>
+
         <nav className="sidebar-nav">
+
           {menuItems.map(item => (
             <div key={item.id}>
               {item.submenu ? (
@@ -218,8 +227,10 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                       <item.icon size={20} />
                       <span>{item.label}</span>
                     </div>
+
                     {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                   </div>
+
                   <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
                     {item.submenu.map((subItem, index) => (
                       <Link
@@ -246,11 +257,10 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </div>
           ))}
 
-          {/* Роздільник */}
           <div className="menu-divider"></div>
 
-          {/* Секція "Додаткові можливості" */}
           <div className="menu-section-title">Додаткові можливості</div>
+
           {additionalItems.map(item => (
             <div key={item.id}>
               <div className="nav-item-wrapper">
@@ -262,8 +272,10 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                     <item.icon size={20} />
                     <span>{item.label}</span>
                   </div>
+
                   {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                 </div>
+
                 <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
                   {item.submenu.map((subItem, index) => (
                     <Link
@@ -280,21 +292,50 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </div>
           ))}
 
-          {/* Роздільник */}
           <div className="menu-divider"></div>
 
-          {/* Секція "Про нас" */}
           <div className="menu-section-title">Платформа</div>
+
           {aboutItems.map(item => (
-            <Link
-              key={item.id}
-              to={item.path}
-              className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
-              onClick={handleLinkClick}
-            >
-              <item.icon size={20} />
-              <span>{item.label}</span>
-            </Link>
+            <div key={item.id}>
+              {item.submenu ? (
+                <div className="nav-item-wrapper">
+                  <div
+                    className={`nav-item dropdown-item ${openDropdowns[item.id] ? 'open' : ''}`}
+                    onClick={() => toggleDropdown(item.id)}
+                  >
+                    <div className="nav-item-content">
+                      <item.icon size={20} />
+                      <span>{item.label}</span>
+                    </div>
+
+                    {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  </div>
+
+                  <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
+                    {item.submenu.map((subItem, index) => (
+                      <Link
+                        key={index}
+                        to={subItem.path}
+                        className={`submenu-item ${location.pathname === subItem.path ? 'active' : ''}`}
+                        onClick={handleLinkClick}
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  to={item.path}
+                  className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+                  onClick={handleLinkClick}
+                >
+                  <item.icon size={20} />
+                  <span>{item.label}</span>
+                </Link>
+              )}
+            </div>
           ))}
 
         </nav>
@@ -304,3 +345,4 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 };
 
 export default Sidebar;
+

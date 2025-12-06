@@ -21,6 +21,7 @@ import Skills from '../pages/Skills/Skills';
 import Achievements from '../pages/Achievements/Achievements';
 import Social from '../pages/Social/Social';
 import CertificateGift from '../pages/CertificateGift/CertificateGift';
+import InteractiveQuiz from '../pages/InteractiveQuiz/InteractiveQuiz';
 
 // Services
 import WebApps from '../pages/Services/WebApps/WebApps';
@@ -69,6 +70,7 @@ const AppRoutes = () => {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/security-tips" element={<SecurityTips />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/interactive-quiz" element={<InteractiveQuiz />} />
 
             {/* Services */}
             <Route path="/services/web-apps" element={<WebApps />} />

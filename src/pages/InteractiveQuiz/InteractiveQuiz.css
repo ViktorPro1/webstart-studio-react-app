@@ -1,0 +1,132 @@
+.InteractiveQuiz-container {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #f8f9fa;
+}
+
+.InteractiveQuiz-quizScreen,
+.InteractiveQuiz-resultScreen {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.InteractiveQuiz-progressContainer {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.InteractiveQuiz-progressBar {
+    height: 10px;
+    background: #4f46e5;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.InteractiveQuiz-progressText {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.InteractiveQuiz-questionContainer {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.InteractiveQuiz-questionTitle {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.InteractiveQuiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.InteractiveQuiz-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.InteractiveQuiz-option:hover {
+    background: #f0f0ff;
+}
+
+.InteractiveQuiz-selected {
+    border-color: #4f46e5;
+    background: #eef0ff;
+}
+
+.InteractiveQuiz-buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.InteractiveQuiz-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.InteractiveQuiz-btn.Primary {
+    background: #4f46e5;
+    color: #fff;
+}
+
+.InteractiveQuiz-btn.Primary:hover {
+    background: #4338ca;
+}
+
+.InteractiveQuiz-btn.Secondary {
+    background: #e5e7eb;
+    color: #333;
+}
+
+.InteractiveQuiz-btn.Secondary:hover {
+    background: #d1d5db;
+}
+
+.InteractiveQuiz-resultCard {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.InteractiveQuiz-resultType {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.InteractiveQuiz-featuresList {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.InteractiveQuiz-timelineInfo {
+    margin-top: 15px;
+    font-weight: 500;
+    color: #4f46e5;
+}

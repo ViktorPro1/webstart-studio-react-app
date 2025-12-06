@@ -1,0 +1,52 @@
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .question-title {
+        font-size: 16px;
+    }
+
+    .option {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .progress-text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .InteractiveQuiz-container {
+        padding: 15px;
+    }
+
+    .InteractiveQuiz-questionTitle {
+        font-size: 16px;
+    }
+
+    .InteractiveQuiz-option {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .InteractiveQuiz-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .InteractiveQuiz-resultCard {
+        padding: 20px;
+    }
+
+    .InteractiveQuiz-featuresList {
+        padding-left: 15px;
+        font-size: 14px;
+    }
+}
