@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import AppRoutes from './routes/AppRoutes';
 import DjonAssistant from './components/DjonAssistant/DjonAssistant';
+import './i18n';
 import './App.css';
 
 function App() {

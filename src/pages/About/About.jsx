@@ -6,7 +6,7 @@ import './About.mobile.css';
 const About = () => {
   return (
     <>
-      <SEO 
+      <SEO
         title="Про нас"
         description="WebStart Studio — створення лендінгів, портфоліо та резюме"
         keywords="про нас, webstart studio, команда, історія"
@@ -14,18 +14,18 @@ const About = () => {
       <div className="about-page">
         <section className="about-section">
           <h2 className="about-centered">Про нас</h2>
-          
+
           <p className="about-centered">
-            Web<span style={{color: '#B00000'}}>Start</span> Studio — це невелика творча команда, яка працює для того,
+            Web<span style={{ color: '#B00000' }}>Start</span> Studio — це невелика творча команда, яка працює для того,
             щоб у кожної людини була своя сучасна онлайн-візитка. Ми робимо прості та зрозумілі лендінги, портфоліо та резюме, які
             легко сприймаються і добре виглядають на будь-якому пристрої.
           </p>
-          
+
           <p className="about-centered">
             Наш підхід — "менше слів, більше результату": компактний дизайн, зрозуміла структура, зручний доступ до
             всієї потрібної інформації. Ми прагнемо, щоб кожен лендінг, портфоліо та резюме був водночас красивим і практичним.
           </p>
-          
+
           <p className="about-centered">
             Крім того, ми допомагаємо людям просувати свої послуги та продукти у соцмережах, налаштовуємо рекламу
             та створюємо прості, але ефективні візуальні матеріали.
@@ -34,7 +34,7 @@ const About = () => {
           <div className="about-history-section">
             <h2 className="about-centered">Історія платформи</h2>
             <p className="about-centered">
-              Ідея Web<span style={{color: '#B00000'}}>Start</span> Studio народилася з бажання зробити запуск у
+              Ідея Web<span style={{ color: '#B00000' }}>Start</span> Studio народилася з бажання зробити запуск у
               digital-простір доступним для кожного. У 2025 році ми вирішили об'єднати досвід веброзробки, дизайну та маркетингу в одну просту платформу.
             </p>
             <p className="about-centered">
@@ -51,10 +51,10 @@ const About = () => {
             <h2 className="about-centered">Наша команда</h2>
             <div className="about-team-container">
               <div className="about-team-member">
-                <img 
-                  src="nasha_komanda/member1.webp" 
-                  alt="Dima Sviy - Веб-розробник та UI/UX дизайнер" 
-                  loading="lazy" 
+                <img
+                  src="nasha_komanda/member1.webp"
+                  alt="Dima Sviy - Веб-розробник та UI/UX дизайнер"
+                  loading="lazy"
                 />
                 <h3>Dima Sviy</h3>
                 <p>Майбутній веброзробник та UI/UX дизайнер, продовжує навчання</p>
@@ -62,10 +62,10 @@ const About = () => {
               </div>
 
               <div className="about-team-member">
-                <img 
+                <img
                   src="nasha_komanda/member2.webp"
-                  alt="Mr. Victor - маркетолог та таргетинг Facebook/Instagram" 
-                  loading="lazy" 
+                  alt="Mr. Victor - маркетолог та таргетинг Facebook/Instagram"
+                  loading="lazy"
                 />
                 <h3>Mr. Victor</h3>
                 <p>Маркетолог, таргетинг Facebook/Instagram.</p>
@@ -73,14 +73,14 @@ const About = () => {
               </div>
 
               <div className="about-team-member">
-                <img 
-                  src="nasha_komanda/assistant.webp" 
-                  alt="Асистент Djon - ваш гіт та помічник на платформі"
-                  loading="lazy" 
+                <img
+                  src="nasha_komanda/assistant.webp"
+                  alt="Асистент Djon - ваш гід та помічник на платформі"
+                  loading="lazy"
                 />
                 <h3>Гід та Асистент Djon</h3>
-                <p>Допомагає створювати контент, структурувати інформацію та давати технічні поради.</p>
-                <a href="pages/djon.html">Деталі</a>
+                <p>Допомагає орієнтуватися на сайті, підказує потрібну інформацію та направляє до спеціалістів.</p>
+                <a href="/assistant">Деталі</a>
               </div>
             </div>
           </div>
