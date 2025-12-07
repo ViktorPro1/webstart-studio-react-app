@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO from '../../SEO/SEO';
-import { FileText, Briefcase, Users, ArrowRight } from 'lucide-react';
+import { FileText, Briefcase, Users, } from 'lucide-react';
 import './Home.css';
 import './Home.mobile.css';
 
@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Головна"
         description="Створення професійних лендінгів, портфоліо та резюме"
         keywords="веб студія, лендінги, портфоліо, резюме"
@@ -34,14 +34,10 @@ const Home = () => {
         <section className="hero-section">
           <h1 className="hero-title">WebStart Studio</h1>
           <p className="hero-subtitle">
-            Наш підхід — "менше слів, більше результату": компактний дизайн, зрозуміла структура, 
-            зручний доступ до всієї потрібної інформації. Ми прагнемо, щоб кожен лендінг, портфоліо 
+            Наш підхід — "менше слів, більше результату": компактний дизайн, зрозуміла структура,
+            зручний доступ до всієї потрібної інформації. Ми прагнемо, щоб кожен лендінг, портфоліо
             та резюме був водночас красивим і практичним.
           </p>
-          <button className="cta-button">
-            Почати проект
-            <ArrowRight size={20} style={{ marginLeft: '10px' }} />
-          </button>
         </section>
 
         <section className="services-section">
