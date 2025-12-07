@@ -25,12 +25,12 @@ import InteractiveQuiz from '../pages/InteractiveQuiz/InteractiveQuiz';
 
 // Services
 import WebApps from '../pages/Services/WebApps/WebApps';
-// import SEOInfo from './pages/Services/SEO/SEOInfo';
-// import SocialMedia from './pages/Services/SocialMedia/SocialMedia';
-// import Animations from './pages/Services/Animations/Animations';
-// import Ecommerce from './pages/Services/Ecommerce/Ecommerce';
-// import Blog from './pages/Services/Blog/Blog';
-// import PersonalizedLanding from './pages/Services/PersonalizedLanding/PersonalizedLanding';
+import SEOInfo from '../pages/Services/SEO/SEOInfo';
+import SocialMedia from '../pages/Services/SocialMedia/SocialMedia';
+import Animations from '../pages/Services/Animations/Animations';
+import Ecommerce from '../pages/Services/Ecommerce/Ecommerce';
+import Blog from '../pages/Services/Blog/BlogInfo';
+import PersonalizedLanding from '../pages/Services/PersonalizedLanding/PersonalizedLanding';
 
 
 // Blog
@@ -74,12 +74,12 @@ const AppRoutes = () => {
 
             {/* Services */}
             <Route path="/services/web-apps" element={<WebApps />} />
-            {/* <Route path="/services/seo" element={<SEOInfo />} />
+            <Route path="/services/seo" element={<SEOInfo />} />
             <Route path="/services/social-media" element={<SocialMedia />} />
             <Route path="/services/animations" element={<Animations />} />
             <Route path="/services/ecommerce" element={<Ecommerce />} />
             <Route path="/services/blog" element={<Blog />} />
-            <Route path="/services/personalized-landing" element={<PersonalizedLanding />} /> */}
+            <Route path="/services/personalized-landing" element={<PersonalizedLanding />} />
 
             {/* Instructions */}
             <Route path="/instruction" element={<Instruction />} />

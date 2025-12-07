@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+    .animations-page {
+        padding: 20px 15px;
+    }
+
+    .animations-container {
+        padding: 30px 20px;
+    }
+
+    .animations-icon-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .animations-icon-large svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .animations-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .animations-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .animations-container {
+        padding: 25px 15px;
+    }
+
+    .animations-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .animations-intro {
+        font-size: 1rem;
+    }
+}

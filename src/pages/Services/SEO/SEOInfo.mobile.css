@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+    .seo-info-page {
+        padding: 20px 15px;
+    }
+
+    .seo-info-container {
+        padding: 30px 20px;
+    }
+
+    .seo-info-icon-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .seo-info-icon-large svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .seo-info-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .seo-info-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .seo-info-container {
+        padding: 25px 15px;
+    }
+
+    .seo-info-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .seo-info-intro {
+        font-size: 1rem;
+    }
+}

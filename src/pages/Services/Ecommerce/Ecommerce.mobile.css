@@ -1,0 +1,117 @@
+@media (max-width: 768px) {
+    .ecommerce-page {
+        padding: 30px 15px;
+    }
+
+    .ecommerce-container {
+        padding: 30px 25px;
+    }
+
+    .ecommerce-icon-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ecommerce-container h2 {
+        font-size: 1.75rem;
+    }
+
+    .ecommerce-container h3 {
+        font-size: 1.35rem;
+        margin: 25px 0 15px;
+    }
+
+    .ecommerce-intro {
+        font-size: 1.05rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .ecommerce-summary {
+        padding: 20px;
+    }
+}
+
+/* Адаптив для мобільних (480px) */
+@media (max-width: 480px) {
+    .ecommerce-page {
+        padding: 20px 10px;
+        min-height: calc(100vh - 60px);
+    }
+
+    .ecommerce-container {
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    .ecommerce-icon-large {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+    }
+
+    .ecommerce-header {
+        margin-bottom: 20px;
+    }
+
+    .ecommerce-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .ecommerce-container h3 {
+        font-size: 1.2rem;
+        margin: 20px 0 15px;
+    }
+
+    .ecommerce-intro {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+
+    .ecommerce-description {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 15px 0;
+    }
+
+    .feature-card {
+        padding: 18px;
+    }
+
+    .feature-card svg {
+        margin-bottom: 10px;
+    }
+
+    .ecommerce-benefits ul {
+        padding-left: 15px;
+        line-height: 1.8;
+    }
+
+    .ecommerce-benefits li {
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+    }
+
+    .ecommerce-summary {
+        padding: 18px;
+        margin-top: 20px;
+        border-left-width: 3px;
+    }
+
+    .ecommerce-summary p {
+        font-size: 0.95rem;
+    }
+}
