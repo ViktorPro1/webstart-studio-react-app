@@ -55,20 +55,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
 
     { id: 'technical', path: '/technical-details', icon: Settings, label: 'Технічні можливості' },
-
-    {
-      id: 'ai-services',
-      icon: Bot,
-      label: 'AI Сервіси',
-      submenu: [
-        { path: '/ai-automation', label: 'AI Автоматизація' },
-        { path: '/ai-prompting', label: 'AI Промптинг' },
-        { path: '/personal-prompting', label: 'Персональний промптинг' },
-        { path: '/create-ai-agent', label: 'Створення AI агента' }
-      ]
-    },
-
-    { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
     { id: 'comparison', path: '/platform-comparison', icon: BarChart, label: 'Порівняння платформ' },
     { id: 'diyvsus', path: '/diy-vs-us', icon: BarChart2, label: 'DIY vs З нами' },
     { id: 'common-mistakes', path: '/common-mistakes', icon: XCircle, label: 'Часті помилки' },
@@ -87,8 +73,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
     { id: 'instruction', path: '/instruction', icon: BookOpen, label: 'Реєстрація на Netlify' },
     { id: 'edit-instruction', path: '/edit-instruction', icon: Monitor, label: 'Редагування проекту у VSCode' },
-
-    { id: 'briefs', path: '/briefs', icon: FileDown, label: 'Отримати проект' },
     { id: 'bonus', path: '/bonus', icon: Gift, label: 'Бонус' },
 
     {
@@ -109,6 +93,22 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: CreditCard,
       label: 'Пакети'
     },
+
+    { id: 'briefs', path: '/briefs', icon: FileDown, label: 'Отримати проект' },
+
+    {
+      id: 'ai-services',
+      icon: Bot,
+      label: 'AI Сервіси',
+      submenu: [
+        { path: '/ai-automation', label: 'AI Автоматизація' },
+        { path: '/ai-prompting', label: 'AI Промптинг' },
+        { path: '/personal-prompting', label: 'Персональний промптинг' },
+        { path: '/create-ai-agent', label: 'Створення AI агента' }
+      ]
+    },
+
+    { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
   ];
 
   const additionalItems = [

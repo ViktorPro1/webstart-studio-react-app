@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Menu, X, Search, User } from 'lucide-react';
+import { Menu, X, Search, User, Moon, Check } from 'lucide-react';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import './Header.css';
 import './Header.mobile.css';
 
 const Header = ({ toggleSidebar, isSidebarOpen }) => {
   const { t, i18n } = useTranslation();
+  const { darkMode, toggleTheme } = useContext(ThemeContext); // беремо тему з контексту
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -22,6 +24,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
           <input type="text" placeholder={t('header.search')} />
         </div>
       </div>
+
       <div className="header-right">
         {/* Селектор мови */}
         <select
@@ -41,6 +44,11 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
         <div className="user-icon">
           <User size={20} />
         </div>
+
+        {/* Кнопка перемикання теми */}
+        <button className="header-theme-btn" onClick={toggleTheme}>
+          {darkMode ? <Check size={20} /> : <Moon size={20} />}
+        </button>
       </div>
     </header>
   );

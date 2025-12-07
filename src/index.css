@@ -1,20 +1,58 @@
-@import "tailwindcss";
-
-* {
+/* Світла тема за замовчуванням */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #222;
   min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+/* Темна тема */
+body.dark-theme {
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+  color: #e0e0e0;
+}
+
+/* Всі контейнерні блоки та секції */
+body.dark-theme * {
+  background-color: inherit;
+  color: inherit;
+  border-color: #444;
+}
+
+/* Інпут, textarea, select */
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  background: #222;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #aaa;
+}
+
+/* Кнопки */
+body.dark-theme button {
+  background: #333;
+  color: #e0e0e0;
+  border: 1px solid #667eea;
+}
+
+body.dark-theme button:hover {
+  background: #444;
+}
+
+/* Таблиці, списки, блоки */
+body.dark-theme table,
+body.dark-theme th,
+body.dark-theme td,
+body.dark-theme ul,
+body.dark-theme li {
+  background: inherit;
+  color: inherit;
 }
