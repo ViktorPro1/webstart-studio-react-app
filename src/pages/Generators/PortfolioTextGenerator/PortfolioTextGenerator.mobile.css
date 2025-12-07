@@ -1,0 +1,91 @@
+@media (max-width: 768px) {
+    .portfolio-generator {
+        padding: 1rem;
+    }
+
+    .generator-container {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .generator-header {
+        margin-bottom: 2rem;
+    }
+
+    .generator-title {
+        font-size: 1.75rem;
+    }
+
+    .generator-subtitle {
+        font-size: 1rem;
+    }
+
+    .generator-form {
+        gap: 1.25rem;
+    }
+
+    .form-input {
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .generate-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .output-card {
+        padding: 1.25rem;
+    }
+
+    .variant-text {
+        font-size: 1rem;
+    }
+
+    .suggestion-card {
+        padding: 1.25rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .suggestion-icon {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .generator-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .generator-title {
+        font-size: 1.5rem;
+    }
+
+    .generator-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .generate-btn {
+        font-size: 0.95rem;
+    }
+
+    .variant-badge {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.85rem;
+    }
+
+    .variant-text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .suggestion-content {
+        font-size: 0.9rem;
+    }
+}

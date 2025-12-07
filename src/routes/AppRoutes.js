@@ -25,6 +25,11 @@ import InteractiveQuiz from '../pages/InteractiveQuiz/InteractiveQuiz';
 import Promo from '../pages/Promo/Promo';
 import Pricing from '../pages/Pricing/Pricing';
 
+// Generators
+import PortfolioTextGenerator from '../pages/Generators/PortfolioTextGenerator/PortfolioTextGenerator';
+import ProjectChecker from '../pages/Generators/ProjectChecker/ProjectChecker';
+import ResumeStructureGenerator from '../pages/Generators/ResumeStructureGenerator/ResumeStructureGenerator';
+
 // Services
 import WebApps from '../pages/Services/WebApps/WebApps';
 import SEOInfo from '../pages/Services/SEO/SEOInfo';
@@ -75,6 +80,11 @@ const AppRoutes = () => {
             <Route path="/interactive-quiz" element={<InteractiveQuiz />} />
             <Route path="/promo" element={<Promo />} />
             <Route path="/pricing" element={<Pricing />} />
+
+            {/* Generators */}
+            <Route path="/generators/portfolio-text" element={<PortfolioTextGenerator />} />
+            <Route path="/generators/project-checker" element={<ProjectChecker />} />
+            <Route path="/generators/resume-structure" element={<ResumeStructureGenerator />} />
 
             {/* Services */}
             <Route path="/services/web-apps" element={<WebApps />} />

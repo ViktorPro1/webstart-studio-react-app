@@ -1,0 +1,123 @@
+@media (max-width: 768px) {
+    .project-checker {
+        padding: 1rem;
+    }
+
+    .checker-container {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .checker-header {
+        margin-bottom: 2rem;
+    }
+
+    .checker-title {
+        font-size: 1.75rem;
+    }
+
+    .checker-subtitle {
+        font-size: 1rem;
+    }
+
+    .checker-form {
+        gap: 1.25rem;
+    }
+
+    .form-input,
+    .form-select {
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .check-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .results-title {
+        font-size: 1.5rem;
+    }
+
+    .results-stats {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .result-card {
+        padding: 1.25rem;
+    }
+
+    .result-name {
+        font-size: 1.1rem;
+    }
+
+    .result-desc {
+        font-size: 0.95rem;
+    }
+
+    .progress-text {
+        min-width: 45px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .checker-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .checker-title {
+        font-size: 1.5rem;
+    }
+
+    .checker-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .check-btn {
+        font-size: 0.95rem;
+    }
+
+    .results-title {
+        font-size: 1.3rem;
+    }
+
+    .stat-item {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .result-status-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .result-name {
+        font-size: 1rem;
+    }
+
+    .result-desc {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .progress-bar {
+        height: 10px;
+    }
+
+    .progress-text {
+        font-size: 0.85rem;
+    }
+}

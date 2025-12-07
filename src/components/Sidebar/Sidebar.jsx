@@ -4,7 +4,7 @@ import {
   Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users,
   Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
   Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
-  BookOpen, Monitor, Globe, Globe2, Star, Zap, CreditCard, Target
+  BookOpen, Monitor, Globe, Globe2, Star, Zap, Sparkles, CreditCard, Target
 } from 'lucide-react';
 
 import './Sidebar.css';
@@ -55,6 +55,18 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
 
     { id: 'technical', path: '/technical-details', icon: Settings, label: 'Технічні можливості' },
+
+    {
+      id: 'generators',
+      icon: Sparkles,
+      label: 'Генератори',
+      submenu: [
+        { path: '/generators/portfolio-text', label: 'Генератор текстів портфоліо' },
+        { path: '/generators/project-checker', label: 'Перевірка проєктів' },
+        { path: '/generators/resume-structure', label: 'Структура резюме' }
+      ]
+    },
+
     { id: 'comparison', path: '/platform-comparison', icon: BarChart, label: 'Порівняння платформ' },
     { id: 'diyvsus', path: '/diy-vs-us', icon: BarChart2, label: 'DIY vs З нами' },
     { id: 'common-mistakes', path: '/common-mistakes', icon: XCircle, label: 'Часті помилки' },

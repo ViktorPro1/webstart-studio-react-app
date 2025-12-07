@@ -1,0 +1,151 @@
+@media (max-width: 768px) {
+    .resume-generator {
+        padding: 1rem;
+    }
+
+    .generator-container {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .generator-header {
+        margin-bottom: 2rem;
+    }
+
+    .generator-title {
+        font-size: 1.75rem;
+    }
+
+    .generator-subtitle {
+        font-size: 1rem;
+    }
+
+    .generator-form {
+        gap: 1.25rem;
+    }
+
+    .form-select {
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .generate-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .sections-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .sections-title {
+        font-size: 1.5rem;
+    }
+
+    .section-card {
+        padding: 1.5rem 1.25rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-icon {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .section-desc {
+        font-size: 0.95rem;
+    }
+
+    .advice-card {
+        padding: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .advice-icon {
+        font-size: 2rem;
+    }
+
+    .advice-title {
+        font-size: 1.2rem;
+    }
+
+    .advice-list li {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .generator-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .generator-title {
+        font-size: 1.5rem;
+    }
+
+    .generator-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .generate-btn {
+        font-size: 0.95rem;
+    }
+
+    .sections-title {
+        font-size: 1.3rem;
+    }
+
+    .sections-count {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .section-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+
+    .section-icon {
+        font-size: 1.75rem;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+
+    .section-desc {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .advice-icon {
+        font-size: 1.75rem;
+    }
+
+    .advice-title {
+        font-size: 1.1rem;
+    }
+
+    .advice-list li {
+        font-size: 0.9rem;
+        padding-left: 1.5rem;
+    }
+
+    .advice-list li::before {
+        font-size: 1rem;
+    }
+}
