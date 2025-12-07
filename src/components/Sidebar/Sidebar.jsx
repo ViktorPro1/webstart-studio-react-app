@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users,
+  Home, Palette, FileText, BarChart, BarChart2, XCircle, Settings, Users,
   Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
   Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
   BookOpen, Monitor, Globe, Globe2, Star, Zap, Sparkles, CreditCard, Target
@@ -44,13 +44,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
 
     {
-      id: 'web-development',
-      icon: Briefcase,
-      label: 'Портфоліо',
+      id: 'templates',
+      icon: Palette,
+      label: 'Готові макети',
       submenu: [
-        { path: '/landing', label: 'Лендінги' },
-        { path: '/portfolio', label: 'Портфоліо' },
-        { path: '/resume', label: 'Резюме' },
+        { path: '/templates/portfolio', label: 'Дизайн портфоліо' },
+        { path: '/templates/resume', label: 'Електронне резюме' },
+        { path: '/templates/landing', label: 'Односторінкові сайти' }
       ]
     },
 

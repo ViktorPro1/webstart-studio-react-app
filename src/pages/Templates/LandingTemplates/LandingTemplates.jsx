@@ -1,0 +1,283 @@
+import React, { useState } from 'react';
+import './LandingTemplates.css';
+
+const LandingTemplates = () => {
+    const [selectedCategory, setSelectedCategory] = useState('all');
+
+    const templates = [
+        {
+            id: 'recruiter',
+            name: 'Landing Recruiter',
+            url: 'https://sage-naiad-50b7a5.netlify.app/',
+            color: '#06b6d4',
+            gradient: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
+            icon: '💼',
+            category: 'business',
+            description: 'Стильний лендінг для HR та рекрутингових агентств',
+            features: ['Форма заявок', 'Вакансії', 'Відгуки клієнтів', 'Калькулятор'],
+            conversions: '18%'
+        },
+        {
+            id: 'taplink',
+            name: 'Instagram "Taplink"',
+            url: 'https://clinquant-melomakarona-a088a5.netlify.app/',
+            color: '#e11d48',
+            gradient: 'linear-gradient(135deg, #e11d48 0%, #be123c 100%)',
+            icon: '📱',
+            category: 'social',
+            description: 'Багатофункціональна сторінка для Instagram Bio',
+            features: ['Соц.мережі', 'Продукти', 'Контакти', 'Аналітика'],
+            conversions: '25%'
+        },
+        {
+            id: 'microlending',
+            name: 'Microlending Promotion',
+            url: 'https://celebrated-faun-808026.netlify.app/',
+            color: '#10b981',
+            gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+            icon: '💰',
+            category: 'finance',
+            description: 'Конверсійний лендінг для фінансових послуг',
+            features: ['Швидка заявка', 'Калькулятор', 'Довіра', 'Chat-bot'],
+            conversions: '22%'
+        },
+        {
+            id: 'transport',
+            name: 'EU Passenger Transport',
+            url: 'https://shimmering-tulumba-a21566.netlify.app/',
+            color: '#6366f1',
+            gradient: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+            icon: '🚌',
+            category: 'service',
+            description: 'Сайт для пасажирських перевезень по Європі',
+            features: ['Бронювання', 'Маршрути', 'Розклад', 'Оплата онлайн'],
+            conversions: '15%'
+        },
+        {
+            id: 'gift',
+            name: '🎁 ПодаруйСвято',
+            url: 'https://give-a-giftholiday.netlify.app/',
+            color: '#ff7f50',
+            gradient: 'linear-gradient(135deg, #ff7f50 0%, #ff6347 100%)',
+            icon: '🎁',
+            category: 'event',
+            description: 'Святковий лендінг для event-агентства',
+            features: ['Галерея', 'Пакети послуг', 'Календар', 'Відгуки'],
+            conversions: '20%'
+        },
+        {
+            id: 'winxp',
+            name: '🖥️ Windows XP Style',
+            url: 'https://landing-page-in-windows-xp.netlify.app/',
+            color: '#0078d7',
+            gradient: 'linear-gradient(135deg, #0078d7 0%, #0063b1 100%)',
+            icon: '🖥️',
+            category: 'creative',
+            description: 'Ностальгічний дизайн у стилі Windows XP',
+            features: ['Ретро-дизайн', 'Інтерактив', 'Геймифікація', 'Вірусність'],
+            conversions: '30%'
+        }
+    ];
+
+    const categories = [
+        { id: 'all', label: 'Всі', icon: '🌟' },
+        { id: 'business', label: 'Бізнес', icon: '💼' },
+        { id: 'social', label: 'Соцмережі', icon: '📱' },
+        { id: 'finance', label: 'Фінанси', icon: '💰' },
+        { id: 'service', label: 'Сервіси', icon: '🚌' },
+        { id: 'event', label: 'Події', icon: '🎁' },
+        { id: 'creative', label: 'Креатив', icon: '🎨' }
+    ];
+
+    const filteredTemplates = selectedCategory === 'all'
+        ? templates
+        : templates.filter(t => t.category === selectedCategory);
+
+    return (
+        <div className="landing-templates">
+            <div className="templates-wrapper">
+                {/* Hero Section */}
+                <section className="hero-section">
+                    <div className="hero-content">
+                        <div className="hero-badge">🚀 Лендінги 2025</div>
+                        <h1 className="hero-title">
+                            Односторінкові сайти, <br />
+                            які <span className="highlight">конвертують</span>
+                        </h1>
+                        <p className="hero-description">
+                            Професійні лендінги для будь-яких цілей: від Instagram taplink до
+                            корпоративних сторінок. Кожен шаблон оптимізований під конверсію,
+                            має швидке завантаження та інтеграції з популярними сервісами.
+                        </p>
+                        <div className="hero-stats">
+                            <div className="stat-item">
+                                <div className="stat-number">6</div>
+                                <div className="stat-label">Готових шаблонів</div>
+                            </div>
+                            <div className="stat-item">
+                                <div className="stat-number">30%</div>
+                                <div className="stat-label">Середня конверсія</div>
+                            </div>
+                            <div className="stat-item">
+                                <div className="stat-number">2.5s</div>
+                                <div className="stat-label">Швидкість завантаження</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* What is Landing */}
+                <section className="info-section">
+                    <h2 className="section-title">Що таке landing page?</h2>
+                    <div className="info-grid">
+                        <div className="info-card">
+                            <div className="info-icon">🎯</div>
+                            <h3>Одна мета</h3>
+                            <p>Лендінг створений для однієї конкретної дії: купівля, реєстрація, дзвінок. Це фокусує увагу відвідувача.</p>
+                        </div>
+                        <div className="info-card">
+                            <div className="info-icon">⚡</div>
+                            <h3>Швидка конверсія</h3>
+                            <p>Мінімум відволікань, максимум переконливості. Користувач швидко розуміє цінність пропозиції.</p>
+                        </div>
+                        <div className="info-card">
+                            <div className="info-icon">📊</div>
+                            <h3>Вимірюваність</h3>
+                            <p>Легко відстежити ефективність рекламних кампаній та A/B тестувати елементи.</p>
+                        </div>
+                        <div className="info-card">
+                            <div className="info-icon">💡</div>
+                            <h3>Простота запуску</h3>
+                            <p>Не потрібен великий сайт - одна сторінка може принести більше лідів, ніж складний портал.</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Categories Filter */}
+                <section className="templates-section">
+                    <h2 className="section-title">Наші лендінги</h2>
+
+                    <div className="categories-filter">
+                        {categories.map(cat => (
+                            <button
+                                key={cat.id}
+                                className={`category-btn ${selectedCategory === cat.id ? 'active' : ''}`}
+                                onClick={() => setSelectedCategory(cat.id)}
+                            >
+                                <span className="cat-icon">{cat.icon}</span>
+                                <span className="cat-label">{cat.label}</span>
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Templates Grid */}
+                    <div className="templates-grid">
+                        {filteredTemplates.map((template) => (
+                            <div
+                                key={template.id}
+                                className="template-card"
+                                style={{ '--card-color': template.color }}
+                            >
+                                <div className="template-visual">
+                                    <div className="template-icon" style={{ background: template.gradient }}>
+                                        {template.icon}
+                                    </div>
+                                    <div className="conversion-badge">
+                                        <span className="conversion-icon">📈</span>
+                                        {template.conversions} конверсія
+                                    </div>
+                                </div>
+
+                                <div className="template-content">
+                                    <h3 className="template-name">{template.name}</h3>
+                                    <p className="template-description">{template.description}</p>
+
+                                    <div className="template-features">
+                                        <div className="features-label">Функціонал:</div>
+                                        <div className="features-tags">
+                                            {template.features.map((feature, idx) => (
+                                                <span key={idx} className="feature-tag">
+                                                    {feature}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <a
+                                        href={template.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="template-link"
+                                        style={{ background: template.gradient }}
+                                    >
+                                        <span>Відкрити демо</span>
+                                        <span className="link-arrow">→</span>
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Price Calculator */}
+                <section className="calculator-section">
+                    <h2 className="section-title">Скільки коштує лендінг?</h2>
+                    <div className="calculator-grid">
+                        <div className="price-card">
+                            <div className="price-label">Базовий</div>
+                            <div className="price-amount">$299</div>
+                            <ul className="price-features">
+                                <li>✓ Один шаблон</li>
+                                <li>✓ Базові налаштування</li>
+                                <li>✓ Адаптивність</li>
+                                <li>✓ 1 місяць підтримки</li>
+                            </ul>
+                        </div>
+                        <div className="price-card featured">
+                            <div className="featured-badge">Популярний</div>
+                            <div className="price-label">Стандарт</div>
+                            <div className="price-amount">$599</div>
+                            <ul className="price-features">
+                                <li>✓ Персоналізація</li>
+                                <li>✓ SEO-оптимізація</li>
+                                <li>✓ Форми та інтеграції</li>
+                                <li>✓ 3 місяці підтримки</li>
+                            </ul>
+                        </div>
+                        <div className="price-card">
+                            <div className="price-label">Преміум</div>
+                            <div className="price-amount">$999</div>
+                            <ul className="price-features">
+                                <li>✓ Унікальний дизайн</li>
+                                <li>✓ Анімації та ефекти</li>
+                                <li>✓ A/B тестування</li>
+                                <li>✓ 6 місяців підтримки</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                {/* CTA Section */}
+                <section className="cta-section">
+                    <div className="cta-content">
+                        <h2 className="cta-title">Готові запустити свій лендінг?</h2>
+                        <p className="cta-description">
+                            Отримайте безкоштовну консультацію та дізнайтеся, як збільшити
+                            конверсію вашого бізнесу за допомогою професійного лендінгу
+                        </p>
+                        <div className="cta-buttons">
+                            <button className="cta-btn primary">
+                                Замовити лендінг
+                            </button>
+                            <button className="cta-btn secondary">
+                                Розрахувати вартість
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    );
+};
+
+export default LandingTemplates;

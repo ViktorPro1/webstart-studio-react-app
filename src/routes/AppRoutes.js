@@ -30,6 +30,11 @@ import PortfolioTextGenerator from '../pages/Generators/PortfolioTextGenerator/P
 import ProjectChecker from '../pages/Generators/ProjectChecker/ProjectChecker';
 import ResumeStructureGenerator from '../pages/Generators/ResumeStructureGenerator/ResumeStructureGenerator';
 
+// Templates
+import PortfolioTemplates from '../pages/Templates/PortfolioTemplates/PortfolioTemplates';
+import ResumeTemplates from '../pages/Templates/ResumeTemplates/ResumeTemplates';
+import LandingTemplates from '../pages/Templates/LandingTemplates/LandingTemplates';
+
 // Services
 import WebApps from '../pages/Services/WebApps/WebApps';
 import SEOInfo from '../pages/Services/SEO/SEOInfo';
@@ -85,6 +90,11 @@ const AppRoutes = () => {
             <Route path="/generators/portfolio-text" element={<PortfolioTextGenerator />} />
             <Route path="/generators/project-checker" element={<ProjectChecker />} />
             <Route path="/generators/resume-structure" element={<ResumeStructureGenerator />} />
+
+            {/* Templates */}
+            <Route path="/templates/portfolio" element={<PortfolioTemplates />} />
+            <Route path="/templates/resume" element={<ResumeTemplates />} />
+            <Route path="/templates/landing" element={<LandingTemplates />} />
 
             {/* Services */}
             <Route path="/services/web-apps" element={<WebApps />} />
