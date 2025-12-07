@@ -1,0 +1,36 @@
+@media (max-width: 768px) {
+    .Pricing-section {
+        padding: 40px 15px;
+    }
+
+    .Pricing-title {
+        font-size: 28px;
+    }
+
+    .Pricing-text {
+        font-size: 16px;
+    }
+
+    .Pricing-table th,
+    .Pricing-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .Pricing-mainTitle {
+        font-size: 24px;
+    }
+
+    .Pricing-group select {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .Pricing-result {
+        font-size: 18px;
+    }
+
+    .Pricing-resultPrice {
+        font-size: 20px;
+    }
+}

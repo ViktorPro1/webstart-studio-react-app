@@ -4,7 +4,7 @@ import {
   Home, Briefcase, FileText, BarChart, BarChart2, XCircle, Settings, Users,
   Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
   Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
-  BookOpen, Monitor, Globe, Globe2, Star, Target
+  BookOpen, Monitor, Globe, Globe2, Star, Zap, CreditCard, Target
 } from 'lucide-react';
 
 import './Sidebar.css';
@@ -96,7 +96,19 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       path: '/interactive-quiz',
       icon: Star,
       label: 'Вікторина'
-    }
+    },
+    {
+      id: 'promo',
+      path: '/promo',
+      icon: Zap,
+      label: 'Акція'
+    },
+    {
+      id: 'pricing',
+      path: '/pricing',
+      icon: CreditCard,
+      label: 'Пакети'
+    },
   ];
 
   const additionalItems = [
