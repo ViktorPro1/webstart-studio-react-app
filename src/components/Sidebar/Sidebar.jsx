@@ -107,20 +107,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
 
     { id: 'briefs', path: '/briefs', icon: FileDown, label: 'Отримати проект' },
-
-    {
-      id: 'ai-services',
-      icon: Bot,
-      label: 'AI Сервіси',
-      submenu: [
-        { path: '/ai-automation', label: 'AI Автоматизація' },
-        { path: '/ai-prompting', label: 'AI Промптинг' },
-        { path: '/personal-prompting', label: 'Персональний промптинг' },
-        { path: '/create-ai-agent', label: 'Створення AI агента' }
-      ]
-    },
-
-    { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
   ];
 
   const additionalItems = [
@@ -174,7 +160,21 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/pc-cleaning/optimization', label: 'Оптимізація ПК' },
         { path: '/pc-cleaning/support', label: 'Технічна підтримка' }
       ]
-    }
+    },
+
+    // ✅ ДОДАНО: AI Сервіси та Кібербезпека НИЖЧЕ pc-cleaning
+    {
+      id: 'ai-services',
+      icon: Bot,
+      label: 'AI Сервіси',
+      submenu: [
+        { path: '/ai-automation', label: 'AI Автоматизація' },
+        { path: '/ai-prompting', label: 'AI Промптинг' },
+        { path: '/personal-prompting', label: 'Персональний промптинг' },
+        { path: '/create-ai-agent', label: 'Створення AI агента' }
+      ]
+    },
+    { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' }
   ];
 
   const aboutItems = [
@@ -215,7 +215,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     {
       id: 'webstart-lab',
       path: '/webstart-lab',
-      icon: Book, // імпортуй свій ікон-персонаж
+      icon: Book,
       label: 'WebStart LAB'
     },
 
@@ -294,32 +294,43 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
           {additionalItems.map(item => (
             <div key={item.id}>
-              <div className="nav-item-wrapper">
-                <div
-                  className={`nav-item dropdown-item ${openDropdowns[item.id] ? 'open' : ''}`}
-                  onClick={() => toggleDropdown(item.id)}
-                >
-                  <div className="nav-item-content">
-                    <item.icon size={20} />
-                    <span>{item.label}</span>
+              {item.submenu ? (
+                <div className="nav-item-wrapper">
+                  <div
+                    className={`nav-item dropdown-item ${openDropdowns[item.id] ? 'open' : ''}`}
+                    onClick={() => toggleDropdown(item.id)}
+                  >
+                    <div className="nav-item-content">
+                      <item.icon size={20} />
+                      <span>{item.label}</span>
+                    </div>
+
+                    {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                   </div>
 
-                  {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
+                    {item.submenu.map((subItem, index) => (
+                      <Link
+                        key={index}
+                        to={subItem.path}
+                        className={`submenu-item ${location.pathname === subItem.path ? 'active' : ''}`}
+                        onClick={handleLinkClick}
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-
-                <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
-                  {item.submenu.map((subItem, index) => (
-                    <Link
-                      key={index}
-                      to={subItem.path}
-                      className={`submenu-item ${location.pathname === subItem.path ? 'active' : ''}`}
-                      onClick={handleLinkClick}
-                    >
-                      {subItem.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              ) : (
+                <Link
+                  to={item.path}
+                  className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+                  onClick={handleLinkClick}
+                >
+                  <item.icon size={20} />
+                  <span>{item.label}</span>
+                </Link>
+              )}
             </div>
           ))}
 
