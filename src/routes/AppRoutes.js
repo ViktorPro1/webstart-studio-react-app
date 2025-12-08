@@ -24,6 +24,7 @@ import CertificateGift from '../pages/CertificateGift/CertificateGift';
 import InteractiveQuiz from '../pages/InteractiveQuiz/InteractiveQuiz';
 import Promo from '../pages/Promo/Promo';
 import Pricing from '../pages/Pricing/Pricing';
+import NotFound from '../pages/NotFound/NotFound';
 
 // Generators
 import PortfolioTextGenerator from '../pages/Generators/PortfolioTextGenerator/PortfolioTextGenerator';
@@ -85,6 +86,7 @@ const AppRoutes = () => {
             <Route path="/interactive-quiz" element={<InteractiveQuiz />} />
             <Route path="/promo" element={<Promo />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="*" element={<NotFound />} />
 
             {/* Generators */}
             <Route path="/generators/portfolio-text" element={<PortfolioTextGenerator />} />
