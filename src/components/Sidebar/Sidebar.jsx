@@ -4,7 +4,7 @@ import {
   Home, Palette, FileText, BarChart, BarChart2, XCircle, Settings, Users,
   Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
   Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
-  BookOpen, Monitor, Globe, Globe2, Book, Star, Zap, Sparkles, CreditCard, Target
+  BookOpen, Monitor, Globe, Globe2, Book, Star, Youtube, Zap, Sparkles, CreditCard, Target
 } from 'lucide-react';
 
 import './Sidebar.css';
@@ -217,6 +217,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       path: '/webstart-lab',
       icon: Book,
       label: 'WebStart LAB'
+    },
+
+    {
+      id: 'youtube-channel',
+      path: '/youtube-channel',
+      icon: Youtube,
+      label: 'YouTube канал'
     },
 
     {
