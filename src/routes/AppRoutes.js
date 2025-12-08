@@ -24,6 +24,7 @@ import CertificateGift from '../pages/CertificateGift/CertificateGift';
 import InteractiveQuiz from '../pages/InteractiveQuiz/InteractiveQuiz';
 import Promo from '../pages/Promo/Promo';
 import Pricing from '../pages/Pricing/Pricing';
+import WebStartLab from '../pages/WebStartLab/WebStartLab';
 import NotFound from '../pages/NotFound/NotFound';
 
 // Generators
@@ -86,6 +87,7 @@ const AppRoutes = () => {
             <Route path="/interactive-quiz" element={<InteractiveQuiz />} />
             <Route path="/promo" element={<Promo />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/webstart-lab" element={<WebStartLab />} />
             <Route path="*" element={<NotFound />} />
 
             {/* Generators */}

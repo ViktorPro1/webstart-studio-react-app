@@ -1,0 +1,46 @@
+/* Адаптивність */
+@media (max-width: 1200px) {
+    .WebStartLab-projects {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .WebStartLab-projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .WebStartLab h2 {
+        font-size: 2em;
+    }
+
+    .WebStartLab>p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 420px) {
+    .WebStartLab h2 {
+        font-size: 1.5em;
+    }
+
+    .WebStartLab>p,
+    .WebStartLab-project-desc {
+        font-size: 0.9em;
+    }
+
+    .WebStartLab-project-link {
+        font-size: 1.1em;
+    }
+
+    .WebStartLab-marquee {
+        font-size: 0.9em;
+        padding: 6px 0;
+    }
+
+    .WebStartLab-project {
+        padding: 20px;
+    }
+}
