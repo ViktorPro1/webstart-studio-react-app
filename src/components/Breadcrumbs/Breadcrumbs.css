@@ -1,0 +1,42 @@
+.Breadcrumbs {
+    width: 100%;
+    padding: 8px 16px;
+    display: block;
+    position: relative;
+    /* щоб бути у нормальному потоці */
+    margin-top: 0;
+    /* якщо Header fixed, можна додати потрібний margin-top */
+}
+
+@media (min-width: 768px) {
+    .Breadcrumbs {
+        display: none;
+        /* ховаємо на десктопі */
+    }
+}
+
+.Breadcrumbs-inner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Breadcrumbs-link {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.Breadcrumbs-link:hover {
+    color: #000;
+}
+
+.Breadcrumbs-crumb {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #888;
+    font-size: 14px;
+}

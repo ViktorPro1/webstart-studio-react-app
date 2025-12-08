@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import AppRoutes from './routes/AppRoutes';
 import DjonAssistant from './components/DjonAssistant/DjonAssistant';
+import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import './i18n';
 import './App.css';
 
@@ -19,6 +20,10 @@ function App() {
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="app-content">
         <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+
+        {/* Breadcrumbs — відображається тільки на мобільних */}
+        <Breadcrumbs />
+
         <main className={`main-wrapper ${isSidebarOpen ? '' : 'sidebar-closed'}`}>
           <AppRoutes />
         </main>
