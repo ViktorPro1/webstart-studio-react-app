@@ -1,0 +1,314 @@
+.prompt-studio {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 0;
+}
+
+.prompt-studio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.prompt-studio-hero {
+    text-align: center;
+    margin-bottom: 5rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.prompt-studio-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(99, 102, 241, 0.2);
+    border: 2px solid rgba(99, 102, 241, 0.5);
+    border-radius: 50px;
+    color: #a5b4fc;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.prompt-studio-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+    text-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
+}
+
+.prompt-studio-description {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.prompt-studio-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.prompt-studio-feature {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(99, 102, 241, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.prompt-studio-feature:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.prompt-studio-feature:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.prompt-studio-feature:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.prompt-studio-feature:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.prompt-studio-feature:hover {
+    transform: translateY(-8px);
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #e0e7ff;
+    margin-bottom: 0.75rem;
+}
+
+.feature-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.prompt-studio-cta {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+    border: 2px solid rgba(99, 102, 241, 0.4);
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.prompt-studio-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #e0e7ff;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.cta-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 3rem;
+    background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.7);
+}
+
+.button-arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover .button-arrow {
+    transform: translateX(5px);
+}
+
+.prompt-studio-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.info-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 2px solid rgba(148, 163, 184, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.info-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin-bottom: 1rem;
+}
+
+.info-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.info-text strong {
+    color: #a78bfa;
+    font-weight: 700;
+}
+
+.prompt-studio-examples {
+    text-align: center;
+}
+
+.examples-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #e0e7ff;
+    margin-bottom: 3rem;
+    letter-spacing: -1px;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.example-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 2px solid rgba(148, 163, 184, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.example-item:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateX(8px);
+}
+
+.example-emoji {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.example-text {
+    font-size: 1rem;
+    color: #cbd5e1;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Імпорт мобільних стилів */
+@import './PromptStudio.mobile.css';

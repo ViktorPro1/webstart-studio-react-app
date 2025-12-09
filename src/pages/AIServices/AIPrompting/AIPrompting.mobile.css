@@ -1,0 +1,105 @@
+@media (max-width: 768px) {
+    .ai-prompting-header {
+        padding: 2rem 1.5rem;
+    }
+
+    .ai-prompting-title {
+        font-size: 2rem;
+    }
+
+    .ai-prompting-main {
+        padding: 2rem 1.5rem;
+    }
+
+    .ai-prompting-article {
+        padding: 2rem 1.5rem;
+    }
+
+    .ai-prompting-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .ai-prompting-subtitle-small {
+        font-size: 1.2rem;
+    }
+
+    .ai-prompting-text {
+        font-size: 1rem;
+    }
+
+    .ai-prompting-code {
+        font-size: 0.9rem;
+        padding: 1.25rem;
+    }
+
+    .ai-prompting-cta {
+        padding: 2rem 1.5rem;
+    }
+
+    .ai-prompting-cta-text {
+        font-size: 1.05rem;
+    }
+
+    .ai-prompting-cta-btn {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-prompting-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .ai-prompting-title {
+        font-size: 1.75rem;
+    }
+
+    .ai-prompting-main {
+        padding: 1.5rem 1rem;
+    }
+
+    .ai-prompting-article {
+        padding: 1.5rem 1rem;
+    }
+
+    .ai-prompting-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .ai-prompting-subtitle-small {
+        font-size: 1.1rem;
+    }
+
+    .ai-prompting-text {
+        font-size: 0.95rem;
+    }
+
+    .ai-prompting-list li {
+        font-size: 0.95rem;
+        padding-left: 1.75rem;
+    }
+
+    .ai-prompting-example {
+        padding: 1.25rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .ai-prompting-code {
+        font-size: 0.85rem;
+        padding: 1rem;
+    }
+
+    .ai-prompting-cta {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .ai-prompting-cta-text {
+        font-size: 1rem;
+    }
+
+    .ai-prompting-cta-btn {
+        padding: 0.75rem 1.75rem;
+        font-size: 0.95rem;
+    }
+}

@@ -162,7 +162,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       ]
     },
 
-    // ✅ ДОДАНО: AI Сервіси та Кібербезпека НИЖЧЕ pc-cleaning
     {
       id: 'ai-services',
       icon: Bot,
@@ -170,10 +169,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       submenu: [
         { path: '/ai-automation', label: 'AI Автоматизація' },
         { path: '/ai-prompting', label: 'AI Промптинг' },
-        { path: '/personal-prompting', label: 'Персональний промптинг' },
-        { path: '/create-ai-agent', label: 'Створення AI агента' }
+        { path: '/prompt-editor', label: 'Персональний промптинг' },
+        { path: '/prompt-studio', label: 'AI Prompt Studio' }
       ]
     },
+
     { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' }
   ];
 
@@ -220,10 +220,10 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
 
     {
-      id: 'youtube-channel',
-      path: '/youtube-channel',
+      id: 'youtube',
       icon: Youtube,
-      label: 'YouTube канал'
+      label: 'YouTube Канал',
+      path: '/youtube-channel'
     },
 
     {

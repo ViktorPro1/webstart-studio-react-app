@@ -25,7 +25,7 @@ import InteractiveQuiz from '../pages/InteractiveQuiz/InteractiveQuiz';
 import Promo from '../pages/Promo/Promo';
 import Pricing from '../pages/Pricing/Pricing';
 import WebStartLab from '../pages/WebStartLab/WebStartLab';
-import SideBadge from '../pages/SideBadge/SideBadge';
+import YouTubeChannel from '../pages/YouTubeChannel/YouTubeChannel';
 import NotFound from '../pages/NotFound/NotFound';
 
 // Generators
@@ -55,6 +55,9 @@ import ResumeTips from '../pages/Blog/ResumeTips/ResumeTips';
 
 // AI Services
 import AIAutomation from '../pages/AIServices/AIAutomation/AIAutomation';
+import AIPrompting from '../pages/AIServices/AIPrompting/AIPrompting';
+import PromptEditor from '../pages/AIServices/PromptEditor/PromptEditor';
+import PromptStudio from '../pages/AIServices/PromptStudio/PromptStudio';
 
 // Google Ads
 import GoogleAdsSetup from '../pages/Additional/GoogleAds/Setup/Setup';
@@ -89,7 +92,7 @@ const AppRoutes = () => {
             <Route path="/promo" element={<Promo />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/webstart-lab" element={<WebStartLab />} />
-            <Route path="/youtube-channel" element={<SideBadge />} />
+            <Route path="/youtube-channel" element={<YouTubeChannel />} />
             <Route path="*" element={<NotFound />} />
 
             {/* Generators */}
@@ -127,6 +130,9 @@ const AppRoutes = () => {
 
             {/* AI Services */}
             <Route path="/ai-automation" element={<AIAutomation />} />
+            <Route path="/ai-prompting" element={<AIPrompting />} />
+            <Route path="/prompt-editor" element={<PromptEditor />} />
+            <Route path="/prompt-studio" element={<PromptStudio />} />
 
             {/* Google Ads */}
             <Route path="/google-ads/setup" element={<GoogleAdsSetup />} />

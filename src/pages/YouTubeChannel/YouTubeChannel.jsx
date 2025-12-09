@@ -1,0 +1,195 @@
+import React from 'react';
+import './YouTubeChannel.css';
+
+const YouTubeChannel = () => {
+    const videos = [
+        {
+            id: 1,
+            title: 'Як створюється платформа',
+            description: 'Покроковий процес розробки веб-платформи з нуля',
+            icon: '🏗️',
+            duration: '15:30'
+        },
+        {
+            id: 2,
+            title: 'Робота у VS Code',
+            description: 'Налаштування середовища та корисні плагіни',
+            icon: '💻',
+            duration: '12:45'
+        },
+        {
+            id: 3,
+            title: 'Написання коду',
+            description: 'Практичні приклади розробки функціоналу',
+            icon: '⚡',
+            duration: '20:15'
+        },
+        {
+            id: 4,
+            title: 'За лаштунками',
+            description: 'Як влаштована архітектура проєкту',
+            icon: '🔧',
+            duration: '18:00'
+        }
+    ];
+
+    const features = [
+        {
+            icon: '🎓',
+            title: 'Навчальні туторіали',
+            description: 'Від основ до просунутих концепцій веб-розробки'
+        },
+        {
+            icon: '🛠️',
+            title: 'Реальні проєкти',
+            description: 'Дивіться, як створюються справжні веб-додатки'
+        },
+        {
+            icon: '💡',
+            title: 'Корисні поради',
+            description: 'Лайфхаки та best practices від професіоналів'
+        },
+        {
+            icon: '🚀',
+            title: 'Новітні технології',
+            description: 'React, Node.js, AI інтеграції та багато іншого'
+        }
+    ];
+
+    return (
+        <div className="youtube-channel">
+            <div className="youtube-channel-container">
+                {/* Hero Section */}
+                <section className="youtube-channel-hero">
+                    <div className="youtube-channel-badge">
+                        <span className="badge-icon">📺</span>
+                        <span className="badge-text">YouTube Channel</span>
+                    </div>
+
+                    <h1 className="youtube-channel-title">
+                        WebStart Studio
+                        <span className="title-accent">YouTube</span>
+                    </h1>
+
+                    <p className="youtube-channel-description">
+                        Занурюйтесь у світ веб-розробки разом з нами! На нашому каналі ви побачите,
+                        як насправді створюються сучасні веб-платформи, як працює код у VS Code,
+                        та що відбувається за лаштунками професійної розробки.
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/@WebStart_Studio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="youtube-channel-cta"
+                    >
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+                            alt="YouTube"
+                            className="youtube-logo"
+                        />
+                        <span className="cta-text">Підписатися на канал</span>
+                        <span className="cta-arrow">→</span>
+                    </a>
+                </section>
+
+                {/* Stats Section */}
+                <section className="youtube-channel-stats">
+                    <div className="stat-card">
+                        <div className="stat-icon">🎬</div>
+                        <div className="stat-number">50+</div>
+                        <div className="stat-label">Відео</div>
+                    </div>
+                    <div className="stat-card">
+                        <div className="stat-icon">👥</div>
+                        <div className="stat-number">1K+</div>
+                        <div className="stat-label">Підписників</div>
+                    </div>
+                    <div className="stat-card">
+                        <div className="stat-icon">⏱️</div>
+                        <div className="stat-number">100+</div>
+                        <div className="stat-label">Годин контенту</div>
+                    </div>
+                </section>
+
+                {/* What You'll Find Section */}
+                <section className="youtube-channel-content">
+                    <h2 className="section-title">Що ви знайдете на каналі?</h2>
+
+                    <div className="content-grid">
+                        {videos.map((video) => (
+                            <div key={video.id} className="content-card">
+                                <div className="card-icon">{video.icon}</div>
+                                <h3 className="card-title">{video.title}</h3>
+                                <p className="card-description">{video.description}</p>
+                                <div className="card-duration">
+                                    <span className="duration-icon">🕐</span>
+                                    <span className="duration-text">{video.duration}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Features Section */}
+                <section className="youtube-channel-features">
+                    <h2 className="section-title">Чому варто підписатися?</h2>
+
+                    <div className="features-grid">
+                        {features.map((feature, index) => (
+                            <div key={index} className="feature-item">
+                                <div className="feature-icon">{feature.icon}</div>
+                                <h3 className="feature-title">{feature.title}</h3>
+                                <p className="feature-description">{feature.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Behind the Scenes Section */}
+                <section className="youtube-channel-behind">
+                    <div className="behind-content">
+                        <h2 className="behind-title">За лаштунками розробки</h2>
+                        <p className="behind-text">
+                            Ми показуємо реальний процес створення веб-платформ: від першого рядка коду
+                            до фінального деплою. Дивіться, як пишеться чистий код, як налаштовується
+                            VS Code, які інструменти використовують професіонали, та як вирішуються
+                            реальні задачі у веб-розробці.
+                        </p>
+
+                        <div className="behind-topics">
+                            <div className="topic-tag">React Development</div>
+                            <div className="topic-tag">VS Code Setup</div>
+                            <div className="topic-tag">Code Review</div>
+                            <div className="topic-tag">Best Practices</div>
+                            <div className="topic-tag">AI Integration</div>
+                            <div className="topic-tag">UI/UX Design</div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Final CTA */}
+                <section className="youtube-channel-final-cta">
+                    <div className="final-cta-content">
+                        <h2 className="final-cta-title">Готові почати навчання?</h2>
+                        <p className="final-cta-text">
+                            Приєднуйтесь до нашої спільноти розробників та отримайте доступ до
+                            ексклюзивного контенту про веб-розробку
+                        </p>
+                        <a
+                            href="https://www.youtube.com/@WebStart_Studio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="final-cta-button"
+                        >
+                            <span className="button-icon">▶️</span>
+                            <span className="button-text">Дивитися зараз</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    );
+};
+
+export default YouTubeChannel;

@@ -1,0 +1,159 @@
+.ai-prompting {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 0;
+}
+
+.ai-prompting-header {
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ai-prompting-title {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+.ai-prompting-main {
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.ai-prompting-article {
+    background: #fff;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+}
+
+.ai-prompting-subtitle {
+    margin-top: 2.5rem;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #333;
+    border-left: 5px solid #4a90e2;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ai-prompting-subtitle-small {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #555;
+}
+
+.ai-prompting-text {
+    margin: 1.25rem 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2c3e50;
+}
+
+.ai-prompting-list {
+    margin: 1.5rem 0 2rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.ai-prompting-list li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.7;
+    color: #2c3e50;
+}
+
+.ai-prompting-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0.5rem;
+    color: #4a90e2;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.ai-prompting-list li strong {
+    color: #9013fe;
+    font-weight: 700;
+}
+
+.ai-prompting-example {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #e6f0ff 0%, #f0e6ff 100%);
+    border-left: 5px solid #4a90e2;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.ai-prompting-example strong {
+    color: #9013fe;
+    font-weight: 700;
+}
+
+.ai-prompting-code {
+    background: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+    border-left: 5px solid #9013fe;
+    padding: 1.5rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-size: 0.95rem;
+    font-family: "Courier New", monospace;
+    white-space: pre-wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 2rem 0;
+}
+
+.ai-prompting-cta {
+    text-align: center;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #c7d7f8 0%, #e0d7f8 100%);
+    border-radius: 16px;
+    border: 2px solid #b0c8ff;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ai-prompting-cta-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.ai-prompting-cta-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4);
+    transition: all 0.3s ease;
+}
+
+.ai-prompting-cta-btn:hover {
+    background: linear-gradient(135deg, #9013fe, #4a90e2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(144, 19, 254, 0.6);
+}
+
+/* Імпорт мобільних стилів */
+@import './AIPrompting.mobile.css';
