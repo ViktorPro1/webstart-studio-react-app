@@ -1,0 +1,125 @@
+@media (max-width: 768px) {
+    .ad-calculator {
+        padding: 3rem 1.5rem;
+    }
+
+    .ad-calculator-title {
+        font-size: 2rem;
+    }
+
+    .ad-calculator-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .ad-calculator-form {
+        padding: 2.5rem 2rem;
+    }
+
+    .ad-calculator-label {
+        font-size: 1rem;
+    }
+
+    .ad-calculator-input {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+    }
+
+    .ad-calculator-total {
+        font-size: 1.15rem;
+    }
+
+    .ad-calculator-button {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+
+    .ad-calculator-info {
+        padding: 2.5rem 2rem;
+    }
+
+    .ad-calculator-info-title {
+        font-size: 1.75rem;
+    }
+
+    .ad-calculator-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .ad-calculator-info-card {
+        padding: 1.75rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-calculator {
+        padding: 2rem 1rem;
+    }
+
+    .ad-calculator-title {
+        font-size: 1.75rem;
+    }
+
+    .ad-calculator-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .ad-calculator-form {
+        padding: 2rem 1.5rem;
+    }
+
+    .ad-calculator-form-group {
+        margin-bottom: 1.75rem;
+    }
+
+    .ad-calculator-label {
+        font-size: 0.95rem;
+    }
+
+    .ad-calculator-input {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.95rem;
+    }
+
+    .ad-calculator-total {
+        font-size: 1.05rem;
+    }
+
+    .ad-calculator-note {
+        font-size: 0.85rem;
+    }
+
+    .ad-calculator-buttons {
+        margin-top: 2rem;
+    }
+
+    .ad-calculator-button {
+        width: 100%;
+        padding: 0.875rem 2rem;
+        font-size: 0.95rem;
+    }
+
+    .ad-calculator-info {
+        padding: 2rem 1.5rem;
+    }
+
+    .ad-calculator-info-title {
+        font-size: 1.5rem;
+    }
+
+    .ad-calculator-info-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .info-icon {
+        font-size: 2.5rem;
+    }
+
+    .ad-calculator-info-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .ad-calculator-info-card p {
+        font-size: 0.95rem;
+    }
+}

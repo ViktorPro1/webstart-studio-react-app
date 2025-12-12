@@ -127,15 +127,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     {
       id: 'facebook-ads',
       icon: Megaphone,
-      label: 'Реклама у Facebook',
+      label: 'Facebook Ads',
       submenu: [
-        { path: '/facebook-ads/setup', label: 'Налаштування Facebook Ads' },
-        { path: '/facebook-ads/targeting', label: 'Таргетинг аудиторії' },
-        { path: '/facebook-ads/creatives', label: 'Створення креативів' },
-        { path: '/facebook-ads/instagram', label: 'Реклама в Instagram' },
-        { path: '/facebook-ads/analytics', label: 'Аналітика результатів' },
-        { path: '/facebook-ads/conversion', label: 'Оптимізація конверсій' }
-      ]
+        { path: '/facebook-ads/ad-calculator', label: 'Калькулятор реклами' },
+        { path: '/facebook-ads/target-advertising', label: 'Таргетована реклама' },
+        { path: '/facebook-ads/target-explanation', label: 'Пояснення таргетингу' },
+        { path: '/facebook-ads/utm-generator', label: 'UTM генератор' },
+      ],
     },
 
     {

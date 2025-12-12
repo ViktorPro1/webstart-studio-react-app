@@ -1,0 +1,198 @@
+.ad-calculator {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    padding: 4rem 2rem;
+}
+
+.ad-calculator-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ad-calculator-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
+}
+
+.ad-calculator-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ad-calculator-form {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ad-calculator-form-group {
+    margin-bottom: 2rem;
+}
+
+.ad-calculator-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1e3a8a;
+}
+
+.ad-calculator-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1.05rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.ad-calculator-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.ad-calculator-input:disabled {
+    background-color: #f1f5f9;
+    cursor: not-allowed;
+    color: #64748b;
+}
+
+.ad-calculator-total {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #1e3a8a;
+}
+
+.ad-calculator-note {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.ad-calculator-buttons {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.ad-calculator-button {
+    padding: 1.25rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.ad-calculator-button.primary {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
+}
+
+.ad-calculator-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.6);
+}
+
+.ad-calculator-button.primary:active {
+    transform: translateY(-1px);
+}
+
+/* Info Section */
+.ad-calculator-info {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    animation: fadeIn 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.ad-calculator-info-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ad-calculator-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.ad-calculator-info-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.ad-calculator-info-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-4px);
+}
+
+.info-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.ad-calculator-info-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+.ad-calculator-info-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Імпорт мобільних стилів */
+@import './AdCalculator.mobile.css';

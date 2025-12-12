@@ -50,7 +50,6 @@ import Ecommerce from '../pages/Services/Ecommerce/Ecommerce';
 import Blog from '../pages/Services/Blog/BlogInfo';
 import PersonalizedLanding from '../pages/Services/PersonalizedLanding/PersonalizedLanding';
 
-
 // Blog
 import LandingTrends from '../pages/Blog/LandingTrends/LandingTrends';
 import PortfolioTips from '../pages/Blog/PortfolioTips/PortfolioTips';
@@ -64,6 +63,12 @@ import PromptStudio from '../pages/AIServices/PromptStudio/PromptStudio';
 
 // Google Ads
 import GoogleAdsSetup from '../pages/Additional/GoogleAds/Setup/Setup';
+
+// Additional Facebook Ads Routes
+import AdCalculator from '../pages/Facebook-Ads/AdCalculator/AdCalculator';
+import TargetAdvertising from '../pages/Facebook-Ads/TargetAdvertising/TargetAdvertising';
+import TargetExplanation from '../pages/Facebook-Ads/TargetExplanation/TargetExplanation';
+import UTMGenerator from '../pages/Facebook-Ads/UTMGenerator/UTMGenerator';
 
 // International
 import English from '../pages/international/English/English';
@@ -142,6 +147,12 @@ const AppRoutes = () => {
 
             {/* Google Ads */}
             <Route path="/google-ads/setup" element={<GoogleAdsSetup />} />
+
+            {/* Facebook Ads */}
+            <Route path="/facebook-ads/ad-calculator" element={<AdCalculator />} />
+            <Route path="/facebook-ads/target-advertising" element={<TargetAdvertising />} />
+            <Route path="/facebook-ads/target-explanation" element={<TargetExplanation />} />
+            <Route path="/facebook-ads/utm-generator" element={<UTMGenerator />} />
 
             {/* About & Contact */}
             <Route path="/contact" element={<Contact />} />
