@@ -1,0 +1,58 @@
+.PolandTax-container {
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 20px auto;
+}
+
+.PolandTax-h1,
+.PolandTax-h2 {
+    color: #0077cc;
+    text-align: center;
+}
+
+.PolandTax-ul {
+    padding-left: 20px;
+    margin-top: 0;
+}
+
+.PolandTax-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.PolandTax-telegramButton {
+    background-color: #28a745;
+    color: white;
+}
+
+.PolandTax-backButton {
+    background-color: #007bff;
+    color: white;
+    margin-left: 10px;
+}
+
+.PolandTax-highlight {
+    background: #fff3cd;
+    padding: 10px;
+    border-left: 4px solid #ffa500;
+    margin: 10px 0;
+}
+
+.PolandTax-priceBox {
+    background: #e3fbe3;
+    padding: 10px;
+    border-left: 4px solid #28a745;
+    margin: 10px 0;
+}

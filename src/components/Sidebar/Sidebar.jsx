@@ -146,18 +146,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
 
     {
-      id: 'tax-refund',
-      icon: FileText,
-      label: 'Повернення податків з Польщі',
-      submenu: [
-        { path: '/tax-refund/documents', label: 'Необхідні документи' },
-        { path: '/tax-refund/process', label: 'Процес повернення' },
-        { path: '/tax-refund/calculation', label: 'Розрахунок суми' },
-        { path: '/tax-refund/consultation', label: 'Консультація' }
-      ]
+      id: 'poland-tax',          // унікальний id для Sidebar
+      path: '/poland-tax',       // маршрут для React Router
+      icon: FileText,            // іконка
+      label: 'Повернення податків з Польщі'
     },
-
-
 
     {
       id: 'ai-services',
@@ -179,7 +172,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: Code,
       label: 'Чистка ПК віддалено'
     }
-
   ];
 
   const aboutItems = [

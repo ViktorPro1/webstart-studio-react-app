@@ -28,6 +28,7 @@ import WebStartLab from '../pages/WebStartLab/WebStartLab';
 import YouTubeChannel from '../pages/YouTubeChannel/YouTubeChannel';
 import CanvaServices from '../pages/CanvaServices/CanvaServices';
 import PcService from '../pages/PcService/PcService';
+import PolandTax from '../pages/PolandTax/PolandTax';
 import NotFound from '../pages/NotFound/NotFound';
 
 // Generators
@@ -96,6 +97,7 @@ const AppRoutes = () => {
             <Route path="/webstart-lab" element={<WebStartLab />} />
             <Route path="/youtube-channel" element={<YouTubeChannel />} />
             <Route path="/canva-services" element={<CanvaServices />} />
+            <Route path="/poland-tax" element={<PolandTax />} />
             <Route path="/pc-service" element={<PcService />} />
             <Route path="*" element={<NotFound />} />
 
