@@ -110,6 +110,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   ];
 
   const additionalItems = [
+    { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
+
     {
       id: 'google-ads',
       icon: Target,
@@ -137,20 +139,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     },
 
     {
-      id: 'canvaservices',
-      path: '/canva-services',
-      icon: Layout,
-      label: 'Банери та Шаблони'
-    },
-
-    {
-      id: 'poland-tax',          // унікальний id для Sidebar
-      path: '/poland-tax',       // маршрут для React Router
-      icon: FileText,            // іконка
-      label: 'Повернення податків з Польщі'
-    },
-
-    {
       id: 'ai-services',
       icon: Bot,
       label: 'AI Сервіси',
@@ -162,7 +150,19 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       ]
     },
 
-    { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
+    {
+      id: 'canvaservices',
+      path: '/canva-services',
+      icon: Layout,
+      label: 'Банери та Шаблони'
+    },
+
+    {
+      id: 'poland-tax',
+      path: '/poland-tax',
+      icon: FileText,
+      label: 'Повернення податків з Польщі'
+    },
 
     {
       id: 'pc-service',
