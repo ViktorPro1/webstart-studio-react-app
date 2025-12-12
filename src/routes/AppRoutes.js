@@ -26,6 +26,7 @@ import Promo from '../pages/Promo/Promo';
 import Pricing from '../pages/Pricing/Pricing';
 import WebStartLab from '../pages/WebStartLab/WebStartLab';
 import YouTubeChannel from '../pages/YouTubeChannel/YouTubeChannel';
+import CanvaServices from '../pages/CanvaServices/CanvaServices';
 import NotFound from '../pages/NotFound/NotFound';
 
 // Generators
@@ -93,6 +94,7 @@ const AppRoutes = () => {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/webstart-lab" element={<WebStartLab />} />
             <Route path="/youtube-channel" element={<YouTubeChannel />} />
+            <Route path="/canva-services" element={<CanvaServices />} />
             <Route path="*" element={<NotFound />} />
 
             {/* Generators */}
