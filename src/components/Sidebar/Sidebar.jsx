@@ -129,8 +129,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: Megaphone,
       label: 'Facebook Ads',
       submenu: [
-        { path: '/facebook-ads/ad-calculator', label: 'Калькулятор реклами' },
         { path: '/facebook-ads/target-advertising', label: 'Таргетована реклама' },
+        { path: '/facebook-ads/ad-calculator', label: 'Калькулятор реклами' },
         { path: '/facebook-ads/target-explanation', label: 'Пояснення таргетингу' },
         { path: '/facebook-ads/utm-generator', label: 'UTM генератор' },
       ],
