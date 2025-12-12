@@ -1,0 +1,25 @@
+@media (max-width: 420px) {
+    .PcService-step {
+        padding: 15px;
+    }
+
+    .PcService-step h2 {
+        font-size: 1.3em;
+    }
+
+    .PcService-intro h1 {
+        font-size: 1.5em;
+    }
+
+    .PcService-intro p {
+        font-size: 1em;
+    }
+
+    .PcService-mainPrice {
+        font-size: 1.5em;
+    }
+
+    .PcService-priceSpoiler summary h2 {
+        font-size: 1.2em;
+    }
+}

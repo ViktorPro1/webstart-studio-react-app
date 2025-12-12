@@ -174,16 +174,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
 
     {
-      id: 'pc-cleaning',
+      id: 'pc-service',
+      path: '/pc-service',
       icon: Code,
-      label: 'Чистка ПК віддалено',
-      submenu: [
-        { path: '/pc-cleaning/diagnostics', label: 'Діагностика системи' },
-        { path: '/pc-cleaning/virus-removal', label: 'Видалення вірусів' },
-        { path: '/pc-cleaning/optimization', label: 'Оптимізація ПК' },
-        { path: '/pc-cleaning/support', label: 'Технічна підтримка' }
-      ]
+      label: 'Чистка ПК віддалено'
     }
+
   ];
 
   const aboutItems = [
