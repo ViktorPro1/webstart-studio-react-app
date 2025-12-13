@@ -1,0 +1,60 @@
+@media (max-width: 768px) {
+    .prompt-showcase {
+        padding: 1rem;
+    }
+
+    .prompt-showcase__title {
+        font-size: 2rem;
+    }
+
+    .prompt-showcase__subtitle {
+        font-size: 1rem;
+    }
+
+    .prompt-showcase__info-box {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .prompt-showcase__grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .prompt-showcase__card-overlay {
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    }
+
+    .prompt-showcase__card-title {
+        font-size: 1rem;
+    }
+
+    .prompt-showcase__card-desc {
+        font-size: 0.85rem;
+    }
+
+    .prompt-showcase__cta {
+        padding: 2rem 1rem;
+    }
+
+    .prompt-showcase__cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .prompt-showcase__cta p {
+        font-size: 1rem;
+    }
+
+    .prompt-showcase__modal {
+        padding: 1rem;
+    }
+
+    .prompt-showcase__modal-content {
+        padding: 1.5rem;
+    }
+
+    .prompt-showcase__modal-content h2 {
+        font-size: 1.4rem;
+    }
+}

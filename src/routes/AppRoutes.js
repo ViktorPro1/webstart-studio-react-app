@@ -59,6 +59,7 @@ import ResumeTips from '../pages/Blog/ResumeTips/ResumeTips';
 import AIAutomation from '../pages/AIServices/AIAutomation/AIAutomation';
 import AIPrompting from '../pages/AIServices/AIPrompting/AIPrompting';
 import PromptEditor from '../pages/AIServices/PromptEditor/PromptEditor';
+import PromptShowcase from '../pages/AIServices/PromptShowcase/PromptShowcase';
 import PromptStudio from '../pages/AIServices/PromptStudio/PromptStudio';
 
 // Google Ads
@@ -143,6 +144,7 @@ const AppRoutes = () => {
             <Route path="/ai-automation" element={<AIAutomation />} />
             <Route path="/ai-prompting" element={<AIPrompting />} />
             <Route path="/prompt-editor" element={<PromptEditor />} />
+            <Route path="/prompt-showcase" element={<PromptShowcase />} />
             <Route path="/prompt-studio" element={<PromptStudio />} />
 
             {/* Google Ads */}

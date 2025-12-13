@@ -146,7 +146,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/ai-automation', label: 'AI Автоматизація' },
         { path: '/ai-prompting', label: 'AI Промптинг' },
         { path: '/prompt-editor', label: 'Персональний промптинг' },
-        { path: '/prompt-studio', label: 'AI Prompt Studio' }
+        { path: '/prompt-studio', label: 'AI Prompt Studio' },
+        { path: '/prompt-showcase', label: 'Наші Роботи' }
       ]
     },
 
