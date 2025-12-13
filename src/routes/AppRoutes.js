@@ -1,95 +1,99 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-// Pages
-import Home from '../pages/Home/Home';
-import ForWhom from '../pages/ForWhom/ForWhom';
-import TechnicalDetails from '../pages/TechnicalDetails/TechnicalDetails';
-import PlatformComparison from '../pages/PlatformComparison/PlatformComparison';
-import DiyVsUs from '../pages/DiyVsUs/DiyVsUs';
-import CommonMistakes from '../pages/CommonMistakes/CommonMistakes';
-import FAQ from '../pages/FAQ/FAQ';
-import SecurityTips from '../pages/SecurityTips/SecurityTips';
-import Testimonials from '../pages/Testimonials/Testimonials';
-import Instruction from '../pages/Instruction/Instruction';
-import EditInstruction from '../pages/EditInstruction/EditInstruction';
-import Briefs from '../pages/Briefs/Briefs';
-import Bonus from '../pages/Bonus/Bonus';
-import Contact from '../pages/Contact/Contact';
-import About from '../pages/About/About';
-import Skills from '../pages/Skills/Skills';
-import Achievements from '../pages/Achievements/Achievements';
-import Social from '../pages/Social/Social';
-import CertificateGift from '../pages/CertificateGift/CertificateGift';
-import InteractiveQuiz from '../pages/InteractiveQuiz/InteractiveQuiz';
-import Promo from '../pages/Promo/Promo';
-import Pricing from '../pages/Pricing/Pricing';
-import WebStartLab from '../pages/WebStartLab/WebStartLab';
-import YouTubeChannel from '../pages/YouTubeChannel/YouTubeChannel';
-import CanvaServices from '../pages/CanvaServices/CanvaServices';
-import PcService from '../pages/PcService/PcService';
-import PolandTax from '../pages/PolandTax/PolandTax';
-import NotFound from '../pages/NotFound/NotFound';
+/* ===== Loader ===== */
+const Loader = () => <div className="page-loader">Завантаження…</div>;
 
-// Generators
-import PortfolioTextGenerator from '../pages/Generators/PortfolioTextGenerator/PortfolioTextGenerator';
-import ProjectChecker from '../pages/Generators/ProjectChecker/ProjectChecker';
-import ResumeStructureGenerator from '../pages/Generators/ResumeStructureGenerator/ResumeStructureGenerator';
+/* ===== Pages ===== */
+const Home = lazy(() => import('../pages/Home/Home'));
+const ForWhom = lazy(() => import('../pages/ForWhom/ForWhom'));
+const TechnicalDetails = lazy(() => import('../pages/TechnicalDetails/TechnicalDetails'));
+const PlatformComparison = lazy(() => import('../pages/PlatformComparison/PlatformComparison'));
+const DiyVsUs = lazy(() => import('../pages/DiyVsUs/DiyVsUs'));
+const CommonMistakes = lazy(() => import('../pages/CommonMistakes/CommonMistakes'));
+const FAQ = lazy(() => import('../pages/FAQ/FAQ'));
+const SecurityTips = lazy(() => import('../pages/SecurityTips/SecurityTips'));
+const Testimonials = lazy(() => import('../pages/Testimonials/Testimonials'));
+const Instruction = lazy(() => import('../pages/Instruction/Instruction'));
+const EditInstruction = lazy(() => import('../pages/EditInstruction/EditInstruction'));
+const Briefs = lazy(() => import('../pages/Briefs/Briefs'));
+const Bonus = lazy(() => import('../pages/Bonus/Bonus'));
+const Contact = lazy(() => import('../pages/Contact/Contact'));
+const About = lazy(() => import('../pages/About/About'));
+const Skills = lazy(() => import('../pages/Skills/Skills'));
+const Achievements = lazy(() => import('../pages/Achievements/Achievements'));
+const Social = lazy(() => import('../pages/Social/Social'));
+const CertificateGift = lazy(() => import('../pages/CertificateGift/CertificateGift'));
+const InteractiveQuiz = lazy(() => import('../pages/InteractiveQuiz/InteractiveQuiz'));
+const Promo = lazy(() => import('../pages/Promo/Promo'));
+const Pricing = lazy(() => import('../pages/Pricing/Pricing'));
+const WebStartLab = lazy(() => import('../pages/WebStartLab/WebStartLab'));
+const YouTubeChannel = lazy(() => import('../pages/YouTubeChannel/YouTubeChannel'));
+const CanvaServices = lazy(() => import('../pages/CanvaServices/CanvaServices'));
+const PcService = lazy(() => import('../pages/PcService/PcService'));
+const PolandTax = lazy(() => import('../pages/PolandTax/PolandTax'));
+const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
-// Templates
-import PortfolioTemplates from '../pages/Templates/PortfolioTemplates/PortfolioTemplates';
-import ResumeTemplates from '../pages/Templates/ResumeTemplates/ResumeTemplates';
-import LandingTemplates from '../pages/Templates/LandingTemplates/LandingTemplates';
+/* ===== Generators ===== */
+const PortfolioTextGenerator = lazy(() => import('../pages/Generators/PortfolioTextGenerator/PortfolioTextGenerator'));
+const ProjectChecker = lazy(() => import('../pages/Generators/ProjectChecker/ProjectChecker'));
+const ResumeStructureGenerator = lazy(() => import('../pages/Generators/ResumeStructureGenerator/ResumeStructureGenerator'));
 
-// Services
-import WebApps from '../pages/Services/WebApps/WebApps';
-import SEOInfo from '../pages/Services/SEO/SEOInfo';
-import SocialMedia from '../pages/Services/SocialMedia/SocialMedia';
-import Animations from '../pages/Services/Animations/Animations';
-import Ecommerce from '../pages/Services/Ecommerce/Ecommerce';
-import Blog from '../pages/Services/Blog/BlogInfo';
-import PersonalizedLanding from '../pages/Services/PersonalizedLanding/PersonalizedLanding';
+/* ===== Templates ===== */
+const PortfolioTemplates = lazy(() => import('../pages/Templates/PortfolioTemplates/PortfolioTemplates'));
+const ResumeTemplates = lazy(() => import('../pages/Templates/ResumeTemplates/ResumeTemplates'));
+const LandingTemplates = lazy(() => import('../pages/Templates/LandingTemplates/LandingTemplates'));
 
-// Blog
-import LandingTrends from '../pages/Blog/LandingTrends/LandingTrends';
-import PortfolioTips from '../pages/Blog/PortfolioTips/PortfolioTips';
-import ResumeTips from '../pages/Blog/ResumeTips/ResumeTips';
+/* ===== Services ===== */
+const WebApps = lazy(() => import('../pages/Services/WebApps/WebApps'));
+const SEOInfo = lazy(() => import('../pages/Services/SEO/SEOInfo'));
+const SocialMedia = lazy(() => import('../pages/Services/SocialMedia/SocialMedia'));
+const Animations = lazy(() => import('../pages/Services/Animations/Animations'));
+const Ecommerce = lazy(() => import('../pages/Services/Ecommerce/Ecommerce'));
+const Blog = lazy(() => import('../pages/Services/Blog/BlogInfo'));
+const PersonalizedLanding = lazy(() => import('../pages/Services/PersonalizedLanding/PersonalizedLanding'));
 
-// AI Services
-import AIAutomation from '../pages/AIServices/AIAutomation/AIAutomation';
-import AIPrompting from '../pages/AIServices/AIPrompting/AIPrompting';
-import PromptEditor from '../pages/AIServices/PromptEditor/PromptEditor';
-import PromptShowcase from '../pages/AIServices/PromptShowcase/PromptShowcase';
-import PromptStudio from '../pages/AIServices/PromptStudio/PromptStudio';
+/* ===== Blog ===== */
+const LandingTrends = lazy(() => import('../pages/Blog/LandingTrends/LandingTrends'));
+const PortfolioTips = lazy(() => import('../pages/Blog/PortfolioTips/PortfolioTips'));
+const ResumeTips = lazy(() => import('../pages/Blog/ResumeTips/ResumeTips'));
 
-// Google Ads
-import GoogleAdsCalculator from '../pages/Google-Ads/GoogleAdsCalculator/GoogleAdsCalculator';
-import GoogleAdsGenerator from '../pages/Google-Ads/GoogleAdsGenerator/GoogleAdsGenerator';
-import GoogleAdsComparison from '../pages/Google-Ads/GoogleAdsComparison/GoogleAdsComparison';
-import GoogleAdsGlossary from '../pages/Google-Ads/GoogleAdsGlossary/GoogleAdsGlossary';
-import GoogleAdsKeywords from '../pages/Google-Ads/GoogleAdsKeywords/GoogleAdsKeywords';
+/* ===== AI ===== */
+const AIAutomation = lazy(() => import('../pages/AIServices/AIAutomation/AIAutomation'));
+const AIPrompting = lazy(() => import('../pages/AIServices/AIPrompting/AIPrompting'));
+const PromptEditor = lazy(() => import('../pages/AIServices/PromptEditor/PromptEditor'));
+const PromptShowcase = lazy(() => import('../pages/AIServices/PromptShowcase/PromptShowcase'));
+const PromptStudio = lazy(() => import('../pages/AIServices/PromptStudio/PromptStudio'));
 
-// Additional Facebook Ads Routes
-import AdCalculator from '../pages/Facebook-Ads/AdCalculator/AdCalculator';
-import TargetAdvertising from '../pages/Facebook-Ads/TargetAdvertising/TargetAdvertising';
-import TargetExplanation from '../pages/Facebook-Ads/TargetExplanation/TargetExplanation';
-import UTMGenerator from '../pages/Facebook-Ads/UTMGenerator/UTMGenerator';
+/* ===== Google Ads ===== */
+const GoogleAdsCalculator = lazy(() => import('../pages/Google-Ads/GoogleAdsCalculator/GoogleAdsCalculator'));
+const GoogleAdsGenerator = lazy(() => import('../pages/Google-Ads/GoogleAdsGenerator/GoogleAdsGenerator'));
+const GoogleAdsComparison = lazy(() => import('../pages/Google-Ads/GoogleAdsComparison/GoogleAdsComparison'));
+const GoogleAdsGlossary = lazy(() => import('../pages/Google-Ads/GoogleAdsGlossary/GoogleAdsGlossary'));
+const GoogleAdsKeywords = lazy(() => import('../pages/Google-Ads/GoogleAdsKeywords/GoogleAdsKeywords'));
 
-// International
-import English from '../pages/international/English/English';
-import Francais from '../pages/international/Français/Français';
-import Polski from '../pages/international/Polski/Polski';
-import Cestina from '../pages/international/Cestina/Cestina';
-import Svenska from '../pages/international/Svenska/Svenska';
-import Deutsch from '../pages/international/Deutsch/Deutsch';
+/* ===== Facebook Ads ===== */
+const AdCalculator = lazy(() => import('../pages/Facebook-Ads/AdCalculator/AdCalculator'));
+const TargetAdvertising = lazy(() => import('../pages/Facebook-Ads/TargetAdvertising/TargetAdvertising'));
+const TargetExplanation = lazy(() => import('../pages/Facebook-Ads/TargetExplanation/TargetExplanation'));
+const UTMGenerator = lazy(() => import('../pages/Facebook-Ads/UTMGenerator/UTMGenerator'));
 
-// Assistant
-import Assistant from '../pages/Assistant/Assistant';
+/* ===== International ===== */
+const English = lazy(() => import('../pages/international/English/English'));
+const Francais = lazy(() => import('../pages/international/Français/Français'));
+const Polski = lazy(() => import('../pages/international/Polski/Polski'));
+const Cestina = lazy(() => import('../pages/international/Cestina/Cestina'));
+const Svenska = lazy(() => import('../pages/international/Svenska/Svenska'));
+const Deutsch = lazy(() => import('../pages/international/Deutsch/Deutsch'));
 
-const AppRoutes = () => {
-    return (
+/* ===== Assistant ===== */
+const Assistant = lazy(() => import('../pages/Assistant/Assistant'));
+
+const AppRoutes = () => (
+    <Suspense fallback={<Loader />}>
         <Routes>
-            {/* Main */}
+
+            {/* Home Page */}
             <Route path="/" element={<Home />} />
 
             {/* Info Pages */}
@@ -107,9 +111,8 @@ const AppRoutes = () => {
             <Route path="/webstart-lab" element={<WebStartLab />} />
             <Route path="/youtube-channel" element={<YouTubeChannel />} />
             <Route path="/canva-services" element={<CanvaServices />} />
-            <Route path="/poland-tax" element={<PolandTax />} />
             <Route path="/pc-service" element={<PcService />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/poland-tax" element={<PolandTax />} />
 
             {/* Generators */}
             <Route path="/generators/portfolio-text" element={<PortfolioTextGenerator />} />
@@ -139,7 +142,7 @@ const AppRoutes = () => {
             <Route path="/bonus" element={<Bonus />} />
             <Route path="/certificate-gift" element={<CertificateGift />} />
 
-            {/* Blog */}
+            {/* Blog Posts */}
             <Route path="/blog/landing-trends" element={<LandingTrends />} />
             <Route path="/blog/portfolio-tips" element={<PortfolioTips />} />
             <Route path="/blog/resume-tips" element={<ResumeTips />} />
@@ -181,8 +184,11 @@ const AppRoutes = () => {
 
             {/*Assistant*/}
             <Route path="/assistant" element={<Assistant />} />
+
+
+            <Route path="*" element={<NotFound />} />
         </Routes>
-    );
-};
+    </Suspense>
+);
 
 export default AppRoutes;
