@@ -1,0 +1,67 @@
+# Netlify Configuration для WebStart Studio React App
+
+[build]
+  # Build команда
+  command = "npm run build"
+  
+  # Публічна директорія після збірки
+  publish = "build"
+  
+  # Node.js версія
+  [build.environment]
+    NODE_VERSION = "18"
+
+# Redirects для SPA - всі маршрути ведуть на index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Захист від clickjacking
+    X-Frame-Options = "DENY"
+    
+    # Захист від XSS
+    X-XSS-Protection = "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    X-Content-Type-Options = "nosniff"
+    
+    # Referrer Policy
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Content Security Policy (базова)
+    # Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+
+# Cache статичних файлів
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache index.html (коротше кешування для SPA)
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Опціонально: Production context налаштування
+[context.production]
+  command = "npm run build"
+  [context.production.environment]
+    NODE_ENV = "production"
+
+# Опціонально: Deploy Preview налаштування
+[context.deploy-preview]
+  command = "npm run build"
+
+# Опціонально: Branch Deploy налаштування
+[context.branch-deploy]
+  command = "npm run build"
+
+# Плагіни Netlify (опціонально)
+# [[plugins]]
+#   package = "@netlify/plugin-lighthouse"

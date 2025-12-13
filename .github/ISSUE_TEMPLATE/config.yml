@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/ViktorPro1/webstart-studio-react-app/discussions
+    about: Обговоріть ідеї зі спільнотою
+  - name: 📧 Email Support
+    url: mailto:webstartstudio978@gmail.com
+    about: Приватні питання
