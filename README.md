@@ -286,7 +286,7 @@ npm run deploy
 **Viktor**
 
 - GitHub: [@ViktorPro1](https://github.com/ViktorPro1)
-- Email: viktor@webstart.studio
+- Email: webstartstudio978@gmail.com
 
 ---
 
