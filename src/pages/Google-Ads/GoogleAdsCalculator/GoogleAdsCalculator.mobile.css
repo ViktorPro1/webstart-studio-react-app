@@ -1,0 +1,127 @@
+@media (max-width: 768px) {
+    .google-ads-calculator__container {
+        border-radius: 10px;
+    }
+
+    .google-ads-calculator__header {
+        padding: 30px 20px;
+    }
+
+    .google-ads-calculator__header h1 {
+        font-size: 24px;
+    }
+
+    .google-ads-calculator__content {
+        padding: 30px 20px;
+    }
+
+    .google-ads-calculator__result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .google-ads-calculator__result-value {
+        font-size: 24px;
+    }
+
+    .google-ads-calculator__result-value--highlight,
+    .google-ads-calculator__result-value--success {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 420px) {
+    .google-ads-calculator {
+        padding: 10px;
+    }
+
+    .google-ads-calculator__container {
+        border-radius: 15px;
+    }
+
+    .google-ads-calculator__header {
+        padding: 25px 15px;
+    }
+
+    .google-ads-calculator__header h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .google-ads-calculator__header p {
+        font-size: 14px;
+    }
+
+    .google-ads-calculator__content {
+        padding: 25px 15px;
+    }
+
+    .google-ads-calculator__form-group {
+        margin-bottom: 20px;
+    }
+
+    .google-ads-calculator__form-group label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .google-ads-calculator__form-group input,
+    .google-ads-calculator__form-group select {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .google-ads-calculator__info-text {
+        font-size: 12px;
+    }
+
+    .google-ads-calculator__calculate-btn {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .google-ads-calculator__results {
+        padding: 20px 15px;
+        margin-top: 25px;
+    }
+
+    .google-ads-calculator__results h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .google-ads-calculator__result-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .google-ads-calculator__result-card {
+        padding: 15px;
+    }
+
+    .google-ads-calculator__result-label {
+        font-size: 13px;
+    }
+
+    .google-ads-calculator__result-value {
+        font-size: 24px;
+    }
+
+    .google-ads-calculator__result-value--highlight,
+    .google-ads-calculator__result-value--success {
+        font-size: 26px;
+    }
+
+    .google-ads-calculator__recommendations {
+        padding: 20px 15px;
+    }
+
+    .google-ads-calculator__recommendations h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .google-ads-calculator__recommendations li {
+        padding: 10px 0;
+        font-size: 13px;
+    }
+}

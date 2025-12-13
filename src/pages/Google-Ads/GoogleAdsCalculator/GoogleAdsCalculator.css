@@ -1,0 +1,205 @@
+.google-ads-calculator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.google-ads-calculator__container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.google-ads-calculator__header {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.google-ads-calculator__header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.google-ads-calculator__header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.google-ads-calculator__content {
+    padding: 40px 30px;
+}
+
+.google-ads-calculator__form-group {
+    margin-bottom: 30px;
+}
+
+.google-ads-calculator__form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.google-ads-calculator__form-group input,
+.google-ads-calculator__form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.google-ads-calculator__form-group input:focus,
+.google-ads-calculator__form-group select:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.google-ads-calculator__info-text {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.google-ads-calculator__calculate-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 20px;
+}
+
+.google-ads-calculator__calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(66, 133, 244, 0.3);
+}
+
+.google-ads-calculator__results {
+    display: block;
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    border-radius: 15px;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.google-ads-calculator__results h2 {
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.google-ads-calculator__result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.google-ads-calculator__result-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.google-ads-calculator__result-card:hover {
+    transform: translateY(-3px);
+}
+
+.google-ads-calculator__result-card--full-width {
+    grid-column: 1 / -1;
+}
+
+.google-ads-calculator__result-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.google-ads-calculator__result-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4285f4;
+}
+
+.google-ads-calculator__result-value--highlight {
+    color: #ea4335;
+    font-size: 32px;
+}
+
+.google-ads-calculator__result-value--success {
+    color: #34a853;
+    font-size: 32px;
+}
+
+.google-ads-calculator__roas-explanation {
+    font-size: 13px;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.google-ads-calculator__recommendations {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.google-ads-calculator__recommendations h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.google-ads-calculator__recommendations ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.google-ads-calculator__recommendations li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.google-ads-calculator__recommendations li:last-child {
+    border-bottom: none;
+}
+
+.google-ads-calculator__recommendations li::before {
+    content: "✓ ";
+    color: #34a853;
+    font-weight: bold;
+    margin-right: 8px;
+}

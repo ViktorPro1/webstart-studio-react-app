@@ -1,0 +1,297 @@
+.google-ads-comparison {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.google-ads-comparison__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.google-ads-comparison__header {
+    background: linear-gradient(135deg, #4285f4 0%, #e94235 100%);
+    color: white;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.google-ads-comparison__header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.google-ads-comparison__header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.google-ads-comparison__content {
+    padding: 50px 30px;
+}
+
+/* Quiz Section */
+.google-ads-comparison__quiz-section {
+    margin-bottom: 60px;
+}
+
+.google-ads-comparison__quiz-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.google-ads-comparison__quiz-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.google-ads-comparison__question {
+    margin-bottom: 30px;
+}
+
+.google-ads-comparison__question h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.google-ads-comparison__options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.google-ads-comparison__option {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.google-ads-comparison__option:hover {
+    border-color: #4285f4;
+    transform: translateX(5px);
+}
+
+.google-ads-comparison__option input[type="radio"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.google-ads-comparison__option span {
+    font-size: 16px;
+    color: #333;
+}
+
+.google-ads-comparison__quiz-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.google-ads-comparison__quiz-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(66, 133, 244, 0.3);
+}
+
+.google-ads-comparison__quiz-result {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.5s;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.google-ads-comparison__quiz-result h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.google-ads-comparison__quiz-result p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.google-ads-comparison__quiz-result ol,
+.google-ads-comparison__quiz-result ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.google-ads-comparison__quiz-result li {
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Comparison Table */
+.google-ads-comparison__table-section {
+    margin-bottom: 60px;
+}
+
+.google-ads-comparison__table-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.google-ads-comparison__table-wrapper {
+    overflow-x: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.google-ads-comparison__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.google-ads-comparison__table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.google-ads-comparison__table th {
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.google-ads-comparison__google-col {
+    background: rgba(66, 133, 244, 0.2);
+}
+
+.google-ads-comparison__facebook-col {
+    background: rgba(233, 66, 53, 0.2);
+}
+
+.google-ads-comparison__table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.2s;
+}
+
+.google-ads-comparison__table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.google-ads-comparison__table td {
+    padding: 20px;
+    font-size: 15px;
+    color: #555;
+}
+
+.google-ads-comparison__criteria {
+    font-weight: 600;
+    color: #333;
+}
+
+.google-ads-comparison__pro {
+    color: #34a853;
+    font-weight: 600;
+}
+
+.google-ads-comparison__con {
+    color: #ea4335;
+}
+
+/* Summary */
+.google-ads-comparison__summary {
+    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.google-ads-comparison__summary h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.google-ads-comparison__summary-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.google-ads-comparison__summary-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.google-ads-comparison__summary-content ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.google-ads-comparison__summary-content li {
+    padding: 12px 0;
+    padding-left: 35px;
+    position: relative;
+    color: #555;
+    font-size: 16px;
+}
+
+.google-ads-comparison__summary-content li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #4285f4;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.google-ads-comparison__summary-cta {
+    text-align: center;
+    font-size: 18px;
+    padding: 25px;
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    color: white;
+    border-radius: 10px;
+    margin-top: 25px;
+}

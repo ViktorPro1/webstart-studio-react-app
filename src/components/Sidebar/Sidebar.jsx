@@ -4,7 +4,7 @@ import {
   Home, Palette, FileText, BarChart, BarChart2, XCircle, Settings, Users,
   Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
   Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
-  BookOpen, Monitor, Globe, Globe2, Book, Layout, Star, Youtube, Zap, Sparkles, CreditCard, Target
+  BookOpen, Monitor, Globe, Globe2, Book, Layout, Star, Youtube, Zap, Sparkles, CreditCard, Search,
 } from 'lucide-react';
 
 import './Sidebar.css';
@@ -114,15 +114,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
     {
       id: 'google-ads',
-      icon: Target,
+      icon: Search,
       label: 'Реклама в Google',
       submenu: [
-        { path: '/google-ads/setup', label: 'Налаштування Google Ads' },
-        { path: '/google-ads/optimization', label: 'Оптимізація кампаній' },
-        { path: '/google-ads/analytics', label: 'Аналітика та звіти' },
-        { path: '/google-ads/keywords', label: 'Підбір ключових слів' },
-        { path: '/google-ads/budget', label: 'Управління бюджетом' },
-        { path: '/google-ads/remarketing', label: 'Ремаркетинг' }
+        { path: '/google-ads/calculator', label: 'Калькулятор бюджету', description: 'Розрахуйте бюджет кампанії' },
+        { path: '/google-ads/comparison', label: 'Порівняння', description: 'Google Ads vs Facebook/Instagram' },
+        { path: '/google-ads/glossary', label: 'Глосарій', description: 'Всі терміни контекстної реклами' },
+        { path: '/google-ads/generator', label: 'Генератор', description: 'Створіть ефективні оголошення' },
+        { path: '/google-ads/keywords', label: 'Ключові слова', description: 'Підбір та аналіз' }
       ]
     },
 

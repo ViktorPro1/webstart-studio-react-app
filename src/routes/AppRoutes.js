@@ -63,7 +63,11 @@ import PromptShowcase from '../pages/AIServices/PromptShowcase/PromptShowcase';
 import PromptStudio from '../pages/AIServices/PromptStudio/PromptStudio';
 
 // Google Ads
-import GoogleAdsSetup from '../pages/Additional/GoogleAds/Setup/Setup';
+import GoogleAdsCalculator from '../pages/Google-Ads/GoogleAdsCalculator/GoogleAdsCalculator';
+import GoogleAdsGenerator from '../pages/Google-Ads/GoogleAdsGenerator/GoogleAdsGenerator';
+import GoogleAdsComparison from '../pages/Google-Ads/GoogleAdsComparison/GoogleAdsComparison';
+import GoogleAdsGlossary from '../pages/Google-Ads/GoogleAdsGlossary/GoogleAdsGlossary';
+import GoogleAdsKeywords from '../pages/Google-Ads/GoogleAdsKeywords/GoogleAdsKeywords';
 
 // Additional Facebook Ads Routes
 import AdCalculator from '../pages/Facebook-Ads/AdCalculator/AdCalculator';
@@ -148,7 +152,11 @@ const AppRoutes = () => {
             <Route path="/prompt-studio" element={<PromptStudio />} />
 
             {/* Google Ads */}
-            <Route path="/google-ads/setup" element={<GoogleAdsSetup />} />
+            <Route path="/google-ads/calculator" element={<GoogleAdsCalculator />} />
+            <Route path="/google-ads/generator" element={<GoogleAdsGenerator />} />
+            <Route path="/google-ads/comparison" element={<GoogleAdsComparison />} />
+            <Route path="/google-ads/glossary" element={<GoogleAdsGlossary />} />
+            <Route path="/google-ads/keywords" element={<GoogleAdsKeywords />} />
 
             {/* Facebook Ads */}
             <Route path="/facebook-ads/ad-calculator" element={<AdCalculator />} />

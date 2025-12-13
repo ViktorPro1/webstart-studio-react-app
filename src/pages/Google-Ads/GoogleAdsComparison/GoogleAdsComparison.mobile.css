@@ -1,0 +1,155 @@
+@media (max-width: 768px) {
+    .google-ads-comparison__container {
+        border-radius: 10px;
+    }
+
+    .google-ads-comparison__header {
+        padding: 30px 20px;
+    }
+
+    .google-ads-comparison__header h1 {
+        font-size: 26px;
+    }
+
+    .google-ads-comparison__content {
+        padding: 30px 20px;
+    }
+
+    .google-ads-comparison__quiz-card {
+        padding: 25px;
+    }
+
+    .google-ads-comparison__table-wrapper {
+        font-size: 14px;
+    }
+
+    .google-ads-comparison__table th,
+    .google-ads-comparison__table td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .google-ads-comparison {
+        padding: 10px;
+    }
+
+    .google-ads-comparison__container {
+        border-radius: 15px;
+    }
+
+    .google-ads-comparison__header {
+        padding: 25px 15px;
+    }
+
+    .google-ads-comparison__header h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .google-ads-comparison__header p {
+        font-size: 14px;
+    }
+
+    .google-ads-comparison__content {
+        padding: 25px 15px;
+    }
+
+    /* Quiz Section */
+    .google-ads-comparison__quiz-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .google-ads-comparison__quiz-card {
+        padding: 20px 15px;
+    }
+
+    .google-ads-comparison__question {
+        margin-bottom: 20px;
+    }
+
+    .google-ads-comparison__question h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .google-ads-comparison__option {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .google-ads-comparison__option input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+    }
+
+    .google-ads-comparison__quiz-btn {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .google-ads-comparison__quiz-result {
+        padding: 20px 15px;
+    }
+
+    .google-ads-comparison__quiz-result h3 {
+        font-size: 20px;
+    }
+
+    .google-ads-comparison__quiz-result p {
+        font-size: 14px;
+    }
+
+    /* Comparison Table */
+    .google-ads-comparison__table-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .google-ads-comparison__table-wrapper {
+        border-radius: 10px;
+        font-size: 12px;
+    }
+
+    .google-ads-comparison__table th,
+    .google-ads-comparison__table td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .google-ads-comparison__table th {
+        font-size: 14px;
+    }
+
+    /* Summary */
+    .google-ads-comparison__summary {
+        padding: 25px 15px;
+    }
+
+    .google-ads-comparison__summary h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .google-ads-comparison__summary-content {
+        padding: 20px 15px;
+    }
+
+    .google-ads-comparison__summary-content p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .google-ads-comparison__summary-content li {
+        font-size: 14px;
+        padding: 10px 0;
+        padding-left: 30px;
+    }
+
+    .google-ads-comparison__summary-cta {
+        font-size: 15px;
+        padding: 20px 15px;
+    }
+}
