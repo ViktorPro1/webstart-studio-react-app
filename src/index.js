@@ -18,3 +18,14 @@ root.render(
     </HelmetProvider>
   </React.StrictMode>
 );
+
+
+// Реєстрація Service Worker для PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/serviceWorker.js')
+      .then((reg) => console.log('Service Worker зареєстровано:', reg))
+      .catch((err) => console.log('Помилка реєстрації SW:', err));
+  });
+}
