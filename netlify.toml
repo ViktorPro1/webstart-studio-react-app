@@ -1,7 +1,3 @@
-# ========================
-# Заголовки для безпеки та кешування
-# ========================
-
 # Cache статичних CSS/JS файлів
 [[headers]]
   for = "/static/css/*"
@@ -45,7 +41,7 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms;
+      script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms scripts.clarity.ms;
       connect-src 'self' www.google-analytics.com cdn.clarity.ms www.clarity.ms;
       img-src 'self' www.google-analytics.com data:;
       style-src 'self' 'unsafe-inline';
@@ -66,7 +62,7 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms;
+      script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms scripts.clarity.ms;
       connect-src 'self' www.google-analytics.com cdn.clarity.ms www.clarity.ms;
       img-src 'self' www.google-analytics.com data:;
       style-src 'self' 'unsafe-inline';
