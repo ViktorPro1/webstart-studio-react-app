@@ -1,78 +1,54 @@
 /* eslint-disable no-restricted-globals */
 
-const CACHE_NAME = "webstart-cache-v2"; // ← Збільшуй версію при кожному оновленні
+const CACHE_NAME = "webstart-cache-v1";
 const urlsToCache = [
     "/",
     "/index.html",
-    "/logo192.png",
-    "/logo512.png",
+    "/manifest.json",
     "/favicon.ico"
 ];
 
-// Встановлення Service Worker і кешування файлів
+// Встановлення Service Worker
 self.addEventListener("install", (event) => {
-    console.log('[SW] Installing new version...');
+    console.log('[SW] Install');
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            console.log('[SW] Caching files');
-            return cache.addAll(urlsToCache);
-        }).then(() => {
-            // Примусово активувати новий SW одразу
-            return self.skipWaiting();
-        })
+        caches.open(CACHE_NAME)
+            .then((cache) => {
+                console.log('[SW] Caching files');
+                return cache.addAll(urlsToCache);
+            })
+            .then(() => self.skipWaiting())
     );
 });
 
-// Активація SW і видалення старих кешів
+// Активація SW
 self.addEventListener("activate", (event) => {
-    console.log('[SW] Activating new version...');
+    console.log('[SW] Activate');
     event.waitUntil(
-        caches.keys().then((keys) =>
-            Promise.all(
-                keys
-                    .filter((key) => key !== CACHE_NAME)
-                    .map((key) => {
-                        console.log('[SW] Deleting old cache:', key);
-                        return caches.delete(key);
-                    })
+        caches.keys()
+            .then((keys) =>
+                Promise.all(
+                    keys
+                        .filter((key) => key !== CACHE_NAME)
+                        .map((key) => {
+                            console.log('[SW] Deleting old cache:', key);
+                            return caches.delete(key);
+                        })
+                )
             )
-        ).then(() => {
-            // Захоплюємо контроль над всіма сторінками одразу
-            return self.clients.claim();
-        }).then(() => {
-            // Відправляємо повідомлення всім клієнтам про оновлення
-            return self.clients.matchAll().then(clients => {
-                clients.forEach(client => {
-                    client.postMessage({
-                        type: 'UPDATE_AVAILABLE',
-                        version: CACHE_NAME
-                    });
-                });
-            });
-        })
+            .then(() => self.clients.claim())
     );
 });
 
-// Підвантаження ресурсів із кешу або мережі
+// Fetch
 self.addEventListener("fetch", (event) => {
     event.respondWith(
-        caches.match(event.request).then((response) => {
-            // Повертаємо кеш або завантажуємо з мережі
-            return response || fetch(event.request).then(fetchResponse => {
-                // Кешуємо нові запити (опціонально)
-                if (event.request.method === 'GET' && !event.request.url.includes('/api/')) {
-                    return caches.open(CACHE_NAME).then(cache => {
-                        cache.put(event.request, fetchResponse.clone());
-                        return fetchResponse;
-                    });
-                }
-                return fetchResponse;
-            });
-        })
+        caches.match(event.request)
+            .then((response) => response || fetch(event.request))
     );
 });
 
-// Слухаємо повідомлення від клієнта
+// Слухаємо повідомлення
 self.addEventListener('message', (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();

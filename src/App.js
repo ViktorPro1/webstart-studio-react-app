@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext'; // ← Додай імпорт
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
@@ -38,28 +39,30 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      {/* Трекер аналітики */}
-      <AnalyticsTracker />
+    <ThemeProvider> {/* ← Обгорни ВСЕ в ThemeProvider */}
+      <div className="app">
+        {/* Трекер аналітики */}
+        <AnalyticsTracker />
 
-      {/* Сповіщення про оновлення */}
-      <UpdateNotification />
+        {/* Сповіщення про оновлення */}
+        <UpdateNotification />
 
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <div className="app-content">
-        <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <div className="app-content">
+          <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
 
-        {/* Breadcrumbs — відображається тільки на мобільних */}
-        <Breadcrumbs />
+          {/* Breadcrumbs — відображається тільки на мобільних */}
+          <Breadcrumbs />
 
-        <main className={`main-wrapper ${isSidebarOpen ? '' : 'sidebar-closed'}`}>
-          <AppRoutes />
-        </main>
-        <Footer isSidebarOpen={isSidebarOpen} />
+          <main className={`main-wrapper ${isSidebarOpen ? '' : 'sidebar-closed'}`}>
+            <AppRoutes />
+          </main>
+          <Footer isSidebarOpen={isSidebarOpen} />
+        </div>
+        <DjonAssistant />
+        <CookieConsent />
       </div>
-      <DjonAssistant />
-      <CookieConsent />
-    </div>
+    </ThemeProvider>
   );
 }
 
