@@ -6,14 +6,15 @@ export const ThemeProvider = ({ children }) => {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
-        if (darkMode) {
-            document.body.classList.add('dark-theme');
-        } else {
-            document.body.classList.remove('dark-theme');
-        }
+        if (typeof document === 'undefined') return;
+        if (!document.body) return;
+
+        document.body.classList.toggle('dark-theme', darkMode);
     }, [darkMode]);
 
-    const toggleTheme = () => setDarkMode(!darkMode);
+    const toggleTheme = () => {
+        setDarkMode(prev => !prev);
+    };
 
     return (
         <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
@@ -21,3 +22,4 @@ export const ThemeProvider = ({ children }) => {
         </ThemeContext.Provider>
     );
 };
+

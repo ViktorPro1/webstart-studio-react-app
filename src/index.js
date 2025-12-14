@@ -1,24 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
-// import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './index.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+
 root.render(
-  <React.StrictMode>
+  <HelmetProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </HelmetProvider>
 );
 
-// Реєструємо Service Worker
-// serviceWorkerRegistration.register({
-//   onUpdate: (registration) => {
-//     // Коли є оновлення - диспатчимо подію
-//     const event = new CustomEvent('swUpdate', { detail: registration });
-//     window.dispatchEvent(event);
-//   }
-// });
+// Service Worker
+serviceWorkerRegistration.register({
+  onUpdate: (registration) => {
+    const event = new CustomEvent('swUpdate', { detail: registration });
+    window.dispatchEvent(event);
+  }
+});
