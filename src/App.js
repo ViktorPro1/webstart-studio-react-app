@@ -8,7 +8,7 @@ import AppRoutes from './routes/AppRoutes';
 import DjonAssistant from './components/DjonAssistant/DjonAssistant';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import CookieConsent from './components/CookieConsent';
-import UpdateNotification from './components/UpdateNotification';
+// import UpdateNotification from './components/UpdateNotification';
 import { initGoogleAnalytics, trackPageView } from './utils/analytics';
 import { initClarity } from './utils/clarity';
 import './i18n';
@@ -45,7 +45,7 @@ function App() {
         <AnalyticsTracker />
 
         {/* Сповіщення про оновлення */}
-        <UpdateNotification />
+        {/* <UpdateNotification /> */}
 
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className="app-content">
