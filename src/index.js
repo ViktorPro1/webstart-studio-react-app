@@ -20,12 +20,21 @@ root.render(
 );
 
 
-// Реєстрація Service Worker для PWA
+// Реєстрація Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('/serviceWorker.js')
-      .then((reg) => console.log('Service Worker зареєстровано:', reg))
-      .catch((err) => console.log('Помилка реєстрації SW:', err));
+      .register('/service-worker.js')
+      .then((registration) => {
+        console.log('Service Worker зареєстровано:', registration);
+
+        // Перевірка оновлень кожні 60 секунд
+        setInterval(() => {
+          registration.update();
+        }, 60000);
+      })
+      .catch((error) => {
+        console.error('Помилка реєстрації Service Worker:', error);
+      });
   });
 }
