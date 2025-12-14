@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 
-const CACHE_NAME = "webstart-cache-v2";
+const CACHE_NAME = "webstart-cache-v3"; // змінюй версію при оновленні
 const urlsToCache = [
     "/",
     "/index.html",
@@ -8,7 +8,7 @@ const urlsToCache = [
     "/favicon.ico"
 ];
 
-// Встановлення Service Worker
+// Встановлення SW
 self.addEventListener("install", (event) => {
     console.log('[SW] Install');
     event.waitUntil(
@@ -17,7 +17,7 @@ self.addEventListener("install", (event) => {
                 console.log('[SW] Caching files');
                 return cache.addAll(urlsToCache);
             })
-            .then(() => self.skipWaiting())
+            .then(() => self.skipWaiting()) // одразу активуємо новий SW
     );
 });
 
@@ -25,30 +25,31 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
     console.log('[SW] Activate');
     event.waitUntil(
-        caches.keys()
-            .then((keys) =>
-                Promise.all(
-                    keys
-                        .filter((key) => key !== CACHE_NAME)
-                        .map((key) => {
-                            console.log('[SW] Deleting old cache:', key);
-                            return caches.delete(key);
-                        })
-                )
+        caches.keys().then((keys) =>
+            Promise.all(
+                keys
+                    .filter((key) => key !== CACHE_NAME)
+                    .map((key) => {
+                        console.log('[SW] Deleting old cache:', key);
+                        return caches.delete(key);
+                    })
             )
-            .then(() => self.clients.claim())
+        ).then(() => self.clients.claim()) // беремо контроль над усіма вкладками
     );
 });
 
 // Fetch
 self.addEventListener("fetch", (event) => {
+    if (event.request.method !== 'GET') return; // кешуємо тільки GET
+
     event.respondWith(
-        caches.match(event.request)
-            .then((response) => response || fetch(event.request))
+        caches.match(event.request).then((response) => {
+            return response || fetch(event.request);
+        })
     );
 });
 
-// Слухаємо повідомлення
+// Отримання повідомлень
 self.addEventListener('message', (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
