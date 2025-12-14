@@ -1,36 +1,3 @@
-# Netlify Configuration для WebStart Studio React App
-
-[build]
-  # Build команда
-  command = "npm run build"
-  
-  # Публічна директорія після збірки
-  publish = "build"
-  
-  # Node.js версія
-  [build.environment]
-    NODE_VERSION = "18"
-    NODE_ENV = "production"
-
-# Redirects для SPA - всі маршрути ведуть на index.html
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
-
-# Security Headers для всіх сторінок
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms 'unsafe-inline'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.clarity.ms https://c.clarity.ms https://*.clarity.ms; img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
-
 # Cache статичних CSS/JS файлів
 [[headers]]
   for = "/static/css/*"
@@ -49,11 +16,21 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Cache index.html (коротше кешування для SPA)
+# Cache для кореня сайту - НЕ кешувати
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+
+# Cache index.html - НЕ кешувати для SPA
 [[headers]]
   for = "/index.html"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
 
 # Cache для інших файлів
 [[headers]]
@@ -65,17 +42,3 @@
   for = "/*.js"
   [headers.values]
     Content-Type = "application/javascript; charset=utf-8"
-
-# Production context
-[context.production]
-  command = "npm run build"
-  [context.production.environment]
-    NODE_ENV = "production"
-
-# Deploy Preview context
-[context.deploy-preview]
-  command = "npm run build"
-
-# Branch Deploy context
-[context.branch-deploy]
-  command = "npm run build"
