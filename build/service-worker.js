@@ -1,27 +1,12 @@
 /* eslint-disable no-restricted-globals */
 
-const CACHE_NAME = "webstart-cache-v5"; // змінюй версію при оновленні
-const urlsToCache = [
-    "/",
-    "/index.html",
-    "/manifest.json",
-    "/favicon.ico"
-];
+const CACHE_NAME = "webstart-cache-v6";
 
-// Встановлення SW
 self.addEventListener("install", (event) => {
     console.log('[SW] Install');
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => {
-                console.log('[SW] Caching files');
-                return cache.addAll(urlsToCache);
-            })
-            .then(() => self.skipWaiting()) // одразу активуємо новий SW
-    );
+    event.waitUntil(self.skipWaiting());
 });
 
-// Активація SW
 self.addEventListener("activate", (event) => {
     console.log('[SW] Activate');
     event.waitUntil(
@@ -29,27 +14,54 @@ self.addEventListener("activate", (event) => {
             Promise.all(
                 keys
                     .filter((key) => key !== CACHE_NAME)
-                    .map((key) => {
-                        console.log('[SW] Deleting old cache:', key);
-                        return caches.delete(key);
-                    })
+                    .map((key) => caches.delete(key))
             )
-        ).then(() => self.clients.claim()) // беремо контроль над усіма вкладками
+        ).then(() => self.clients.claim())
     );
 });
 
-// Fetch
 self.addEventListener("fetch", (event) => {
-    if (event.request.method !== 'GET') return; // кешуємо тільки GET
+    if (event.request.method !== 'GET') return;
 
+    // Для HTML - завжди спочатку мережа
+    if (event.request.headers.get('accept').includes('text/html')) {
+        event.respondWith(
+            fetch(event.request)
+                .then(response => {
+                    const clonedResponse = response.clone();
+                    caches.open(CACHE_NAME).then(cache => {
+                        cache.put(event.request, clonedResponse);
+                    });
+                    return response;
+                })
+                .catch(() => caches.match(event.request))
+        );
+        return;
+    }
+
+    // Для JS, CSS, зображень - спочатку кеш
     event.respondWith(
         caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
+            if (response) {
+                return response;
+            }
+
+            return fetch(event.request).then(response => {
+                if (!response || response.status !== 200 || response.type === 'error') {
+                    return response;
+                }
+
+                const responseToCache = response.clone();
+                caches.open(CACHE_NAME).then(cache => {
+                    cache.put(event.request, responseToCache);
+                });
+
+                return response;
+            });
         })
     );
 });
 
-// Отримання повідомлень
 self.addEventListener('message', (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
