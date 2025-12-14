@@ -34,6 +34,10 @@ const PcService = lazy(() => import('../pages/PcService/PcService'));
 const PolandTax = lazy(() => import('../pages/PolandTax/PolandTax'));
 const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
+/* ===== Legal ===== */
+const PrivacyPolicy = lazy(() => import('../pages/Legal/PrivacyPolicy'));
+const ThirdPartyCookies = lazy(() => import('../pages/Legal/ThirdPartyCookies'));
+
 /* ===== Generators ===== */
 const PortfolioTextGenerator = lazy(() => import('../pages/Generators/PortfolioTextGenerator/PortfolioTextGenerator'));
 const ProjectChecker = lazy(() => import('../pages/Generators/ProjectChecker/ProjectChecker'));
@@ -113,6 +117,10 @@ const AppRoutes = () => (
             <Route path="/canva-services" element={<CanvaServices />} />
             <Route path="/pc-service" element={<PcService />} />
             <Route path="/poland-tax" element={<PolandTax />} />
+
+            {/* Legal Pages */}
+            <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/legal/third-party-cookies" element={<ThirdPartyCookies />} />
 
             {/* Generators */}
             <Route path="/generators/portfolio-text" element={<PortfolioTextGenerator />} />

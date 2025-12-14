@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import AppRoutes from './routes/AppRoutes';
 import DjonAssistant from './components/DjonAssistant/DjonAssistant';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
+import CookieConsent from './components/CookieConsent';
 import './i18n';
 import './App.css';
 
@@ -30,6 +31,7 @@ function App() {
         <Footer isSidebarOpen={isSidebarOpen} />
       </div>
       <DjonAssistant />
+      <CookieConsent />
     </div>
   );
 }
