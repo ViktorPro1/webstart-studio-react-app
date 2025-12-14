@@ -10,35 +10,42 @@
   # Node.js версія
   [build.environment]
     NODE_VERSION = "18"
+    NODE_ENV = "production"
 
 # Redirects для SPA - всі маршрути ведуть на index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
 
-# Security Headers
+# Security Headers для всіх сторінок
 [[headers]]
   for = "/*"
   [headers.values]
-    # Захист від clickjacking
     X-Frame-Options = "DENY"
-    
-    # Захист від XSS
-    X-XSS-Protection = "1; mode=block"
-    
-    # Prevent MIME type sniffing
     X-Content-Type-Options = "nosniff"
-    
-    # Referrer Policy
+    X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    
-    # Content Security Policy (базова)
-    # Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms 'unsafe-inline'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.clarity.ms https://c.clarity.ms https://*.clarity.ms; img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
 
-# Cache статичних файлів
+# Cache статичних CSS/JS файлів
 [[headers]]
-  for = "/static/*"
+  for = "/static/css/*"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/js/*"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/media/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
@@ -48,20 +55,27 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Опціонально: Production context налаштування
+# Cache для інших файлів
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+# Production context
 [context.production]
   command = "npm run build"
   [context.production.environment]
     NODE_ENV = "production"
 
-# Опціонально: Deploy Preview налаштування
+# Deploy Preview context
 [context.deploy-preview]
   command = "npm run build"
 
-# Опціонально: Branch Deploy налаштування
+# Branch Deploy context
 [context.branch-deploy]
   command = "npm run build"
-
-# Плагіни Netlify (опціонально)
-# [[plugins]]
-#   package = "@netlify/plugin-lighthouse"
