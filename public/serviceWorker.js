@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 
-const CACHE_NAME = "webstart-cache-v3"; // змінюй версію при оновленні
+const CACHE_NAME = "webstart-cache-v4"; // змінюй версію при оновленні
 const urlsToCache = [
     "/",
     "/index.html",

@@ -16,11 +16,15 @@ root.render(
   </HelmetProvider>
 );
 
-// Реєстрація SW
-if ('serviceWorker' in navigator) {
+// ----------------------
+// Service Worker
+// ----------------------
+if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then((registration) => {
+    const swUrl = '/service-worker.js';
+
+    navigator.serviceWorker.register(swUrl)
+      .then(registration => {
         console.log('Service Worker зареєстровано:', registration);
 
         // Якщо вже є waiting SW, відправляємо SKIP_WAITING
@@ -28,7 +32,7 @@ if ('serviceWorker' in navigator) {
           registration.waiting.postMessage({ type: 'SKIP_WAITING' });
         }
 
-        // Слухаємо оновлення
+        // Слухаємо наявність нової версії SW
         registration.addEventListener('updatefound', () => {
           const newWorker = registration.installing;
           if (newWorker) {
@@ -42,6 +46,11 @@ if ('serviceWorker' in navigator) {
           }
         });
       })
-      .catch((err) => console.error('SW помилка:', err));
+      .catch(err => console.error('SW помилка:', err));
+
+    // Додатково: автоматичне SKIP_WAITING для вже активного контролера
+    if (navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
+    }
   });
 }
