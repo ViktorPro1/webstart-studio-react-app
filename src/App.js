@@ -1,10 +1,11 @@
+// src/App.jsx
 import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { useLocation } from 'react-router-dom';
-import { ThemeProvider } from './contexts/ThemeContext'; // ← Додай імпорт
+import AppRoutes from './routes/AppRoutes';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
-import AppRoutes from './routes/AppRoutes';
 import DjonAssistant from './components/DjonAssistant/DjonAssistant';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import CookieConsent from './components/CookieConsent';
@@ -13,8 +14,9 @@ import { initGoogleAnalytics, trackPageView } from './utils/analytics';
 import { initClarity } from './utils/clarity';
 import './i18n';
 import './App.css';
+import './components/Layout/Layout.css'; // Для Layout стилів
 
-// Компонент для трекінгу сторінок
+// Трекінг сторінок
 function AnalyticsTracker() {
   const location = useLocation();
 
@@ -25,43 +27,40 @@ function AnalyticsTracker() {
   return null;
 }
 
+// Головний Layout
+const Layout = ({ children, isSidebarOpen, toggleSidebar }) => {
+  return (
+    <div className="app-container">
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <div className="main-content">
+        <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <Breadcrumbs />
+        <main className="page-content">{children}</main>
+        <Footer isSidebarOpen={isSidebarOpen} />
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
-  // Ініціалізуємо аналітику один раз при завантаженні
   useEffect(() => {
     initGoogleAnalytics();
     initClarity();
   }, []);
 
   return (
-    <ThemeProvider> {/* ← Обгорни ВСЕ в ThemeProvider */}
-      <div className="app">
-        {/* Трекер аналітики */}
-        <AnalyticsTracker />
-
-        {/* Сповіщення про оновлення */}
-        <UpdateNotification />
-
-        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <div className="app-content">
-          <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
-
-          {/* Breadcrumbs — відображається тільки на мобільних */}
-          <Breadcrumbs />
-
-          <main className={`main-wrapper ${isSidebarOpen ? '' : 'sidebar-closed'}`}>
-            <AppRoutes />
-          </main>
-          <Footer isSidebarOpen={isSidebarOpen} />
-        </div>
-        <DjonAssistant />
-        <CookieConsent />
-      </div>
+    <ThemeProvider>
+      <AnalyticsTracker />
+      <UpdateNotification />
+      <Layout isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}>
+        <AppRoutes />
+      </Layout>
+      <DjonAssistant />
+      <CookieConsent />
     </ThemeProvider>
   );
 }

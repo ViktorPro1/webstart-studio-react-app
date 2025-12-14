@@ -1,5 +1,10 @@
+/* ================== Мобільні стилі Sidebar ================== */
 @media (max-width: 768px) {
     .sidebar {
+        width: 240px;
+        /* ще менша ширина */
+        max-width: 65vw;
+        /* максимум 65% екрану */
         transform: translateX(-100%);
     }
 
@@ -7,27 +12,28 @@
         transform: translateX(0);
     }
 
+    /* Overlay для затемнення фону */
     .sidebar-overlay {
-        display: block;
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
+        width: 100vw;
+        height: 100vh;
         background: rgba(0, 0, 0, 0.5);
         z-index: 999;
     }
+
+    .sidebar.open~.sidebar-overlay,
+    .sidebar-overlay.active {
+        display: block;
+    }
 }
 
+/* Для дуже маленьких екранів */
 @media (max-width: 480px) {
     .sidebar {
-        width: 100%;
-    }
-
-    .main-wrapper,
-    .app-content,
-    .home-page {
-        margin-left: 0 !important;
-        padding: 15px;
+        width: 220px;
+        max-width: 60vw;
     }
 }
