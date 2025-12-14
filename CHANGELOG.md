@@ -54,6 +54,27 @@
 
 ---
 
+## 🔐 Безпека
+
+Проект налаштовано з дотриманням сучасних стандартів безпеки:
+
+### Security Headers
+
+- **Content Security Policy (CSP)** - захист від XSS атак
+- **X-Frame-Options** - захист від clickjacking
+- **X-Content-Type-Options** - захист від MIME type sniffing
+- **Strict-Transport-Security (HSTS)** - примусовий HTTPS
+- **Referrer-Policy** - контроль передачі referrer інформації
+- **Permissions-Policy** - обмеження доступу до API браузера
+
+### Environment Variables
+
+Конфіденційні дані зберігаються в `.env` файлі:
+
+```bash
+REACT_APP_GA4_MEASUREMENT_ID=your_ga_id
+REACT_APP_CLARITY_ID=your_clarity_id
+
 ---
 
 ## [1.0.0] - 2024-12-13
@@ -137,3 +158,4 @@
 [1.0.0]: https://github.com/ViktorPro1/webstart-studio-react-app/releases/tag/v1.0.0
 [0.5.0]: https://github.com/ViktorPro1/webstart-studio-react-app/compare/v0.1.0...v0.5.0
 [0.1.0]: https://github.com/ViktorPro1/webstart-studio-react-app/releases/tag/v0.1.0
+```
