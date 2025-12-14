@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
@@ -6,8 +7,21 @@ import AppRoutes from './routes/AppRoutes';
 import DjonAssistant from './components/DjonAssistant/DjonAssistant';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import CookieConsent from './components/CookieConsent';
+import { initGoogleAnalytics, trackPageView } from './utils/analytics';
+import { initClarity } from './utils/clarity';
 import './i18n';
 import './App.css';
+
+// Компонент для трекінгу сторінок
+function AnalyticsTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location]);
+
+  return null;
+}
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -16,8 +30,17 @@ function App() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  // Ініціалізуємо аналітику один раз при завантаженні
+  useEffect(() => {
+    initGoogleAnalytics();
+    initClarity();
+  }, []);
+
   return (
     <div className="app">
+      {/* Трекер аналітики */}
+      <AnalyticsTracker />
+
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="app-content">
         <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
