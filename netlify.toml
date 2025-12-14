@@ -1,20 +1,36 @@
+# ========================
+# Заголовки для безпеки та кешування
+# ========================
+
 # Cache статичних CSS/JS файлів
 [[headers]]
   for = "/static/css/*"
   [headers.values]
     Content-Type = "text/css; charset=utf-8"
     Cache-Control = "public, max-age=31536000, immutable"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
 [[headers]]
   for = "/static/js/*"
   [headers.values]
     Content-Type = "application/javascript; charset=utf-8"
     Cache-Control = "public, max-age=31536000, immutable"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
 [[headers]]
   for = "/static/media/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
 # Cache для кореня сайту - НЕ кешувати
 [[headers]]
@@ -23,6 +39,19 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
     Pragma = "no-cache"
     Expires = "0"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms;
+      connect-src 'self' www.google-analytics.com cdn.clarity.ms;
+      img-src 'self' www.google-analytics.com data:;
+      style-src 'self' 'unsafe-inline';
+      font-src 'self';
+      frame-ancestors 'self';
+    """
 
 # Cache index.html - НЕ кешувати для SPA
 [[headers]]
@@ -31,8 +60,21 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
     Pragma = "no-cache"
     Expires = "0"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms;
+      connect-src 'self' www.google-analytics.com cdn.clarity.ms;
+      img-src 'self' www.google-analytics.com data:;
+      style-src 'self' 'unsafe-inline';
+      font-src 'self';
+      frame-ancestors 'self';
+    """
 
-# Cache для інших файлів
+# Cache для інших CSS/JS файлів
 [[headers]]
   for = "/*.css"
   [headers.values]
