@@ -2,7 +2,7 @@
   "name": "webstart-studio",
   "version": "1.0.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "/",
   "dependencies": {
     "i18next": "^23.15.1",
     "lucide-react": "^0.263.1",

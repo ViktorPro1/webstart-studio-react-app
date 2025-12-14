@@ -5,6 +5,16 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import './index.css';
 
+// ----------------------
+// Chunk load fallback
+// ----------------------
+window.addEventListener('error', (e) => {
+  if (/Loading chunk \d+ failed/.test(e.message)) {
+    console.log('Chunk load failed, перезавантаження сторінки...');
+    window.location.reload();
+  }
+});
+
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
@@ -27,19 +37,16 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
       .then(registration => {
         console.log('Service Worker зареєстровано:', registration);
 
-        // Якщо вже є waiting SW, відправляємо SKIP_WAITING
         if (registration.waiting) {
           registration.waiting.postMessage({ type: 'SKIP_WAITING' });
         }
 
-        // Слухаємо наявність нової версії SW
         registration.addEventListener('updatefound', () => {
           const newWorker = registration.installing;
           if (newWorker) {
             newWorker.addEventListener('statechange', () => {
               if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                 console.log('Нова версія доступна!');
-                // Автоматично активуємо новий SW
                 newWorker.postMessage({ type: 'SKIP_WAITING' });
               }
             });
@@ -48,7 +55,6 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
       })
       .catch(err => console.error('SW помилка:', err));
 
-    // Додатково: автоматичне SKIP_WAITING для вже активного контролера
     if (navigator.serviceWorker.controller) {
       navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
     }
