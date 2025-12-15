@@ -1,11 +1,11 @@
-.youtube-channel {
+.YouTubeChannel {
     min-height: 100vh;
     background: linear-gradient(135deg, #ff0000 0%, #c4302b 50%, #8b0000 100%);
     position: relative;
     overflow: hidden;
 }
 
-.youtube-channel::before {
+.YouTubeChannel::before {
     content: '';
     position: absolute;
     top: 0;
@@ -18,7 +18,7 @@
     pointer-events: none;
 }
 
-.youtube-channel-container {
+.YouTubeChannel-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
@@ -27,7 +27,7 @@
 }
 
 /* Hero Section */
-.youtube-channel-hero {
+.YouTubeChannel-hero {
     text-align: center;
     margin-bottom: 5rem;
     animation: fadeInUp 0.8s ease-out;
@@ -45,7 +45,7 @@
     }
 }
 
-.youtube-channel-badge {
+.YouTubeChannel-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -73,11 +73,11 @@
     }
 }
 
-.badge-icon {
+.YouTubeChannel-badge-icon {
     font-size: 1.2rem;
 }
 
-.youtube-channel-title {
+.YouTubeChannel-title {
     font-size: 4rem;
     font-weight: 900;
     color: white;
@@ -87,7 +87,7 @@
     line-height: 1.2;
 }
 
-.title-accent {
+.YouTubeChannel-title-accent {
     display: block;
     background: linear-gradient(135deg, #ffffff 0%, #ffcccc 100%);
     -webkit-background-clip: text;
@@ -97,7 +97,7 @@
     margin-top: 0.5rem;
 }
 
-.youtube-channel-description {
+.YouTubeChannel-description {
     font-size: 1.25rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.95);
@@ -106,7 +106,7 @@
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.youtube-channel-cta {
+.YouTubeChannel-cta {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
@@ -121,34 +121,34 @@
     transition: all 0.3s ease;
 }
 
-.youtube-channel-cta:hover {
+.YouTubeChannel-cta:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
-.youtube-logo {
+.YouTubeChannel-logo {
     height: 30px;
     width: auto;
 }
 
-.cta-arrow {
+.YouTubeChannel-cta-arrow {
     font-size: 1.5rem;
     transition: transform 0.3s ease;
 }
 
-.youtube-channel-cta:hover .cta-arrow {
+.YouTubeChannel-cta:hover .YouTubeChannel-cta-arrow {
     transform: translateX(5px);
 }
 
 /* Stats Section */
-.youtube-channel-stats {
+.YouTubeChannel-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-bottom: 5rem;
 }
 
-.stat-card {
+.YouTubeChannel-stat-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -169,49 +169,49 @@
     }
 }
 
-.stat-card:nth-child(1) {
+.YouTubeChannel-stat-card:nth-child(1) {
     animation-delay: 0.1s;
 }
 
-.stat-card:nth-child(2) {
+.YouTubeChannel-stat-card:nth-child(2) {
     animation-delay: 0.2s;
 }
 
-.stat-card:nth-child(3) {
+.YouTubeChannel-stat-card:nth-child(3) {
     animation-delay: 0.3s;
 }
 
-.stat-card:hover {
+.YouTubeChannel-stat-card:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.4);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.stat-icon {
+.YouTubeChannel-stat-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.stat-number {
+.YouTubeChannel-stat-number {
     font-size: 3rem;
     font-weight: 900;
     color: white;
     margin-bottom: 0.5rem;
 }
 
-.stat-label {
+.YouTubeChannel-stat-label {
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
 }
 
 /* Content Section */
-.youtube-channel-content {
+.YouTubeChannel-content {
     margin-bottom: 5rem;
 }
 
-.section-title {
+.YouTubeChannel-section-title {
     font-size: 2.5rem;
     font-weight: 800;
     color: white;
@@ -221,13 +221,13 @@
     letter-spacing: -1px;
 }
 
-.content-grid {
+.YouTubeChannel-content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
 }
 
-.content-card {
+.YouTubeChannel-content-card {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 16px;
     padding: 2rem;
@@ -235,31 +235,31 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
-.content-card:hover {
+.YouTubeChannel-content-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
-.card-icon {
+.YouTubeChannel-card-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.card-title {
+.YouTubeChannel-card-title {
     font-size: 1.5rem;
     font-weight: 800;
     color: #ff0000;
     margin-bottom: 0.75rem;
 }
 
-.card-description {
+.YouTubeChannel-card-description {
     font-size: 1rem;
     line-height: 1.7;
     color: #2c3e50;
     margin-bottom: 1.25rem;
 }
 
-.card-duration {
+.YouTubeChannel-card-duration {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -267,22 +267,22 @@
     font-weight: 600;
 }
 
-.duration-icon {
+.YouTubeChannel-duration-icon {
     font-size: 1.2rem;
 }
 
 /* Features Section */
-.youtube-channel-features {
+.YouTubeChannel-features {
     margin-bottom: 5rem;
 }
 
-.features-grid {
+.YouTubeChannel-features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.feature-item {
+.YouTubeChannel-feature-item {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -291,25 +291,25 @@
     transition: all 0.3s ease;
 }
 
-.feature-item:hover {
+.YouTubeChannel-feature-item:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-4px);
 }
 
-.feature-icon {
+.YouTubeChannel-feature-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.feature-title {
+.YouTubeChannel-feature-title {
     font-size: 1.4rem;
     font-weight: 800;
     color: white;
     margin-bottom: 0.75rem;
 }
 
-.feature-description {
+.YouTubeChannel-feature-description {
     font-size: 1rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.9);
@@ -317,7 +317,7 @@
 }
 
 /* Behind the Scenes Section */
-.youtube-channel-behind {
+.YouTubeChannel-behind {
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -326,7 +326,7 @@
     margin-bottom: 5rem;
 }
 
-.behind-title {
+.YouTubeChannel-behind-title {
     font-size: 2.5rem;
     font-weight: 900;
     color: white;
@@ -334,20 +334,20 @@
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 }
 
-.behind-text {
+.YouTubeChannel-behind-text {
     font-size: 1.15rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: 2.5rem;
 }
 
-.behind-topics {
+.YouTubeChannel-behind-topics {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.topic-tag {
+.YouTubeChannel-topic-tag {
     padding: 0.75rem 1.5rem;
     background: rgba(255, 255, 255, 0.15);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -358,14 +358,14 @@
     transition: all 0.3s ease;
 }
 
-.topic-tag:hover {
+.YouTubeChannel-topic-tag:hover {
     background: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
 }
 
 /* Final CTA Section */
-.youtube-channel-final-cta {
+.YouTubeChannel-final-cta {
     text-align: center;
     padding: 4rem 2rem;
     background: rgba(255, 255, 255, 0.1);
@@ -374,7 +374,7 @@
     border-radius: 24px;
 }
 
-.final-cta-title {
+.YouTubeChannel-final-cta-title {
     font-size: 3rem;
     font-weight: 900;
     color: white;
@@ -382,7 +382,7 @@
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 }
 
-.final-cta-text {
+.YouTubeChannel-final-cta-text {
     font-size: 1.2rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.95);
@@ -390,7 +390,7 @@
     margin: 0 auto 2.5rem;
 }
 
-.final-cta-button {
+.YouTubeChannel-final-cta-button {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
@@ -405,12 +405,12 @@
     transition: all 0.3s ease;
 }
 
-.final-cta-button:hover {
+.YouTubeChannel-final-cta-button:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
-.button-icon {
+.YouTubeChannel-button-icon {
     font-size: 1.5rem;
 }
 

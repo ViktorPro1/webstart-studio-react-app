@@ -1,221 +1,221 @@
 @media (max-width: 768px) {
-    .youtube-channel-container {
+    .YouTubeChannel-container {
         padding: 3rem 1.5rem;
     }
 
-    .youtube-channel-hero {
+    .YouTubeChannel-hero {
         margin-bottom: 4rem;
     }
 
-    .youtube-channel-title {
+    .YouTubeChannel-title {
         font-size: 2.5rem;
     }
 
-    .title-accent {
+    .YouTubeChannel-title-accent {
         font-size: 3rem;
     }
 
-    .youtube-channel-description {
+    .YouTubeChannel-description {
         font-size: 1.1rem;
     }
 
-    .youtube-channel-cta {
+    .YouTubeChannel-cta {
         padding: 1rem 2rem;
         font-size: 1.05rem;
     }
 
-    .youtube-logo {
+    .YouTubeChannel-logo {
         height: 25px;
     }
 
-    .youtube-channel-stats {
+    .YouTubeChannel-stats {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         margin-bottom: 4rem;
     }
 
-    .stat-card {
+    .YouTubeChannel-stat-card {
         padding: 2rem 1.5rem;
     }
 
-    .stat-number {
+    .YouTubeChannel-stat-number {
         font-size: 2.5rem;
     }
 
-    .section-title {
+    .YouTubeChannel-section-title {
         font-size: 2rem;
     }
 
-    .content-grid,
-    .features-grid {
+    .YouTubeChannel-content-grid,
+    .YouTubeChannel-features-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    .youtube-channel-behind {
+    .YouTubeChannel-behind {
         padding: 3rem 2rem;
     }
 
-    .behind-title {
+    .YouTubeChannel-behind-title {
         font-size: 2rem;
     }
 
-    .behind-text {
+    .YouTubeChannel-behind-text {
         font-size: 1.05rem;
     }
 
-    .youtube-channel-final-cta {
+    .YouTubeChannel-final-cta {
         padding: 3rem 1.5rem;
     }
 
-    .final-cta-title {
+    .YouTubeChannel-final-cta-title {
         font-size: 2rem;
     }
 
-    .final-cta-text {
+    .YouTubeChannel-final-cta-text {
         font-size: 1.05rem;
     }
 
-    .final-cta-button {
+    .YouTubeChannel-final-cta-button {
         padding: 1.25rem 2.5rem;
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .youtube-channel-container {
+    .YouTubeChannel-container {
         padding: 2rem 1rem;
     }
 
-    .youtube-channel-hero {
+    .YouTubeChannel-hero {
         margin-bottom: 3rem;
     }
 
-    .youtube-channel-badge {
+    .YouTubeChannel-badge {
         font-size: 0.8rem;
         padding: 0.5rem 1.25rem;
     }
 
-    .badge-icon {
+    .YouTubeChannel-badge-icon {
         font-size: 1rem;
     }
 
-    .youtube-channel-title {
+    .YouTubeChannel-title {
         font-size: 2rem;
     }
 
-    .title-accent {
+    .YouTubeChannel-title-accent {
         font-size: 2.5rem;
     }
 
-    .youtube-channel-description {
+    .YouTubeChannel-description {
         font-size: 1rem;
     }
 
-    .youtube-channel-cta {
+    .YouTubeChannel-cta {
         padding: 0.875rem 1.75rem;
         font-size: 1rem;
         width: 100%;
         justify-content: center;
     }
 
-    .youtube-logo {
+    .YouTubeChannel-logo {
         height: 22px;
     }
 
-    .stat-card {
+    .YouTubeChannel-stat-card {
         padding: 1.75rem 1.25rem;
     }
 
-    .stat-icon {
+    .YouTubeChannel-stat-icon {
         font-size: 2.5rem;
     }
 
-    .stat-number {
+    .YouTubeChannel-stat-number {
         font-size: 2rem;
     }
 
-    .stat-label {
+    .YouTubeChannel-stat-label {
         font-size: 1rem;
     }
 
-    .section-title {
+    .YouTubeChannel-section-title {
         font-size: 1.75rem;
     }
 
-    .content-card {
+    .YouTubeChannel-content-card {
         padding: 1.5rem;
     }
 
-    .card-icon {
+    .YouTubeChannel-card-icon {
         font-size: 2.5rem;
     }
 
-    .card-title {
+    .YouTubeChannel-card-title {
         font-size: 1.3rem;
     }
 
-    .card-description {
+    .YouTubeChannel-card-description {
         font-size: 0.95rem;
     }
 
-    .feature-item {
+    .YouTubeChannel-feature-item {
         padding: 1.5rem;
     }
 
-    .feature-icon {
+    .YouTubeChannel-feature-icon {
         font-size: 2.5rem;
     }
 
-    .feature-title {
+    .YouTubeChannel-feature-title {
         font-size: 1.2rem;
     }
 
-    .feature-description {
+    .YouTubeChannel-feature-description {
         font-size: 0.95rem;
     }
 
-    .youtube-channel-behind {
+    .YouTubeChannel-behind {
         padding: 2.5rem 1.5rem;
     }
 
-    .behind-title {
+    .YouTubeChannel-behind-title {
         font-size: 1.75rem;
     }
 
-    .behind-text {
+    .YouTubeChannel-behind-text {
         font-size: 1rem;
     }
 
-    .behind-topics {
+    .YouTubeChannel-behind-topics {
         gap: 0.75rem;
     }
 
-    .topic-tag {
+    .YouTubeChannel-topic-tag {
         padding: 0.6rem 1.25rem;
         font-size: 0.9rem;
     }
 
-    .youtube-channel-final-cta {
+    .YouTubeChannel-final-cta {
         padding: 2.5rem 1.25rem;
     }
 
-    .final-cta-title {
+    .YouTubeChannel-final-cta-title {
         font-size: 1.75rem;
     }
 
-    .final-cta-text {
+    .YouTubeChannel-final-cta-text {
         font-size: 1rem;
     }
 
-    .final-cta-button {
+    .YouTubeChannel-final-cta-button {
         padding: 1rem 2rem;
         font-size: 1rem;
         width: 100%;
         justify-content: center;
     }
 
-    .button-icon {
+    .YouTubeChannel-button-icon {
         font-size: 1.25rem;
     }
 }
