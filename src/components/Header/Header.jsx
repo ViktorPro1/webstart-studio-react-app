@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Menu, X, Search, User, Moon, Check } from 'lucide-react';
+import { Menu, X, Search, Moon, Check } from 'lucide-react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import './Header.css';
 import './Header.mobile.css';
@@ -41,9 +41,11 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
         </select>
 
         <button className="header-btn">{t('header.orderProject')}</button>
-        <div className="user-icon">
+
+        {/* Поки закоментував даний блок і видалив з імпорту - User, */}
+        {/* <div className="user-icon">
           <User size={20} />
-        </div>
+        </div> */}
 
         {/* Кнопка перемикання теми */}
         <button className="header-theme-btn" onClick={toggleTheme}>
