@@ -1,5 +1,6 @@
 import React from 'react';
-import { Facebook, Send, MessageCircle } from 'lucide-react';
+import { Facebook, Send, } from 'lucide-react';
+import { SiViber } from 'react-icons/si';
 import './Footer.css';
 import './Footer.mobile.css';
 
@@ -30,7 +31,7 @@ const Footer = ({ isSidebarOpen }) => {
             aria-label="Відкрити нашу Viber спільноту у новому вікні"
             className="social-link viber"
           >
-            <MessageCircle size={20} />
+            <SiViber size={20} color="white" />
           </a>
 
           <a

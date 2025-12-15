@@ -92,7 +92,7 @@
 /* Кнопка чату */
 .djon-chat-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 120px;
     right: 20px;
     z-index: 9998;
     width: 56px;
