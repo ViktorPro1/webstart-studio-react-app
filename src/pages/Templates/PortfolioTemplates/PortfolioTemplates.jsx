@@ -53,58 +53,58 @@ const PortfolioTemplates = () => {
 
     return (
         <div className="portfolio-templates">
-            <div className="templates-wrapper">
+            <div className="portfolio-templates__wrapper">
                 {/* Hero Section */}
-                <section className="hero-section">
-                    <div className="hero-content">
-                        <div className="hero-badge">🎨 Портфоліо 2025</div>
-                        <h1 className="hero-title">
+                <section className="portfolio-templates__hero">
+                    <div className="portfolio-templates__hero-content">
+                        <div className="portfolio-templates__hero-badge">🎨 Портфоліо 2025</div>
+                        <h1 className="portfolio-templates__hero-title">
                             Дизайн портфоліо, <br />
-                            який <span className="highlight">продає</span>
+                            який <span className="portfolio-templates__highlight">продає</span>
                         </h1>
-                        <p className="hero-description">
+                        <p className="portfolio-templates__hero-description">
                             Професійні шаблони портфоліо, створені за останніми трендами веб-дизайну.
                             Кожен макет оптимізований для швидкого завантаження, адаптивний під всі
                             пристрої та готовий до персоналізації під ваші потреби.
                         </p>
-                        <div className="hero-stats">
-                            <div className="stat-item">
-                                <div className="stat-number">4</div>
-                                <div className="stat-label">Унікальних стилів</div>
+                        <div className="portfolio-templates__hero-stats">
+                            <div className="portfolio-templates__stat-item">
+                                <div className="portfolio-templates__stat-number">4</div>
+                                <div className="portfolio-templates__stat-label">Унікальних стилів</div>
                             </div>
-                            <div className="stat-item">
-                                <div className="stat-number">100%</div>
-                                <div className="stat-label">Адаптивність</div>
+                            <div className="portfolio-templates__stat-item">
+                                <div className="portfolio-templates__stat-number">100%</div>
+                                <div className="portfolio-templates__stat-label">Адаптивність</div>
                             </div>
-                            <div className="stat-item">
-                                <div className="stat-number">24/7</div>
-                                <div className="stat-label">Підтримка</div>
+                            <div className="portfolio-templates__stat-item">
+                                <div className="portfolio-templates__stat-number">24/7</div>
+                                <div className="portfolio-templates__stat-label">Підтримка</div>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Features Section */}
-                <section className="features-section">
-                    <h2 className="section-title">Чому наші портфоліо особливі?</h2>
-                    <div className="features-grid">
-                        <div className="feature-card">
-                            <div className="feature-icon">⚡</div>
+                <section className="portfolio-templates__features">
+                    <h2 className="portfolio-templates__section-title">Чому наші портфоліо особливі?</h2>
+                    <div className="portfolio-templates__features-grid">
+                        <div className="portfolio-templates__feature-card">
+                            <div className="portfolio-templates__feature-icon">⚡</div>
                             <h3>Блискавична швидкість</h3>
                             <p>Оптимізовані під Core Web Vitals для ідеальної продуктивності</p>
                         </div>
-                        <div className="feature-card">
-                            <div className="feature-icon">📱</div>
+                        <div className="portfolio-templates__feature-card">
+                            <div className="portfolio-templates__feature-icon">📱</div>
                             <h3>Адаптивний дизайн</h3>
                             <p>Ідеально виглядають на всіх пристроях - від смартфонів до 4K моніторів</p>
                         </div>
-                        <div className="feature-card">
-                            <div className="feature-icon">🎯</div>
+                        <div className="portfolio-templates__feature-card">
+                            <div className="portfolio-templates__feature-icon">🎯</div>
                             <h3>SEO-оптимізація</h3>
                             <p>Вбудовані мета-теги та структура для кращого ранжування в пошуку</p>
                         </div>
-                        <div className="feature-card">
-                            <div className="feature-icon">🎨</div>
+                        <div className="portfolio-templates__feature-card">
+                            <div className="portfolio-templates__feature-icon">🎨</div>
                             <h3>Сучасний дизайн</h3>
                             <p>Тренди 2025: glassmorphism, micro-interactions, bold typography</p>
                         </div>
@@ -112,44 +112,45 @@ const PortfolioTemplates = () => {
                 </section>
 
                 {/* Templates Grid */}
-                <section className="templates-section">
-                    <h2 className="section-title">Оберіть свій стиль</h2>
-                    <p className="section-subtitle">
+                <section className="portfolio-templates__templates">
+                    <h2 className="portfolio-templates__section-title">Оберіть свій стиль</h2>
+                    <p className="portfolio-templates__section-subtitle">
                         Кожен шаблон розроблений з увагою до деталей та готовий до використання
                     </p>
 
-                    <div className="templates-grid">
+                    <div className="portfolio-templates__grid">
                         {templates.map((template, index) => (
                             <div
                                 key={template.id}
-                                className={`template-card ${activeTemplate === template.id ? 'active' : ''}`}
+                                className={`portfolio-templates__card ${activeTemplate === template.id ? 'portfolio-templates__card--active' : ''
+                                    }`}
                                 onMouseEnter={() => setActiveTemplate(template.id)}
                                 onMouseLeave={() => setActiveTemplate(null)}
                                 style={{ '--card-color': template.color }}
                             >
-                                <div className="template-header">
-                                    <div className="template-icon" style={{ background: template.gradient }}>
+                                <div className="portfolio-templates__card-header">
+                                    <div className="portfolio-templates__card-icon" style={{ background: template.gradient }}>
                                         {template.icon}
                                     </div>
-                                    <div className="template-badge">Популярний</div>
+                                    <div className="portfolio-templates__card-badge">Популярний</div>
                                 </div>
 
-                                <h3 className="template-name">{template.name}</h3>
-                                <p className="template-description">{template.description}</p>
+                                <h3 className="portfolio-templates__card-name">{template.name}</h3>
+                                <p className="portfolio-templates__card-description">{template.description}</p>
 
-                                <div className="template-features">
-                                    <div className="features-label">Що включено:</div>
-                                    <ul className="features-list">
+                                <div className="portfolio-templates__card-features">
+                                    <div className="portfolio-templates__features-label">Що включено:</div>
+                                    <ul className="portfolio-templates__features-list">
                                         {template.features.map((feature, idx) => (
                                             <li key={idx}>
-                                                <span className="feature-check">✓</span>
+                                                <span className="portfolio-templates__feature-check">✓</span>
                                                 {feature}
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                <div className="template-best-for">
+                                <div className="portfolio-templates__card-best-for">
                                     <strong>Підходить для:</strong> {template.bestFor}
                                 </div>
 
@@ -157,11 +158,11 @@ const PortfolioTemplates = () => {
                                     href={template.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="template-link"
+                                    className="portfolio-templates__card-link"
                                     style={{ background: template.gradient }}
                                 >
                                     <span>Переглянути демо</span>
-                                    <span className="link-arrow">→</span>
+                                    <span className="portfolio-templates__link-arrow">→</span>
                                 </a>
                             </div>
                         ))}
@@ -169,18 +170,18 @@ const PortfolioTemplates = () => {
                 </section>
 
                 {/* CTA Section */}
-                <section className="cta-section">
-                    <div className="cta-content">
-                        <h2 className="cta-title">Готові створити своє портфоліо?</h2>
-                        <p className="cta-description">
+                <section className="portfolio-templates__cta">
+                    <div className="portfolio-templates__cta-content">
+                        <h2 className="portfolio-templates__cta-title">Готові створити своє портфоліо?</h2>
+                        <p className="portfolio-templates__cta-description">
                             Зв'яжіться з нами для індивідуальної консультації та отримайте
                             персоналізований дизайн, який ідеально підходить під ваші цілі
                         </p>
-                        <div className="cta-buttons">
-                            <button className="cta-btn primary">
+                        <div className="portfolio-templates__cta-buttons">
+                            <button className="portfolio-templates__cta-btn portfolio-templates__cta-btn--primary">
                                 Замовити портфоліо
                             </button>
-                            <button className="cta-btn secondary">
+                            <button className="portfolio-templates__cta-btn portfolio-templates__cta-btn--secondary">
                                 Безкоштовна консультація
                             </button>
                         </div>

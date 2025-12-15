@@ -1,24 +1,26 @@
 .landing-templates {
-    min-height: 100vh;
+    min-height: 120vh;
     background: linear-gradient(180deg, #0c0a1f 0%, #1a1332 50%, #0c0a1f 100%);
     color: white;
+    overflow-x: hidden;
 }
 
-.templates-wrapper {
-    max-width: 1400px;
+.landing-templates__wrapper {
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
 /* Hero Section */
-.hero-section {
+.landing-templates__hero {
     padding: 6rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.hero-section::before {
+.landing-templates__hero::before {
     content: '';
     position: absolute;
     top: -50%;
@@ -27,10 +29,10 @@
     height: 200%;
     background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%);
     transform: translateX(-50%);
-    animation: pulse 8s ease-in-out infinite;
+    animation: landing-templates-pulse 8s ease-in-out infinite;
 }
 
-@keyframes pulse {
+@keyframes landing-templates-pulse {
 
     0%,
     100% {
@@ -42,13 +44,13 @@
     }
 }
 
-.hero-content {
+.landing-templates__hero-content {
     position: relative;
     z-index: 1;
-    animation: fadeInUp 0.8s ease-out;
+    animation: landing-templates-fadeInUp 0.8s ease-out;
 }
 
-@keyframes fadeInUp {
+@keyframes landing-templates-fadeInUp {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -60,7 +62,7 @@
     }
 }
 
-.hero-badge {
+.landing-templates__hero-badge {
     display: inline-block;
     padding: 0.5rem 1.5rem;
     background: rgba(236, 72, 153, 0.1);
@@ -72,7 +74,7 @@
     margin-bottom: 2rem;
 }
 
-.hero-title {
+.landing-templates__hero-title {
     font-size: 4rem;
     font-weight: 900;
     line-height: 1.2;
@@ -80,14 +82,14 @@
     letter-spacing: -2px;
 }
 
-.highlight {
+.landing-templates__highlight {
     background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.hero-description {
+.landing-templates__hero-description {
     font-size: 1.25rem;
     line-height: 1.8;
     color: #cbd5e1;
@@ -95,18 +97,18 @@
     margin: 0 auto 3rem;
 }
 
-.hero-stats {
+.landing-templates__hero-stats {
     display: flex;
     justify-content: center;
     gap: 4rem;
     margin-top: 3rem;
 }
 
-.stat-item {
+.landing-templates__stat-item {
     text-align: center;
 }
 
-.stat-number {
+.landing-templates__stat-number {
     font-size: 3rem;
     font-weight: 900;
     background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
@@ -116,19 +118,19 @@
     margin-bottom: 0.5rem;
 }
 
-.stat-label {
+.landing-templates__stat-label {
     font-size: 1rem;
     color: #94a3b8;
     font-weight: 500;
 }
 
 /* Info Section */
-.info-section {
+.landing-templates__info {
     padding: 4rem 2rem;
     background: rgba(26, 19, 50, 0.5);
 }
 
-.section-title {
+.landing-templates__section-title {
     font-size: 2.5rem;
     font-weight: 800;
     text-align: center;
@@ -136,7 +138,7 @@
     letter-spacing: -1px;
 }
 
-.info-grid {
+.landing-templates__info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
@@ -144,7 +146,7 @@
     margin: 0 auto;
 }
 
-.info-card {
+.landing-templates__info-card {
     padding: 2rem;
     background: rgba(26, 19, 50, 0.6);
     border: 2px solid rgba(148, 163, 184, 0.1);
@@ -152,36 +154,36 @@
     transition: all 0.3s ease;
 }
 
-.info-card:hover {
+.landing-templates__info-card:hover {
     transform: translateY(-8px);
     border-color: rgba(236, 72, 153, 0.5);
     box-shadow: 0 20px 60px rgba(236, 72, 153, 0.2);
 }
 
-.info-icon {
+.landing-templates__info-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.info-card h3 {
+.landing-templates__info-card h3 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
 }
 
-.info-card p {
+.landing-templates__info-card p {
     color: #cbd5e1;
     line-height: 1.7;
     margin: 0;
 }
 
 /* Templates Section */
-.templates-section {
+.landing-templates__templates {
     padding: 6rem 2rem;
 }
 
 /* Categories Filter */
-.categories-filter {
+.landing-templates__categories-filter {
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -189,7 +191,7 @@
     flex-wrap: wrap;
 }
 
-.category-btn {
+.landing-templates__category-btn {
     padding: 0.75rem 1.5rem;
     background: rgba(26, 19, 50, 0.6);
     border: 2px solid rgba(148, 163, 184, 0.1);
@@ -205,24 +207,24 @@
     font-family: inherit;
 }
 
-.category-btn:hover {
+.landing-templates__category-btn:hover {
     border-color: rgba(236, 72, 153, 0.5);
     background: rgba(236, 72, 153, 0.1);
     transform: translateY(-2px);
 }
 
-.category-btn.active {
+.landing-templates__category-btn--active {
     background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
     border-color: transparent;
     color: white;
 }
 
-.cat-icon {
+.landing-templates__cat-icon {
     font-size: 1.2rem;
 }
 
 /* Templates Grid */
-.templates-grid {
+.landing-templates__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 2.5rem;
@@ -230,16 +232,16 @@
     margin: 0 auto;
 }
 
-.template-card {
+.landing-templates__card {
     background: rgba(26, 19, 50, 0.6);
     border: 2px solid rgba(148, 163, 184, 0.1);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: fadeIn 0.6s ease-out backwards;
+    animation: landing-templates-fadeIn 0.6s ease-out backwards;
 }
 
-@keyframes fadeIn {
+@keyframes landing-templates-fadeIn {
     from {
         opacity: 0;
         transform: scale(0.95);
@@ -251,13 +253,13 @@
     }
 }
 
-.template-card:hover {
+.landing-templates__card:hover {
     transform: translateY(-12px);
     border-color: var(--card-color);
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
 }
 
-.template-visual {
+.landing-templates__card-visual {
     padding: 2rem;
     background: rgba(12, 10, 31, 0.8);
     display: flex;
@@ -266,7 +268,7 @@
     border-bottom: 2px solid rgba(148, 163, 184, 0.1);
 }
 
-.template-icon {
+.landing-templates__card-icon {
     width: 80px;
     height: 80px;
     border-radius: 20px;
@@ -277,7 +279,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.conversion-badge {
+.landing-templates__conversion-badge {
     padding: 0.5rem 1rem;
     background: rgba(16, 185, 129, 0.1);
     border: 1px solid rgba(16, 185, 129, 0.3);
@@ -290,46 +292,46 @@
     gap: 0.35rem;
 }
 
-.conversion-icon {
+.landing-templates__conversion-icon {
     font-size: 1rem;
 }
 
-.template-content {
+.landing-templates__card-content {
     padding: 2rem;
 }
 
-.template-name {
+.landing-templates__card-name {
     font-size: 1.75rem;
     font-weight: 800;
     margin-bottom: 0.75rem;
     letter-spacing: -0.5px;
 }
 
-.template-description {
+.landing-templates__card-description {
     color: #cbd5e1;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
-.template-features {
+.landing-templates__card-features {
     margin-bottom: 1.5rem;
 }
 
-.features-label {
+.landing-templates__features-label {
     font-size: 0.9rem;
     font-weight: 600;
     color: #94a3b8;
     margin-bottom: 0.75rem;
 }
 
-.features-tags {
+.landing-templates__features-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.feature-tag {
+.landing-templates__feature-tag {
     padding: 0.4rem 0.9rem;
     background: rgba(12, 10, 31, 0.8);
     border: 1px solid rgba(148, 163, 184, 0.2);
@@ -339,7 +341,7 @@
     font-weight: 500;
 }
 
-.template-link {
+.landing-templates__card-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -353,27 +355,27 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.template-link:hover {
+.landing-templates__card-link:hover {
     transform: translateX(4px);
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
-.link-arrow {
+.landing-templates__link-arrow {
     font-size: 1.5rem;
     transition: transform 0.3s ease;
 }
 
-.template-link:hover .link-arrow {
+.landing-templates__card-link:hover .landing-templates__link-arrow {
     transform: translateX(5px);
 }
 
 /* Calculator Section */
-.calculator-section {
+.landing-templates__calculator {
     padding: 4rem 2rem;
     background: rgba(26, 19, 50, 0.3);
 }
 
-.calculator-grid {
+.landing-templates__calculator-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
@@ -381,7 +383,7 @@
     margin: 0 auto;
 }
 
-.price-card {
+.landing-templates__price-card {
     padding: 2.5rem 2rem;
     background: rgba(26, 19, 50, 0.6);
     border: 2px solid rgba(148, 163, 184, 0.1);
@@ -390,13 +392,13 @@
     position: relative;
 }
 
-.price-card.featured {
+.landing-templates__price-card--featured {
     border-color: rgba(236, 72, 153, 0.5);
     background: rgba(236, 72, 153, 0.05);
     transform: scale(1.05);
 }
 
-.featured-badge {
+.landing-templates__featured-badge {
     position: absolute;
     top: -12px;
     left: 50%;
@@ -409,23 +411,23 @@
     color: white;
 }
 
-.price-card:hover {
+.landing-templates__price-card:hover {
     transform: translateY(-8px);
     border-color: rgba(236, 72, 153, 0.5);
 }
 
-.price-card.featured:hover {
+.landing-templates__price-card--featured:hover {
     transform: scale(1.05) translateY(-8px);
 }
 
-.price-label {
+.landing-templates__price-label {
     font-size: 1.2rem;
     font-weight: 600;
     color: #94a3b8;
     margin-bottom: 1rem;
 }
 
-.price-amount {
+.landing-templates__price-amount {
     font-size: 3rem;
     font-weight: 900;
     background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
@@ -435,58 +437,58 @@
     margin-bottom: 2rem;
 }
 
-.price-features {
+.landing-templates__price-features {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.price-features li {
+.landing-templates__price-features li {
     padding: 0.75rem 0;
     color: #cbd5e1;
     font-size: 1rem;
     border-bottom: 1px solid rgba(148, 163, 184, 0.1);
 }
 
-.price-features li:last-child {
+.landing-templates__price-features li:last-child {
     border-bottom: none;
 }
 
 /* CTA Section */
-.cta-section {
+.landing-templates__cta {
     padding: 6rem 2rem;
     background: rgba(236, 72, 153, 0.05);
     border-top: 2px solid rgba(236, 72, 153, 0.2);
 }
 
-.cta-content {
+.landing-templates__cta-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
-.cta-title {
+.landing-templates__cta-title {
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
 }
 
-.cta-description {
+.landing-templates__cta-description {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #cbd5e1;
     margin-bottom: 2.5rem;
 }
 
-.cta-buttons {
+.landing-templates__cta-buttons {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.cta-btn {
+.landing-templates__cta-btn {
     padding: 1.25rem 2.5rem;
     font-size: 1.1rem;
     font-weight: 700;
@@ -497,24 +499,24 @@
     font-family: inherit;
 }
 
-.cta-btn.primary {
+.landing-templates__cta-btn--primary {
     background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
 }
 
-.cta-btn.primary:hover {
+.landing-templates__cta-btn--primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(236, 72, 153, 0.6);
 }
 
-.cta-btn.secondary {
+.landing-templates__cta-btn--secondary {
     background: transparent;
     color: white;
     border: 2px solid rgba(236, 72, 153, 0.5);
 }
 
-.cta-btn.secondary:hover {
+.landing-templates__cta-btn--secondary:hover {
     background: rgba(236, 72, 153, 0.1);
     border-color: #ec4899;
 }

@@ -1,211 +1,211 @@
 @media (max-width: 1024px) {
-    .hero-title {
+    .landing-templates__hero-title {
         font-size: 3rem;
     }
 
-    .templates-grid {
+    .landing-templates__grid {
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    .hero-section {
+    .landing-templates__hero {
         padding: 4rem 1.5rem;
     }
 
-    .hero-title {
+    .landing-templates__hero-title {
         font-size: 2.5rem;
     }
 
-    .hero-description {
+    .landing-templates__hero-description {
         font-size: 1.1rem;
     }
 
-    .hero-stats {
+    .landing-templates__hero-stats {
         gap: 2rem;
     }
 
-    .stat-number {
+    .landing-templates__stat-number {
         font-size: 2.5rem;
     }
 
-    .info-section,
-    .templates-section,
-    .calculator-section,
-    .cta-section {
+    .landing-templates__info,
+    .landing-templates__templates,
+    .landing-templates__calculator,
+    .landing-templates__cta {
         padding: 3rem 1.5rem;
     }
 
-    .section-title {
+    .landing-templates__section-title {
         font-size: 2rem;
     }
 
-    .info-grid,
-    .calculator-grid {
+    .landing-templates__info-grid,
+    .landing-templates__calculator-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    .templates-grid {
+    .landing-templates__grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .categories-filter {
+    .landing-templates__categories-filter {
         gap: 0.75rem;
     }
 
-    .category-btn {
+    .landing-templates__category-btn {
         padding: 0.6rem 1.25rem;
         font-size: 0.9rem;
     }
 
-    .price-card.featured {
+    .landing-templates__price-card--featured {
         transform: scale(1);
     }
 
-    .price-card.featured:hover {
+    .landing-templates__price-card--featured:hover {
         transform: translateY(-8px);
     }
 
-    .cta-title {
+    .landing-templates__cta-title {
         font-size: 2rem;
     }
 
-    .cta-description {
+    .landing-templates__cta-description {
         font-size: 1.05rem;
     }
 
-    .cta-buttons {
+    .landing-templates__cta-buttons {
         flex-direction: column;
         gap: 1rem;
     }
 
-    .cta-btn {
+    .landing-templates__cta-btn {
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-section {
+    .landing-templates__hero {
         padding: 3rem 1rem;
     }
 
-    .hero-badge {
+    .landing-templates__hero-badge {
         font-size: 0.8rem;
         padding: 0.4rem 1rem;
     }
 
-    .hero-title {
+    .landing-templates__hero-title {
         font-size: 2rem;
     }
 
-    .hero-description {
+    .landing-templates__hero-description {
         font-size: 1rem;
     }
 
-    .hero-stats {
+    .landing-templates__hero-stats {
         flex-direction: column;
         gap: 1.5rem;
     }
 
-    .stat-number {
+    .landing-templates__stat-number {
         font-size: 2rem;
     }
 
-    .info-section,
-    .templates-section,
-    .calculator-section,
-    .cta-section {
+    .landing-templates__info,
+    .landing-templates__templates,
+    .landing-templates__calculator,
+    .landing-templates__cta {
         padding: 2.5rem 1rem;
     }
 
-    .section-title {
+    .landing-templates__section-title {
         font-size: 1.75rem;
     }
 
-    .info-card,
-    .price-card {
+    .landing-templates__info-card,
+    .landing-templates__price-card {
         padding: 1.5rem;
     }
 
-    .info-icon {
+    .landing-templates__info-icon {
         font-size: 2.5rem;
     }
 
-    .info-card h3 {
+    .landing-templates__info-card h3 {
         font-size: 1.3rem;
     }
 
-    .categories-filter {
+    .landing-templates__categories-filter {
         gap: 0.5rem;
     }
 
-    .category-btn {
+    .landing-templates__category-btn {
         padding: 0.5rem 1rem;
         font-size: 0.85rem;
     }
 
-    .cat-icon {
+    .landing-templates__cat-icon {
         font-size: 1rem;
     }
 
-    .template-visual {
+    .landing-templates__card-visual {
         padding: 1.5rem;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
-    .template-icon {
+    .landing-templates__card-icon {
         width: 70px;
         height: 70px;
         font-size: 2rem;
     }
 
-    .template-content {
+    .landing-templates__card-content {
         padding: 1.5rem;
     }
 
-    .template-name {
+    .landing-templates__card-name {
         font-size: 1.5rem;
     }
 
-    .template-description {
+    .landing-templates__card-description {
         font-size: 0.95rem;
     }
 
-    .features-tags {
+    .landing-templates__features-tags {
         gap: 0.4rem;
     }
 
-    .feature-tag {
+    .landing-templates__feature-tag {
         font-size: 0.8rem;
         padding: 0.35rem 0.75rem;
     }
 
-    .template-link {
+    .landing-templates__card-link {
         padding: 0.875rem 1.25rem;
         font-size: 0.95rem;
     }
 
-    .price-amount {
+    .landing-templates__price-amount {
         font-size: 2.5rem;
     }
 
-    .price-features li {
+    .landing-templates__price-features li {
         font-size: 0.95rem;
     }
 
-    .cta-title {
+    .landing-templates__cta-title {
         font-size: 1.75rem;
     }
 
-    .cta-description {
+    .landing-templates__cta-description {
         font-size: 1rem;
     }
 
-    .cta-btn {
+    .landing-templates__cta-btn {
         padding: 1rem 2rem;
         font-size: 1rem;
     }

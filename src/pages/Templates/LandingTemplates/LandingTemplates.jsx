@@ -95,58 +95,58 @@ const LandingTemplates = () => {
 
     return (
         <div className="landing-templates">
-            <div className="templates-wrapper">
+            <div className="landing-templates__wrapper">
                 {/* Hero Section */}
-                <section className="hero-section">
-                    <div className="hero-content">
-                        <div className="hero-badge">🚀 Лендінги 2025</div>
-                        <h1 className="hero-title">
+                <section className="landing-templates__hero">
+                    <div className="landing-templates__hero-content">
+                        <div className="landing-templates__hero-badge">🚀 Лендінги 2025</div>
+                        <h1 className="landing-templates__hero-title">
                             Односторінкові сайти, <br />
-                            які <span className="highlight">конвертують</span>
+                            які <span className="landing-templates__highlight">конвертують</span>
                         </h1>
-                        <p className="hero-description">
+                        <p className="landing-templates__hero-description">
                             Професійні лендінги для будь-яких цілей: від Instagram taplink до
                             корпоративних сторінок. Кожен шаблон оптимізований під конверсію,
                             має швидке завантаження та інтеграції з популярними сервісами.
                         </p>
-                        <div className="hero-stats">
-                            <div className="stat-item">
-                                <div className="stat-number">6</div>
-                                <div className="stat-label">Готових шаблонів</div>
+                        <div className="landing-templates__hero-stats">
+                            <div className="landing-templates__stat-item">
+                                <div className="landing-templates__stat-number">6</div>
+                                <div className="landing-templates__stat-label">Готових шаблонів</div>
                             </div>
-                            <div className="stat-item">
-                                <div className="stat-number">30%</div>
-                                <div className="stat-label">Середня конверсія</div>
+                            <div className="landing-templates__stat-item">
+                                <div className="landing-templates__stat-number">30%</div>
+                                <div className="landing-templates__stat-label">Середня конверсія</div>
                             </div>
-                            <div className="stat-item">
-                                <div className="stat-number">2.5s</div>
-                                <div className="stat-label">Швидкість завантаження</div>
+                            <div className="landing-templates__stat-item">
+                                <div className="landing-templates__stat-number">2.5s</div>
+                                <div className="landing-templates__stat-label">Швидкість завантаження</div>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* What is Landing */}
-                <section className="info-section">
-                    <h2 className="section-title">Що таке landing page?</h2>
-                    <div className="info-grid">
-                        <div className="info-card">
-                            <div className="info-icon">🎯</div>
+                <section className="landing-templates__info">
+                    <h2 className="landing-templates__section-title">Що таке landing page?</h2>
+                    <div className="landing-templates__info-grid">
+                        <div className="landing-templates__info-card">
+                            <div className="landing-templates__info-icon">🎯</div>
                             <h3>Одна мета</h3>
                             <p>Лендінг створений для однієї конкретної дії: купівля, реєстрація, дзвінок. Це фокусує увагу відвідувача.</p>
                         </div>
-                        <div className="info-card">
-                            <div className="info-icon">⚡</div>
+                        <div className="landing-templates__info-card">
+                            <div className="landing-templates__info-icon">⚡</div>
                             <h3>Швидка конверсія</h3>
                             <p>Мінімум відволікань, максимум переконливості. Користувач швидко розуміє цінність пропозиції.</p>
                         </div>
-                        <div className="info-card">
-                            <div className="info-icon">📊</div>
+                        <div className="landing-templates__info-card">
+                            <div className="landing-templates__info-icon">📊</div>
                             <h3>Вимірюваність</h3>
                             <p>Легко відстежити ефективність рекламних кампаній та A/B тестувати елементи.</p>
                         </div>
-                        <div className="info-card">
-                            <div className="info-icon">💡</div>
+                        <div className="landing-templates__info-card">
+                            <div className="landing-templates__info-icon">💡</div>
                             <h3>Простота запуску</h3>
                             <p>Не потрібен великий сайт - одна сторінка може принести більше лідів, ніж складний портал.</p>
                         </div>
@@ -154,49 +154,50 @@ const LandingTemplates = () => {
                 </section>
 
                 {/* Categories Filter */}
-                <section className="templates-section">
-                    <h2 className="section-title">Наші лендінги</h2>
+                <section className="landing-templates__templates">
+                    <h2 className="landing-templates__section-title">Наші лендінги</h2>
 
-                    <div className="categories-filter">
+                    <div className="landing-templates__categories-filter">
                         {categories.map(cat => (
                             <button
                                 key={cat.id}
-                                className={`category-btn ${selectedCategory === cat.id ? 'active' : ''}`}
+                                className={`landing-templates__category-btn ${selectedCategory === cat.id ? 'landing-templates__category-btn--active' : ''
+                                    }`}
                                 onClick={() => setSelectedCategory(cat.id)}
                             >
-                                <span className="cat-icon">{cat.icon}</span>
-                                <span className="cat-label">{cat.label}</span>
+                                <span className="landing-templates__cat-icon">{cat.icon}</span>
+                                <span className="landing-templates__cat-label">{cat.label}</span>
                             </button>
                         ))}
                     </div>
 
                     {/* Templates Grid */}
-                    <div className="templates-grid">
+                    <div className="landing-templates__grid">
                         {filteredTemplates.map((template) => (
                             <div
                                 key={template.id}
-                                className="template-card"
+                                className="landing-templates__card"
                                 style={{ '--card-color': template.color }}
                             >
-                                <div className="template-visual">
-                                    <div className="template-icon" style={{ background: template.gradient }}>
+                                <div className="landing-templates__card-visual">
+                                    <div className="landing-templates__card-icon" style={{ background: template.gradient }}>
                                         {template.icon}
                                     </div>
-                                    <div className="conversion-badge">
-                                        <span className="conversion-icon">📈</span>
+                                    <div className="landing-templates__conversion-badge">
+                                        <span className="landing-templates__conversion-icon">📈</span>
                                         {template.conversions} конверсія
                                     </div>
                                 </div>
 
-                                <div className="template-content">
-                                    <h3 className="template-name">{template.name}</h3>
-                                    <p className="template-description">{template.description}</p>
+                                <div className="landing-templates__card-content">
+                                    <h3 className="landing-templates__card-name">{template.name}</h3>
+                                    <p className="landing-templates__card-description">{template.description}</p>
 
-                                    <div className="template-features">
-                                        <div className="features-label">Функціонал:</div>
-                                        <div className="features-tags">
+                                    <div className="landing-templates__card-features">
+                                        <div className="landing-templates__features-label">Функціонал:</div>
+                                        <div className="landing-templates__features-tags">
                                             {template.features.map((feature, idx) => (
-                                                <span key={idx} className="feature-tag">
+                                                <span key={idx} className="landing-templates__feature-tag">
                                                     {feature}
                                                 </span>
                                             ))}
@@ -207,11 +208,11 @@ const LandingTemplates = () => {
                                         href={template.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="template-link"
+                                        className="landing-templates__card-link"
                                         style={{ background: template.gradient }}
                                     >
                                         <span>Відкрити демо</span>
-                                        <span className="link-arrow">→</span>
+                                        <span className="landing-templates__link-arrow">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -220,34 +221,34 @@ const LandingTemplates = () => {
                 </section>
 
                 {/* Price Calculator */}
-                <section className="calculator-section">
-                    <h2 className="section-title">Скільки коштує лендінг?</h2>
-                    <div className="calculator-grid">
-                        <div className="price-card">
-                            <div className="price-label">Базовий</div>
-                            <div className="price-amount">$299</div>
-                            <ul className="price-features">
+                <section className="landing-templates__calculator">
+                    <h2 className="landing-templates__section-title">Скільки коштує лендінг?</h2>
+                    <div className="landing-templates__calculator-grid">
+                        <div className="landing-templates__price-card">
+                            <div className="landing-templates__price-label">Базовий</div>
+                            <div className="landing-templates__price-amount">$299</div>
+                            <ul className="landing-templates__price-features">
                                 <li>✓ Один шаблон</li>
                                 <li>✓ Базові налаштування</li>
                                 <li>✓ Адаптивність</li>
                                 <li>✓ 1 місяць підтримки</li>
                             </ul>
                         </div>
-                        <div className="price-card featured">
-                            <div className="featured-badge">Популярний</div>
-                            <div className="price-label">Стандарт</div>
-                            <div className="price-amount">$599</div>
-                            <ul className="price-features">
+                        <div className="landing-templates__price-card landing-templates__price-card--featured">
+                            <div className="landing-templates__featured-badge">Популярний</div>
+                            <div className="landing-templates__price-label">Стандарт</div>
+                            <div className="landing-templates__price-amount">$599</div>
+                            <ul className="landing-templates__price-features">
                                 <li>✓ Персоналізація</li>
                                 <li>✓ SEO-оптимізація</li>
                                 <li>✓ Форми та інтеграції</li>
                                 <li>✓ 3 місяці підтримки</li>
                             </ul>
                         </div>
-                        <div className="price-card">
-                            <div className="price-label">Преміум</div>
-                            <div className="price-amount">$999</div>
-                            <ul className="price-features">
+                        <div className="landing-templates__price-card">
+                            <div className="landing-templates__price-label">Преміум</div>
+                            <div className="landing-templates__price-amount">$999</div>
+                            <ul className="landing-templates__price-features">
                                 <li>✓ Унікальний дизайн</li>
                                 <li>✓ Анімації та ефекти</li>
                                 <li>✓ A/B тестування</li>
@@ -258,18 +259,18 @@ const LandingTemplates = () => {
                 </section>
 
                 {/* CTA Section */}
-                <section className="cta-section">
-                    <div className="cta-content">
-                        <h2 className="cta-title">Готові запустити свій лендінг?</h2>
-                        <p className="cta-description">
+                <section className="landing-templates__cta">
+                    <div className="landing-templates__cta-content">
+                        <h2 className="landing-templates__cta-title">Готові запустити свій лендінг?</h2>
+                        <p className="landing-templates__cta-description">
                             Отримайте безкоштовну консультацію та дізнайтеся, як збільшити
                             конверсію вашого бізнесу за допомогою професійного лендінгу
                         </p>
-                        <div className="cta-buttons">
-                            <button className="cta-btn primary">
+                        <div className="landing-templates__cta-buttons">
+                            <button className="landing-templates__cta-btn landing-templates__cta-btn--primary">
                                 Замовити лендінг
                             </button>
-                            <button className="cta-btn secondary">
+                            <button className="landing-templates__cta-btn landing-templates__cta-btn--secondary">
                                 Розрахувати вартість
                             </button>
                         </div>

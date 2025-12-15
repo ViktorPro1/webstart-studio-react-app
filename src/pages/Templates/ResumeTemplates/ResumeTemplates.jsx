@@ -8,168 +8,163 @@ const ResumeTemplates = () => {
         {
             id: 'classic',
             name: 'Classic',
-            url: 'https://cute-eclair-b92b0f.netlify.app/',
+            url: 'https://cute-eclair-b92b0f.netlify.app',
             color: '#3b82f6',
             gradient: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
             icon: '📄',
-            description: 'Перевірений часом формат для консервативних галузей',
-            features: ['Чітка структура', 'Традиційна типографіка', 'PDF експорт', 'ATS-friendly'],
-            bestFor: 'Фінанси, право, медицина, державний сектор',
-            popularity: '85%'
+            description: 'Timeless and professional design for any industry.',
+            features: ['PDF Export', 'ATS-friendly', 'One-page layout'],
+            bestFor: 'Entry-level to mid-senior roles',
+            popularity: 85
         },
         {
             id: 'creative',
             name: 'Creative',
-            url: 'https://resonant-fudge-055f66.netlify.app/',
+            url: 'https://resonant-fudge-055f66.netlify.app',
             color: '#f43f5e',
             gradient: 'linear-gradient(135deg, #f43f5e 0%, #e11d48 100%)',
             icon: '🎨',
-            description: 'Сміливий дизайн для творчих професій',
-            features: ['Унікальна верстка', 'Інтерактивні елементи', 'Портфоліо галерея', 'Анімації'],
-            bestFor: 'Дизайнери, маркетологи, креативні директори',
-            popularity: '92%'
+            description: 'Bold colors and modern layout for creative fields.',
+            features: ['Custom sections', 'Visual timeline', 'Portfolio integration'],
+            bestFor: 'Designers & marketers',
+            popularity: 92
         },
         {
             id: 'minimal',
             name: 'Minimal',
-            url: 'https://frolicking-sunflower-90993f.netlify.app/',
+            url: 'https://frolicking-sunflower-90993f.netlify.app',
             color: '#64748b',
             gradient: 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
             icon: '✨',
-            description: 'Мінімалізм, що привертає увагу до змісту',
-            features: ['Чистий дизайн', 'Акцент на досвід', 'Швидке завантаження', 'Елегантність'],
-            bestFor: 'Архітектори, письменники, консультанти',
-            popularity: '78%'
+            description: 'Clean and distraction-free design.',
+            features: ['Single column', 'Maximum readability', 'Fast loading'],
+            bestFor: 'Tech & engineering roles',
+            popularity: 78
         },
         {
             id: 'premium',
             name: 'Premium',
-            url: 'https://fluffy-sawine-100fa8.netlify.app/',
+            url: 'https://fluffy-sawine-100fa8.netlify.app',
             color: '#eab308',
             gradient: 'linear-gradient(135deg, #eab308 0%, #ca8a04 100%)',
-            icon: '👑',
-            description: 'Ексклюзивний формат для топових позицій',
-            features: ['Розкішний вигляд', 'Відео-презентація', 'Інтеграції', 'VIP досвід'],
-            bestFor: 'C-level, топ-менеджери, експерти світового рівня',
-            popularity: '95%'
+            icon: '⭐',
+            description: 'Executive design with premium typography.',
+            features: ['Two-page option', 'Custom icons', 'VIP typography'],
+            bestFor: 'C-level & management',
+            popularity: 95
         }
     ];
 
     return (
         <div className="resume-templates">
-            <div className="templates-wrapper">
+            <div className="resume-templates-templates-wrapper">
                 {/* Hero Section */}
-                <section className="hero-section">
-                    <div className="hero-content">
-                        <div className="hero-badge">📝 Резюме 2025</div>
-                        <h1 className="hero-title">
-                            Резюме, яке <br />
-                            <span className="highlight">відкриває двері</span>
+                <section className="resume-templates-hero-section">
+                    <div className="resume-templates-hero-content">
+                        <div className="resume-templates-hero-badge">📄 Резюме 2025</div>
+                        <h1 className="resume-templates-hero-title">
+                            Найкращі <br /> <span className="resume-templates-highlight">шаблони резюме</span>
                         </h1>
-                        <p className="hero-description">
-                            Електронні резюме нового покоління. Ми поєднуємо професійний дизайн з
-                            психологією сприйняття, щоб ваше CV виділялося серед сотень інших.
-                            Готові шаблони з інтерактивними блоками навичок та адаптивним дизайном.
+                        <p className="resume-templates-hero-description">
+                            Створюйте професійні CV за 5 хвилин. 4 готових шаблони, 100% оптимізовані під ATS-системи рекрутерів.
                         </p>
-                        <div className="hero-stats">
-                            <div className="stat-item">
-                                <div className="stat-number">4</div>
-                                <div className="stat-label">Професійних стилів</div>
+                        <div className="resume-templates-hero-stats">
+                            <div className="resume-templates-stat-item">
+                                <div className="resume-templates-stat-number">4</div>
+                                <div className="resume-templates-stat-label">шаблони</div>
                             </div>
-                            <div className="stat-item">
-                                <div className="stat-number">95%</div>
-                                <div className="stat-label">Успішних відгуків</div>
+                            <div className="resume-templates-stat-item">
+                                <div className="resume-templates-stat-number">95%</div>
+                                <div className="resume-templates-stat-label">ATS-сумісність</div>
                             </div>
-                            <div className="stat-item">
-                                <div className="stat-number">∞</div>
-                                <div className="stat-label">Можливостей</div>
+                            <div className="resume-templates-stat-item">
+                                <div className="resume-templates-stat-number">10К+</div>
+                                <div className="resume-templates-stat-label">користувачів</div>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Benefits Section */}
-                <section className="benefits-section">
-                    <h2 className="section-title">Переваги електронного резюме</h2>
-                    <div className="benefits-grid">
-                        <div className="benefit-card">
-                            <div className="benefit-icon">🚀</div>
-                            <h3>Швидке оновлення</h3>
-                            <p>Змінюйте інформацію в реальному часі без необхідності перевідправляти файли</p>
+                <section className="resume-templates-benefits-section">
+                    <h2 className="resume-templates-section-title">Чому обирають наші шаблони?</h2>
+                    <div className="resume-templates-benefits-grid">
+                        <div className="resume-templates-benefit-card">
+                            <div className="resume-templates-benefit-icon">⚡</div>
+                            <h3>Швидко та просто</h3>
+                            <p>Заповни за 10 хвилин. Готовий PDF одразу.</p>
                         </div>
-                        <div className="benefit-card">
-                            <div className="benefit-icon">📊</div>
-                            <h3>Аналітика переглядів</h3>
-                            <p>Відстежуйте, хто і коли переглядав ваше резюме, отримуйте статистику</p>
+                        <div className="resume-templates-benefit-card">
+                            <div className="resume-templates-benefit-icon">🎯</div>
+                            <h3>100% ATS-сумісні</h3>
+                            <p>15+ ключових слів, 40+ оптимізацій для парсерів.</p>
                         </div>
-                        <div className="benefit-card">
-                            <div className="benefit-icon">🎯</div>
-                            <h3>Інтерактивність</h3>
-                            <p>Додавайте відео-презентації, живі посилання на проєкти та портфоліо</p>
+                        <div className="resume-templates-benefit-card">
+                            <div className="resume-templates-benefit-icon">📱</div>
+                            <h3>Адаптивний дизайн</h3>
+                            <p>Ідеально виглядає на друці та в цифровому форматі.</p>
                         </div>
-                        <div className="benefit-card">
-                            <div className="benefit-icon">🔗</div>
-                            <h3>Просте поширення</h3>
-                            <p>Одне посилання замість десятків файлів - діліться в один клік</p>
+                        <div className="resume-templates-benefit-card">
+                            <div className="resume-templates-benefit-icon">⭐</div>
+                            <h3>Професійний вигляд</h3>
+                            <p>Рекрутери витрачають 7 сек на резюме. Зроби перше враження незабутнім.</p>
                         </div>
                     </div>
                 </section>
 
                 {/* Templates Grid */}
-                <section className="templates-section">
-                    <h2 className="section-title">Виберіть формат резюме</h2>
-                    <p className="section-subtitle">
-                        Кожен шаблон адаптований під конкретну галузь та рівень позиції
+                <section className="resume-templates-templates-section">
+                    <h2 className="resume-templates-section-title">Оберіть свій шаблон</h2>
+                    <p className="resume-templates-section-subtitle">
+                        Кожен шаблон протестований на 50+ рекрутингових платформах
                     </p>
-
-                    <div className="templates-grid">
+                    <div className="resume-templates-templates-grid">
                         {templates.map((template) => (
                             <div
                                 key={template.id}
-                                className={`template-card ${activeTemplate === template.id ? 'active' : ''}`}
+                                className={`resume-templates-template-card ${activeTemplate === template.id ? 'active' : ''}`}
                                 onMouseEnter={() => setActiveTemplate(template.id)}
                                 onMouseLeave={() => setActiveTemplate(null)}
                                 style={{ '--card-color': template.color }}
                             >
-                                <div className="template-header">
-                                    <div className="template-icon" style={{ background: template.gradient }}>
+                                <div className="resume-templates-template-header">
+                                    <div
+                                        className="resume-templates-template-icon"
+                                        style={{ background: template.gradient }}
+                                    >
                                         {template.icon}
                                     </div>
-                                    <div className="popularity-badge">
-                                        <span className="popularity-star">⭐</span>
-                                        {template.popularity}
+                                    <div className="resume-templates-popularity-badge">
+                                        <span className="resume-templates-popularity-star">⭐</span>
+                                        {template.popularity}%
                                     </div>
                                 </div>
-
-                                <h3 className="template-name">{template.name}</h3>
-                                <p className="template-description">{template.description}</p>
-
-                                <div className="template-features">
-                                    <div className="features-label">Ключові особливості:</div>
-                                    <ul className="features-list">
+                                <h3 className="resume-templates-template-name">{template.name}</h3>
+                                <p className="resume-templates-template-description">{template.description}</p>
+                                <div className="resume-templates-template-features">
+                                    <div className="resume-templates-features-label">Особливості:</div>
+                                    <ul className="resume-templates-features-list">
                                         {template.features.map((feature, idx) => (
                                             <li key={idx}>
-                                                <span className="feature-check">✓</span>
+                                                <span className="resume-templates-feature-check">✓</span>
                                                 {feature}
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
-
-                                <div className="template-best-for">
-                                    <div className="best-for-label">💼 Ідеально для:</div>
-                                    <div className="best-for-text">{template.bestFor}</div>
+                                <div className="resume-templates-template-best-for">
+                                    <div className="resume-templates-best-for-label">Найкраще для:</div>
+                                    <div className="resume-templates-best-for-text">{template.bestFor}</div>
                                 </div>
-
                                 <a
                                     href={template.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="template-link"
+                                    className="resume-templates-template-link"
                                     style={{ background: template.gradient }}
                                 >
-                                    <span>Переглянути приклад</span>
-                                    <span className="link-arrow">→</span>
+                                    <span>Переглянути демо</span>
+                                    <span className="resume-templates-link-arrow">→</span>
                                 </a>
                             </div>
                         ))}
@@ -177,46 +172,45 @@ const ResumeTemplates = () => {
                 </section>
 
                 {/* Tips Section */}
-                <section className="tips-section">
-                    <h2 className="section-title">Як створити ідеальне резюме?</h2>
-                    <div className="tips-grid">
-                        <div className="tip-card">
-                            <div className="tip-number">01</div>
-                            <h3>Чіткість та структура</h3>
-                            <p>Використовуйте зрозумілі заголовки та логічну послідовність розділів. Рекрутер має знайти потрібну інформацію за 10 секунд.</p>
+                <section className="resume-templates-tips-section">
+                    <h2 className="resume-templates-section-title">4 ключові поради</h2>
+                    <div className="resume-templates-tips-grid">
+                        <div className="resume-templates-tip-card">
+                            <div className="resume-templates-tip-number">01</div>
+                            <h3>Ключові слова</h3>
+                            <p>Додай 10-15 слів з вакансії у резюме.</p>
                         </div>
-                        <div className="tip-card">
-                            <div className="tip-number">02</div>
-                            <h3>Конкретні досягнення</h3>
-                            <p>Замість "керував командою" пишіть "керував командою з 15 осіб, збільшив продуктивність на 40%". Цифри працюють.</p>
+                        <div className="resume-templates-tip-card">
+                            <div className="resume-templates-tip-number">02</div>
+                            <h3>Кількість</h3>
+                            <p>15 рядків досвіду, 40% на досягнення (цифри!).</p>
                         </div>
-                        <div className="tip-card">
-                            <div className="tip-number">03</div>
-                            <h3>Адаптація під вакансію</h3>
-                            <p>Кожне резюме має бути персоналізоване під конкретну позицію. Використовуйте ключові слова з опису вакансії.</p>
+                        <div className="resume-templates-tip-card">
+                            <div className="resume-templates-tip-number">03</div>
+                            <h3>Формат</h3>
+                            <p>PDF, шрифт 10-12pt, без таблиць/графіки.</p>
                         </div>
-                        <div className="tip-card">
-                            <div className="tip-number">04</div>
-                            <h3>Візуальна привабливість</h3>
-                            <p>Дизайн має відповідати вашій галузі. Креативні професії можуть дозволити сміливість, консервативні - стриманість.</p>
+                        <div className="resume-templates-tip-card">
+                            <div className="resume-templates-tip-number">04</div>
+                            <h3>Тестування</h3>
+                            <p>Перевір у Jobscan/Google for Jobs, адаптуй під парсери.</p>
                         </div>
                     </div>
                 </section>
 
                 {/* CTA Section */}
-                <section className="cta-section">
-                    <div className="cta-content">
-                        <h2 className="cta-title">Готові до наступного кроку в кар'єрі?</h2>
-                        <p className="cta-description">
-                            Замовте індивідуальну консультацію та отримайте резюме, яке підкреслює
-                            ваші сильні сторони та відповідає трендам ринку праці 2025 року
+                <section className="resume-templates-cta-section">
+                    <div className="resume-templates-cta-content">
+                        <h2 className="resume-templates-cta-title">Готовий до співбесіди?</h2>
+                        <p className="resume-templates-cta-description">
+                            Обери шаблон і отримай резюме, яке пройде всі фільтри HR-систем. 2025 рік.
                         </p>
-                        <div className="cta-buttons">
-                            <button className="cta-btn primary">
-                                Створити резюме
+                        <div className="resume-templates-cta-buttons">
+                            <button className="resume-templates-cta-btn resume-templates-cta-btn-primary">
+                                Почати зараз
                             </button>
-                            <button className="cta-btn secondary">
-                                Консультація HR-експерта
+                            <button className="resume-templates-cta-btn resume-templates-cta-btn-secondary">
+                                Подивись приклади
                             </button>
                         </div>
                     </div>
