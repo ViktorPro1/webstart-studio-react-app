@@ -32,12 +32,21 @@ const Home = () => {
       />
       <div className="home-page">
         <section className="hero-section">
-          <h1 className="hero-title">WebStart Studio</h1>
-          <p className="hero-subtitle">
-            Наш підхід — "менше слів, більше результату": компактний дизайн, зрозуміла структура,
-            зручний доступ до всієї потрібної інформації. Ми прагнемо, щоб кожен лендінг, портфоліо
-            та резюме був водночас красивим і практичним.
-          </p>
+          <div className="hero-content">
+            <h1 className="hero-title">WebStart Studio</h1>
+            <p className="hero-subtitle">
+              Наш підхід — "менше слів, більше результату": компактний дизайн, зрозуміла структура,
+              зручний доступ до всієї потрібної інформації. Ми прагнемо, щоб кожен лендінг, портфоліо
+              та резюме був водночас красивим і практичним.
+            </p>
+          </div>
+          <div className="hero-image-container">
+            <img
+              src="/assets/hero-image.webp"
+              alt="Професійний бізнесмен з ноутбуком"
+              className="hero-image"
+            />
+          </div>
         </section>
 
         <section className="services-section">

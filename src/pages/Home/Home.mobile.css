@@ -10,9 +10,25 @@
 
     /* Hero Section */
     .hero-section {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         padding: 40px 30px;
         gap: 30px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .hero-image-container {
+        order: -1;
+    }
+
+    .hero-image {
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
     }
 
     .hero-title {
@@ -145,6 +161,11 @@
     .circle-2,
     .circle-3 {
         display: none;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
 
