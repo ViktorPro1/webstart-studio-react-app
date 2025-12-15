@@ -1,3 +1,26 @@
+/* Фікс для виходу елементів за межі */
+.security-tips-page,
+.security-tips-container,
+.security-tips-hero,
+.security-tips-warning-section,
+.security-tips-examples-section,
+.security-tips-signs-section,
+.security-tips-protection-section,
+.security-tips-check-service,
+.security-tips-faq-section,
+.security-tips-resources-section,
+.security-tips-professional-help {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Глобальний box-sizing для безпечного розрахунку ширини */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .security-tips-page {
     background: #f5f7fa;
     color: #222;
@@ -200,14 +223,21 @@
 }
 
 .security-tips-service-features {
-    margin: 30px 0;
+    display: flex;
+    /* горизонтальне розташування */
+    flex-wrap: wrap;
+    /* перенос на новий рядок при вузьких екранах */
+    gap: 20px;
+    /* відстань між елементами */
+    justify-content: center;
+    /* вирівнювання по центру */
 }
 
 .security-tips-feature {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
 .security-tips-feature span {

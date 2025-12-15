@@ -172,12 +172,12 @@ const SecurityTips = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Кібербезпека та захист від фішингу"
         description="Дізнайтесь, як захистити себе від фішингу, шахрайства та кіберзагроз. Безкоштовна перевірка посилань від WebStart Studio"
         keywords="кібербезпека, фішинг, шахрайство, кіберзагрози, безпека онлайн, перевірка посилань"
       />
-      
+
       <div className="security-tips-page">
         <main className="security-tips-main-content">
           {/* Hero */}
@@ -266,7 +266,7 @@ const SecurityTips = () => {
           <section className="security-tips-check-service">
             <div className="security-tips-container">
               <div className="security-tips-service-card">
-                <h2>🔬 Професійна перевірка посилань та файлів</h2>
+                <h2>🔬 Перевірка посилань та файлів</h2>
                 <p className="security-tips-service-description">
                   Надішли нам посилання або файл — ми проведемо детальний аналіз і надамо висновок
                 </p>
@@ -307,8 +307,8 @@ const SecurityTips = () => {
                 </div>
 
                 <div className="security-tips-contact-buttons">
-                  <a 
-                    href="https://t.me/Viktor_freelancer_recruiting_pit" 
+                  <a
+                    href="https://t.me/Viktor_freelancer_recruiting_pit"
                     className="security-tips-btn security-tips-btn-telegram"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -320,7 +320,7 @@ const SecurityTips = () => {
                   </a>
                 </div>
 
-                <p className="security-tips-note">* Для постійних клієнтів — знижки та пакетні пропозиції</p>
+                <p className="security-tips-note">* Для постійних учасників — знижки та пакетні пропозиції</p>
               </div>
             </div>
           </section>
@@ -331,11 +331,11 @@ const SecurityTips = () => {
               <h2>❓ Часті запитання</h2>
               <div className="security-tips-faq-list">
                 {faqData.map((faq, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`security-tips-faq-item ${activeFaq === index ? 'active' : ''}`}
                   >
-                    <button 
+                    <button
                       className="security-tips-faq-question"
                       onClick={() => toggleFaq(index)}
                     >
@@ -363,19 +363,19 @@ const SecurityTips = () => {
                 <div className="security-tips-resource-card featured">
                   <h3>🔍 VirusTotal</h3>
                   <p className="security-tips-resource-desc">
-                    Найпопулярніший сервіс для перевірки посилань та файлів. Аналізує за 
+                    Найпопулярніший сервіс для перевірки посилань та файлів. Аналізує за
                     допомогою десятків антивірусів одночасно.
                   </p>
-                  <a 
-                    href="https://www.virustotal.com" 
-                    target="_blank" 
+                  <a
+                    href="https://www.virustotal.com"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="security-tips-resource-link"
                   >
                     Перейти на VirusTotal →
                   </a>
                   <div className="security-tips-resource-tip">
-                    <strong>💡 Порада:</strong> Завантажте файл або вставте посилання, 
+                    <strong>💡 Порада:</strong> Завантажте файл або вставте посилання,
                     зачекайте результатів сканування від різних антивірусних движків.
                   </div>
                 </div>
@@ -417,10 +417,10 @@ const SecurityTips = () => {
               </div>
 
               <div className="security-tips-professional-help">
-                <h3>🎯 Потрібна професійна допомога?</h3>
+                <h3>🎯 Потрібна допомога?</h3>
                 <p>
-                  Якщо ви не впевнені або потрібен детальний аналіз — замовте нашу послугу 
-                  перевірки. Ми використовуємо кілька професійних інструментів і надаємо 
+                  Якщо ви не впевнені або потрібен детальний аналіз — ми можемо допомогти з
+                  перевіркою. Ми використовуємо кілька професійних інструментів і надаємо
                   детальний звіт.
                 </p>
               </div>
