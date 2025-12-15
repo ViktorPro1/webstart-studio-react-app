@@ -1,23 +1,101 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SEO from '../../SEO/SEO';
-import { Mail, Phone, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MessageCircle, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import './Contact.css';
 import './Contact.mobile.css';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
+  const [status, setStatus] = useState({
+    type: '', // 'success', 'error', 'loading'
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ type: 'loading', message: 'Відправка...' });
+
+    try {
+      // Ваш Google Apps Script URL
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwXCIDEa8tvukJDhWi3GOaSzZ3Fpoh6ILzJ5KLnBewdYFgNGcGZoY-SYtA98ZhQfx9V9A/exec';
+
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Не вказано',
+          service: formData.service,
+          message: formData.message
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.result === 'success') {
+        setStatus({
+          type: 'success',
+          message: '✅ Дякуємо! Ваша заявка успішно відправлена. Ми зв\'яжемося з вами протягом 24 годин.'
+        });
+
+        // Очистити форму
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+
+        // Прибрати повідомлення через 5 секунд
+        setTimeout(() => {
+          setStatus({ type: '', message: '' });
+        }, 5000);
+      } else {
+        throw new Error('Server returned error');
+      }
+
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus({
+        type: 'error',
+        message: '❌ Помилка відправки. Будь ласка, спробуйте пізніше або напишіть нам на email.'
+      });
+
+      setTimeout(() => {
+        setStatus({ type: '', message: '' });
+      }, 5000);
+    }
+  };
+
   return (
     <>
-      <SEO 
+      <SEO
         title="Контакти"
         description="Зв'яжіться з WebStart Studio - email, телефон, Viber. Ми завжди на зв'язку!"
         keywords="контакти, webstart studio, email, телефон, viber, зв'язок"
       />
-      
+
       <div className="contact-page">
         <section id="contact-gift-wrapper">
           <div className="contact-block">
             <h2>Контакти</h2>
-            
+
             <div className="contact-item">
               <Mail size={24} className="contact-icon" />
               <div className="contact-info">
@@ -39,8 +117,8 @@ const Contact = () => {
             </div>
 
             <div className="viber-wrapper">
-              <a 
-                href="viber://chat?number=+380661391932" 
+              <a
+                href="viber://chat?number=+380661391932"
                 className="viber-button"
               >
                 <MessageCircle size={20} />
@@ -51,16 +129,16 @@ const Contact = () => {
             <div className="contact-additional-contacts">
               <h3>Додаткові контакти</h3>
               <div className="contact-social-links">
-                <a 
-                  href="https://t.me/Viktor_freelancer_recruiting_pit" 
+                <a
+                  href="https://t.me/Viktor_freelancer_recruiting_pit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-social-link telegram"
                 >
                   ✈️ Telegram
                 </a>
-                <a 
-                  href="mailto:webstartstudio978@gmail.com" 
+                <a
+                  href="mailto:webstartstudio978@gmail.com"
                   className="contact-social-link email"
                 >
                   📧 Email
@@ -76,71 +154,105 @@ const Contact = () => {
             <p className="contact-form-description">
               Заповніть форму, і ми зв'яжемося з вами протягом 24 годин
             </p>
-            
-            <form className="contact-form" onSubmit={(e) => {
-              e.preventDefault();
-              alert('Форма відправлена! Ми зв\'яжемося з вами найближчим часом.');
-            }}>
+
+            {/* Статус повідомлення */}
+            {status.message && (
+              <div className={`contact-status-message ${status.type}`}>
+                {status.type === 'success' && <CheckCircle size={20} />}
+                {status.type === 'error' && <AlertCircle size={20} />}
+                {status.type === 'loading' && <Loader size={20} className="spinning" />}
+                <span>{status.message}</span>
+              </div>
+            )}
+
+            <div className="contact-form">
               <div className="contact-form-group">
                 <label htmlFor="name">Ім'я *</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  required 
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="Ваше ім'я"
                 />
               </div>
 
               <div className="contact-form-group">
                 <label htmlFor="email">Email *</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  required 
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="your@email.com"
                 />
               </div>
 
               <div className="contact-form-group">
                 <label htmlFor="phone">Телефон</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone" 
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="+38 (___) ___ __ __"
                 />
               </div>
 
               <div className="contact-form-group">
                 <label htmlFor="service">Тип послуги *</label>
-                <select id="service" name="service" required>
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  required
+                >
                   <option value="">Оберіть послугу</option>
-                  <option value="landing">Лендінг</option>
-                  <option value="portfolio">Портфоліо</option>
-                  <option value="resume">Резюме</option>
-                  <option value="corporate">Корпоративний сайт</option>
-                  <option value="ai">AI сервіси</option>
-                  <option value="other">Інше</option>
+                  <option value="Лендінг">Лендінг</option>
+                  <option value="Портфоліо">Портфоліо</option>
+                  <option value="Резюме">Резюме</option>
+                  <option value="Корпоративний сайт">Корпоративний сайт</option>
+                  <option value="AI Автоматизація">AI Автоматизація</option>
+                  <option value="AI Промптінг">AI Промптінг</option>
+                  <option value="Google Ads">Google Ads</option>
+                  <option value="Facebook Ads">Facebook Ads</option>
+                  <option value="UI/UX Дизайн">UI/UX Дизайн</option>
+                  <option value="Логотип">Логотип</option>
+                  <option value="Брендинг">Брендинг</option>
+                  <option value="Повернення податків">Повернення податків</option>
+                  <option value="Чистка ПК">Чистка ПК</option>
+                  <option value="Інше">Інше</option>
                 </select>
               </div>
 
               <div className="contact-form-group">
                 <label htmlFor="message">Повідомлення *</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows="5" 
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="5"
                   required
                   placeholder="Розкажіть детальніше про ваш проєкт..."
                 ></textarea>
               </div>
 
-              <button type="submit" className="contact-submit-button">
-                Відправити заявку
+              <button
+                type="button"
+                onClick={handleSubmit}
+                className="contact-submit-button"
+                disabled={status.type === 'loading'}
+              >
+                {status.type === 'loading' ? 'Відправка...' : 'Відправити заявку'}
               </button>
-            </form>
+            </div>
           </div>
         </section>
 
