@@ -141,10 +141,12 @@ const Contact = () => {
                   ✈️ Telegram
                 </a>
                 <a
-                  href="mailto:webstartstudio978@gmail.com"
-                  className="contact-social-link email"
+                  href="https://chat.whatsapp.com/H5Mz1CTwCwDJAXvyhPKUka"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-social-link whatsapp"
                 >
-                  📧 Email
+                  📱 WhatsApp
                 </a>
               </div>
             </div>

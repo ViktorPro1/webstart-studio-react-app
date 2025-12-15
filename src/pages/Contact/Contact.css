@@ -179,14 +179,14 @@
     transform: translateY(-2px);
 }
 
-/* Email */
-.contact-social-link.email {
-    background: #667eea;
+/* Whatsapp */
+.contact-social-link.whatsapp {
+    background: #50c459;
     color: white;
 }
 
-.contact-social-link.email:hover {
-    background: #5568d3;
+.contact-social-link.whatsapp:hover {
+    background: #50c425;
     transform: translateY(-2px);
 }
 
