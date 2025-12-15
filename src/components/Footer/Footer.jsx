@@ -9,7 +9,9 @@ const Footer = ({ isSidebarOpen }) => {
     <footer className={`footer ${isSidebarOpen ? '' : 'full-width'}`}>
       <div className="footer-content">
         <div className="footer-text">
-          <p>© 2025 WebStart Studio.</p>
+          <p>
+            © 2025 Web<span className="highlight-footer">Start</span> Studio.
+          </p>
           <p className="footer-subtitle">Створюємо веб-рішення для вашого успіху</p>
         </div>
 

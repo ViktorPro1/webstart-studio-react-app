@@ -33,7 +33,9 @@ const Home = () => {
       <div className="home-page">
         <section className="hero-section">
           <div className="hero-content">
-            <h1 className="hero-title">WebStart Studio</h1>
+            <h1 className="hero-title">
+              Web<span className="highlight-home">Start</span> Studio
+            </h1>
             <p className="hero-subtitle">
               Наш підхід — "менше слів, більше результату": компактний дизайн, зрозуміла структура,
               зручний доступ до всієї потрібної інформації. Ми прагнемо, щоб кожен лендінг, портфоліо
