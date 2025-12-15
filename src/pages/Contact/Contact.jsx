@@ -116,14 +116,17 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="viber-wrapper">
-              <a
-                href="viber://chat?number=+380661391932"
-                className="viber-button"
-              >
-                <MessageCircle size={20} />
-                Написати у Viber
-              </a>
+            <div className="contact-viber-card">
+              <MessageCircle size={20} className="contact-viber-icon" />
+              <div>
+                <div className="contact-viber-label">Viber</div>
+                <a
+                  href="viber://chat?number=+380661391932"
+                  className="contact-viber-value"
+                >
+                  Написати повідомлення
+                </a>
+              </div>
             </div>
 
             <div className="contact-additional-contacts">
@@ -258,7 +261,7 @@ const Contact = () => {
 
         <section className="contact-working-hours">
           <div className="contact-container">
-            <h2>Графік роботи</h2>
+            <h2>Період доступу</h2>
             <div className="contact-hours-grid">
               <div className="contact-hours-item">
                 <strong>Пн - Пт:</strong>

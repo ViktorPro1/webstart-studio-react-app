@@ -76,29 +76,43 @@
 }
 
 /* Viber кнопка */
-.contact-viber-wrapper {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.contact-viber-button {
-    display: inline-flex;
+.contact-viber-card {
+    display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 30px;
-    background: #7360f2;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(115, 96, 242, 0.3);
+    gap: 14px;
+    padding: 18px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 16px;
 }
 
-.contact-viber-button:hover {
-    background: #5a4bc9;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(115, 96, 242, 0.4);
+.contact-viber-icon {
+    color: #7360f2;
+    flex-shrink: 0;
+}
+
+.contact-viber-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.contact-viber-value {
+    font-weight: 600;
+    color: #111;
+    text-decoration: none;
+}
+
+.contact-viber-value:hover {
+    text-decoration: underline;
+}
+
+.contact-viber-card:hover {
+    transform: translateX(5px);
+    /* або - як у Email/Телеграм */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* як у contact-item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Додаткові контакти */
