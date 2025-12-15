@@ -1,11 +1,8 @@
 @media (max-width: 768px) {
     .header {
         margin-left: 0;
-        /* скидаємо бічний відступ */
         left: 0;
-        /* фіксуємо початок у лівому краю */
         width: 100%;
-        /* займає всю ширину */
         padding: 0 15px;
         display: flex;
         justify-content: space-between;
@@ -34,10 +31,8 @@
 @media (max-width: 420px) {
     .header {
         position: relative;
-        /* більше не фіксований */
         width: 100%;
         padding: 0 8px;
-        /* менший padding */
         display: flex;
         justify-content: space-between;
         align-items: center;
