@@ -1,94 +1,48 @@
 @media (max-width: 768px) {
     #contact-gift-wrapper {
-        max-width: 100%;
-        flex-direction: column;
-        padding: 30px 15px;
-        gap: 25px;
-        box-sizing: border-box;
+        padding: 26px 14px;
+        gap: 20px;
     }
 
     .contact-block,
-    .gift-block {
-        max-width: 100%;
-        padding: 25px;
-    }
-
-    .contact-block h2,
-    .gift-block h3 {
-        font-size: 1.5rem;
-    }
-
-    .contact-form-section {
-        padding: 30px 15px;
-    }
-
+    .gift-block,
     .contact-form {
-        padding: 25px 15px;
+        padding: 20px 14px;
     }
 
     .contact-form-group input,
     .contact-form-group select,
     .contact-form-group textarea {
-        max-width: 100%;
-        box-sizing: border-box;
-        font-size: 1rem;
-        padding: 12px;
-    }
-
-    .contact-hours-grid {
-        grid-template-columns: 1fr;
+        font-size: 0.94rem;
+        padding: 10px;
     }
 
     .contact-social-link {
-        min-width: unset;
-        max-width: unset;
-        width: 100%;
+        padding: 10px 14px;
     }
 }
 
 @media (max-width: 480px) {
     #contact-gift-wrapper {
-        max-width: 100%;
-        padding: 20px 10px;
+        padding: 16px 10px;
+        gap: 16px;
     }
 
     .contact-block,
-    .gift-block {
-        padding: 20px;
-    }
-
-    .contact-block h2,
-    .gift-block h3 {
-        font-size: 1.3rem;
-    }
-
+    .gift-block,
     .contact-form {
-        padding: 20px 12px;
-    }
-
-    .contact-form-section h2,
-    .contact-working-hours h2 {
-        font-size: 1.4rem;
-    }
-
-    .contact-form-description,
-    .contact-label,
-    .contact-hours-item span {
-        font-size: 0.9rem;
+        padding: 14px 10px;
     }
 
     .contact-form-group input,
     .contact-form-group select,
     .contact-form-group textarea {
-        max-width: 100%;
-        box-sizing: border-box;
-        font-size: 0.9rem;
-        padding: 10px;
+        font-size: 0.88rem;
+        padding: 8px;
     }
 
     .contact-social-link {
-        width: 100%;
-        font-size: 0.95rem;
-        padding: 10px 15px;
+        font-size: 0.88rem;
+        padding: 9px 10px;
     }
 }

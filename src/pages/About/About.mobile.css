@@ -9,6 +9,10 @@
     .about-history-section,
     .about-team-section {
         padding: 20px 15px;
+        max-width: 700px;
+        /* звужуємо */
+        margin: 0 auto;
+        /* центруємо */
     }
 
     .about-centered {
@@ -26,6 +30,9 @@
     .about-history-section,
     .about-team-section {
         padding: 15px 12px;
+        max-width: 360px;
+        /* звужуємо ще більше */
+        margin: 0 auto;
     }
 
     .about-centered:first-child {
@@ -34,11 +41,13 @@
 
     .about-team-member {
         padding: 12px;
+        max-width: 300px;
+        /* щоб картка не розтягувалась */
+        margin: 0 auto;
     }
 
     .about-team-member img {
         height: 140px;
-        /* залишаємо трохи більшим */
     }
 
     .about-team-member h3 {
@@ -60,11 +69,18 @@
     .about-history-section,
     .about-team-section {
         padding: 12px 10px;
+        max-width: 320px;
+        /* ще компактніше */
+        margin: 0 auto;
+    }
+
+    .about-team-member {
+        max-width: 280px;
+        margin: 0 auto;
     }
 
     .about-team-member img {
         height: 130px;
-        /* не надто дрібне */
     }
 
     .about-team-member h3 {
