@@ -1,262 +1,116 @@
-@media (max-width: 768px) {
+/* ===================== ADAPTIVE STYLES ===================== */
 
-    .home-page {
-        margin-left: 0 !important;
-        margin-top: 70px;
-        padding: 0;
-        /* ← змінено з 20px */
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
-    }
-
-    /* Hero Section */
+/* Tablet: 1024px ↓ */
+@media (max-width: 1024px) {
     .hero-section {
         grid-template-columns: 1fr;
-        padding: 40px 20px;
-        /* ← зменшено з 30px */
-        gap: 30px;
+        padding: 60px 40px;
+        gap: 40px;
         min-height: auto;
-        width: 100%;
-        box-sizing: border-box;
     }
 
     .hero-content {
-        padding-right: 0;
-        padding-left: 0;
-        /* ← додано */
+        padding: 0;
         text-align: center;
-        width: 100%;
     }
 
-    .hero-image-container {
-        order: -1;
-        width: 100%;
+    .hero-title {
+        font-size: 42px;
+        white-space: normal;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
     }
 
     .hero-image {
-        max-height: 300px;
-        width: 100%;
-        max-width: 100%;
-        object-fit: cover;
+        max-height: 400px;
+    }
+
+    section {
+        padding: 80px 40px;
+    }
+
+    .services-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+}
+
+/* Mobile: 768px ↓ */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 50px 20px;
+        gap: 30px;
     }
 
     .hero-title {
         font-size: 32px;
-        white-space: normal;
-        /* ← додано */
-    }
-
-    .title-accent {
-        display: inline;
     }
 
     .hero-subtitle {
         font-size: 16px;
     }
 
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
     .cta-button {
-        width: 100%;
-        max-width: 100%;
-        justify-content: center;
-        box-sizing: border-box;
-    }
-
-    .hero-decoration {
-        display: none;
-    }
-
-    /* Statistics */
-    .stats-section {
-        padding: 30px 20px;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .stat-number {
-        font-size: 36px;
-    }
-
-    .stat-label {
-        font-size: 14px;
-    }
-
-    /* Services */
-    .section-title {
-        font-size: 28px;
-    }
-
-    .section-subtitle {
+        padding: 12px 30px;
         font-size: 16px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        width: 100%;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-
-    .service-card {
-        padding: 30px 25px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .service-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .service-title {
-        font-size: 20px;
-    }
-
-    /* Benefits */
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        width: 100%;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-
-    .benefit-card {
-        padding: 30px 25px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .benefit-icon {
-        width: 70px;
-        height: 70px;
-    }
-
-    /* Features */
-    .features-section {
-        padding: 40px 20px;
-        /* ← зменшено з 30px */
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .features-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        width: 100%;
-    }
-
-    .features-left h2 {
-        font-size: 28px;
-    }
-
-    .features-list li {
-        font-size: 16px;
-    }
-
-    .feature-highlight {
-        padding: 25px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .feature-highlight h3 {
-        font-size: 20px;
-    }
-
-    /* Final CTA */
-    .final-cta {
-        padding: 50px 20px;
-        /* ← зменшено з 30px */
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .final-cta h2 {
-        font-size: 28px;
-    }
-
-    .final-cta p {
-        font-size: 16px;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .circle-1,
-    .circle-2,
-    .circle-3 {
-        display: none;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        width: 100%;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 480px) {
-    .home-page {
-        padding: 0;
-    }
-
-    .hero-section {
-        padding: 30px 15px;
-        /* ← зменшено з 20px */
-    }
-
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .stats-section {
-        padding: 20px 15px;
-    }
-
-    .stat-number {
-        font-size: 32px;
-    }
-
-    .section-title {
-        font-size: 24px;
-    }
-
-    .service-card,
-    .benefit-card {
-        padding: 25px 20px;
     }
 
     .services-grid,
-    .benefits-grid,
     .features-grid {
-        padding: 0 5px;
-        /* ← додано */
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .features-section {
-        padding: 30px 15px;
-        /* ← зменшено */
+    section {
+        padding: 60px 20px;
     }
 
-    .final-cta {
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 50px;
+    }
+
+    .hero-image {
+        max-height: 300px;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+}
+
+/* Small Mobile: 480px ↓ */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 26px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    section {
         padding: 40px 15px;
-        /* ← зменшено */
     }
 
-    .final-cta h2 {
+    .section-title {
         font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .hero-image {
+        max-height: 220px;
     }
 }
