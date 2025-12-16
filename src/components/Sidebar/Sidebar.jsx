@@ -4,7 +4,7 @@ import {
   Home, Palette, FileText, BarChart, BarChart2, XCircle, Settings, Users,
   Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
   Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
-  BookOpen, Monitor, Globe, Globe2, Book, Layout, Star, Youtube, Zap, Sparkles, CreditCard, Search,
+  BookOpen, Monitor, Globe, Globe2, Book, Layout, Star, Lightbulb, Youtube, Zap, Sparkles, CreditCard, Search,
 } from 'lucide-react';
 
 import './Sidebar.css';
@@ -233,6 +233,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { path: '/international/cz', label: 'Čeština' },
         { path: '/international/sv', label: 'Svenska' }
       ]
+    },
+
+    {
+      id: 'innovations',
+      path: '/innovations',
+      icon: Lightbulb, // або Sparkles, Rocket
+      label: 'Новації'
     }
   ];
 

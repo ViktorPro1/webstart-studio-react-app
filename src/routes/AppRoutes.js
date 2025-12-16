@@ -32,6 +32,7 @@ const YouTubeChannel = lazy(() => import('../pages/YouTubeChannel/YouTubeChannel
 const CanvaServices = lazy(() => import('../pages/CanvaServices/CanvaServices'));
 const PcService = lazy(() => import('../pages/PcService/PcService'));
 const PolandTax = lazy(() => import('../pages/PolandTax/PolandTax'));
+const Innovations = lazy(() => import('../pages/Innovations/Innovations'));
 const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 /* ===== Legal ===== */
@@ -117,6 +118,7 @@ const AppRoutes = () => (
             <Route path="/canva-services" element={<CanvaServices />} />
             <Route path="/pc-service" element={<PcService />} />
             <Route path="/poland-tax" element={<PolandTax />} />
+            <Route path="/innovations" element={<Innovations />} />
 
             {/* Legal Pages */}
             <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />

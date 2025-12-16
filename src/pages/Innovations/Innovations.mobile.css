@@ -1,0 +1,230 @@
+/* Планшети */
+@media (max-width: 1024px) {
+    .innovations-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 30px;
+    }
+
+    .innovations-image-wrapper {
+        position: static;
+    }
+
+    .innovations-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .innovations-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .innovations-text h2 {
+        font-size: 2rem;
+    }
+
+    .innovations-text h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Мобільні пристрої */
+@media (max-width: 768px) {
+    .innovations {
+        padding: 60px 15px 40px;
+    }
+
+    .innovations-header {
+        padding: 40px 25px;
+    }
+
+    .innovations-header h1 {
+        font-size: 2rem;
+    }
+
+    .innovations-subtitle {
+        font-size: 1rem;
+    }
+
+    .innovations-content {
+        padding: 30px 20px;
+    }
+
+    .innovations-text h2 {
+        font-size: 1.7rem;
+    }
+
+    .innovations-text h3 {
+        font-size: 1.4rem;
+        margin: 30px 0 12px 0;
+    }
+
+    .innovations-text h4 {
+        font-size: 1.15rem;
+    }
+
+    .innovations-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .innovations-feature-list {
+        padding: 20px;
+        margin: 25px 0;
+    }
+
+    .innovations-feature-list ul li {
+        font-size: 0.95rem;
+        padding: 8px 0 8px 25px;
+    }
+
+    .innovations-feature-list ul li::before {
+        font-size: 1.1rem;
+    }
+
+    .innovations-migration-info {
+        padding: 20px;
+        margin: 25px 0;
+    }
+
+    .innovations-link-section {
+        padding: 20px;
+        margin-top: 25px;
+    }
+
+    .innovations-original-link {
+        display: block;
+        text-align: center;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .innovations-evolution-timeline {
+        padding: 40px 20px;
+    }
+
+    .innovations-evolution-timeline h2 {
+        font-size: 1.8rem;
+        margin-bottom: 35px;
+    }
+
+    .innovations-timeline {
+        padding-left: 40px;
+    }
+
+    .innovations-timeline::before {
+        left: 15px;
+    }
+
+    .innovations-timeline-item {
+        padding-left: 25px;
+        margin-bottom: 30px;
+    }
+
+    .innovations-timeline-marker {
+        left: -25px;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
+    }
+
+    .innovations-timeline-content {
+        padding: 15px 20px;
+    }
+
+    .innovations-timeline-content h4 {
+        font-size: 1.15rem;
+    }
+
+    .innovations-timeline-content p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Малі мобільні пристрої */
+@media (max-width: 480px) {
+    .innovations {
+        padding: 50px 10px 30px;
+    }
+
+    .innovations-header {
+        padding: 30px 20px;
+    }
+
+    .innovations-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .innovations-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .innovations-content {
+        padding: 25px 15px;
+    }
+
+    .innovations-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .innovations-text h3 {
+        font-size: 1.25rem;
+    }
+
+    .innovations-text h4 {
+        font-size: 1.05rem;
+    }
+
+    .innovations-text p {
+        font-size: 0.95rem;
+    }
+
+    .innovations-feature-list {
+        padding: 15px;
+    }
+
+    .innovations-feature-list ul li {
+        font-size: 0.9rem;
+        padding: 7px 0 7px 22px;
+    }
+
+    .innovations-migration-info {
+        padding: 15px;
+    }
+
+    .innovations-link-section {
+        padding: 15px;
+    }
+
+    .innovations-original-link {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .innovations-evolution-timeline {
+        padding: 30px 15px;
+    }
+
+    .innovations-evolution-timeline h2 {
+        font-size: 1.5rem;
+    }
+
+    .innovations-timeline {
+        padding-left: 35px;
+    }
+
+    .innovations-timeline-content {
+        padding: 12px 15px;
+    }
+
+    .innovations-timeline-content h4 {
+        font-size: 1.05rem;
+    }
+
+    .innovations-timeline-content p {
+        font-size: 0.9rem;
+    }
+
+    .innovations-image-caption {
+        font-size: 0.85rem;
+    }
+}
