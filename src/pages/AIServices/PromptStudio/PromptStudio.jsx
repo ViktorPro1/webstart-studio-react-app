@@ -1,5 +1,6 @@
 import React from 'react';
 import './PromptStudio.css';
+import './PromptStudio.mobile.css';
 
 const PromptStudio = () => {
     return (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './LandingTemplates.css';
+import './LandingTemplates.mobile.css';
 
 const LandingTemplates = () => {
     const [selectedCategory, setSelectedCategory] = useState('all');

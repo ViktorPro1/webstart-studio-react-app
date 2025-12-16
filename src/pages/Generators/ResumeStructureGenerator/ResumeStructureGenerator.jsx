@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ResumeStructureGenerator.css';
+import './ResumeStructureGenerator.mobile.css';
 
 const ResumeStructureGenerator = () => {
     const [jobType, setJobType] = useState('');

@@ -413,6 +413,3 @@
 .YouTubeChannel-button-icon {
     font-size: 1.5rem;
 }
-
-/* Імпорт мобільних стилів */
-@import './YouTubeChannel.mobile.css';

@@ -1,185 +1,41 @@
 @media (max-width: 768px) {
-    .target-advertising-container {
-        padding: 3rem 1.5rem;
+    .target-explanation-container {
+        padding: 1rem 1.25rem 3rem 1.25rem;
     }
 
-    .target-advertising-hero {
-        margin-bottom: 4rem;
+    .target-explanation-hero {
+        margin-bottom: 1.5rem;
     }
 
-    .hero-icon {
-        font-size: 4rem;
-    }
-
-    .target-advertising-title {
-        font-size: 2.5rem;
-    }
-
-    .target-advertising-description {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
+    .target-explanation-title {
         font-size: 2rem;
     }
 
-    .niches-grid,
-    .services-grid,
-    .tools-grid {
+    .target-explanation-heading {
+        font-size: 1.6rem;
+    }
+
+    .target-explanation-benefits-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
-    .niche-card {
-        padding: 2.5rem 2rem;
-    }
-
-    .service-card,
-    .tool-card,
-    .why-card {
-        padding: 1.75rem 1.5rem;
-    }
-
-    .show-results-btn {
-        padding: 1.25rem 1.5rem;
-        font-size: 1.1rem;
-    }
-
-    .results-slider {
-        padding: 1.5rem;
-    }
-
-    .slider-wrapper {
-        margin: 0 2.5rem;
-    }
-
-    .slider-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.75rem;
-    }
-
-    .slider-btn.prev {
-        left: 0.5rem;
-    }
-
-    .slider-btn.next {
-        right: 0.5rem;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .target-explanation-note {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    .target-advertising-container {
-        padding: 2rem 1rem;
-    }
-
-    .target-advertising-hero {
-        margin-bottom: 3rem;
-    }
-
-    .hero-icon {
-        font-size: 3.5rem;
-    }
-
-    .target-advertising-title {
-        font-size: 2rem;
-    }
-
-    .target-advertising-description {
-        font-size: 1rem;
-    }
-
-    .section-title {
+    .target-explanation-title {
         font-size: 1.75rem;
     }
 
-    .niche-card {
-        padding: 2rem 1.5rem;
+    .target-explanation-heading {
+        font-size: 1.4rem;
     }
 
-    .niche-icon {
-        font-size: 3.5rem;
-    }
-
-    .niche-title {
-        font-size: 1.5rem;
-    }
-
-    .niche-description {
-        font-size: 0.95rem;
-    }
-
-    .service-card,
-    .tool-card,
-    .why-card {
-        padding: 1.5rem 1.25rem;
-    }
-
-    .service-icon,
-    .tool-icon,
-    .why-icon {
-        font-size: 3rem;
-    }
-
-    .service-title,
-    .tool-title,
-    .why-title {
-        font-size: 1.2rem;
-    }
-
-    .service-description,
-    .tool-description,
-    .why-text {
-        font-size: 0.95rem;
-    }
-
-    .show-results-btn {
-        padding: 1rem 1.25rem;
+    .target-explanation-text {
         font-size: 1rem;
-    }
-
-    .arrow {
-        font-size: 1.3rem;
-    }
-
-    .results-slider {
-        padding: 1.25rem;
-    }
-
-    .slider-wrapper {
-        margin: 0 2rem;
-    }
-
-    .slider-image {
-        max-height: 350px;
-    }
-
-    .slider-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-    }
-
-    .slider-btn.prev {
-        left: 0.25rem;
-    }
-
-    .slider-btn.next {
-        right: 0.25rem;
-    }
-
-    .slider-dots {
-        gap: 0.5rem;
-        margin-top: 1.25rem;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
     }
 }

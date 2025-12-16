@@ -1,5 +1,6 @@
 import React from 'react';
 import './YouTubeChannel.css';
+import './YouTubeChannel.mobile.css';
 
 const YouTubeChannel = () => {
     const videos = [

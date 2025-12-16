@@ -1,5 +1,6 @@
 import React from 'react';
 import './AIAutomation.css';
+import './AIAutomation.mobile.css';
 
 const AIAutomation = () => {
     return (

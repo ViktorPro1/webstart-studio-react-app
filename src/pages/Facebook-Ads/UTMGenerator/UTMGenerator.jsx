@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './UTMGenerator.css';
+import './UTMGenerator.mobile.css';
 
 const UTMGenerator = () => {
     const [url, setUrl] = useState('');

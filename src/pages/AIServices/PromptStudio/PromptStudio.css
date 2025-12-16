@@ -309,6 +309,3 @@
     text-align: left;
     font-weight: 500;
 }
-
-/* Імпорт мобільних стилів */
-@import './PromptStudio.mobile.css';

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AdCalculator.css';
+import './AdCalculator.mobile.css';
 
 const AdCalculator = () => {
     const [days, setDays] = useState(5);

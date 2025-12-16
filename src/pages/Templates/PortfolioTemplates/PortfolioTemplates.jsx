@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PortfolioTemplates.css';
+import './PortfolioTemplates.mobile.css';
 
 const PortfolioTemplates = () => {
     const [activeTemplate, setActiveTemplate] = useState(null);

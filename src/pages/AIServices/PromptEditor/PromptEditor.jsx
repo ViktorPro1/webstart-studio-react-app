@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PromptEditor.css';
+import './PromptEditor.mobile.css';
 
 const PromptEditor = () => {
     const [openSection, setOpenSection] = useState(null);

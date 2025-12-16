@@ -1,8 +1,10 @@
 @media (max-width: 768px) {
     #contact-gift-wrapper {
+        max-width: 100%;
         flex-direction: column;
         padding: 30px 15px;
         gap: 25px;
+        box-sizing: border-box;
     }
 
     .contact-block,
@@ -13,68 +15,40 @@
 
     .contact-block h2,
     .gift-block h3 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .contact-form-section {
-        padding: 40px 15px;
+        padding: 30px 15px;
     }
 
     .contact-form {
-        padding: 30px 20px;
+        padding: 25px 15px;
     }
 
-    .hours-grid {
+    .contact-form-group input,
+    .contact-form-group select,
+    .contact-form-group textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .contact-hours-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Viber як Email/Телефон */
-    .contact-viber-card {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 12px;
-        padding: 12px 20px;
-        text-align: left;
+    .contact-social-link {
+        min-width: unset;
+        max-width: unset;
         width: 100%;
-        border-radius: 8px;
-        color: white;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .contact-viber-card:hover {
-        transform: translateX(5px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .contact-viber-icon {
-        flex-shrink: 0;
-        font-size: 20px;
-        margin-top: 2px;
-    }
-
-    .contact-viber-text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .contact-viber-label {
-        font-size: 0.9rem;
-        color: #666;
-    }
-
-    .contact-viber-value {
-        font-weight: 600;
-        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     #contact-gift-wrapper {
+        max-width: 100%;
         padding: 20px 10px;
     }
 
@@ -85,35 +59,36 @@
 
     .contact-block h2,
     .gift-block h3 {
-        font-size: 1.4rem;
-    }
-
-    /* Viber як Email/Телефон */
-    .contact-viber-card {
-        width: 100%;
-        padding: 12px 15px;
-        gap: 10px;
-    }
-
-    .contact-viber-value {
-        font-size: 15px;
-    }
-
-    .social-links {
-        flex-direction: column;
-    }
-
-    .social-link {
-        width: 100%;
-        text-align: center;
+        font-size: 1.3rem;
     }
 
     .contact-form {
-        padding: 20px 15px;
+        padding: 20px 12px;
     }
 
     .contact-form-section h2,
-    .working-hours h2 {
-        font-size: 1.6rem;
+    .contact-working-hours h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact-form-description,
+    .contact-label,
+    .contact-hours-item span {
+        font-size: 0.9rem;
+    }
+
+    .contact-form-group input,
+    .contact-form-group select,
+    .contact-form-group textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .contact-social-link {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 10px 15px;
     }
 }

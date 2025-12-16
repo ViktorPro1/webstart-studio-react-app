@@ -1,69 +1,101 @@
-@media (max-width: 768px) {
+/* =========================
+   Планшети (до 1024px)
+   ========================= */
+@media (max-width: 1024px) {
+    .platform-comparison-page {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 30px 15px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        /* прибирає горизонтальний скрол */
+    }
+
     .centered-header {
         font-size: 1.8rem;
     }
 
     .centered-text {
         font-size: 1rem;
-        padding: 0 15px;
+        padding: 0 10px;
+    }
+
+    .comparison-table {
+        font-size: 13px;
+        max-width: 100%;
+        /* не виходить за межі контейнера */
+        table-layout: auto;
+        word-wrap: break-word;
+    }
+}
+
+/* =========================
+   Смартфони (до 768px)
+   ========================= */
+@media (max-width: 768px) {
+    .platform-comparison-page {
+        padding: 20px 10px;
+        overflow-x: hidden;
+    }
+
+    .centered-header {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .centered-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
     }
 
     .comparison-table {
         font-size: 12px;
+        max-width: 100%;
     }
 
     .comparison-table td,
     .comparison-table th {
         padding: 8px 10px;
-    }
-
-    .table-wrapper {
-        margin: 0 -20px;
-        padding: 0 20px;
+        word-break: break-word;
+        /* перенос довгих слів */
     }
 }
 
+/* =========================
+   Маленькі смартфони (до 480px)
+   ========================= */
 @media (max-width: 480px) {
     .platform-comparison-page {
-        padding: 30px 15px;
+        padding: 15px 5px;
+        overflow-x: hidden;
     }
 
     .centered-header {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .centered-text {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        padding: 0 5px;
+    }
+
+    .table-wrapper {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        /* плавний скрол */
     }
 
     .comparison-table {
+        width: 100%;
         font-size: 11px;
+        table-layout: auto;
     }
 
     .comparison-table td,
     .comparison-table th {
         padding: 6px 8px;
-        white-space: normal;
-    }
-
-    /* На дуже маленьких екранах - вертикальний скрол */
-    .table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-@media (max-width: 375px) {
-    .centered-header {
-        font-size: 1.3rem;
-    }
-
-    .comparison-table {
-        font-size: 10px;
-    }
-
-    .comparison-table td,
-    .comparison-table th {
-        padding: 5px 6px;
+        word-break: break-word;
     }
 }

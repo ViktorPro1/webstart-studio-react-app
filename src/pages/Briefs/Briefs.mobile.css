@@ -1,97 +1,102 @@
+/* =========================
+   Планшети (до 1024px)
+   ========================= */
+@media (max-width: 1024px) {
+    .briefs-title {
+        font-size: 2rem;
+    }
+
+    .briefs-description {
+        font-size: 1.05rem;
+        margin-bottom: 30px;
+    }
+
+    .brief-card {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================
+   Смартфони (до 768px)
+   ========================= */
 @media (max-width: 768px) {
     .briefs {
         padding: 40px 15px;
     }
 
     .briefs-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .briefs-description {
         font-size: 1rem;
-        margin-bottom: 40px;
+        line-height: 1.5;
     }
 
     .briefs-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        /* одна колонка */
+        gap: 20px;
     }
 
     .brief-card {
-        padding: 30px 25px;
-    }
-
-    .brief-icon {
-        width: 70px;
-        height: 70px;
-    }
-
-    .brief-title {
-        font-size: 1.3rem;
-    }
-
-    .briefs-info {
-        padding: 30px 25px;
-    }
-
-    .briefs-info h3 {
-        font-size: 1.5rem;
-    }
-
-    .steps-list li {
-        font-size: 1rem;
-    }
-
-    .contact-section {
-        padding: 30px 20px;
-    }
-
-    .contact-section h3 {
-        font-size: 1.5rem;
-    }
-
-    .contact-buttons {
-        flex-direction: column;
-    }
-
-    .contact-btn {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .briefs-title {
-        font-size: 1.5rem;
-    }
-
-    .briefs-description {
-        font-size: 0.95rem;
-    }
-
-    .brief-card {
-        padding: 25px 20px;
+        padding: 20px 15px;
     }
 
     .brief-icon {
         width: 60px;
         height: 60px;
+        margin-bottom: 15px;
+    }
+}
+
+/* =========================
+   Маленькі смартфони (до 480px)
+   ========================= */
+@media (max-width: 480px) {
+    .briefs {
+        padding: 25px 10px;
     }
 
-    .brief-title {
-        font-size: 1.2rem;
+    .briefs-title {
+        font-size: 1.4rem;
+    }
+
+    .briefs-description {
+        font-size: 0.9rem;
+    }
+
+    .brief-card {
+        padding: 15px 10px;
+        border-radius: 12px;
+    }
+
+    .brief-icon {
+        width: 50px;
+        height: 50px;
     }
 
     .brief-btn {
-        padding: 12px 25px;
-        font-size: 14px;
-    }
-
-    .briefs-info {
-        padding: 25px 20px;
+        width: 100%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 10px 15px;
     }
 
     .contact-section {
-        padding: 25px 15px;
+        padding: 20px 10px;
+    }
+
+    .contact-section h3 {
+        font-size: 1.4rem;
+    }
+
+    .contact-section p {
+        font-size: 0.9rem;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PortfolioTextGenerator.css';
+import './PortfolioTextGenerator.mobile.css';
 
 const PortfolioTextGenerator = () => {
     const [field, setField] = useState('');

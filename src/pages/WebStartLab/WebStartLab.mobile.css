@@ -1,46 +1,64 @@
-/* Адаптивність */
-@media (max-width: 1200px) {
-    .WebStartLab-projects {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
-    }
-}
-
 @media (max-width: 768px) {
+    .WebStartLab {
+        max-width: 100%;
+        padding: 20px 12px;
+        box-sizing: border-box;
+    }
+
     .WebStartLab-projects {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
 
     .WebStartLab h2 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .WebStartLab>p {
-        font-size: 1em;
+        font-size: 0.95em;
+    }
+
+    .WebStartLab-project-desc {
+        font-size: 0.9em;
     }
 }
 
 @media (max-width: 420px) {
     .WebStartLab h2 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     .WebStartLab>p,
     .WebStartLab-project-desc {
-        font-size: 0.9em;
+        font-size: 0.85em;
     }
 
     .WebStartLab-project-link {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .WebStartLab-marquee {
-        font-size: 0.9em;
-        padding: 6px 0;
+        font-size: 0.8em;
+        padding: 4px 0;
     }
 
     .WebStartLab-project {
-        padding: 20px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .WebStartLab h2 {
+        font-size: 1.2em;
+    }
+
+    .WebStartLab>p,
+    .WebStartLab-project-desc {
+        font-size: 0.8em;
+    }
+
+    .WebStartLab-marquee {
+        font-size: 0.75em;
+        padding: 3px 0;
     }
 }

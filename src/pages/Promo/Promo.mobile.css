@@ -1,113 +1,46 @@
-/* Адаптив для планшетів (768px) */
-@media (max-width: 768px) {
-    .promo-page {
-        padding: 30px 15px;
+@media (max-width: 1024px) {
+    .promo-root .promo-header h1 {
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
     }
 
-    .promo {
-        padding: 35px 20px;
-        max-width: 90%;
-    }
-
-    .promo-icon {
-        width: 80px;
-        height: 80px;
-    }
-
-    .promo-container h2 {
-        font-size: 1.75em;
-    }
-
-    .promo-date {
-        font-size: 1.2em;
-    }
-
-    .promo-intro {
-        font-size: 1.1em;
-    }
-
-    .promo-offers p {
-        font-size: 1em;
-    }
-
-    .promo-gift p {
-        font-size: 1em;
-    }
-
-    .countdown {
-        font-size: 1.2rem;
-        padding: 12px 18px;
-    }
-
-    .promo-btn {
-        padding: 12px 25px;
-        font-size: 1em;
+    .promo-root .promo-text {
+        font-size: 1rem;
+        line-height: 1.5;
     }
 }
 
-/* Адаптив для мобільних (480px) */
-@media (max-width: 480px) {
-    .promo-page {
+@media (max-width: 768px) {
+    .promo-root {
         padding: 20px 10px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
-    .promo {
-        padding: 25px 15px;
-        border-radius: 15px;
-        max-width: 95%;
+    .promo-root .promo-header h1 {
+        font-size: clamp(1.5rem, 5vw, 1.8rem);
     }
 
-    .promo-icon {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 15px;
-    }
-
-    .promo-container h2 {
-        font-size: 1.5em;
-        margin-bottom: 12px;
-    }
-
-    .promo-date {
-        font-size: 1.1em;
-        margin: 12px 0;
-    }
-
-    .promo-intro {
-        font-size: 1em;
-        margin: 15px 0;
-    }
-
-    .promo-offers {
-        padding: 15px;
-        margin: 15px 0;
-    }
-
-    .promo-offers p {
-        font-size: 0.95em;
-        margin: 8px 0;
-    }
-
-    .promo-gift {
-        padding: 15px;
-        margin: 15px 0;
-    }
-
-    .promo-gift p {
-        font-size: 0.95em;
-        margin: 8px 0;
-    }
-
-    .countdown {
-        font-size: 1rem;
-        padding: 10px 15px;
-        margin: 20px 0;
-    }
-
-    .promo-btn {
-        padding: 12px 20px;
-        font-size: 0.95em;
+    .promo-root .promo-btn {
         width: 100%;
-        max-width: 300px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-root {
+        padding: 15px 5px;
+    }
+
+    .promo-root .promo-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .promo-root .promo-text {
+        font-size: 0.9rem;
+    }
+
+    .promo-root .promo-card {
+        padding: 10px;
+        border-radius: 8px;
     }
 }

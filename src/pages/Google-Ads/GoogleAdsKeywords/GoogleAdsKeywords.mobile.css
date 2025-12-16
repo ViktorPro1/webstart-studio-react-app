@@ -1,24 +1,43 @@
 @media (max-width: 1024px) {
+    .google-ads-keywords {
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .google-ads-keywords__container {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
     .google-ads-keywords__results-grid {
         grid-template-columns: 1fr;
+    }
+
+    .google-ads-keywords__form-group input,
+    .google-ads-keywords__form-group select {
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }
 
 @media (max-width: 768px) {
     .google-ads-keywords__container {
+        max-width: 100%;
         border-radius: 10px;
     }
 
     .google-ads-keywords__header {
-        padding: 30px 20px;
+        padding: 25px 15px;
     }
 
     .google-ads-keywords__header h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .google-ads-keywords__content {
-        padding: 30px 20px;
+        padding: 20px 15px;
     }
 
     .google-ads-keywords__checkbox-group {
@@ -28,87 +47,74 @@
     .google-ads-keywords__results-grid {
         grid-template-columns: 1fr;
     }
+
+    .google-ads-keywords__form-group input,
+    .google-ads-keywords__form-group select {
+        padding: 12px;
+        font-size: 14px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 @media (max-width: 420px) {
     .google-ads-keywords {
-        padding: 10px;
+        padding: 8px;
+        overflow-x: hidden;
     }
 
     .google-ads-keywords__container {
-        border-radius: 15px;
+        max-width: 100%;
+        border-radius: 12px;
     }
 
     .google-ads-keywords__header {
-        padding: 25px 15px;
+        padding: 20px 12px;
     }
 
     .google-ads-keywords__header h1 {
-        font-size: 22px;
-        margin-bottom: 8px;
-    }
-
-    .google-ads-keywords__header p {
-        font-size: 14px;
-    }
-
-    .google-ads-keywords__content {
-        padding: 25px 15px;
-    }
-
-    .google-ads-keywords__generator-section h2 {
-        font-size: 22px;
-    }
-
-    .google-ads-keywords__form-group {
-        margin-bottom: 20px;
-    }
-
-    .google-ads-keywords__form-group label {
-        font-size: 14px;
+        font-size: 20px;
         margin-bottom: 6px;
     }
 
-    .google-ads-keywords__form-group input {
-        padding: 12px;
-        font-size: 14px;
-    }
-
-    .google-ads-keywords__checkbox-label {
-        padding: 9px;
-        font-size: 14px;
-    }
-
-    .google-ads-keywords__generate-btn {
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    .google-ads-keywords__results {
-        padding: 20px 15px;
-    }
-
-    .google-ads-keywords__results h3 {
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-
-    .google-ads-keywords__result-group {
-        padding: 15px;
-    }
-
-    .google-ads-keywords__result-group h4 {
-        font-size: 16px;
-        margin-bottom: 12px;
-    }
-
-    .google-ads-keywords__keyword-item {
-        padding: 9px 12px;
+    .google-ads-keywords__header p {
         font-size: 13px;
     }
 
-    .google-ads-keywords__copy-btn {
-        padding: 14px;
+    .google-ads-keywords__content {
+        padding: 15px 10px;
+    }
+
+    .google-ads-keywords__form-group input,
+    .google-ads-keywords__form-group select {
+        padding: 10px;
+        font-size: 13px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .google-ads-keywords__generate-btn {
+        padding: 12px;
         font-size: 15px;
+        width: 100%;
+    }
+
+    .google-ads-keywords__results {
+        padding: 15px 10px;
+    }
+
+    .google-ads-keywords__result-group {
+        padding: 12px;
+    }
+
+    .google-ads-keywords__keyword-item {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .google-ads-keywords__copy-btn {
+        padding: 12px;
+        font-size: 14px;
+        width: 100%;
     }
 }

@@ -1,241 +1,73 @@
 @media (max-width: 768px) {
+    .canva-services {
+        overflow-x: hidden;
+        /* прибирає горизонтальний скрол */
+    }
+
     .canva-services-container {
-        padding: 3rem 1.5rem;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
     }
 
-    .canva-services-hero {
-        margin-bottom: 4rem;
-    }
-
-    .hero-icon {
-        font-size: 4rem;
-    }
-
-    .canva-services-title {
-        font-size: 2.5rem;
-    }
-
-    .canva-services-description {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .services-grid {
+    .services-grid,
+    .features-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .service-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .pricing-table-wrapper {
-        padding: 1.5rem;
-    }
-
-    .pricing-table th,
-    .pricing-table td {
-        padding: 1rem;
-        font-size: 0.95rem;
-    }
-
-    .price-cell {
-        font-size: 1.1rem;
-    }
-
-    .cta-card {
-        padding: 3rem 2rem;
-    }
-
-    .cta-title {
-        font-size: 2rem;
-    }
-
-    .cta-text {
-        font-size: 1.05rem;
-    }
-
-    .cta-button {
-        padding: 1rem 2rem;
-        font-size: 1.05rem;
-    }
-
-    .show-examples-btn {
-        padding: 1.25rem 1.5rem;
-        font-size: 1.1rem;
-    }
-
-    .examples-slider {
-        padding: 1.5rem;
+        gap: 1rem;
     }
 
     .slider-wrapper {
-        margin: 0 2.5rem;
+        margin: 0 1rem;
+        /* менші відступи */
     }
 
-    .slider-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.75rem;
-    }
-
-    .slider-btn.prev {
-        left: 0.5rem;
-    }
-
-    .slider-btn.next {
-        right: 0.5rem;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .feature-item {
-        padding: 1.75rem 1.5rem;
+    .cta-button,
+    .show-examples-btn {
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }
 
 @media (max-width: 480px) {
     .canva-services-container {
-        padding: 2rem 1rem;
-    }
-
-    .canva-services-hero {
-        margin-bottom: 3rem;
-    }
-
-    .hero-icon {
-        font-size: 3.5rem;
+        max-width: 100%;
+        padding: 1.5rem 0.75rem;
+        overflow-x: hidden;
     }
 
     .canva-services-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .canva-services-description {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 1.75rem;
-    }
-
-    .service-card {
-        padding: 1.75rem 1.25rem;
-    }
-
-    .service-icon {
-        font-size: 3.5rem;
-    }
-
-    .service-title {
-        font-size: 1.3rem;
-    }
-
-    .service-description {
         font-size: 0.95rem;
-    }
-
-    .pricing-table-wrapper {
-        padding: 1.25rem;
-    }
-
-    .pricing-table th,
-    .pricing-table td {
-        padding: 0.875rem;
-        font-size: 0.9rem;
-    }
-
-    .price-cell {
-        font-size: 1rem;
-    }
-
-    .cta-card {
-        padding: 2.5rem 1.5rem;
-    }
-
-    .cta-title {
-        font-size: 1.75rem;
-    }
-
-    .cta-text {
-        font-size: 1rem;
     }
 
     .cta-button {
-        padding: 0.875rem 1.75rem;
-        font-size: 1rem;
         width: 100%;
-        justify-content: center;
-    }
-
-    .button-icon {
-        font-size: 1.3rem;
-    }
-
-    .show-examples-btn {
-        padding: 1rem 1.25rem;
-        font-size: 1rem;
-    }
-
-    .arrow {
-        font-size: 1.3rem;
-    }
-
-    .examples-slider {
-        padding: 1.25rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+        box-sizing: border-box;
     }
 
     .slider-wrapper {
-        margin: 0 2rem;
+        margin: 0 0.5rem;
+        /* мінімальні відступи */
     }
 
     .slider-image {
-        max-height: 350px;
+        max-height: 280px;
+        /* компактніше */
     }
 
     .slider-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-    }
-
-    .slider-btn.prev {
-        left: 0.25rem;
-    }
-
-    .slider-btn.next {
-        right: 0.25rem;
-    }
-
-    .slider-dots {
-        gap: 0.5rem;
-        margin-top: 1.25rem;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
-    }
-
-    .feature-item {
-        padding: 1.5rem 1.25rem;
-    }
-
-    .feature-icon {
-        font-size: 2.5rem;
-    }
-
-    .feature-title {
+        width: 32px;
+        height: 32px;
         font-size: 1.2rem;
     }
 
-    .feature-text {
-        font-size: 0.95rem;
+    .features-grid {
+        gap: 0.75rem;
     }
 }

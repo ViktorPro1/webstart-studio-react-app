@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ProjectChecker.css';
+import './ProjectChecker.mobile.css';
 
 const ProjectChecker = () => {
     const [projectType, setProjectType] = useState('landing');

@@ -224,6 +224,3 @@
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
 }
-
-/* Імпорт мобільних стилів */
-@import './PromptEditor.mobile.css';

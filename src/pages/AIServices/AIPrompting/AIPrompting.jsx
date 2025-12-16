@@ -1,5 +1,6 @@
 import React from 'react';
 import './AIPrompting.css';
+import './AIPrompting.mobile.css';
 
 const AIPrompting = () => {
     return (

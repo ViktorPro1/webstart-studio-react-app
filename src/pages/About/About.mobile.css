@@ -1,67 +1,77 @@
 @media (max-width: 768px) {
     .about-page {
+        max-width: 100%;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .about-section,
+    .about-history-section,
+    .about-team-section {
         padding: 20px 15px;
     }
 
-    .about-section {
-        padding: 25px 20px;
-    }
-
     .about-centered {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
-    .about-centered:first-child {
-        font-size: 2rem;
-    }
-
-    .about-history-toggle-btn,
-    .about-team-toggle-btn {
-        width: 100%;
-        max-width: 300px;
-        padding: 14px 20px;
-    }
-
-    .about-team-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .about-team-member {
-        width: 100%;
-        max-width: 320px;
+    .about-team-member p {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
-    .about-section {
-        padding: 20px 15px;
+
+    .about-section,
+    .about-history-section,
+    .about-team-section {
+        padding: 15px 12px;
     }
 
     .about-centered:first-child {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .about-team-member {
-        padding: 15px;
+        padding: 12px;
     }
 
     .about-team-member img {
         height: 140px;
+        /* залишаємо трохи більшим */
+    }
+
+    .about-team-member h3 {
+        font-size: 1.1rem;
+    }
+
+    .about-team-member p {
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 375px) {
     .about-page {
-        padding: 15px 10px;
+        max-width: 100%;
+        padding: 12px 8px;
     }
 
-    .about-section {
-        padding: 15px 12px;
+    .about-section,
+    .about-history-section,
+    .about-team-section {
+        padding: 12px 10px;
     }
 
     .about-team-member img {
-        height: 120px;
+        height: 130px;
+        /* не надто дрібне */
+    }
+
+    .about-team-member h3 {
+        font-size: 1rem;
+    }
+
+    .about-team-member p {
+        font-size: 0.8rem;
     }
 }

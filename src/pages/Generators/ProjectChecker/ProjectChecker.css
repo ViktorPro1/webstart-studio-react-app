@@ -351,6 +351,3 @@
     min-width: 50px;
     text-align: right;
 }
-
-/* Імпорт мобільних стилів */
-@import './ProjectChecker.mobile.css';

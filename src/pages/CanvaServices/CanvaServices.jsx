@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './CanvaServices.css';
+import './CanvaServices.mobile.css';
 
 const CanvaServices = () => {
     const [showExamples, setShowExamples] = useState(false);

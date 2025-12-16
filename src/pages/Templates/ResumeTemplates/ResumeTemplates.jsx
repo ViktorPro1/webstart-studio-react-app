@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ResumeTemplates.css';
+import './ResumeTemplates.mobile.css';
 
 const ResumeTemplates = () => {
     const [activeTemplate, setActiveTemplate] = useState(null);

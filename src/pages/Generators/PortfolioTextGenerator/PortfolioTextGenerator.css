@@ -249,6 +249,3 @@
     color: #92400e;
     font-weight: 700;
 }
-
-/* Імпорт мобільних стилів */
-@import './PortfolioTextGenerator.mobile.css';

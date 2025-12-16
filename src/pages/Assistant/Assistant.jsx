@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageCircle, Zap, Clock, Shield, Heart, Compass } from 'lucide-react';
 import './Assistant.css';
+import './Assistant.mobile.css';
 
 const Assistant = () => {
     return (

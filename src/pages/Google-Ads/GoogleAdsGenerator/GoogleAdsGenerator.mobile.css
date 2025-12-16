@@ -1,147 +1,119 @@
 @media (max-width: 1024px) {
+    .google-ads-generator {
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        /* прибирає горизонтальний скрол */
+    }
+
+    .google-ads-generator__container {
+        max-width: 95%;
+        /* звужує контент */
+        margin: 0 auto;
+    }
+
     .google-ads-generator__main-layout {
         grid-template-columns: 1fr;
-    }
-
-    .google-ads-generator__info-panel {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .google-ads-generator__container {
-        border-radius: 10px;
-    }
-
-    .google-ads-generator__header {
-        padding: 30px 20px;
-    }
-
-    .google-ads-generator__header h1 {
-        font-size: 26px;
-    }
-
-    .google-ads-generator__content {
-        padding: 30px 20px;
-    }
-
-    .google-ads-generator__templates-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 420px) {
-    .google-ads-generator {
-        padding: 10px;
-    }
-
-    .google-ads-generator__container {
-        border-radius: 15px;
-    }
-
-    .google-ads-generator__header {
-        padding: 25px 15px;
-    }
-
-    .google-ads-generator__header h1 {
-        font-size: 22px;
-        margin-bottom: 8px;
-    }
-
-    .google-ads-generator__header p {
-        font-size: 14px;
-    }
-
-    .google-ads-generator__content {
-        padding: 25px 15px;
+        gap: 25px;
     }
 
     .google-ads-generator__info-panel {
         flex-direction: column;
         gap: 15px;
-        padding: 20px 15px;
     }
 
-    .google-ads-generator__info-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
+    .google-ads-generator__form-group input,
+    .google-ads-generator__form-group select {
+        max-width: 100%;
+        box-sizing: border-box;
+        /* враховує падінги та border */
+    }
+}
+
+@media (max-width: 768px) {
+    .google-ads-generator__container {
+        max-width: 100%;
+        border-radius: 10px;
     }
 
-    .google-ads-generator__info-icon {
-        font-size: 28px;
+    .google-ads-generator__header {
+        padding: 20px 12px;
     }
 
-    .google-ads-generator__main-layout {
+    .google-ads-generator__header h1 {
+        font-size: 22px;
+    }
+
+    .google-ads-generator__content {
+        padding: 15px 10px;
+    }
+
+    .google-ads-generator__templates-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .google-ads-generator__form-section h2,
-    .google-ads-generator__preview-section h2 {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .google-ads-generator__form-group {
-        margin-bottom: 20px;
-    }
-
-    .google-ads-generator__form-group label {
-        font-size: 14px;
-        margin-bottom: 6px;
+        gap: 12px;
     }
 
     .google-ads-generator__form-group input,
     .google-ads-generator__form-group select {
         padding: 12px;
         font-size: 14px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 420px) {
+    .google-ads-generator {
+        padding: 8px;
+        overflow-x: hidden;
     }
 
-    .google-ads-generator__generate-btn {
-        padding: 15px;
-        font-size: 16px;
+    .google-ads-generator__container {
+        max-width: 100%;
+        border-radius: 12px;
     }
 
-    .google-ads-generator__results {
-        padding: 20px 15px;
+    .google-ads-generator__header {
+        padding: 15px 10px;
     }
 
-    .google-ads-generator__results h3 {
+    .google-ads-generator__header h1 {
         font-size: 18px;
-        margin-bottom: 20px;
+        margin-bottom: 6px;
     }
 
-    .google-ads-generator__result-block {
-        padding: 15px;
-        margin-bottom: 15px;
+    .google-ads-generator__header p {
+        font-size: 12px;
     }
 
-    .google-ads-generator__result-item {
-        padding: 10px 12px;
+    .google-ads-generator__content {
+        padding: 12px 8px;
+    }
+
+    .google-ads-generator__info-panel {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
+        padding: 12px 8px;
     }
 
-    .google-ads-generator__copy-btn {
-        width: 100%;
-    }
-
-    .google-ads-generator__templates-section h2 {
-        font-size: 22px;
-    }
-
-    .google-ads-generator__templates-grid {
+    .google-ads-generator__main-layout {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    .google-ads-generator__template-card {
-        padding: 20px 15px;
+    .google-ads-generator__form-group input,
+    .google-ads-generator__form-group select {
+        padding: 8px;
+        font-size: 12px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
-    .google-ads-generator__template-icon {
-        font-size: 40px;
+    .google-ads-generator__generate-btn {
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+        /* кнопка на всю ширину */
     }
 }

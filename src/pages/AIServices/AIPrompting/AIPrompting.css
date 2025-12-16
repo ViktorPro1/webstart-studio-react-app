@@ -154,6 +154,3 @@
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(144, 19, 254, 0.6);
 }
-
-/* Імпорт мобільних стилів */
-@import './AIPrompting.mobile.css';

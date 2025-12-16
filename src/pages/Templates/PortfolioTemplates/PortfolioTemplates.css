@@ -479,6 +479,3 @@
     background: rgba(45, 212, 191, 0.1);
     border-color: #2dd4bf;
 }
-
-/* Імпорт мобільних стилів */
-@import './PortfolioTemplates.mobile.css';

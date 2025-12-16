@@ -1,72 +1,72 @@
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    .header h1 {
+    .instruction-root .instruction-header h1 {
         font-size: 1.6em;
     }
 
-    .header p {
+    .instruction-root .instruction-header p {
         font-size: 0.95em;
     }
 
-    .tab {
+    .instruction-root .tab {
         font-size: 0.9em;
         padding: 15px 10px;
     }
 
-    .tab-text {
+    .instruction-root .tab-text {
         display: none;
     }
 
-    .content {
+    .instruction-root .content {
         padding: 20px 15px;
     }
 
-    .tab-content h2 {
+    .instruction-root .tab-content h2 {
         font-size: 1.4em;
     }
 
-    .step-header {
+    .instruction-root .step-header {
         font-size: 1em;
     }
 
-    .button-group {
+    .instruction-root .button-group {
         flex-direction: column;
     }
 
-    .btn {
+    .instruction-root .btn {
         width: 100%;
         justify-content: center;
     }
 
-    .navigation-buttons {
+    .instruction-root .navigation-buttons {
         gap: 10px;
     }
 
-    .nav-btn {
+    .instruction-root .nav-btn {
         flex: 1;
         justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
-    .header {
+    .instruction-root .instruction-header {
         padding: 25px 15px;
     }
 
-    .header h1 {
+    .instruction-root .instruction-header h1 {
         font-size: 1.3em;
     }
 
-    .step-number {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9em;
+    .instruction-root .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85em;
     }
 
-    .step-details {
-        padding-left: 40px;
+    .instruction-root .step-details {
+        padding-left: 35px;
+    }
+
+    .instruction-root .content {
+        padding: 15px 10px;
     }
 }

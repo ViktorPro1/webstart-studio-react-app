@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './TargetAdvertising.css';
+import './TargetAdvertising.mobile.css';
 
 const TargetAdvertising = () => {
     const [showExamples, setShowExamples] = useState(false);

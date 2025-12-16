@@ -1,5 +1,6 @@
 import React from 'react';
 import './TargetExplanation.css';
+import './TargetExplanation.mobile.css';
 
 const TargetExplanation = () => {
     const benefits = [
