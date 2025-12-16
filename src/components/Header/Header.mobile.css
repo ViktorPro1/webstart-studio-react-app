@@ -3,10 +3,16 @@
         margin-left: 0;
         left: 0;
         width: 100%;
+        max-width: 100vw;
+        /* додано */
         padding: 0 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        box-sizing: border-box;
+        /* додано */
+        overflow-x: hidden;
+        /* додано */
     }
 
     .burger-menu {
@@ -26,26 +32,41 @@
         width: 35px;
         height: 35px;
     }
+
+    .header-left,
+    .header-right {
+        flex-shrink: 0;
+        /* додано */
+    }
 }
 
 @media (max-width: 420px) {
     .header {
         position: relative;
         width: 100%;
+        max-width: 100vw;
+        /* додано */
         padding: 0 8px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        box-sizing: border-box;
+        /* додано */
+        overflow-x: hidden;
+        /* додано */
     }
 
     .header-left {
-        gap: 8px;
+        gap: 6px;
+        /* зменшено з 8px */
         display: flex;
         align-items: center;
+        flex-shrink: 0;
     }
 
     .burger-menu {
         display: block;
+        flex-shrink: 0;
     }
 
     .search-bar {
@@ -53,18 +74,23 @@
     }
 
     .header-right {
-        gap: 8px;
+        gap: 6px;
+        /* зменшено з 8px */
         display: flex;
         align-items: center;
+        flex-shrink: 0;
     }
 
     .header-btn {
         padding: 4px 8px;
         font-size: 10px;
+        white-space: nowrap;
+        /* додано */
     }
 
     .user-icon {
         width: 26px;
         height: 26px;
+        flex-shrink: 0;
     }
 }

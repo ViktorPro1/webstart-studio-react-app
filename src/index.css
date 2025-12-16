@@ -56,3 +56,19 @@ body.dark-theme li {
   background: inherit;
   color: inherit;
 }
+
+/* Фікс для мобільних пристроїв */
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
