@@ -1,17 +1,16 @@
-/* ВИПРАВЛЕНИЙ Contact.mobile.css - ТРІШКИ МЕНЬШИЙ ЛІВИЙ ВІДСТУП */
+/* ВИПРАВЛЕНИЙ Contact.mobile.css - ТІЛЬКИ ФІКС ЗСУВУ */
 
 @media (max-width: 768px) {
-
     .contact-page {
         overflow-x: hidden !important;
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
-        padding: 0 12px 0 6px !important;
-        /* ← ТРІШКИ ЗЛІВА 6px */
+        padding: 0 !important;
         box-sizing: border-box;
     }
 
+    /* ФІКС ТІЛЬКИ ДЛЯ ЗСУВУ */
     #contact-gift-wrapper,
     .contact-block,
     .contact-form,
@@ -19,7 +18,8 @@
     .contact-working-hours {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 auto !important;
+        margin: 0 !important;
+        /* ← прибрано auto */
         padding: 20px 12px !important;
         box-sizing: border-box !important;
     }
@@ -28,11 +28,13 @@
     .contact-working-hours .container {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 auto !important;
+        margin: 0 !important;
+        /* ← прибрано auto */
         padding: 0 12px !important;
         box-sizing: border-box !important;
     }
 
+    /* решта БЕЗ ЗМІН */
     .contact-form-group input,
     .contact-form-group select,
     .contact-form-group textarea {
@@ -68,13 +70,8 @@
     }
 }
 
+/* Решта breakpoint'ів БЕЗ ЗМІН */
 @media (max-width: 480px) {
-
-    .contact-page {
-        padding: 0 10px 0 4px !important;
-        /* ← ТРІШКИ ЗЛІВА 4px */
-    }
-
     #contact-gift-wrapper {
         padding: 16px 10px !important;
         gap: 16px;
@@ -99,12 +96,6 @@
 }
 
 @media (max-width: 420px) {
-
-    .contact-page {
-        padding: 0 10px 0 4px !important;
-        /* ← ТРІШКИ ЗЛІВА 4px */
-    }
-
     #contact-gift-wrapper {
         padding: 14px 10px !important;
         gap: 18px;
@@ -133,12 +124,6 @@
 }
 
 @media (max-width: 375px) {
-
-    .contact-page {
-        padding: 0 8px 0 2px !important;
-        /* ← ТРІШКИ ЗЛІВА 2px */
-    }
-
     #contact-gift-wrapper {
         padding: 12px 8px !important;
     }
