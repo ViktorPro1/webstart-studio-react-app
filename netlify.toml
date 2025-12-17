@@ -39,15 +39,12 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-    # --- ВИПРАВЛЕННЯ ДЛЯ ШВИДКОСТІ (LCP) ---
-    # Цей рядок каже серверу Netlify почати відправку CSS/JS негайно
-    Link = "</static/css/*.css>; rel=preload; as=style, </static/js/*.js>; rel=preload; as=script"
-    # ---------------------------------------
+    # Оновлений CSP: дозволяємо Clarity збирати дані та відправляти зображення-маячки (c.gif)
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms scripts.clarity.ms *.clarity.ms;
+      script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms scripts.clarity.ms *.clarity.ms;
       connect-src 'self' www.google-analytics.com cdn.clarity.ms www.clarity.ms o.clarity.ms *.clarity.ms;
-      img-src 'self' www.google-analytics.com data:;
+      img-src 'self' www.google-analytics.com c.clarity.ms c.gif data:;
       style-src 'self' 'unsafe-inline';
       font-src 'self';
       frame-ancestors 'self';
@@ -63,19 +60,18 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-    # Дублюємо Link preload для index.html
-    Link = "</static/css/*.css>; rel=preload; as=style, </static/js/*.js>; rel=preload; as=script"
+    # Дублюємо оновлений CSP сюди
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms scripts.clarity.ms *.clarity.ms;
+      script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms scripts.clarity.ms *.clarity.ms;
       connect-src 'self' www.google-analytics.com cdn.clarity.ms www.clarity.ms o.clarity.ms *.clarity.ms;
-      img-src 'self' www.google-analytics.com data:;
+      img-src 'self' www.google-analytics.com c.clarity.ms c.gif data:;
       style-src 'self' 'unsafe-inline';
       font-src 'self';
       frame-ancestors 'self';
     """
 
-# Решта конфігурації без змін
+# Решта конфігурації
 [[headers]]
   for = "/*.css"
   [headers.values]
