@@ -1,14 +1,25 @@
 @media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .contact-page {
         overflow-x: hidden;
         max-width: 500px;
         margin: 0 auto;
+        padding: 0;
     }
 
     #contact-gift-wrapper {
-        padding: 26px 14px;
+        padding: 26px 10px;
         gap: 20px;
         max-width: 100%;
+        margin: 0;
         box-sizing: border-box;
     }
 
@@ -20,8 +31,9 @@
 
     .contact-block,
     .contact-form {
-        padding: 20px 14px;
+        padding: 20px 10px;
         box-sizing: border-box;
+        margin: 0;
     }
 
     .contact-form-section,
@@ -33,8 +45,8 @@
     .contact-form-section .container,
     .contact-working-hours .container {
         max-width: 100%;
-        margin: 0 auto;
-        padding: 0 14px;
+        margin: 0;
+        padding: 0 10px;
         box-sizing: border-box;
     }
 
