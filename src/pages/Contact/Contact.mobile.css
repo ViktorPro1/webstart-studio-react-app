@@ -133,6 +133,45 @@
     }
 }
 
+@media (max-width: 420px) {
+    .contact-page {
+        max-width: 340px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #contact-gift-wrapper {
+        padding: 14px 10px;
+        gap: 18px;
+    }
+
+    .contact-block,
+    .contact-form {
+        padding: 16px 10px;
+    }
+
+    .contact-form-section,
+    .contact-working-hours {
+        max-width: 340px;
+    }
+
+    .contact-form-group input,
+    .contact-form-group select,
+    .contact-form-group textarea {
+        font-size: 0.9rem;
+        padding: 9px;
+    }
+
+    .contact-social-link {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+
+    .contact-hours-grid {
+        gap: 12px;
+    }
+}
+
 @media (max-width: 375px) {
     .contact-page {
         padding: 0;
