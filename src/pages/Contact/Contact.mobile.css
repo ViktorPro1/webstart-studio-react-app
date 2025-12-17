@@ -1,15 +1,14 @@
-/* ВИПРАВЛЕНИЙ Contact.mobile.css - усунуто всі max-width конфлікти */
+/* ВИПРАВЛЕНИЙ Contact.mobile.css - ТРІШКИ МЕНЬШИЙ ЛІВИЙ ВІДСТУП */
 
 @media (max-width: 768px) {
 
-    html,
-    body,
     .contact-page {
         overflow-x: hidden !important;
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
-        padding: 0 !important;
+        padding: 0 12px 0 6px !important;
+        /* ← ТРІШКИ ЗЛІВА 6px */
         box-sizing: border-box;
     }
 
@@ -69,8 +68,13 @@
     }
 }
 
-/* ОДНА УНІВЕРСАЛЬНА МОБІЛЬНА БЛОК - без вкладених media queries */
 @media (max-width: 480px) {
+
+    .contact-page {
+        padding: 0 10px 0 4px !important;
+        /* ← ТРІШКИ ЗЛІВА 4px */
+    }
+
     #contact-gift-wrapper {
         padding: 16px 10px !important;
         gap: 16px;
@@ -95,6 +99,12 @@
 }
 
 @media (max-width: 420px) {
+
+    .contact-page {
+        padding: 0 10px 0 4px !important;
+        /* ← ТРІШКИ ЗЛІВА 4px */
+    }
+
     #contact-gift-wrapper {
         padding: 14px 10px !important;
         gap: 18px;
@@ -123,6 +133,12 @@
 }
 
 @media (max-width: 375px) {
+
+    .contact-page {
+        padding: 0 8px 0 2px !important;
+        /* ← ТРІШКИ ЗЛІВА 2px */
+    }
+
     #contact-gift-wrapper {
         padding: 12px 8px !important;
     }

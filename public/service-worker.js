@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 
-const CACHE_NAME = "webstart-cache-v17"; // Збільшив версію!
+const CACHE_NAME = "webstart-cache-v19"; // Збільшив версію!
 
 self.addEventListener("install", (event) => {
     console.log('[SW] Install');
