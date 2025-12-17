@@ -1,13 +1,31 @@
 @media (max-width: 768px) {
+    .contact-page {
+        overflow-x: hidden;
+    }
+
     #contact-gift-wrapper {
         padding: 26px 14px;
         gap: 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-block {
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .contact-block,
-    .gift-block,
     .contact-form {
         padding: 20px 14px;
+        box-sizing: border-box;
+    }
+
+    .contact-form-section .container,
+    .contact-working-hours .container {
+        max-width: 100%;
+        padding: 0 14px;
+        box-sizing: border-box;
     }
 
     .contact-form-group input,
@@ -15,10 +33,26 @@
     .contact-form-group textarea {
         font-size: 0.94rem;
         padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .contact-social-links {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .contact-social-link {
         padding: 10px 14px;
+        box-sizing: border-box;
+        min-width: auto;
+        max-width: 100%;
+    }
+
+    .contact-item,
+    .contact-viber-card {
+        box-sizing: border-box;
+        word-wrap: break-word;
     }
 }
 
@@ -26,12 +60,18 @@
     #contact-gift-wrapper {
         padding: 16px 10px;
         gap: 16px;
+        max-width: 100%;
     }
 
     .contact-block,
-    .gift-block,
     .contact-form {
         padding: 14px 10px;
+        max-width: 100%;
+    }
+
+    .contact-form-section .container,
+    .contact-working-hours .container {
+        padding: 0 10px;
     }
 
     .contact-form-group input,
@@ -44,5 +84,30 @@
     .contact-social-link {
         font-size: 0.88rem;
         padding: 9px 10px;
+    }
+
+    .contact-hours-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .contact-page {
+        padding: 0;
+    }
+
+    #contact-gift-wrapper {
+        padding: 12px 8px;
+    }
+
+    .contact-block,
+    .contact-form {
+        padding: 12px 8px;
+    }
+
+    .contact-form-section .container,
+    .contact-working-hours .container {
+        padding: 0 8px;
     }
 }

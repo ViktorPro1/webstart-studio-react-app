@@ -3,24 +3,38 @@
         max-width: 100%;
         padding: 20px 15px;
         box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .about-section,
     .about-history-section,
     .about-team-section {
         padding: 20px 15px;
-        max-width: 700px;
-        /* звужуємо */
+        max-width: 100%;
         margin: 0 auto;
-        /* центруємо */
+        box-sizing: border-box;
+    }
+
+    .about-team-container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-team-member {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .about-centered {
         font-size: 0.95rem;
+        word-wrap: break-word;
     }
 
     .about-team-member p {
         font-size: 0.9rem;
+        word-wrap: break-word;
     }
 }
 
@@ -30,9 +44,9 @@
     .about-history-section,
     .about-team-section {
         padding: 15px 12px;
-        max-width: 360px;
-        /* звужуємо ще більше */
+        max-width: 100%;
         margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .about-centered:first-child {
@@ -41,9 +55,10 @@
 
     .about-team-member {
         padding: 12px;
+        width: 100%;
         max-width: 300px;
-        /* щоб картка не розтягувалась */
         margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .about-team-member img {
@@ -63,20 +78,23 @@
     .about-page {
         max-width: 100%;
         padding: 12px 8px;
+        overflow-x: hidden;
     }
 
     .about-section,
     .about-history-section,
     .about-team-section {
         padding: 12px 10px;
-        max-width: 320px;
-        /* ще компактніше */
+        max-width: 100%;
         margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .about-team-member {
+        width: 100%;
         max-width: 280px;
         margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .about-team-member img {
