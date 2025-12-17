@@ -1,91 +1,66 @@
-/* =========================
-   MOBILE BASE (768px ↓)
-   ========================= */
+/* ВИПРАВЛЕНИЙ Contact.mobile.css - усунуто всі max-width конфлікти */
+
 @media (max-width: 768px) {
 
-    *,
-    *::before,
-    *::after {
+    html,
+    body,
+    .contact-page {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
         box-sizing: border-box;
     }
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    /* ЄДИНИЙ КОНТРОЛЬ ШИРИНИ СТОРІНКИ */
-    .contact-page {
-        width: 100%;
-        max-width: 380px;
-        margin: 0 auto;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    #contact-gift-wrapper {
-        width: 100%;
-        padding: 20px 10px;
-        gap: 20px;
-        margin: 0;
-    }
-
+    #contact-gift-wrapper,
     .contact-block,
     .contact-form,
     .contact-form-section,
     .contact-working-hours {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 16px 10px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 20px 12px !important;
+        box-sizing: border-box !important;
     }
 
     .contact-form-section .container,
     .contact-working-hours .container {
-        width: 100%;
-        margin: 0;
-        padding: 0 10px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 12px !important;
+        box-sizing: border-box !important;
     }
 
-    input,
-    select,
-    textarea,
-    button {
+    .contact-form-group input,
+    .contact-form-group select,
+    .contact-form-group textarea {
+        font-size: 0.94rem;
+        padding: 10px;
+        box-sizing: border-box;
         width: 100%;
+    }
+
+    .contact-social-links {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-social-link {
+        padding: 10px 14px;
+        box-sizing: border-box;
+        min-width: auto;
         max-width: 100%;
+        width: 100%;
     }
 
-    .contact-social-links,
-    .contact-social-link,
     .contact-item,
     .contact-viber-card {
-        width: 100%;
-        max-width: 100%;
+        box-sizing: border-box;
         word-wrap: break-word;
-    }
-}
-
-/* =========================
-   480px ↓
-   ========================= */
-@media (max-width: 480px) {
-
-    .contact-page {
-        max-width: 360px;
-    }
-
-    #contact-gift-wrapper {
-        padding: 16px 10px;
-        gap: 16px;
-    }
-
-    .contact-block,
-    .contact-form {
-        padding: 14px 10px;
+        overflow-wrap: break-word;
     }
 
     .contact-hours-grid {
@@ -94,23 +69,40 @@
     }
 }
 
-/* =========================
-   420px ↓  (ПОВЕРНУТО)
-   ========================= */
-@media (max-width: 420px) {
-
-    .contact-page {
-        max-width: 340px;
+/* ОДНА УНІВЕРСАЛЬНА МОБІЛЬНА БЛОК - без вкладених media queries */
+@media (max-width: 480px) {
+    #contact-gift-wrapper {
+        padding: 16px 10px !important;
+        gap: 16px;
     }
 
+    .contact-block,
+    .contact-form {
+        padding: 14px 10px !important;
+    }
+
+    .contact-form-group input,
+    .contact-form-group select,
+    .contact-form-group textarea {
+        font-size: 0.88rem;
+        padding: 8px;
+    }
+
+    .contact-social-link {
+        font-size: 0.88rem;
+        padding: 9px 10px;
+    }
+}
+
+@media (max-width: 420px) {
     #contact-gift-wrapper {
-        padding: 14px 10px;
+        padding: 14px 10px !important;
         gap: 18px;
     }
 
     .contact-block,
     .contact-form {
-        padding: 14px 10px;
+        padding: 16px 10px !important;
     }
 
     .contact-form-group input,
@@ -130,26 +122,18 @@
     }
 }
 
-/* =========================
-   375px ↓
-   ========================= */
 @media (max-width: 375px) {
-
-    .contact-page {
-        max-width: 320px;
-    }
-
     #contact-gift-wrapper {
-        padding: 12px 8px;
+        padding: 12px 8px !important;
     }
 
     .contact-block,
     .contact-form {
-        padding: 12px 8px;
+        padding: 12px 8px !important;
     }
 
     .contact-form-section .container,
     .contact-working-hours .container {
-        padding: 0 8px;
+        padding: 0 8px !important;
     }
 }
