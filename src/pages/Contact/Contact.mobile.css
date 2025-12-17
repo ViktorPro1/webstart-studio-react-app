@@ -1,6 +1,8 @@
 @media (max-width: 768px) {
     .contact-page {
         overflow-x: hidden;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     #contact-gift-wrapper {
@@ -12,6 +14,7 @@
 
     .contact-block {
         max-width: 100%;
+        margin: 0 auto;
         box-sizing: border-box;
     }
 
@@ -21,9 +24,16 @@
         box-sizing: border-box;
     }
 
+    .contact-form-section,
+    .contact-working-hours {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
     .contact-form-section .container,
     .contact-working-hours .container {
         max-width: 100%;
+        margin: 0 auto;
         padding: 0 14px;
         box-sizing: border-box;
     }
@@ -57,20 +67,39 @@
 }
 
 @media (max-width: 480px) {
+    .contact-page {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
     #contact-gift-wrapper {
         padding: 16px 10px;
         gap: 16px;
         max-width: 100%;
     }
 
+    .contact-block {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
     .contact-block,
     .contact-form {
         padding: 14px 10px;
         max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .contact-form-section,
+    .contact-working-hours {
+        max-width: 360px;
+        margin: 0 auto;
     }
 
     .contact-form-section .container,
     .contact-working-hours .container {
+        max-width: 100%;
+        margin: 0 auto;
         padding: 0 10px;
     }
 
@@ -95,19 +124,36 @@
 @media (max-width: 375px) {
     .contact-page {
         padding: 0;
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     #contact-gift-wrapper {
         padding: 12px 8px;
     }
 
+    .contact-block {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
     .contact-block,
     .contact-form {
         padding: 12px 8px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .contact-form-section,
+    .contact-working-hours {
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .contact-form-section .container,
     .contact-working-hours .container {
+        max-width: 100%;
+        margin: 0 auto;
         padding: 0 8px;
     }
 }
