@@ -1,0 +1,215 @@
+/* Mobile styles for GoogleAdsLearning */
+
+@media (max-width: 768px) {
+    .google-ads-learning {
+        padding: 30px 20px;
+    }
+
+    /* Hero Section Mobile */
+    .google-ads-learning__hero {
+        padding: 50px 30px;
+        margin-bottom: 50px;
+        border-radius: 16px;
+    }
+
+    .google-ads-learning__hero-badge {
+        font-size: 12px;
+        padding: 6px 16px;
+        margin-bottom: 20px;
+    }
+
+    .google-ads-learning__hero-title {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    .google-ads-learning__hero-description {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .google-ads-learning__hero-stats {
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 30px;
+    }
+
+    .google-ads-learning__stat-item {
+        text-align: left;
+    }
+
+    .google-ads-learning__stat-number {
+        font-size: 32px;
+        margin-bottom: 4px;
+    }
+
+    .google-ads-learning__stat-label {
+        font-size: 13px;
+    }
+
+    .google-ads-learning__decoration-circle {
+        display: none;
+    }
+
+    /* Sections Mobile */
+    .google-ads-learning__benefits-section,
+    .google-ads-learning__tools-section {
+        margin-bottom: 50px;
+    }
+
+    .google-ads-learning__section-title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .google-ads-learning__section-subtitle {
+        font-size: 15px;
+        margin: 0 auto 30px;
+    }
+
+    /* Benefits Grid Mobile */
+    .google-ads-learning__benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .google-ads-learning__benefit-card {
+        padding: 30px 24px;
+        border-radius: 16px;
+    }
+
+    .google-ads-learning__benefit-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+        border-radius: 14px;
+    }
+
+    .google-ads-learning__benefit-title {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .google-ads-learning__benefit-description {
+        font-size: 14px;
+    }
+
+    /* Tools Grid Mobile */
+    .google-ads-learning__tools-header {
+        margin-bottom: 30px;
+    }
+
+    .google-ads-learning__tools-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .google-ads-learning__tool-card {
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        border-radius: 16px;
+    }
+
+    .google-ads-learning__tool-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .google-ads-learning__tool-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+    }
+
+    .google-ads-learning__tool-title {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .google-ads-learning__tool-description {
+        font-size: 14px;
+    }
+
+    .google-ads-learning__tool-arrow {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+    }
+
+    /* CTA Section Mobile */
+    .google-ads-learning__cta-section {
+        padding: 50px 30px;
+        margin-top: 50px;
+        border-radius: 16px;
+    }
+
+    .google-ads-learning__cta-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 20px;
+    }
+
+    .google-ads-learning__cta-title {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    .google-ads-learning__cta-description {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .google-ads-learning__cta-badge {
+        font-size: 13px;
+        padding: 12px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .google-ads-learning {
+        padding: 20px 16px;
+    }
+
+    .google-ads-learning__hero {
+        padding: 40px 24px;
+        margin-bottom: 40px;
+    }
+
+    .google-ads-learning__hero-title {
+        font-size: 26px;
+    }
+
+    .google-ads-learning__hero-description {
+        font-size: 15px;
+    }
+
+    .google-ads-learning__section-title {
+        font-size: 24px;
+    }
+
+    .google-ads-learning__benefits-grid,
+    .google-ads-learning__tools-grid {
+        gap: 16px;
+    }
+
+    .google-ads-learning__benefit-card,
+    .google-ads-learning__tool-card {
+        padding: 20px;
+    }
+
+    .google-ads-learning__cta-section {
+        padding: 40px 24px;
+    }
+
+    .google-ads-learning__cta-title {
+        font-size: 24px;
+    }
+
+    .google-ads-learning__cta-description {
+        font-size: 14px;
+    }
+}

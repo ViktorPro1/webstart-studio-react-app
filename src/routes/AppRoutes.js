@@ -71,6 +71,7 @@ const PromptShowcase = lazy(() => import('../pages/AIServices/PromptShowcase/Pro
 const PromptStudio = lazy(() => import('../pages/AIServices/PromptStudio/PromptStudio'));
 
 /* ===== Google Ads ===== */
+const GoogleAdsLearning = lazy(() => import('../pages/Google-Ads/GoogleAdsLearning/GoogleAdsLearning'));
 const GoogleAdsCalculator = lazy(() => import('../pages/Google-Ads/GoogleAdsCalculator/GoogleAdsCalculator'));
 const GoogleAdsGenerator = lazy(() => import('../pages/Google-Ads/GoogleAdsGenerator/GoogleAdsGenerator'));
 const GoogleAdsComparison = lazy(() => import('../pages/Google-Ads/GoogleAdsComparison/GoogleAdsComparison'));
@@ -165,6 +166,7 @@ const AppRoutes = () => (
             <Route path="/prompt-studio" element={<PromptStudio />} />
 
             {/* Google Ads */}
+            <Route path="/google-ads/learning" element={<GoogleAdsLearning />} />
             <Route path="/google-ads/calculator" element={<GoogleAdsCalculator />} />
             <Route path="/google-ads/generator" element={<GoogleAdsGenerator />} />
             <Route path="/google-ads/comparison" element={<GoogleAdsComparison />} />

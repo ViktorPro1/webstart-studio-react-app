@@ -117,6 +117,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       icon: Search,
       label: 'Реклама в Google',
       submenu: [
+        { path: '/google-ads/learning', label: 'Навчання', description: 'Вивчайте Google Ads з нами' },
         { path: '/google-ads/calculator', label: 'Калькулятор бюджету', description: 'Розрахуйте бюджет кампанії' },
         { path: '/google-ads/comparison', label: 'Порівняння', description: 'Google Ads vs Facebook/Instagram' },
         { path: '/google-ads/glossary', label: 'Глосарій', description: 'Всі терміни контекстної реклами' },
