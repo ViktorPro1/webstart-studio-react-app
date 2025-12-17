@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 
-const CACHE_NAME = "webstart-cache-v13";
+const CACHE_NAME = "webstart-cache-v14"; // Збільшив версію!
 
 self.addEventListener("install", (event) => {
     console.log('[SW] Install');
@@ -39,7 +39,23 @@ self.addEventListener("fetch", (event) => {
         return;
     }
 
-    // Для JS, CSS, зображень - спочатку кеш
+    // Для CSS - завжди спочатку мережа (як HTML)
+    if (event.request.url.endsWith('.css')) {
+        event.respondWith(
+            fetch(event.request)
+                .then(response => {
+                    const clonedResponse = response.clone();
+                    caches.open(CACHE_NAME).then(cache => {
+                        cache.put(event.request, clonedResponse);
+                    });
+                    return response;
+                })
+                .catch(() => caches.match(event.request))
+        );
+        return;
+    }
+
+    // Для JS, зображень - спочатку кеш
     event.respondWith(
         caches.match(event.request).then((response) => {
             if (response) {
