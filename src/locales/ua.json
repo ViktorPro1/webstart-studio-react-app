@@ -1,6 +1,11 @@
 {
   "header": {
     "search": "Пошук...",
-    "orderProject": "На звʼязку"
+    "orderProject": "На звʼязку",
+    "openMenu": "Відкрити меню",
+    "closeMenu": "Закрити меню",
+    "switchToLight": "Увімкнути світлу тему",
+    "switchToDark": "Увімкнути темну тему",
+    "selectLanguage": "Вибрати мову"
   }
 }

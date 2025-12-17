@@ -76,7 +76,12 @@ const DjonAssistant = () => {
             {isPopupOpen && (
                 <div className="djon-popup-overlay">
                     <div className="djon-popup-container">
-                        <button onClick={closePopupForever} className="djon-close-btn">
+                        {/* ДОДАНО aria-label */}
+                        <button
+                            onClick={closePopupForever}
+                            className="djon-close-btn"
+                            aria-label="Закрити вітальне повідомлення"
+                        >
                             ✕
                         </button>
 
@@ -106,9 +111,13 @@ const DjonAssistant = () => {
                 </div>
             )}
 
-            {/* Кнопка чату */}
+            {/* Кнопка чату - ДОДАНО aria-label */}
             {!isChatOpen && (
-                <button onClick={() => setIsChatOpen(true)} className="djon-chat-button">
+                <button
+                    onClick={() => setIsChatOpen(true)}
+                    className="djon-chat-button"
+                    aria-label="Відкрити чат з асистентом"
+                >
                     <MessageCircle size={28} />
                 </button>
             )}
@@ -125,7 +134,12 @@ const DjonAssistant = () => {
                                 онлайн
                             </div>
                         </div>
-                        <button onClick={() => setIsChatOpen(false)} className="djon-chat-close">
+                        {/* ДОДАНО aria-label */}
+                        <button
+                            onClick={() => setIsChatOpen(false)}
+                            className="djon-chat-close"
+                            aria-label="Закрити чат"
+                        >
                             <X size={24} />
                         </button>
                     </div>
@@ -159,8 +173,15 @@ const DjonAssistant = () => {
                             onKeyPress={e => e.key === 'Enter' && handleSend()}
                             placeholder="Напиши повідомлення..."
                             className="djon-chat-input"
+                            aria-label="Поле введення повідомлення"
                         />
-                        <button onClick={handleSend} className="djon-chat-send" disabled={!input.trim()}>
+                        {/* ДОДАНО aria-label */}
+                        <button
+                            onClick={handleSend}
+                            className="djon-chat-send"
+                            disabled={!input.trim()}
+                            aria-label="Надіслати повідомлення"
+                        >
                             <Send size={20} />
                         </button>
                     </div>

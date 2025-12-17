@@ -1,6 +1,11 @@
 {
   "header": {
     "search": "Hledat...",
-    "orderProject": "V kontaktu"
+    "orderProject": "V kontaktu",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu",
+    "switchToLight": "Přepnout na světlý motiv",
+    "switchToDark": "Přepnout na tmavý motiv",
+    "selectLanguage": "Vybrat jazyk"
   }
 }

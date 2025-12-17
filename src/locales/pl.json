@@ -1,6 +1,11 @@
 {
   "header": {
     "search": "Szukaj...",
-    "orderProject": "W kontakcie"
+    "orderProject": "W kontakcie",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "switchToLight": "Przełącz na jasny motyw",
+    "switchToDark": "Przełącz na ciemny motyw",
+    "selectLanguage": "Wybierz język"
   }
 }

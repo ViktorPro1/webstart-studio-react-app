@@ -20,14 +20,11 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
 
   const handleSearch = (e) => {
     if (e.key !== 'Enter') return;
-
     const value = query.trim().toLowerCase();
     if (!value) return;
-
     const result = searchIndex.find((item) =>
       item.label.toLowerCase().includes(value)
     );
-
     if (result) {
       navigate(result.path);
       setQuery('');
@@ -41,7 +38,12 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
   return (
     <header className={`header ${isSidebarOpen ? '' : 'full-width'}`}>
       <div className="header-left">
-        <button className="burger-menu" onClick={toggleSidebar}>
+        {/* 1. Додано aria-label для бургер-меню */}
+        <button
+          className="burger-menu"
+          onClick={toggleSidebar}
+          aria-label={isSidebarOpen ? t('header.closeMenu') : t('header.openMenu')}
+        >
           {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
@@ -58,11 +60,11 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
       </div>
 
       <div className="header-right">
-        {/* Селектор мови */}
         <select
           value={i18n.language}
           onChange={(e) => changeLanguage(e.target.value)}
           className="language-selector"
+          aria-label={t('header.selectLanguage')} // Додано для селектора
         >
           <option value="ua">🇺🇦 UA</option>
           <option value="en">🇬🇧 EN</option>
@@ -72,13 +74,16 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
           <option value="de">🇩🇪 DE</option>
         </select>
 
-        {/* Кнопка переходу на контакти */}
         <button className="header-btn" onClick={goToContact}>
           {t('header.orderProject')}
         </button>
 
-        {/* Кнопка перемикання теми */}
-        <button className="header-theme-btn" onClick={toggleTheme}>
+        {/* 2. Додано aria-label для перемикача теми */}
+        <button
+          className="header-theme-btn"
+          onClick={toggleTheme}
+          aria-label={darkMode ? t('header.switchToLight') : t('header.switchToDark')}
+        >
           {darkMode ? <Check size={20} /> : <Moon size={20} />}
         </button>
       </div>
@@ -87,4 +92,3 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
 };
 
 export default Header;
-

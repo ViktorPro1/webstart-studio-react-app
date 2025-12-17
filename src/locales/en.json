@@ -1,6 +1,11 @@
 {
   "header": {
     "search": "Search...",
-    "orderProject": "In touch"
+    "orderProject": "In touch",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme",
+    "selectLanguage": "Select language"
   }
 }
