@@ -47,6 +47,10 @@ const Home = () => {
               src="/assets/hero-image.webp"
               alt="Професійний бізнесмен з ноутбуком"
               className="hero-image"
+              width="546"
+              height="546"
+              fetchpriority="high"
+              loading="eager"
             />
           </div>
         </section>

@@ -1,3 +1,5 @@
+/* Footer.css - ВИПРАВЛЕНО ТІЛЬКИ КОНТРАСТ */
+
 .footer {
     margin-left: 280px;
     background: rgba(255, 255, 255, 0.95);
@@ -24,7 +26,8 @@
 }
 
 .footer-text p {
-    color: #666;
+    /* Змінено з #666 на #4b5563 для контрасту */
+    color: #4b5563;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -35,7 +38,8 @@
 
 .footer-subtitle {
     font-size: 12px;
-    color: #999;
+    /* Змінено з #999 на #4b5563 для контрасту */
+    color: #4b5563;
 }
 
 .social-links {

@@ -28,7 +28,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
-# Cache для кореня сайту - НЕ кешувати
+# Cache для кореня сайту та index.html
 [[headers]]
   for = "/"
   [headers.values]
@@ -39,6 +39,10 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    # --- ВИПРАВЛЕННЯ ДЛЯ ШВИДКОСТІ (LCP) ---
+    # Цей рядок каже серверу Netlify почати відправку CSS/JS негайно
+    Link = "</static/css/*.css>; rel=preload; as=style, </static/js/*.js>; rel=preload; as=script"
+    # ---------------------------------------
     Content-Security-Policy = """
       default-src 'self';
       script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms scripts.clarity.ms *.clarity.ms;
@@ -49,7 +53,6 @@
       frame-ancestors 'self';
     """
 
-# Cache index.html - НЕ кешувати для SPA
 [[headers]]
   for = "/index.html"
   [headers.values]
@@ -60,6 +63,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    # Дублюємо Link preload для index.html
+    Link = "</static/css/*.css>; rel=preload; as=style, </static/js/*.js>; rel=preload; as=script"
     Content-Security-Policy = """
       default-src 'self';
       script-src 'self' www.googletagmanager.com www.google-analytics.com cdn.clarity.ms www.clarity.ms scripts.clarity.ms *.clarity.ms;
@@ -70,7 +75,7 @@
       frame-ancestors 'self';
     """
 
-# Cache для інших CSS/JS файлів
+# Решта конфігурації без змін
 [[headers]]
   for = "/*.css"
   [headers.values]
@@ -81,8 +86,6 @@
   [headers.values]
     Content-Type = "application/javascript; charset=utf-8"
 
-
-# SPA fallback для Netlify
 [[redirects]]
   from = "/*"
   to = "/index.html"
