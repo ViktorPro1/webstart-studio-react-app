@@ -10,11 +10,12 @@ import DjonAssistant from './components/DjonAssistant/DjonAssistant';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import CookieConsent from './components/CookieConsent';
 import UpdateNotification from './components/UpdateNotification';
+import ChristmasDecorations from './components/NewYear/ChristmasDecorations';
 import { initGoogleAnalytics, trackPageView } from './utils/analytics';
 import { initClarity } from './utils/clarity';
 import './i18n';
 import './App.css';
-import './components/Layout/Layout.css'; // Для Layout стилів
+import './components/Layout/Layout.css';
 
 // Трекінг сторінок
 function AnalyticsTracker() {
@@ -52,8 +53,19 @@ function App() {
     initClarity();
   }, []);
 
+  // Функція для перевірки чи показувати новорічні декорації
+  const showChristmasDecorations = () => {
+    const now = new Date();
+    const month = now.getMonth(); // 0-11 (0 = Січень, 11 = Грудень)
+    const day = now.getDate();
+
+    // Показувати з 15 грудня до 15 січня
+    return (month === 11 && day >= 15) || (month === 0 && day <= 15);
+  };
+
   return (
     <ThemeProvider>
+      {showChristmasDecorations() && <ChristmasDecorations />}
       <AnalyticsTracker />
       <UpdateNotification />
       <Layout isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}>
