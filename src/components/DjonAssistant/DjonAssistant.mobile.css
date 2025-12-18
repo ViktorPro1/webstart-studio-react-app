@@ -1,20 +1,26 @@
-/* DjonAssistant.mobile.css - Мобільні стилі */
+/* DjonAssistant.mobile.css - Мобільні стилі (КОМПАКТНИЙ ПОПАП) */
 
 @media (max-width: 768px) {
 
-    /* Попап */
+    /* Попап - зроблено компактнішим */
     .djon-popup-overlay {
         bottom: 15px;
         right: 15px;
     }
 
     .djon-popup-container {
-        max-width: 280px;
-        padding: 16px;
+        max-width: 230px;
+        /* Зменшено для компактності (було 280px) */
+        padding: 12px 14px;
+        /* Зменшено відступи */
+        border-radius: 12px;
     }
 
     .djon-popup-text {
-        font-size: 14px;
+        font-size: 13px;
+        /* Трохи менший шрифт */
+        line-height: 1.4;
+        margin-bottom: 10px;
     }
 
     /* Кнопка чату */
@@ -77,14 +83,17 @@
 
 @media (max-width: 480px) {
 
-    /* Дуже маленькі екрани */
+    /* Дуже маленькі екрани - максимальна компактність */
     .djon-popup-container {
-        max-width: 260px;
-        padding: 14px;
+        max-width: 210px;
+        /* Ще вужче на малих екранах (було 260px) */
+        padding: 10px 12px;
     }
 
     .djon-popup-text {
-        font-size: 13px;
+        font-size: 12px;
+        /* Мінімально читабельний шрифт */
+        margin-bottom: 8px;
     }
 
     .djon-chat-window {
@@ -109,6 +118,7 @@
     }
 
     .djon-popup-container {
-        max-width: 300px;
+        max-width: 280px;
+        /* Трохи ширше для горизонтального режиму */
     }
 }
