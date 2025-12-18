@@ -1,0 +1,74 @@
+/* Планшети (до 768px) */
+@media (max-width: 768px) {
+    .cookie-modal {
+        bottom: 1rem;
+        width: 95vw;
+        padding: 1.25rem;
+    }
+
+    .cookie-buttons {
+        flex-direction: column;
+        /* Кнопки в стовпчик на мобілках */
+        width: 100%;
+    }
+
+    .cookie-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cookie-settings-footer {
+        flex-direction: column;
+    }
+}
+
+/* Смартфони (до 640px) */
+@media (max-width: 640px) {
+    .cookie-settings-modal {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .cookie-category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Вміст li/категорії вліво */
+    }
+
+    .cookie-toggle {
+        margin-top: 0.75rem;
+    }
+
+    .privacy-container {
+        padding: 1rem;
+    }
+}
+
+/* Маленькі екрани (до 420px) — спеціально для твого запиту */
+@media (max-width: 420px) {
+    .cookie-settings-title {
+        font-size: 1.25rem;
+    }
+
+    .cookie-content {
+        flex-direction: column;
+        align-items: center;
+        /* Центруємо іконку щодо тексту */
+        text-align: center;
+        /* Текст повідомлення по центру */
+    }
+
+    .cookie-category-info {
+        text-align: left;
+        /* Але всередині налаштувань текст лишаємо зліва */
+    }
+
+    .cookie-text {
+        font-size: 0.8rem;
+    }
+
+    .cookie-settings-btn {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}

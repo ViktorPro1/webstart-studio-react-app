@@ -16,26 +16,22 @@
     z-index: 9999;
     padding: 1.5rem;
     box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
-
     width: fit-content;
     max-width: 90vw;
     border-radius: 0.75rem;
 }
 
-/* Контейнер */
 .cookie-container {
     width: fit-content;
     max-width: 100%;
 }
 
-/* Контент з іконкою та текстом */
 .cookie-content {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
 }
 
-/* Іконка info */
 .cookie-icon {
     flex-shrink: 0;
 }
@@ -56,12 +52,10 @@
     font-weight: 500;
 }
 
-/* Тіло контенту */
 .cookie-body {
     flex: 1;
 }
 
-/* Текст */
 .cookie-text {
     color: #1f2937;
     font-size: 0.875rem;
@@ -69,26 +63,17 @@
     margin-bottom: 1rem;
 }
 
-/* Посилання */
 .cookie-link {
     color: #2563eb;
     text-decoration: underline;
 }
 
-.cookie-link:hover {
-    color: #1d4ed8;
-}
-
-/* Контейнер кнопок */
 .cookie-buttons {
     display: flex;
-    flex-direction: column;
     gap: 0.75rem;
 }
 
-/* Кнопки */
 .cookie-btn {
-    width: 100%;
     padding: 0.75rem 1rem;
     background-color: white;
     border: 2px solid #d1d5db;
@@ -99,19 +84,7 @@
     transition: all 0.2s;
 }
 
-.cookie-btn:hover {
-    background-color: #f9fafb;
-    border-color: #9ca3af;
-}
-
-.cookie-btn:active {
-    transform: scale(0.98);
-}
-
-/* ============================================ */
 /* НАЛАШТУВАННЯ COOKIE */
-/* ============================================ */
-
 .cookie-settings-modal {
     position: fixed;
     top: 50%;
@@ -147,33 +120,6 @@
     margin: 0;
 }
 
-.cookie-close-btn {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #6b7280;
-    cursor: pointer;
-    padding: 0.25rem;
-    line-height: 1;
-    transition: color 0.2s;
-}
-
-.cookie-close-btn:hover {
-    color: #1f2937;
-}
-
-.cookie-settings-content {
-    margin-bottom: 1.5rem;
-}
-
-.cookie-settings-description {
-    color: #4b5563;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-}
-
-/* Категорії cookie */
 .cookie-category {
     margin-bottom: 1.5rem;
     padding: 1rem;
@@ -188,24 +134,6 @@
     gap: 1rem;
 }
 
-.cookie-category-info {
-    flex: 1;
-}
-
-.cookie-category-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin: 0 0 0.5rem 0;
-}
-
-.cookie-category-desc {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin: 0;
-}
-
-/* Toggle перемикач */
 .cookie-toggle {
     position: relative;
     display: inline-block;
@@ -215,23 +143,9 @@
     cursor: pointer;
 }
 
-.cookie-toggle.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.cookie-toggle input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
 .cookie-toggle-slider {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-color: #d1d5db;
     border-radius: 1.5rem;
     transition: 0.3s;
@@ -257,7 +171,6 @@
     transform: translateX(1.5rem);
 }
 
-/* Footer з кнопками */
 .cookie-settings-footer {
     display: flex;
     gap: 0.75rem;
@@ -271,7 +184,6 @@
     font-weight: 500;
     border-radius: 0.375rem;
     cursor: pointer;
-    transition: all 0.2s;
     border: none;
 }
 
@@ -280,135 +192,8 @@
     color: white;
 }
 
-.cookie-settings-btn.primary:hover {
-    background-color: #2563eb;
-}
-
 .cookie-settings-btn.secondary {
     background-color: white;
     color: #1f2937;
     border: 2px solid #d1d5db;
-}
-
-.cookie-settings-btn.secondary:hover {
-    background-color: #f9fafb;
-}
-
-/* ============================================ */
-/* СТОРІНКИ PRIVACY */
-/* ============================================ */
-
-.privacy-page {
-    padding: 2rem 1rem;
-    max-width: 56rem;
-    margin: 0 auto;
-}
-
-.privacy-container {
-    background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.privacy-container h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 1.5rem;
-}
-
-.privacy-container h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-.privacy-container h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #374151;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-}
-
-.privacy-container section {
-    margin-bottom: 2rem;
-}
-
-.privacy-container p {
-    color: #4b5563;
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-.privacy-container ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-    color: #4b5563;
-    line-height: 1.7;
-}
-
-.privacy-container li {
-    margin-bottom: 0.5rem;
-}
-
-.cookie-service {
-    background: #f9fafb;
-    padding: 1rem;
-    border-radius: 0.375rem;
-    margin-bottom: 1rem;
-}
-
-.cookie-service h3 {
-    margin-top: 0;
-}
-
-.privacy-updated {
-    font-size: 0.875rem;
-    color: #6b7280;
-    font-style: italic;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e5e7eb;
-}
-
-/* ============================================ */
-/* АДАПТИВНІСТЬ */
-/* ============================================ */
-
-@media (min-width: 768px) {
-    .cookie-buttons {
-        flex-direction: row;
-    }
-
-    .cookie-btn {
-        width: auto;
-        flex: 1;
-    }
-
-    .cookie-settings-footer {
-        flex-direction: row;
-    }
-}
-
-@media (max-width: 640px) {
-    .cookie-settings-modal {
-        width: 95%;
-        max-height: 95vh;
-    }
-
-    .cookie-settings-container {
-        padding: 1rem;
-    }
-
-    .cookie-category-header {
-        flex-direction: column;
-    }
-
-    .privacy-container {
-        padding: 1rem;
-    }
 }

@@ -9,35 +9,66 @@
         width: 100%;
         max-width: 300px;
         font-size: 16px;
+        /* Вирівнюємо текст по лівому краю, але саму кнопку по центру */
+        display: flex;
+        justify-content: flex-start;
+        padding: 12px 20px;
+        box-sizing: border-box;
     }
 
     .share-buttons {
-        gap: 20px;
+        display: grid;
+        /* Міняємо на grid, щоб нічого не налазіло */
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 12px;
+        width: 100%;
+        justify-items: center;
     }
 
     .share-btn {
-        width: 80px;
-        height: 80px;
-        font-size: 12px;
-        padding: 12px 10px;
+        width: 100%;
+        /* Кнопка підлаштовується під колонку */
+        max-width: 90px;
+        height: auto;
+        /* ПРИБРАВ ФІКСОВАНУ ВИСОТУ */
+        min-height: 70px;
+        font-size: 11px;
+        padding: 10px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        word-break: break-word;
+        /* Щоб довгі слова не розпирали кнопку */
     }
 }
 
 @media (max-width: 480px) {
     .social-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        /* На малих екранах краще в стовпчик, щоб не тиснути в боки */
+        align-items: center;
         gap: 10px;
     }
 
     .social-list a {
+        max-width: 100%;
+        /* На всю ширину екрана */
         font-size: 15px;
-        padding: 10px 5px;
+    }
+
+    .share-buttons {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 рівні колонки */
+        gap: 8px;
     }
 
     .share-btn {
-        width: 90px;
-        height: 75px;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        /* Робимо кнопку квадратною без жорстких пікселів */
+        font-size: 10px;
     }
 }

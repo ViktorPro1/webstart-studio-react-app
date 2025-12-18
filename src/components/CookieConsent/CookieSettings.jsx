@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './CookieConsent.css';
+import './CookieConsent.mobile.css';
 
 export default function CookieSettings({ onSave, onClose }) {
     const [settings, setSettings] = useState({

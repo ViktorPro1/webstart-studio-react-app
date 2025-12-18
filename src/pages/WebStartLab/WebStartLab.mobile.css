@@ -3,11 +3,31 @@
         max-width: 100%;
         padding: 20px 12px;
         box-sizing: border-box;
+        text-align: center;
+        /* Заголовок секції по центру */
     }
 
     .WebStartLab-projects {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Вирівнює всі LI по центру екрана */
         gap: 15px;
+        padding: 0;
+    }
+
+    .WebStartLab-project {
+        width: 100%;
+        max-width: 400px;
+        /* Щоб було видно, що блок по центру */
+        padding: 20px;
+        box-sizing: border-box;
+
+        /* ВСЕ ВНУТРІШНЄ — В ЛІВУ ЧАСТИНУ */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .WebStartLab h2 {
@@ -24,6 +44,12 @@
 }
 
 @media (max-width: 420px) {
+    .WebStartLab-project {
+        max-width: 100%;
+        /* На малих екранах на всю ширину */
+        padding: 15px;
+    }
+
     .WebStartLab h2 {
         font-size: 1.4em;
     }
@@ -35,15 +61,13 @@
 
     .WebStartLab-project-link {
         font-size: 1em;
+        align-self: flex-start;
+        /* Посилання чітко зліва */
     }
 
     .WebStartLab-marquee {
         font-size: 0.8em;
         padding: 4px 0;
-    }
-
-    .WebStartLab-project {
-        padding: 15px;
     }
 }
 
