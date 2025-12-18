@@ -152,7 +152,7 @@ const DjonAssistant = () => {
                     </div>
 
                     <div className="djon-chat-messages">
-                        {messages.length === 0 && <div className="djon-chat-empty">Напиши "Переглянути" — я покажу макети! 👋</div>}
+                        {messages.length === 0 && <div className="djon-chat-empty">👋 Привіт! Чим можу допомогти?</div>}
                         {messages.map(m => (
                             <div key={m.id} className={`djon-message ${m.sender}`}>
                                 <div className="djon-message-content">
