@@ -4,6 +4,8 @@
     color: #222;
     background: #fff;
     min-height: 100vh;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 /* HERO SECTION */

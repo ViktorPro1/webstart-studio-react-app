@@ -3,6 +3,8 @@
     background: linear-gradient(180deg, #0c0a1f 0%, #1a1332 50%, #0c0a1f 100%);
     color: white;
     overflow-x: hidden;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .landing-templates__wrapper {

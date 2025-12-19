@@ -3,6 +3,8 @@
     background: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
     color: white;
     overflow-x: hidden;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .resume-templates-templates-wrapper {
