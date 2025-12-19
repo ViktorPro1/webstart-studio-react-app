@@ -153,3 +153,207 @@
 .header-theme-btn:hover svg {
     transform: rotate(20deg);
 }
+
+/* Overlay для popup */
+.portal-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Сам popup */
+.portal-popup {
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    /* Змінено з 50% на 55% */
+    transform: translate(-50%, -50%);
+    background: var(--card-bg, #ffffff);
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+/* Темна тема */
+[data-theme="dark"] .portal-popup {
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Кнопка закриття */
+.portal-popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary, #333);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portal-popup-close:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: rotate(90deg);
+}
+
+[data-theme="dark"] .portal-popup-close {
+    color: #fff;
+}
+
+[data-theme="dark"] .portal-popup-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Контент popup */
+.portal-popup-content {
+    text-align: center;
+}
+
+.portal-popup-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.portal-popup-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-primary, #333);
+    margin-bottom: 24px;
+}
+
+[data-theme="dark"] .portal-popup-title {
+    color: #fff;
+}
+
+.portal-popup-section {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.portal-popup-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+    margin-bottom: 8px;
+}
+
+[data-theme="dark"] .portal-popup-section h3 {
+    color: #fff;
+}
+
+.portal-popup-section p {
+    color: var(--text-secondary, #666);
+    line-height: 1.6;
+}
+
+[data-theme="dark"] .portal-popup-section p {
+    color: #aaa;
+}
+
+.portal-popup-features {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+}
+
+.portal-popup-features li {
+    color: var(--text-secondary, #666);
+    padding: 8px 0;
+    font-size: 15px;
+}
+
+[data-theme="dark"] .portal-popup-features li {
+    color: #aaa;
+}
+
+/* Кнопки */
+.portal-popup-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.portal-popup-btn {
+    flex: 1;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.portal-popup-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.portal-popup-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.portal-popup-btn.secondary {
+    background: transparent;
+    color: var(--text-primary, #333);
+    border: 2px solid #667eea;
+}
+
+[data-theme="dark"] .portal-popup-btn.secondary {
+    color: #fff;
+    border-color: #764ba2;
+}
+
+.portal-popup-btn.secondary:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}

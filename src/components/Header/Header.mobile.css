@@ -106,3 +106,86 @@
         height: 14px;
     }
 }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .portal-popup {
+        left: 50%;
+        /* Повертаємо по центру на мобільному */
+        padding: 24px;
+        width: 95%;
+    }
+
+    .portal-popup-title {
+        font-size: 24px;
+    }
+
+    .portal-popup-buttons {
+        flex-direction: column;
+    }
+
+    .portal-popup-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .portal-popup-section h3 {
+        font-size: 16px;
+    }
+}
+
+/* Адаптив для маленьких екранів */
+@media (max-width: 420px) {
+    .portal-popup {
+        left: 50%;
+        /* По центру */
+        padding: 20px;
+        width: 95%;
+        max-height: 85vh;
+    }
+
+    .portal-popup-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .portal-popup-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 16px;
+    }
+
+    .portal-popup-section {
+        margin-bottom: 20px;
+    }
+
+    .portal-popup-section h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .portal-popup-section p {
+        font-size: 14px;
+    }
+
+    .portal-popup-features li {
+        padding: 6px 0;
+        font-size: 14px;
+    }
+
+    .portal-popup-buttons {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .portal-popup-btn {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    .portal-popup-close {
+        top: 12px;
+        right: 12px;
+        padding: 6px;
+    }
+}

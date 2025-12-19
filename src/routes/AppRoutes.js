@@ -35,6 +35,9 @@ const PolandTax = lazy(() => import('../pages/PolandTax/PolandTax'));
 const Innovations = lazy(() => import('../pages/Innovations/Innovations'));
 const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
+/* ===== Client Portal ===== */
+const ClientPortal = lazy(() => import('../pages/ClientPortal/ClientPortal'));
+
 /* ===== Legal ===== */
 const PrivacyPolicy = lazy(() => import('../pages/Legal/PrivacyPolicy'));
 const ThirdPartyCookies = lazy(() => import('../pages/Legal/ThirdPartyCookies'));
@@ -120,6 +123,9 @@ const AppRoutes = () => (
             <Route path="/pc-service" element={<PcService />} />
             <Route path="/poland-tax" element={<PolandTax />} />
             <Route path="/innovations" element={<Innovations />} />
+
+            {/* Client Portal */}
+            <Route path="/client-portal" element={<ClientPortal />} />
 
             {/* Legal Pages */}
             <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />

@@ -1,0 +1,446 @@
+/* Client Portal - Mobile Styles */
+
+/* Tablets and smaller */
+@media (max-width: 1024px) {
+    .client-portal {
+        padding: 1.5rem;
+    }
+
+    .client-portal-container {
+        max-width: 100%;
+    }
+
+    .client-portal-header {
+        padding: 1.5rem;
+    }
+
+    .client-portal-title {
+        font-size: 1.75rem;
+    }
+
+    .client-portal-progress {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .client-portal {
+        padding: 1rem;
+    }
+
+    /* Header */
+    .client-portal-header {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .client-portal-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .client-portal-welcome {
+        font-size: 1.125rem;
+    }
+
+    .client-portal-project {
+        font-size: 0.9375rem;
+    }
+
+    /* Progress Steps */
+    .client-portal-progress {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .client-portal-step-circle {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .client-portal-step-label {
+        font-size: 0.8125rem;
+        margin-top: 0.5rem;
+    }
+
+    .client-portal-progress-line {
+        top: 1.25rem;
+    }
+
+    /* Cards */
+    .client-portal-card {
+        padding: 1.5rem;
+    }
+
+    .client-portal-card-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .client-portal-card-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Card Icon */
+    .client-portal-card-icon {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .client-portal-card-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Option Buttons */
+    .client-portal-option-btn {
+        padding: 1.25rem;
+    }
+
+    .client-portal-option-content {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .client-portal-option-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .client-portal-option-title {
+        font-size: 1.125rem;
+    }
+
+    .client-portal-option-desc {
+        font-size: 0.875rem;
+    }
+
+    /* Download Button */
+    .client-portal-download-btn {
+        padding: 1.25rem;
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .client-portal-download-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Instructions */
+    .client-portal-instructions-card {
+        padding: 1.25rem;
+    }
+
+    .client-portal-instructions-title {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .client-portal-instructions-list li {
+        font-size: 0.875rem;
+        gap: 0.75rem;
+        padding: 0.625rem 0;
+    }
+
+    .client-portal-instruction-number {
+        width: 1.375rem;
+        height: 1.375rem;
+        font-size: 0.8125rem;
+    }
+
+    /* Price Card */
+    .client-portal-price-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .client-portal-price-label {
+        font-size: 1rem;
+    }
+
+    .client-portal-price-amount {
+        font-size: 2.5rem;
+    }
+
+    .client-portal-price-note {
+        font-size: 0.875rem;
+    }
+
+    /* Payment Card */
+    .client-portal-payment-card {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .client-portal-payment-title {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .client-portal-payment-info {
+        padding: 0.875rem;
+    }
+
+    .client-portal-payment-label {
+        font-size: 0.8125rem;
+    }
+
+    .client-portal-payment-value {
+        font-size: 1rem;
+    }
+
+    .client-portal-card-number {
+        font-size: 1.125rem;
+    }
+
+    /* Features Card */
+    .client-portal-features-card {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .client-portal-features-title {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .client-portal-features-list li {
+        font-size: 0.875rem;
+        gap: 0.625rem;
+    }
+
+    .client-portal-feature-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Notifications */
+    .client-portal-notification {
+        padding: 1.25rem;
+    }
+
+    .client-portal-notification-text {
+        font-size: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .client-portal-notification-text svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .client-portal-notification-subtext {
+        font-size: 0.875rem;
+    }
+
+    /* Footer */
+    .client-portal-footer {
+        margin-top: 1.5rem;
+    }
+
+    .client-portal-back-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .client-portal {
+        padding: 0.75rem;
+    }
+
+    .client-portal-header {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .client-portal-title {
+        font-size: 1.375rem;
+    }
+
+    .client-portal-welcome {
+        font-size: 1rem;
+    }
+
+    .client-portal-project {
+        font-size: 0.875rem;
+    }
+
+    .client-portal-progress {
+        padding: 1.25rem 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .client-portal-step-circle {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 0.9375rem;
+    }
+
+    .client-portal-step-label {
+        font-size: 0.75rem;
+    }
+
+    .client-portal-progress-line {
+        top: 1.125rem;
+    }
+
+    .client-portal-card {
+        padding: 1.25rem;
+    }
+
+    .client-portal-card-title {
+        font-size: 1.375rem;
+    }
+
+    .client-portal-card-subtitle {
+        font-size: 0.9375rem;
+    }
+
+    .client-portal-card-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .client-portal-card-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .client-portal-option-btn {
+        padding: 1rem;
+    }
+
+    .client-portal-option-title {
+        font-size: 1rem;
+    }
+
+    .client-portal-option-desc {
+        font-size: 0.8125rem;
+    }
+
+    .client-portal-download-btn {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .client-portal-price-amount {
+        font-size: 2.25rem;
+    }
+
+    .client-portal-payment-card,
+    .client-portal-features-card,
+    .client-portal-instructions-card {
+        padding: 1rem;
+    }
+
+    .client-portal-notification {
+        padding: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .client-portal {
+        padding: 0.5rem;
+    }
+
+    .client-portal-header {
+        padding: 0.875rem;
+    }
+
+    .client-portal-title {
+        font-size: 1.25rem;
+    }
+
+    .client-portal-welcome {
+        font-size: 0.9375rem;
+    }
+
+    .client-portal-progress {
+        padding: 1rem 0.5rem;
+    }
+
+    .client-portal-step-circle {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.875rem;
+    }
+
+    .client-portal-step-label {
+        font-size: 0.6875rem;
+    }
+
+    .client-portal-card {
+        padding: 1rem;
+    }
+
+    .client-portal-card-title {
+        font-size: 1.25rem;
+    }
+
+    .client-portal-option-btn {
+        padding: 0.875rem;
+    }
+
+    .client-portal-option-title {
+        font-size: 0.9375rem;
+    }
+
+    .client-portal-download-btn {
+        padding: 0.875rem;
+        font-size: 0.9375rem;
+    }
+
+    .client-portal-price-amount {
+        font-size: 2rem;
+    }
+
+    .client-portal-card-number {
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .client-portal {
+        padding: 1rem;
+    }
+
+    .client-portal-header {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .client-portal-progress {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .client-portal-card {
+        padding: 1.25rem;
+    }
+
+    .client-portal-card-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .client-portal-price-card,
+    .client-portal-payment-card,
+    .client-portal-features-card,
+    .client-portal-instructions-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
