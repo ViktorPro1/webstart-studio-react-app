@@ -37,6 +37,20 @@
     color: white;
 }
 
+.PolandTax-telegramButton:hover {
+    background-color: #218838;
+}
+
+.PolandTax-courseButton {
+    background-color: #0077cc;
+    color: white;
+    margin-left: 15px;
+}
+
+.PolandTax-courseButton:hover {
+    background-color: #005fa3;
+}
+
 .PolandTax-backButton {
     background-color: #007bff;
     color: white;

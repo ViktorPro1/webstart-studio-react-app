@@ -202,16 +202,23 @@ const ResumeTemplates = () => {
                 {/* CTA Section */}
                 <section className="resume-templates-cta-section">
                     <div className="resume-templates-cta-content">
-                        <h2 className="resume-templates-cta-title">Готовий до співбесіди?</h2>
+                        <h2 className="resume-templates-cta-title">Готові створити своє резюме?</h2>
                         <p className="resume-templates-cta-description">
-                            Обери шаблон і отримай резюме, яке пройде всі фільтри HR-систем. 2025 рік.
+                            Оберіть підхожий пакет або отримайте індивідуальний проект
+                            під ваші потреби
                         </p>
                         <div className="resume-templates-cta-buttons">
-                            <button className="resume-templates-cta-btn resume-templates-cta-btn-primary">
-                                Почати зараз
+                            <button
+                                className="resume-templates-cta-btn resume-templates-cta-btn-primary"
+                                onClick={() => window.location.href = '/briefs'}
+                            >
+                                Отримати проект
                             </button>
-                            <button className="resume-templates-cta-btn resume-templates-cta-btn-secondary">
-                                Подивись приклади
+                            <button
+                                className="resume-templates-cta-btn resume-templates-cta-btn-secondary"
+                                onClick={() => window.location.href = '/pricing'}
+                            >
+                                Пакети
                             </button>
                         </div>
                     </div>

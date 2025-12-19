@@ -106,7 +106,7 @@ const LandingTemplates = () => {
                             які <span className="landing-templates__highlight">конвертують</span>
                         </h1>
                         <p className="landing-templates__hero-description">
-                            Професійні лендінги для будь-яких цілей: від Instagram taplink до
+                            Лендінги для будь-яких цілей: від Instagram taplink до
                             корпоративних сторінок. Кожен шаблон оптимізований під конверсію,
                             має швидке завантаження та інтеграції з популярними сервісами.
                         </p>
@@ -221,58 +221,26 @@ const LandingTemplates = () => {
                     </div>
                 </section>
 
-                {/* Price Calculator */}
-                <section className="landing-templates__calculator">
-                    <h2 className="landing-templates__section-title">Скільки коштує лендінг?</h2>
-                    <div className="landing-templates__calculator-grid">
-                        <div className="landing-templates__price-card">
-                            <div className="landing-templates__price-label">Базовий</div>
-                            <div className="landing-templates__price-amount">$299</div>
-                            <ul className="landing-templates__price-features">
-                                <li>✓ Один шаблон</li>
-                                <li>✓ Базові налаштування</li>
-                                <li>✓ Адаптивність</li>
-                                <li>✓ 1 місяць підтримки</li>
-                            </ul>
-                        </div>
-                        <div className="landing-templates__price-card landing-templates__price-card--featured">
-                            <div className="landing-templates__featured-badge">Популярний</div>
-                            <div className="landing-templates__price-label">Стандарт</div>
-                            <div className="landing-templates__price-amount">$599</div>
-                            <ul className="landing-templates__price-features">
-                                <li>✓ Персоналізація</li>
-                                <li>✓ SEO-оптимізація</li>
-                                <li>✓ Форми та інтеграції</li>
-                                <li>✓ 3 місяці підтримки</li>
-                            </ul>
-                        </div>
-                        <div className="landing-templates__price-card">
-                            <div className="landing-templates__price-label">Преміум</div>
-                            <div className="landing-templates__price-amount">$999</div>
-                            <ul className="landing-templates__price-features">
-                                <li>✓ Унікальний дизайн</li>
-                                <li>✓ Анімації та ефекти</li>
-                                <li>✓ A/B тестування</li>
-                                <li>✓ 6 місяців підтримки</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
                 {/* CTA Section */}
                 <section className="landing-templates__cta">
                     <div className="landing-templates__cta-content">
-                        <h2 className="landing-templates__cta-title">Готові запустити свій лендінг?</h2>
+                        <h2 className="landing-templates__cta-title">Готові створити свій лендінг?</h2>
                         <p className="landing-templates__cta-description">
-                            Отримайте безкоштовну консультацію та дізнайтеся, як збільшити
-                            конверсію вашого бізнесу за допомогою професійного лендінгу
+                            Оберіть підхожий пакет або отримайте індивідуальний проект
+                            під ваші потреби
                         </p>
                         <div className="landing-templates__cta-buttons">
-                            <button className="landing-templates__cta-btn landing-templates__cta-btn--primary">
-                                Замовити лендінг
+                            <button
+                                className="landing-templates__cta-btn landing-templates__cta-btn--primary"
+                                onClick={() => window.location.href = '/briefs'}
+                            >
+                                Отримати проект
                             </button>
-                            <button className="landing-templates__cta-btn landing-templates__cta-btn--secondary">
-                                Розрахувати вартість
+                            <button
+                                className="landing-templates__cta-btn landing-templates__cta-btn--secondary"
+                                onClick={() => window.location.href = '/pricing'}
+                            >
+                                Пакети
                             </button>
                         </div>
                     </div>

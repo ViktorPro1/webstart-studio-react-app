@@ -1,5 +1,7 @@
 .contact-page {
     animation: fadeIn 0.6s ease;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 /* Основна секція контактів */

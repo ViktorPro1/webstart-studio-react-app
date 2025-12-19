@@ -1,6 +1,5 @@
 .prompt-editor {
     min-height: 100vh;
-    background: radial-gradient(circle at top left, #0b0f17 0%, #111827 100%);
     color: #e2e8f0;
     padding: 4rem 2rem;
 }

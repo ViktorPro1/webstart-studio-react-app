@@ -156,7 +156,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
                   className="portal-popup-btn primary"
                   onClick={handleOrderProject}
                 >
-                  🚀 Замовити
+                  🚀 Отримати
                 </button>
                 <button
                   className="portal-popup-btn secondary"

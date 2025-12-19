@@ -9,8 +9,10 @@ const PolandTax = () => {
 
             <h1 className="PolandTax-h1">Повернення податку з Польщі</h1>
 
+
+
             <h2 className="PolandTax-h2">Що таке PIT-11?</h2>
-            <p><strong>PIT-11</strong> — це офіційна податкова довідка, яку зобов’язаний надати ваш роботодавець у Польщі після завершення року або після звільнення. У ній зазначаються:</p>
+            <p><strong>PIT-11</strong> — це офіційна податкова довідка, яку зобов'язаний надати ваш роботодавець у Польщі після завершення року або після звільнення. У ній зазначаються:</p>
             <ul className="PolandTax-ul">
                 <li>Загальна сума доходів за рік;</li>
                 <li>Сума сплаченого податку;</li>
@@ -51,9 +53,17 @@ const PolandTax = () => {
                 <p>⏳ <strong>Очікування повернення коштів:</strong> від <strong>1 до 3 місяців</strong> після подання декларації.</p>
             </div>
 
+
             <p><strong>Для розрахунку або консультації</strong> — напишіть нам у Telegram:</p>
             <a href="https://t.me/Viktor_freelancer_recruiting_pit" className="PolandTax-button PolandTax-telegramButton">Написати в Telegram</a>
-
+            <a
+                href="https://everything-related-to-pit.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="PolandTax-button PolandTax-courseButton"
+            >
+                Все що стосується PIT-11
+            </a>
         </div>
     );
 };

@@ -4,63 +4,21 @@ import './YouTubeChannel.mobile.css';
 
 const YouTubeChannel = () => {
     const videos = [
-        {
-            id: 1,
-            title: 'Як створюється платформа',
-            description: 'Покроковий процес розробки веб-платформи з нуля',
-            icon: '🏗️',
-            duration: '15:30'
-        },
-        {
-            id: 2,
-            title: 'Робота у VS Code',
-            description: 'Налаштування середовища та корисні плагіни',
-            icon: '💻',
-            duration: '12:45'
-        },
-        {
-            id: 3,
-            title: 'Написання коду',
-            description: 'Практичні приклади розробки функціоналу',
-            icon: '⚡',
-            duration: '20:15'
-        },
-        {
-            id: 4,
-            title: 'За лаштунками',
-            description: 'Як влаштована архітектура проєкту',
-            icon: '🔧',
-            duration: '18:00'
-        }
+        { id: 1, title: 'Як створюється платформа', description: 'Покроковий процес розробки веб-платформи з нуля', icon: '🏗️', duration: '15:30' },
+        { id: 2, title: 'Робота у VS Code', description: 'Налаштування середовища та корисні плагіни', icon: '💻', duration: '12:45' },
+        { id: 3, title: 'Написання коду', description: 'Практичні приклади розробки функціоналу', icon: '⚡', duration: '20:15' },
+        { id: 4, title: 'За лаштунками', description: 'Як влаштована архітектура проєкту', icon: '🔧', duration: '18:00' }
     ];
 
     const features = [
-        {
-            icon: '🎓',
-            title: 'Навчальні туторіали',
-            description: 'Від основ до просунутих концепцій веб-розробки'
-        },
-        {
-            icon: '🛠️',
-            title: 'Реальні проєкти',
-            description: 'Дивіться, як створюються справжні веб-додатки'
-        },
-        {
-            icon: '💡',
-            title: 'Корисні поради',
-            description: 'Лайфхаки та best practices від професіоналів'
-        },
-        {
-            icon: '🚀',
-            title: 'Новітні технології',
-            description: 'React, Node.js, AI інтеграції та багато іншого'
-        }
+        { icon: '🛠️', title: 'Реальні проєкти', description: 'Дивіться, як створюються справжні веб-додатки' },
+        { icon: '💡', title: 'Корисні поради', description: 'Лайфхаки та best practices від професіоналів' },
+        { icon: '🚀', title: 'Новітні технології', description: 'React, Node.js, AI інтеграції та багато іншого' }
     ];
 
     return (
         <div className="YouTubeChannel">
             <div className="YouTubeChannel-container">
-                {/* Hero Section */}
                 <section className="YouTubeChannel-hero">
                     <div className="YouTubeChannel-badge">
                         <span className="YouTubeChannel-badge-icon">📺</span>
@@ -90,30 +48,27 @@ const YouTubeChannel = () => {
                             className="YouTubeChannel-logo"
                         />
                         <span className="YouTubeChannel-cta-text">Підписатися на канал</span>
-                        <span className="YouTubeChannel-cta-arrow">→</span>
                     </a>
                 </section>
 
-                {/* Stats Section */}
                 <section className="YouTubeChannel-stats">
                     <div className="YouTubeChannel-stat-card">
                         <div className="YouTubeChannel-stat-icon">🎬</div>
-                        <div className="YouTubeChannel-stat-number">50+</div>
-                        <div className="YouTubeChannel-stat-label">Відео</div>
+                        <div className="YouTubeChannel-stat-number">Новий</div>
+                        <div className="YouTubeChannel-stat-label">Канал</div>
                     </div>
                     <div className="YouTubeChannel-stat-card">
-                        <div className="YouTubeChannel-stat-icon">👥</div>
-                        <div className="YouTubeChannel-stat-number">1K+</div>
-                        <div className="YouTubeChannel-stat-label">Підписників</div>
+                        <div className="YouTubeChannel-stat-icon">🚀</div>
+                        <div className="YouTubeChannel-stat-number">Старт</div>
+                        <div className="YouTubeChannel-stat-label">2025</div>
                     </div>
                     <div className="YouTubeChannel-stat-card">
-                        <div className="YouTubeChannel-stat-icon">⏱️</div>
-                        <div className="YouTubeChannel-stat-number">100+</div>
-                        <div className="YouTubeChannel-stat-label">Годин контенту</div>
+                        <div className="YouTubeChannel-stat-icon">📹</div>
+                        <div className="YouTubeChannel-stat-number">Щотижня</div>
+                        <div className="YouTubeChannel-stat-label">Нові відео</div>
                     </div>
                 </section>
 
-                {/* What You'll Find Section */}
                 <section className="YouTubeChannel-content">
                     <h2 className="YouTubeChannel-section-title">Що ви знайдете на каналі?</h2>
 
@@ -132,7 +87,6 @@ const YouTubeChannel = () => {
                     </div>
                 </section>
 
-                {/* Features Section */}
                 <section className="YouTubeChannel-features">
                     <h2 className="YouTubeChannel-section-title">Чому варто підписатися?</h2>
 
@@ -147,7 +101,6 @@ const YouTubeChannel = () => {
                     </div>
                 </section>
 
-                {/* Behind the Scenes Section */}
                 <section className="YouTubeChannel-behind">
                     <div className="YouTubeChannel-behind-content">
                         <h2 className="YouTubeChannel-behind-title">За лаштунками розробки</h2>
@@ -169,13 +122,11 @@ const YouTubeChannel = () => {
                     </div>
                 </section>
 
-                {/* Final CTA */}
                 <section className="YouTubeChannel-final-cta">
                     <div className="YouTubeChannel-final-cta-content">
-                        <h2 className="YouTubeChannel-final-cta-title">Готові почати навчання?</h2>
+                        <h2 className="YouTubeChannel-final-cta-title">Приєднуйтесь до нас!</h2>
                         <p className="YouTubeChannel-final-cta-text">
-                            Приєднуйтесь до нашої спільноти розробників та отримайте доступ до
-                            ексклюзивного контенту про веб-розробку
+                            Підписуйтесь на канал та слідкуйте за процесом створення реальних веб-проєктів
                         </p>
                         <a
                             href="https://www.youtube.com/@WebStart_Studio"
@@ -184,7 +135,7 @@ const YouTubeChannel = () => {
                             className="YouTubeChannel-final-cta-button"
                         >
                             <span className="YouTubeChannel-button-icon">▶️</span>
-                            <span className="YouTubeChannel-button-text">Дивитися зараз</span>
+                            <span className="YouTubeChannel-button-text">Перейти на канал</span>
                         </a>
                     </div>
                 </section>

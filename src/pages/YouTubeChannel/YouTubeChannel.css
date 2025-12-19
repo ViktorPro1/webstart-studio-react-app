@@ -1,8 +1,9 @@
 .YouTubeChannel {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff0000 0%, #c4302b 50%, #8b0000 100%);
     position: relative;
     overflow: hidden;
+    border-radius: 20px;
+
 }
 
 .YouTubeChannel::before {

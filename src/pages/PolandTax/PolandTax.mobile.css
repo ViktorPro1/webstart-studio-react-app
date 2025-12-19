@@ -21,7 +21,12 @@
     .PolandTax-button {
         width: 100%;
         margin-top: 10px;
+        margin-left: 0;
         box-sizing: border-box;
+    }
+
+    .PolandTax-courseButton {
+        margin-left: 0;
     }
 
     .PolandTax-backButton {
@@ -54,7 +59,12 @@
         padding: 10px 15px;
         font-size: 0.9rem;
         margin-top: 8px;
+        margin-left: 0;
         box-sizing: border-box;
+    }
+
+    .PolandTax-courseButton {
+        margin-left: 0;
     }
 
     .PolandTax-backButton {

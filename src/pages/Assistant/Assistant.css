@@ -1,5 +1,7 @@
 .assistant-page {
     width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
     overflow-x: hidden;
 }
 

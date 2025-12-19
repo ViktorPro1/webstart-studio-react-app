@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     background: #f9f9f9;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .blog-page-trends-header {

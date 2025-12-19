@@ -175,15 +175,21 @@ const PortfolioTemplates = () => {
                     <div className="portfolio-templates__cta-content">
                         <h2 className="portfolio-templates__cta-title">Готові створити своє портфоліо?</h2>
                         <p className="portfolio-templates__cta-description">
-                            Зв'яжіться з нами для індивідуальної консультації та отримайте
-                            персоналізований дизайн, який ідеально підходить під ваші цілі
+                            Оберіть підхожий пакет або отримайте індивідуальний проект
+                            під ваші потреби
                         </p>
                         <div className="portfolio-templates__cta-buttons">
-                            <button className="portfolio-templates__cta-btn portfolio-templates__cta-btn--primary">
-                                Замовити портфоліо
+                            <button
+                                className="portfolio-templates__cta-btn portfolio-templates__cta-btn--primary"
+                                onClick={() => window.location.href = '/briefs'}
+                            >
+                                Отримати проект
                             </button>
-                            <button className="portfolio-templates__cta-btn portfolio-templates__cta-btn--secondary">
-                                Безкоштовна консультація
+                            <button
+                                className="portfolio-templates__cta-btn portfolio-templates__cta-btn--secondary"
+                                onClick={() => window.location.href = '/pricing'}
+                            >
+                                Пакети
                             </button>
                         </div>
                     </div>

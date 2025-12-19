@@ -1,7 +1,6 @@
 .blog-info-page {
     min-height: calc(100vh - 70px);
     padding: 40px 20px;
-    background-color: #f4f6f8;
     animation: fadeIn 0.6s ease;
 }
 

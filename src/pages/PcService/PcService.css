@@ -6,6 +6,8 @@
     line-height: 1.6;
     background-color: #f4f7f9;
     color: #333;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .PcService-intro {

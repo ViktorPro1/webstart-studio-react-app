@@ -4,6 +4,8 @@
     max-width: 800px;
     margin: 0 auto;
     background: #f8f9fa;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .InteractiveQuiz-quizScreen,

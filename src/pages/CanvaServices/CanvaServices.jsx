@@ -78,7 +78,7 @@ const CanvaServices = () => {
 
                 {/* Services Grid */}
                 <section className="canva-services-grid">
-                    <h2 className="section-title">Наші послуги</h2>
+                    <h2 className="section-title">Що ми створюємо</h2>
                     <div className="services-grid">
                         {services.map((service, index) => (
                             <div key={index} className="service-card">
@@ -92,13 +92,13 @@ const CanvaServices = () => {
 
                 {/* Pricing Section */}
                 <section className="canva-services-pricing">
-                    <h2 className="section-title">Вартість послуг</h2>
+                    <h2 className="section-title">Оптимальний вибір</h2>
                     <div className="pricing-table-wrapper">
                         <table className="pricing-table">
                             <thead>
                                 <tr>
-                                    <th>Послуга</th>
-                                    <th>Ціна</th>
+                                    <th>Пропонуємо</th>
+                                    <th>Просимо</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -116,7 +116,7 @@ const CanvaServices = () => {
                 {/* Mini Course CTA */}
                 <section className="canva-services-cta">
                     <div className="cta-card">
-                        <h2 className="cta-title">Хочете навчитися Canva?</h2>
+                        <h2 className="cta-title">Хочете навчитися самому у Canva?</h2>
                         <p className="cta-text">
                             Пройдіть наш безкоштовний мінікурс "Простий старт у Canva" та дізнайтеся,
                             як створювати професійні дизайни самостійно
@@ -196,7 +196,7 @@ const CanvaServices = () => {
                         <div className="feature-item">
                             <div className="feature-icon">💎</div>
                             <h3 className="feature-title">Якісно</h3>
-                            <p className="feature-text">Професійний дизайн, що привертає увагу</p>
+                            <p className="feature-text">Дизайн, що привертає увагу</p>
                         </div>
                         <div className="feature-item">
                             <div className="feature-icon">🎯</div>
@@ -206,7 +206,7 @@ const CanvaServices = () => {
                         <div className="feature-item">
                             <div className="feature-icon">💰</div>
                             <h3 className="feature-title">Доступно</h3>
-                            <p className="feature-text">Прозорі ціни без прихованих платежів</p>
+                            <p className="feature-text">Без прихованих витрат</p>
                         </div>
                     </div>
                 </section>
