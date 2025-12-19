@@ -134,9 +134,14 @@ const DjonAssistant = () => {
 
             {/* Кнопка чату */}
             {!isChatOpen && (
-                <button onClick={() => setIsChatOpen(true)} className="djon-chat-button">
+                <button
+                    onClick={() => setIsChatOpen(true)}
+                    className="djon-chat-button"
+                    aria-label="Відкрити чат"
+                >
                     <MessageCircle size={28} />
                 </button>
+
             )}
 
             {/* Чат */}
