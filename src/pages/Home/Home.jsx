@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO from '../../SEO/SEO';
 import { FileText, Briefcase, Users, } from 'lucide-react';
+import PromoPopup from '../Promo/PromoPopup';
 import './Home.css';
 import './Home.mobile.css';
 
@@ -25,6 +26,7 @@ const Home = () => {
 
   return (
     <>
+      <PromoPopup />
       <SEO
         title="Головна"
         description="Створення професійних лендінгів, портфоліо та резюме"

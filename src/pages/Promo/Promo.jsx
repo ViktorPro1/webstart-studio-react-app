@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../../SEO/SEO';
 import { Zap } from 'lucide-react';
+import promoConfig from '../../config/promoConfig';
 import './Promo.css';
 import './Promo.mobile.css';
 
@@ -14,10 +15,8 @@ const Promo = () => {
     const [isEnded, setIsEnded] = useState(false);
 
     useEffect(() => {
-        const deadline = new Date(2025, 10, 30, 23, 59, 59);
-
         const updateCountdown = () => {
-            const diff = deadline - new Date();
+            const diff = promoConfig.endDate - new Date();
 
             if (diff <= 0) {
                 setIsEnded(true);
@@ -41,9 +40,9 @@ const Promo = () => {
     return (
         <>
             <SEO
-                title="🔥 Чорна П'ятниця - Знижки до 50%"
-                description="Акція Чорна П'ятниця! Знижки до 50% на резюме, портфоліо та лендінги. Подарунок кожному учаснику!"
-                keywords="чорна п'ятниця, акція, знижки, резюме, портфоліо, лендінг, веб-дизайн"
+                title={promoConfig.seo.title}
+                description={promoConfig.seo.description}
+                keywords={promoConfig.seo.keywords}
             />
 
             <div className="promo-page">
@@ -53,21 +52,23 @@ const Promo = () => {
                             <Zap size={60} />
                         </div>
 
-                        <h2>🔥 Чорна П'ятниця: <br />час оновити себе і свій бренд</h2>
+                        <h2>{promoConfig.title}</h2>
 
-                        <p className="promo-date"><strong>14.11 — 30.11</strong></p>
+                        <p className="promo-date"><strong>{promoConfig.dateRange}</strong></p>
 
-                        <p className="promo-intro">💸 Знижки до –50% на ключові пропозиції, які працюють на вас:</p>
+                        <p className="promo-intro">{promoConfig.intro}</p>
 
                         <div className="promo-offers">
-                            <p>📄 <strong>Резюме та CV</strong> — сильна структура, сучасний вигляд.</p>
-                            <p>📁 <strong>Портфоліо</strong> — професійна подача вашого досвіду.</p>
-                            <p>🌐 <strong>Лендінги</strong> — дизайн + текст, що продає.</p>
+                            {promoConfig.offers.map((offer, index) => (
+                                <p key={index}>
+                                    {offer.emoji} <strong>{offer.title}</strong> — {offer.description}
+                                </p>
+                            ))}
                         </div>
 
                         <div className="promo-gift">
-                            <p>🎁 Подарунок кожному <strong>учаснику, який звернеться до нас</strong>:</p>
-                            <p>✨ Соцбанер із QR-кодом у бренд-стилі — для постів, сторіс і реклами.</p>
+                            <p>{promoConfig.gift.intro}</p>
+                            <p>{promoConfig.gift.description}</p>
                         </div>
 
                         <div className="countdown">
@@ -81,12 +82,12 @@ const Promo = () => {
                         </div>
 
                         <a
-                            href="https://t.me/Viktor_freelancer_recruiting_pit"
+                            href={promoConfig.ctaLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="promo-btn"
                         >
-                            Скористатися пропозицією
+                            {promoConfig.ctaText}
                         </a>
                     </div>
                 </section>

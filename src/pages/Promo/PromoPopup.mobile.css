@@ -1,0 +1,85 @@
+/* PromoPopup.mobile.css */
+
+@media (max-width: 768px) {
+    .promo-popup-compact {
+        bottom: 20px;
+        right: 50px;
+    }
+
+    .promo-popup-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .promo-popup-content {
+        padding: 25px 15px 10px;
+    }
+
+    .promo-popup-emoji {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+
+    .promo-popup-title {
+        font-size: 1.4em;
+        margin-bottom: 5px;
+    }
+
+    .promo-popup-subtitle {
+        font-size: 0.95em;
+        margin-bottom: 10px;
+    }
+
+    .promo-popup-validity {
+        font-size: 0.75em;
+        padding: 6px 12px;
+        margin-bottom: 5px;
+    }
+
+    .promo-popup-hand {
+        font-size: 1.5em;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-popup-compact {
+        bottom: 15px;
+        right: 35px;
+    }
+
+    .promo-popup-circle {
+        width: 190px;
+        height: 190px;
+    }
+
+    .promo-popup-content {
+        padding: 20px 10px 8px;
+    }
+
+    .promo-popup-emoji {
+        font-size: 1.8em;
+        margin-bottom: 3px;
+    }
+
+    .promo-popup-title {
+        font-size: 1.25em;
+        margin-bottom: 3px;
+    }
+
+    .promo-popup-subtitle {
+        font-size: 0.85em;
+        margin-bottom: 8px;
+    }
+
+    .promo-popup-validity {
+        font-size: 0.7em;
+        padding: 5px 10px;
+        margin-bottom: 3px;
+    }
+
+    .promo-popup-hand {
+        font-size: 1.3em;
+        margin-top: 3px;
+    }
+}
