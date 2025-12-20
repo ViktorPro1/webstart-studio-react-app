@@ -1,73 +1,169 @@
 @media (max-width: 768px) {
-    .canva-services {
-        overflow-x: hidden;
-        /* прибирає горизонтальний скрол */
-    }
 
-    .canva-services-container {
+    .canva-container {
+        padding: 1.5rem 1rem;
         max-width: 100%;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-        box-sizing: border-box;
-    }
-
-    .services-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .slider-wrapper {
-        margin: 0 1rem;
-        /* менші відступи */
-    }
-
-    .cta-button,
-    .show-examples-btn {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 480px) {
-    .canva-services-container {
-        max-width: 100%;
-        padding: 1.5rem 0.75rem;
-        overflow-x: hidden;
-    }
-
-    .canva-services-title {
-        font-size: 1.75rem;
-    }
-
-    .canva-services-description {
-        font-size: 0.95rem;
-    }
-
-    .cta-button {
         width: 100%;
-        padding: 0.75rem 1.5rem;
-        font-size: 0.95rem;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .canva-hero,
+    .canva-grid,
+    .canva-pricing,
+    .canva-cta,
+    .canva-examples,
+    .canva-features {
+        width: 100%;
+        margin-bottom: 2.5rem;
+        padding: 0;
         box-sizing: border-box;
     }
 
-    .slider-wrapper {
-        margin: 0 0.5rem;
-        /* мінімальні відступи */
+    .canva-services-grid,
+    .canva-features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        width: 100%;
+        padding: 0;
     }
 
-    .slider-image {
-        max-height: 280px;
-        /* компактніше */
+    .canva-service-card,
+    .canva-feature-item {
+        padding: 1.75rem 1.25rem;
+        margin-bottom: 0;
     }
 
-    .slider-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 1.2rem;
+    .canva-service-icon {
+        font-size: 2.75rem !important;
+        margin-bottom: 1rem;
     }
 
-    .features-grid {
-        gap: 0.75rem;
+    .canva-feature-icon {
+        font-size: 2.25rem !important;
+        margin-bottom: 0.875rem;
+    }
+
+    .canva-hero-icon {
+        font-size: 3.5rem !important;
+        margin-bottom: 1.25rem;
+    }
+
+    .canva-button-icon {
+        font-size: 1.125rem !important;
+    }
+
+    .canva-title {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+        word-break: break-word;
+    }
+
+    .canva-section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .canva-slider-wrapper {
+        margin: 0 !important;
+        padding: 0 0.25rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .canva-examples-slider {
+        padding: 1rem 0.5rem;
+        margin: 0;
+    }
+
+    .canva-cta-button {
+        padding: 0.875rem 1.25rem !important;
+        font-size: 1rem !important;
+        line-height: 1.35 !important;
+        margin: 0 0 1rem 0;
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+    }
+
+    .canva-show-examples-btn {
+        padding: 1.125rem 1.5rem;
+        margin: 0 0 1rem 0;
+        height: auto;
+        line-height: 1.4;
+    }
+
+    .canva-cta-card {
+        padding: 2.25rem 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .canva-pricing-table-wrapper {
+        margin: 0 0 1rem 0;
+        padding: 0.75rem;
+        border-radius: 12px;
+    }
+
+    .canva-pricing-table {
+        min-width: 0 !important;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    .canva-pricing-table th,
+    .canva-pricing-table td {
+        padding: 0.6rem 0.4rem !important;
+        font-size: 0.78rem !important;
+        white-space: normal !important;
+    }
+
+    @media (max-width: 480px) {
+        .canva-container {
+            padding: 1.25rem 0.875rem;
+        }
+
+        .canva-service-icon {
+            font-size: 2.5rem !important;
+        }
+
+        .canva-feature-icon {
+            font-size: 2rem !important;
+        }
+
+        .canva-hero-icon {
+            font-size: 3rem !important;
+        }
+
+        .canva-title {
+            font-size: 1.75rem;
+        }
+
+        .canva-section-title {
+            font-size: 1.5rem;
+        }
+
+        .canva-service-card,
+        .canva-feature-item {
+            padding: 1.5rem 1rem;
+        }
+
+        .canva-cta-card {
+            padding: 2rem 1rem;
+        }
+
+        .canva-cta-button {
+            padding: 0.75rem 1rem !important;
+            font-size: 0.95rem !important;
+        }
+
+        .canva-pricing-table th,
+        .canva-pricing-table td {
+            padding: 0.5rem 0.3rem !important;
+            font-size: 0.75rem !important;
+        }
     }
 }
