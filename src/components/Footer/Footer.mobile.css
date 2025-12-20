@@ -40,6 +40,22 @@
         height: 36px;
         flex-shrink: 0;
     }
+
+    /* ========== ДОДАНО: Адаптив для юридичних посилань ========== */
+
+    .footer-links {
+        justify-content: center;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .footer-link {
+        font-size: 10px;
+    }
+
+    .footer-separator {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 420px) {
@@ -81,5 +97,21 @@
         width: 30px;
         height: 30px;
         flex-shrink: 0;
+    }
+
+    /* ========== ДОДАНО: Адаптив для дуже малих екранів ========== */
+
+    .footer-links {
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 6px;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+
+    .footer-link {
+        font-size: 9px;
     }
 }

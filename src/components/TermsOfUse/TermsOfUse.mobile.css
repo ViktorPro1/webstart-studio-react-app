@@ -1,0 +1,124 @@
+@media screen and (max-width: 768px) {
+    .terms-of-use {
+        padding: 80px 0 60px;
+    }
+
+    .terms-of-use__container {
+        max-width: 100%;
+        margin: 0 20px;
+        padding: 40px 24px;
+        border-radius: 16px;
+    }
+
+    .terms-of-use__title {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    .terms-of-use__updated {
+        font-size: 13px;
+        margin-bottom: 32px;
+    }
+
+    .terms-of-use__section {
+        margin-bottom: 32px;
+    }
+
+    .terms-of-use__subtitle {
+        font-size: 22px;
+        margin-bottom: 12px;
+        padding-left: 16px;
+    }
+
+    .terms-of-use__subtitle::before {
+        width: 3px;
+        height: 24px;
+    }
+
+    .terms-of-use__text {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 14px;
+    }
+
+    .terms-of-use__list {
+        margin: 16px 0;
+    }
+
+    .terms-of-use__list-item {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 10px;
+        padding-left: 28px;
+    }
+
+    .terms-of-use__list-item::before {
+        width: 18px;
+        height: 18px;
+        font-size: 11px;
+    }
+
+    .terms-of-use__section:hover {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .terms-of-use {
+        padding: 60px 0 40px;
+    }
+
+    .terms-of-use__container {
+        margin: 0 16px;
+        padding: 32px 20px;
+        border-radius: 12px;
+    }
+
+    .terms-of-use__title {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .terms-of-use__updated {
+        font-size: 12px;
+        margin-bottom: 28px;
+    }
+
+    .terms-of-use__section {
+        margin-bottom: 28px;
+    }
+
+    .terms-of-use__subtitle {
+        font-size: 20px;
+        margin-bottom: 10px;
+        padding-left: 14px;
+    }
+
+    .terms-of-use__subtitle::before {
+        width: 3px;
+        height: 22px;
+    }
+
+    .terms-of-use__text {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .terms-of-use__list {
+        margin: 14px 0;
+    }
+
+    .terms-of-use__list-item {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 8px;
+        padding-left: 26px;
+    }
+
+    .terms-of-use__list-item::before {
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+}

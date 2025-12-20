@@ -42,6 +42,11 @@ const ClientPortal = lazy(() => import('../pages/ClientPortal/ClientPortal'));
 const PrivacyPolicy = lazy(() => import('../pages/Legal/PrivacyPolicy'));
 const ThirdPartyCookies = lazy(() => import('../pages/Legal/ThirdPartyCookies'));
 
+
+/* ===== Added Legal Pages ===== */
+const PrivacyPolicyFull = lazy(() => import('../components/PrivacyPolicy/PrivacyPolicy'));
+const TermsOfUse = lazy(() => import('../components/TermsOfUse/TermsOfUse'));
+
 /* ===== Generators ===== */
 const PortfolioTextGenerator = lazy(() => import('../pages/Generators/PortfolioTextGenerator/PortfolioTextGenerator'));
 const ProjectChecker = lazy(() => import('../pages/Generators/ProjectChecker/ProjectChecker'));
@@ -130,6 +135,10 @@ const AppRoutes = () => (
             {/* Legal Pages */}
             <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/legal/third-party-cookies" element={<ThirdPartyCookies />} />
+
+            { /* Added Legal Pages */}
+            <Route path="/privacy-policy" element={<PrivacyPolicyFull />} />
+            <Route path="/terms-of-use" element={<TermsOfUse />} />
 
             {/* Generators */}
             <Route path="/generators/portfolio-text" element={<PortfolioTextGenerator />} />

@@ -64,3 +64,48 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
+
+/* ========== ДОДАНО: Стилі для юридичних посилань ========== */
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #4b5563;
+    font-size: 11px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 2px 0;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #ce1313;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ce1313;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+.footer-separator {
+    color: #9ca3af;
+    font-size: 11px;
+    user-select: none;
+}

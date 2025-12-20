@@ -1,0 +1,163 @@
+.terms-of-use {
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    position: relative;
+}
+
+.terms-of-use::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.terms-of-use__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+.terms-of-use__title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.terms-of-use__updated {
+    font-size: 14px;
+    color: #718096;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.terms-of-use__section {
+    margin-bottom: 40px;
+}
+
+.terms-of-use__section:last-child {
+    margin-bottom: 0;
+}
+
+.terms-of-use__subtitle {
+    font-size: 26px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.terms-of-use__subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 28px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 2px;
+}
+
+.terms-of-use__text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 16px;
+}
+
+.terms-of-use__text:last-child {
+    margin-bottom: 0;
+}
+
+.terms-of-use__text strong {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.terms-of-use__text em {
+    color: #718096;
+    font-style: italic;
+}
+
+.terms-of-use__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.terms-of-use__list-item {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.terms-of-use__list-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.terms-of-use__list-item strong {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Hover Effects */
+.terms-of-use__section {
+    transition: transform 0.3s ease;
+}
+
+.terms-of-use__section:hover {
+    transform: translateX(5px);
+}
+
+/* Scrollbar Styling */
+.terms-of-use__container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terms-of-use__container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.terms-of-use__container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 10px;
+}
+
+.terms-of-use__container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+}
