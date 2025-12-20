@@ -35,7 +35,6 @@
 
     .briefs-grid {
         grid-template-columns: 1fr;
-        /* одна колонка */
         gap: 20px;
     }
 
@@ -47,6 +46,20 @@
         width: 60px;
         height: 60px;
         margin-bottom: 15px;
+    }
+
+    /* ✅ КНОПКИ ЗАВАНТАЖИТИ - ВУЗЬКІ */
+    .brief-btn {
+        width: 85%;
+        /* ← Не 100%, а 85% ширини */
+        max-width: 280px;
+        /* ← Максимальна ширина */
+        margin: 0 auto;
+        /* ← По центру */
+        justify-content: center;
+        font-size: 0.85rem;
+        padding: 8px 14px;
+        line-height: 1.4;
     }
 }
 
@@ -76,11 +89,17 @@
         height: 50px;
     }
 
+    /* ✅ КНОПКИ ЗАВАНТАЖИТИ - ЩЕ ВУЗЬКІШІ */
     .brief-btn {
-        width: 100%;
+        width: 80%;
+        /* ← 80% ширини картки */
+        max-width: 240px;
+        /* ← Ще менша макс. ширина */
+        margin: 0 auto;
         justify-content: center;
-        font-size: 0.9rem;
-        padding: 10px 15px;
+        font-size: 0.8rem;
+        padding: 7px 12px;
+        line-height: 1.35;
     }
 
     .contact-section {
