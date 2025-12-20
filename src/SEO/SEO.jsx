@@ -9,8 +9,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
   const siteUrl = url || SITE_INFO.url;
 
   const baseUrl = 'https://web-start-studio.netlify.app';
-  // Використовуємо вашу картинку webp
-  const rawImage = image || '/web-start-studio-og.webp';
+  const rawImage = image || '/web-start-studio-og.jpg'; // Змінено на JPG
   const siteImage = rawImage.startsWith('http')
     ? rawImage
     : `${baseUrl}${rawImage}`;
@@ -23,9 +22,9 @@ const SEO = ({ title, description, keywords, image, url }) => {
       <meta name="keywords" content={siteKeywords} />
 
       {/* Google, WhatsApp, Viber */}
-      <meta itemprop="name" content={siteTitle} />
-      <meta itemprop="description" content={siteDescription} />
-      <meta itemprop="image" content={siteImage} />
+      <meta itemProp="name" content={siteTitle} />
+      <meta itemProp="description" content={siteDescription} />
+      <meta itemProp="image" content={siteImage} />
 
       {/* Open Graph (Facebook, Telegram, Viber, Messenger) */}
       <meta property="og:type" content="website" />
@@ -34,10 +33,11 @@ const SEO = ({ title, description, keywords, image, url }) => {
       <meta property="og:description" content={siteDescription} />
       <meta property="og:image" content={siteImage} />
       <meta property="og:image:secure_url" content={siteImage} />
-      <meta property="og:image:type" content="image/webp" />
+      <meta property="og:image:type" content="image/jpeg" /> {/* Змінено тип */}
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="WebStart Studio" />
+      <meta property="og:locale" content="uk_UA" /> {/* Додано локаль */}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
