@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 
-const CACHE_NAME = "webstart-cache-v35"; // Збільшив версію!
+const CACHE_NAME = "webstart-cache-v36"; // Оновив версію для активації змін
 
 self.addEventListener("install", (event) => {
     console.log('[SW] Install');
@@ -24,7 +24,8 @@ self.addEventListener("fetch", (event) => {
     if (event.request.method !== 'GET') return;
 
     // Для HTML - завжди спочатку мережа
-    if (event.request.headers.get('accept').includes('text/html')) {
+    const acceptHeader = event.request.headers.get('accept');
+    if (acceptHeader && acceptHeader.includes('text/html')) {
         event.respondWith(
             fetch(event.request)
                 .then(response => {
@@ -34,12 +35,12 @@ self.addEventListener("fetch", (event) => {
                     });
                     return response;
                 })
-                .catch(() => caches.match(event.request))
+                .catch(() => caches.match(event.request)) // Тут catch вже був, це добре
         );
         return;
     }
 
-    // Для CSS - завжди спочатку мережа (як HTML)
+    // Для CSS - завжди спочатку мережа
     if (event.request.url.endsWith('.css')) {
         event.respondWith(
             fetch(event.request)
@@ -50,7 +51,7 @@ self.addEventListener("fetch", (event) => {
                     });
                     return response;
                 })
-                .catch(() => caches.match(event.request))
+                .catch(() => caches.match(event.request)) // Додано для CSS
         );
         return;
     }
@@ -62,18 +63,23 @@ self.addEventListener("fetch", (event) => {
                 return response;
             }
 
-            return fetch(event.request).then(response => {
-                if (!response || response.status !== 200 || response.type === 'error') {
+            return fetch(event.request)
+                .then(response => {
+                    if (!response || response.status !== 200 || response.type === 'error') {
+                        return response;
+                    }
+
+                    const responseToCache = response.clone();
+                    caches.open(CACHE_NAME).then(cache => {
+                        cache.put(event.request, responseToCache);
+                    });
+
                     return response;
-                }
-
-                const responseToCache = response.clone();
-                caches.open(CACHE_NAME).then(cache => {
-                    cache.put(event.request, responseToCache);
+                })
+                /* ОСНОВНЕ ВИПРАВЛЕННЯ: додаємо цей catch, щоб прибрати "Uncaught TypeError" */
+                .catch(() => {
+                    return new Response('Offline', { status: 408, statusText: 'Network failed' });
                 });
-
-                return response;
-            });
         })
     );
 });
