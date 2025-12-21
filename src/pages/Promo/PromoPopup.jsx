@@ -64,7 +64,7 @@ const PromoPopup = () => {
 
     return (
         <div className="promo-popup-compact">
-            <button className="promo-popup-close-compact" onClick={handleClose}>
+            <button className="promo-popup-close-compact" onClick={handleClose} aria-label="Закрити акційне вікно">
                 <X size={20} />
             </button>
 
