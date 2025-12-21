@@ -25,6 +25,8 @@
 
     .hero-image {
         max-height: 400px;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     section {
@@ -79,6 +81,8 @@
 
     .hero-image {
         max-height: 300px;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .hero-content {
