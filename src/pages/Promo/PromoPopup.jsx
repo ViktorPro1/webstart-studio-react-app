@@ -25,10 +25,10 @@ const PromoPopup = () => {
             return;
         }
 
-        // Показуємо попап через 3 секунди
+        // Показуємо попап через 5 секунди
         const timer = setTimeout(() => {
             setIsVisible(true);
-        }, 3000);
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, []);
