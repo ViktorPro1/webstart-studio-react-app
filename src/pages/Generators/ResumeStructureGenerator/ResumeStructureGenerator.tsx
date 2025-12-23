@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import './ResumeStructureGenerator.css';
 import './ResumeStructureGenerator.mobile.css';
 
-const ResumeStructureGenerator = () => {
-    const [jobType, setJobType] = useState('');
-    const [sections, setSections] = useState([]);
-    const [error, setError] = useState('');
+interface Section {
+    title: string;
+    desc: string;
+    icon: string;
+}
 
-    const sectionsData = {
+type JobType = 'web' | 'marketing' | 'management' | 'other';
+
+const ResumeStructureGenerator = () => {
+    const [jobType, setJobType] = useState<JobType | ''>('');
+    const [sections, setSections] = useState<Section[]>([]);
+    const [error, setError] = useState<string>('');
+
+    const sectionsData: Record<JobType, Section[]> = {
         web: [
             {
                 title: 'Контактна інформація',
@@ -130,6 +138,10 @@ const ResumeStructureGenerator = () => {
         setSections(sectionsData[jobType]);
     };
 
+    const handleJobTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        setJobType(e.target.value as JobType);
+    };
+
     return (
         <div className="resume-generator">
             <div className="generator-container">
@@ -149,7 +161,7 @@ const ResumeStructureGenerator = () => {
                             id="job-type"
                             className="form-select"
                             value={jobType}
-                            onChange={(e) => setJobType(e.target.value)}
+                            onChange={handleJobTypeChange}
                         >
                             <option value="">Оберіть сферу роботи</option>
                             <option value="web">Веб-дизайн / Розробка</option>

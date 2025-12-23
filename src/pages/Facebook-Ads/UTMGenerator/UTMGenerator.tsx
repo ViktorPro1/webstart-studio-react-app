@@ -161,7 +161,6 @@ const UTMGenerator = () => {
                     )}
                 </div>
 
-                {/* Info Section */}
                 <div className="utm-generator-info">
                     <h2 className="utm-generator-info-title">Що таке UTM-мітки?</h2>
                     <div className="utm-generator-info-grid">

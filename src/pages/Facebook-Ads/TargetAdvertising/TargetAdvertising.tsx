@@ -54,7 +54,6 @@ const TargetAdvertising = () => {
     return (
         <div className="target-advertising">
             <div className="target-advertising-container">
-                {/* Hero Section */}
                 <section className="target-advertising-hero">
                     <div className="hero-icon">🎯</div>
                     <h1 className="target-advertising-title">Таргетована реклама</h1>
@@ -63,7 +62,6 @@ const TargetAdvertising = () => {
                     </p>
                 </section>
 
-                {/* Niches Section */}
                 <section className="target-advertising-niches">
                     <h2 className="section-title">Наші ніші</h2>
                     <div className="niches-grid">
@@ -77,7 +75,6 @@ const TargetAdvertising = () => {
                     </div>
                 </section>
 
-                {/* Services Section */}
                 <section className="target-advertising-services">
                     <h2 className="section-title">Що ми пропонуємо</h2>
                     <div className="services-grid">
@@ -91,7 +88,6 @@ const TargetAdvertising = () => {
                     </div>
                 </section>
 
-                {/* Tools Section */}
                 <section className="target-advertising-tools">
                     <h2 className="section-title">Корисні інструменти</h2>
                     <div className="tools-grid">
@@ -110,7 +106,6 @@ const TargetAdvertising = () => {
                     </div>
                 </section>
 
-                {/* Results Section */}
                 <section className="target-advertising-results">
                     <button
                         className="show-results-btn"
@@ -157,7 +152,6 @@ const TargetAdvertising = () => {
                     )}
                 </section>
 
-                {/* Why Us Section */}
                 <section className="target-advertising-why">
                     <h2 className="section-title">Чому обирають нас?</h2>
                     <div className="why-grid">

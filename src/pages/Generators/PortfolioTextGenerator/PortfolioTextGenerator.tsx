@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import './PortfolioTextGenerator.css';
 import './PortfolioTextGenerator.mobile.css';
+
+interface Output {
+    variant1: string;
+    variant2: string;
+}
 
 const PortfolioTextGenerator = () => {
     const [field, setField] = useState('');
     const [achievements, setAchievements] = useState('');
-    const [output, setOutput] = useState(null);
+    const [output, setOutput] = useState<Output | null>(null);
     const [error, setError] = useState('');
 
     const templates = [
-        (f, a) => `Фахівець у сфері <strong>${f}</strong>, який досяг <strong>${a}</strong>.`,
-        (f, a) => `Маю досвід у <strong>${f}</strong> та реалізував(ла) <strong>${a}</strong>.`,
-        (f, a) => `Професіонал у <strong>${f}</strong> з досягненнями: <strong>${a}</strong>.`,
-        (f, a) => `Експерт у <strong>${f}</strong> з практичними результатами: <strong>${a}</strong>.`
-    ];
+        (f: string, a: string) => `Фахівець у сфері <strong>${f}</strong>, який досяг <strong>${a}</strong>.`,
+        (f: string, a: string) => `Маю досвід у <strong>${f}</strong> та реалізував(ла) <strong>${a}</strong>.`,
+        (f: string, a: string) => `Професіонал у <strong>${f}</strong> з досягненнями: <strong>${a}</strong>.`,
+        (f: string, a: string) => `Експерт у <strong>${f}</strong> з практичними результатами: <strong>${a}</strong>.`
+    ] as ((field: string, achievements: string) => string)[];
 
     const handleGenerate = () => {
         setError('');
@@ -25,7 +30,7 @@ const PortfolioTextGenerator = () => {
         }
 
         const firstIndex = Math.floor(Math.random() * templates.length);
-        let secondIndex;
+        let secondIndex: number;
         do {
             secondIndex = Math.floor(Math.random() * templates.length);
         } while (secondIndex === firstIndex);
@@ -34,6 +39,14 @@ const PortfolioTextGenerator = () => {
             variant1: templates[firstIndex](field, achievements),
             variant2: templates[secondIndex](field, achievements)
         });
+    };
+
+    const handleFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setField(e.target.value);
+    };
+
+    const handleAchievementsChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setAchievements(e.target.value);
     };
 
     return (
@@ -57,7 +70,7 @@ const PortfolioTextGenerator = () => {
                             className="form-input"
                             placeholder="наприклад: веб-дизайн"
                             value={field}
-                            onChange={(e) => setField(e.target.value)}
+                            onChange={handleFieldChange}
                         />
                     </div>
 
@@ -71,7 +84,7 @@ const PortfolioTextGenerator = () => {
                             className="form-input"
                             placeholder="наприклад: 20+ успішних проєктів"
                             value={achievements}
-                            onChange={(e) => setAchievements(e.target.value)}
+                            onChange={handleAchievementsChange}
                         />
                     </div>
 

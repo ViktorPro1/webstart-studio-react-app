@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import './PromptEditor.css';
 import './PromptEditor.mobile.css';
 
-const PromptEditor = () => {
-    const [openSection, setOpenSection] = useState(null);
+interface Section {
+    id: string;
+    title: string;
+    items: string[];
+}
 
-    const sections = [
+const PromptEditor: React.FC = () => {
+    const [openSection, setOpenSection] = useState<string | null>(null);
+
+    const sections: Section[] = [
         {
             id: 'general',
             title: 'Загальний набір інструментів для ваших цілей',
@@ -102,7 +108,7 @@ const PromptEditor = () => {
         }
     ];
 
-    const toggleSection = (id) => {
+    const toggleSection = (id: string): void => {
         setOpenSection(openSection === id ? null : id);
     };
 

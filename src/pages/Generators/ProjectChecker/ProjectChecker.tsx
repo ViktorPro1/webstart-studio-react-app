@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import './ProjectChecker.css';
 import './ProjectChecker.mobile.css';
 
-const ProjectChecker = () => {
-    const [projectType, setProjectType] = useState('landing');
-    const [url, setUrl] = useState('');
-    const [results, setResults] = useState([]);
-    const [error, setError] = useState('');
+interface CheckResult {
+    name: string;
+    status: 'ok' | 'warning' | 'error';
+    desc: string;
+    percentage: number;
+}
 
-    const checksData = {
+type ProjectType = 'landing' | 'resume' | 'portfolio';
+
+const ProjectChecker = () => {
+    const [projectType, setProjectType] = useState<ProjectType>('landing');
+    const [url, setUrl] = useState<string>('');
+    const [results, setResults] = useState<CheckResult[]>([]);
+    const [error, setError] = useState<string>('');
+
+    const checksData: Record<ProjectType, CheckResult[]> = {
         landing: [
             { name: 'CTA присутній', status: 'ok', desc: 'Кнопка заклику до дії видна і привертає увагу. Має бути чітко помітною, у вас приблизно 60% від ідеалу.', percentage: 60 },
             { name: 'Текст читається', status: 'ok', desc: 'Шрифт достатньо великий, контрастний. Має бути максимально 1000 символів на блок, у вас близько 600.', percentage: 90 },
@@ -43,7 +52,7 @@ const ProjectChecker = () => {
         setResults(checks);
     };
 
-    const getStatusIcon = (status) => {
+    const getStatusIcon = (status: CheckResult['status']): string => {
         switch (status) {
             case 'ok':
                 return '✓';
@@ -56,7 +65,7 @@ const ProjectChecker = () => {
         }
     };
 
-    const getStatusColor = (status) => {
+    const getStatusColor = (status: CheckResult['status']): string => {
         switch (status) {
             case 'ok':
                 return '#10b981';
@@ -67,6 +76,14 @@ const ProjectChecker = () => {
             default:
                 return '#6b7280';
         }
+    };
+
+    const handleProjectTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        setProjectType(e.target.value as ProjectType);
+    };
+
+    const handleUrlChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setUrl(e.target.value);
     };
 
     return (
@@ -88,7 +105,7 @@ const ProjectChecker = () => {
                             id="project-type"
                             className="form-select"
                             value={projectType}
-                            onChange={(e) => setProjectType(e.target.value)}
+                            onChange={handleProjectTypeChange}
                         >
                             <option value="landing">Лендінг</option>
                             <option value="resume">Резюме</option>
@@ -106,7 +123,7 @@ const ProjectChecker = () => {
                             className="form-input"
                             placeholder="Введи URL або залиш поле порожнім"
                             value={url}
-                            onChange={(e) => setUrl(e.target.value)}
+                            onChange={handleUrlChange}
                         />
                     </div>
 

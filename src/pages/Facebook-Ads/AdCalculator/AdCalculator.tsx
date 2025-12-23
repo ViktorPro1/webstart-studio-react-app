@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import './AdCalculator.css';
 import './AdCalculator.mobile.css';
 
 const AdCalculator = () => {
-    const [days, setDays] = useState(5);
-    const [adBudget, setAdBudget] = useState(100);
-    const [myFee, setMyFee] = useState('');
-    const [total, setTotal] = useState('');
+    const [days, setDays] = useState<number>(5);
+    const [adBudget, setAdBudget] = useState<number>(100);
+    const [myFee, setMyFee] = useState<string>('');
+    const [total, setTotal] = useState<string>('');
 
     const calculate = () => {
-        const daysNum = parseInt(days);
-        const adBudgetNum = parseFloat(adBudget);
+        const daysNum = parseInt(days.toString());
+        const adBudgetNum = parseFloat(adBudget.toString());
 
         if (isNaN(daysNum) || isNaN(adBudgetNum) || daysNum < 1 || adBudgetNum < 0) {
             alert('Введіть коректні значення.');
@@ -27,6 +27,16 @@ const AdCalculator = () => {
 
         setMyFee(calculatedFee.toFixed(2));
         setTotal(totalAmount.toFixed(2));
+    };
+
+    const handleDaysChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const value = parseInt(e.target.value) || 5;
+        setDays(value);
+    };
+
+    const handleBudgetChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const value = parseFloat(e.target.value) || 100;
+        setAdBudget(value);
     };
 
     return (
@@ -48,7 +58,7 @@ const AdCalculator = () => {
                             className="ad-calculator-input"
                             value={days}
                             min="1"
-                            onChange={(e) => setDays(e.target.value)}
+                            onChange={handleDaysChange}
                         />
                     </div>
 
@@ -62,7 +72,8 @@ const AdCalculator = () => {
                             className="ad-calculator-input"
                             value={adBudget}
                             min="0"
-                            onChange={(e) => setAdBudget(e.target.value)}
+                            step="0.01"
+                            onChange={handleBudgetChange}
                         />
                         <div className="ad-calculator-note">* Рекомендуємо від 100 грн на день</div>
                     </div>
@@ -104,7 +115,6 @@ const AdCalculator = () => {
                     </div>
                 </div>
 
-                {/* Info Section */}
                 <div className="ad-calculator-info">
                     <h2 className="ad-calculator-info-title">Як розраховується вартість?</h2>
                     <div className="ad-calculator-info-grid">

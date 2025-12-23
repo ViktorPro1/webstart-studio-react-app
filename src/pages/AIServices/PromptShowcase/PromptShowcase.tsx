@@ -2,10 +2,18 @@ import React, { useState } from 'react';
 import './PromptShowcase.css';
 import './PromptShowcase.mobile.css';
 
-const PromptShowcase = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
+interface GalleryItem {
+    id: number;
+    image: string;
+    title: string;
+    description: string;
+    prompt: string;
+}
 
-    const gallery = [
+const PromptShowcase: React.FC = () => {
+    const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
+
+    const gallery: GalleryItem[] = [
         {
             id: 1,
             image: '/images/gallery/img1.webp',
@@ -221,7 +229,7 @@ const PromptShowcase = () => {
                 >
                     <div
                         className="prompt-showcase__modal-box"
-                        onClick={e => e.stopPropagation()}
+                        onClick={(e: React.MouseEvent) => e.stopPropagation()}
                     >
                         <button
                             className="prompt-showcase__close"

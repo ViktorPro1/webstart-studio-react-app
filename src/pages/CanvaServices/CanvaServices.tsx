@@ -64,7 +64,6 @@ const CanvaServices = () => {
     return (
         <div className="canva">
             <div className="canva-container">
-                {/* Hero Section */}
                 <section className="canva-hero">
                     <div className="canva-hero-icon">🖼️</div>
                     <h1 className="canva-title">Банери та Шаблони</h1>
@@ -75,7 +74,6 @@ const CanvaServices = () => {
                     </p>
                 </section>
 
-                {/* Services Grid */}
                 <section className="canva-grid">
                     <h2 className="canva-section-title">Що ми створюємо</h2>
                     <div className="canva-services-grid">
@@ -89,7 +87,6 @@ const CanvaServices = () => {
                     </div>
                 </section>
 
-                {/* Pricing Section */}
                 <section className="canva-pricing">
                     <h2 className="canva-section-title">Оптимальний вибір</h2>
                     <div className="canva-pricing-table-wrapper">
@@ -112,7 +109,6 @@ const CanvaServices = () => {
                     </div>
                 </section>
 
-                {/* Mini Course CTA */}
                 <section className="canva-cta">
                     <div className="canva-cta-card">
                         <h2 className="canva-cta-title">Хочете навчитися самому у Canva?</h2>
@@ -132,7 +128,6 @@ const CanvaServices = () => {
                     </div>
                 </section>
 
-                {/* Examples Section */}
                 <section className="canva-examples">
                     <button
                         className="canva-show-examples-btn"
@@ -183,7 +178,6 @@ const CanvaServices = () => {
                     )}
                 </section>
 
-                {/* Features Section */}
                 <section className="canva-features">
                     <h2 className="canva-section-title">Чому обирають нас?</h2>
                     <div className="canva-features-grid">

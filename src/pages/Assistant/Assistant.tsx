@@ -6,7 +6,6 @@ import './Assistant.mobile.css';
 const Assistant = () => {
     return (
         <div className="assistant-page">
-            {/* Герой секція */}
             <section className="assistant-hero">
                 <div className="assistant-hero-content">
                     <div className="assistant-hero-text">
@@ -32,7 +31,6 @@ const Assistant = () => {
                 </div>
             </section>
 
-            {/* Можливості */}
             <section className="assistant-features">
                 <h2 className="section-title">Чим я можу допомогти?</h2>
                 <div className="features-grid">
@@ -86,7 +84,6 @@ const Assistant = () => {
                 </div>
             </section>
 
-            {/* Як працює */}
             <section className="assistant-how-it-works">
                 <h2 className="section-title">Як зі мною зв'язатися?</h2>
                 <div className="steps-container">
@@ -110,7 +107,6 @@ const Assistant = () => {
                 </div>
             </section>
 
-            {/* FAQ про Джона */}
             <section className="assistant-faq">
                 <h2 className="section-title">Питання про мене</h2>
                 <div className="faq-list">
@@ -152,7 +148,6 @@ const Assistant = () => {
                 </div>
             </section>
 
-            {/* CTA */}
             <section className="assistant-cta">
                 <div className="cta-content">
                     <h2>Готовий поспілкуватися?</h2>

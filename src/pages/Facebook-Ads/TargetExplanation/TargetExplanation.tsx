@@ -21,14 +21,12 @@ const TargetExplanation = () => {
     return (
         <div className="target-explanation">
             <div className="target-explanation-container">
-                {/* Hero */}
                 <section className="target-explanation-hero">
                     <h1 className="target-explanation-title">
                         Як ми рекламуємо ваші вакансії та перевезення
                     </h1>
                 </section>
 
-                {/* Main Content */}
                 <section className="target-explanation-content">
                     <div className="target-explanation-block">
                         <h2 className="target-explanation-heading">Наш підхід до реклами</h2>
@@ -74,7 +72,6 @@ const TargetExplanation = () => {
                         </p>
                     </div>
 
-                    {/* Benefits */}
                     <div className="target-explanation-benefits">
                         <h2 className="target-explanation-heading">Такий підхід:</h2>
                         <div className="target-explanation-benefits-grid">
@@ -88,7 +85,6 @@ const TargetExplanation = () => {
                         </div>
                     </div>
 
-                    {/* Note */}
                     <div className="target-explanation-note">
                         <div className="target-explanation-note-icon">💡</div>
                         <div className="target-explanation-note-content">

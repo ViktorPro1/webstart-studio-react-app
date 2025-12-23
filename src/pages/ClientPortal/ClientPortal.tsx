@@ -3,18 +3,36 @@ import { Package, Download, CreditCard, CheckCircle, Clock, AlertCircle } from '
 import './ClientPortal.css';
 import './ClientPortal.mobile.css';
 
+interface ClientParams {
+    id: string;
+    name: string;
+    project: string;
+    step: number;
+    zip: string;
+    price: string;
+    status: string;
+}
+
 const ClientPortal = () => {
-    const [params, setParams] = useState({});
+    const [params, setParams] = useState<ClientParams>({
+        id: 'demo-123',
+        name: 'Клієнт',
+        project: 'Веб-проєкт',
+        step: 1,
+        zip: '',
+        price: '500',
+        status: 'waiting'
+    });
     const [step, setStep] = useState(1);
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption, setSelectedOption] = useState<'zip' | 'hosting' | null>(null);
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
-        const paramsObj = {
+        const paramsObj: ClientParams = {
             id: urlParams.get('id') || 'demo-123',
             name: urlParams.get('name') || 'Клієнт',
             project: urlParams.get('project') || 'Веб-проєкт',
-            step: parseInt(urlParams.get('step')) || 1,
+            step: parseInt(urlParams.get('step') || '1') || 1,
             zip: urlParams.get('zip') || '',
             price: urlParams.get('price') || '500',
             status: urlParams.get('status') || 'waiting'
@@ -25,12 +43,17 @@ const ClientPortal = () => {
         const storageKey = `client_${paramsObj.id}`;
         const existingData = localStorage.getItem(storageKey);
         if (existingData) {
-            const data = JSON.parse(existingData);
-            setSelectedOption(data.selectedOption);
+            try {
+                const data = JSON.parse(existingData) as {
+                    selectedOption: 'zip' | 'hosting' | null;
+                };
+                setSelectedOption(data.selectedOption);
+            } catch {
+            }
         }
     }, []);
 
-    const handleOptionSelect = (option) => {
+    const handleOptionSelect = (option: 'zip' | 'hosting'): void => {
         setSelectedOption(option);
         const storageKey = `client_${params.id}`;
         localStorage.setItem(storageKey, JSON.stringify({
@@ -40,19 +63,19 @@ const ClientPortal = () => {
         }));
     };
 
-    const getStepStatus = (stepNumber) => {
+    const getStepStatus = (stepNumber: number): 'completed' | 'active' | 'pending' => {
         if (stepNumber < step) return 'completed';
         if (stepNumber === step) return 'active';
         return 'pending';
     };
 
-    const getStepIcon = (stepNumber) => {
+    const getStepIcon = (stepNumber: number): string => {
         const status = getStepStatus(stepNumber);
         if (status === 'completed') return '✓';
-        return stepNumber;
+        return stepNumber.toString();
     };
 
-    const getStepColor = (stepNumber) => {
+    const getStepColor = (stepNumber: number): string => {
         const status = getStepStatus(stepNumber);
         if (status === 'completed') return 'client-portal-step-completed';
         if (status === 'active') return 'client-portal-step-active';
@@ -62,7 +85,6 @@ const ClientPortal = () => {
     return (
         <div className="client-portal">
             <div className="client-portal-container">
-                {/* Header */}
                 <div className="client-portal-header">
                     <h1 className="client-portal-title">Твій кабінет</h1>
                     <p className="client-portal-welcome">
@@ -71,10 +93,9 @@ const ClientPortal = () => {
                     <p className="client-portal-project">Проєкт: {params.project}</p>
                 </div>
 
-                {/* Progress Steps */}
                 <div className="client-portal-progress">
                     <div className="client-portal-progress-steps">
-                        {/* Progress Line */}
+
                         <div className="client-portal-progress-line">
                             <div
                                 className="client-portal-progress-line-fill"
@@ -82,7 +103,6 @@ const ClientPortal = () => {
                             ></div>
                         </div>
 
-                        {/* Step 1 */}
                         <div className="client-portal-progress-step">
                             <div className={`client-portal-step-circle ${getStepColor(1)}`}>
                                 {getStepIcon(1)}
@@ -90,7 +110,6 @@ const ClientPortal = () => {
                             <span className="client-portal-step-label">Бриф</span>
                         </div>
 
-                        {/* Step 2 */}
                         <div className="client-portal-progress-step">
                             <div className={`client-portal-step-circle ${getStepColor(2)}`}>
                                 {getStepIcon(2)}
@@ -98,7 +117,6 @@ const ClientPortal = () => {
                             <span className="client-portal-step-label">Вибір</span>
                         </div>
 
-                        {/* Step 3 */}
                         <div className="client-portal-progress-step">
                             <div className={`client-portal-step-circle ${getStepColor(3)}`}>
                                 {getStepIcon(3)}
@@ -108,7 +126,6 @@ const ClientPortal = () => {
                     </div>
                 </div>
 
-                {/* Step 1: Choose Option */}
                 {step === 1 && (
                     <div className="client-portal-content">
                         <div className="client-portal-card">
@@ -156,7 +173,6 @@ const ClientPortal = () => {
                     </div>
                 )}
 
-                {/* Step 2: ZIP Download */}
                 {step === 2 && params.zip && (
                     <div className="client-portal-content">
                         <div className="client-portal-card">
@@ -206,7 +222,6 @@ const ClientPortal = () => {
                     </div>
                 )}
 
-                {/* Step 3: Payment */}
                 {step === 3 && (
                     <div className="client-portal-content">
                         <div className="client-portal-card">
@@ -291,7 +306,6 @@ const ClientPortal = () => {
                     </div>
                 )}
 
-                {/* Back to Home */}
                 <div className="client-portal-footer">
                     <a href="/" className="client-portal-back-btn">
                         ← На головну

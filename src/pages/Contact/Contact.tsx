@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import SEO from '../../SEO/SEO';
 import { Mail, Phone, MessageCircle, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import './Contact.css';
 import './Contact.mobile.css';
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  message: string;
+}
+
+interface Status {
+  type: 'success' | 'error' | 'loading' | '';
+  message: string;
+}
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
@@ -13,12 +26,12 @@ const Contact = () => {
     message: ''
   });
 
-  const [status, setStatus] = useState({
-    type: '', // 'success', 'error', 'loading'
+  const [status, setStatus] = useState<Status>({
+    type: '',
     message: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -26,12 +39,11 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus({ type: 'loading', message: 'Відправка...' });
 
     try {
-      // Ваш Google Apps Script URL
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwXCIDEa8tvukJDhWi3GOaSzZ3Fpoh6ILzJ5KLnBewdYFgNGcGZoY-SYtA98ZhQfx9V9A/exec';
 
       const response = await fetch(scriptURL, {
@@ -53,7 +65,6 @@ const Contact = () => {
           message: '✅ Дякуємо! Ваша заявка успішно відправлена. Ми зв\'яжемося з вами протягом 24 годин.'
         });
 
-        // Очистити форму
         setFormData({
           name: '',
           email: '',
@@ -62,14 +73,12 @@ const Contact = () => {
           message: ''
         });
 
-        // Прибрати повідомлення через 5 секунд
         setTimeout(() => {
           setStatus({ type: '', message: '' });
         }, 5000);
       } else {
         throw new Error('Server returned error');
       }
-
     } catch (error) {
       console.error('Error:', error);
       setStatus({
@@ -160,7 +169,6 @@ const Contact = () => {
               Заповніть форму, і ми зв'яжемося з вами протягом 24 годин
             </p>
 
-            {/* Статус повідомлення */}
             {status.message && (
               <div className={`contact-status-message ${status.type}`}>
                 {status.type === 'success' && <CheckCircle size={20} />}
@@ -170,7 +178,7 @@ const Contact = () => {
               </div>
             )}
 
-            <div className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-form-group">
                 <label htmlFor="name">Ім'я *</label>
                 <input
@@ -243,21 +251,20 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="5"
+                  rows={5}
                   required
                   placeholder="Розкажіть детальніше про ваш проєкт..."
-                ></textarea>
+                />
               </div>
 
               <button
-                type="button"
-                onClick={handleSubmit}
+                type="submit"
                 className="contact-submit-button"
                 disabled={status.type === 'loading'}
               >
                 {status.type === 'loading' ? 'Відправка...' : 'Відправити заявку'}
               </button>
-            </div>
+            </form>
           </div>
         </section>
 

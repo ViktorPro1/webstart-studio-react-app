@@ -3,7 +3,6 @@ import SEO from '../../SEO/SEO';
 import './Achievements.css';
 import './Achievements.mobile.css';
 
-// Виносимо stats за межі компонента
 const stats = [
   {
     icon: '📊',

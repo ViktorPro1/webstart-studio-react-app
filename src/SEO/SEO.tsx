@@ -2,14 +2,22 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { SITE_INFO } from '../utils/constants';
 
-const SEO = ({ title, description, keywords, image, url }) => {
+interface SEOProps {
+  title: string;
+  description: string;
+  keywords: string;
+  image?: string;
+  url?: string;
+}
+
+const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, url }) => {
   const siteTitle = title ? `${title} | ${SITE_INFO.title}` : SITE_INFO.title;
   const siteDescription = description || SITE_INFO.description;
   const siteKeywords = keywords || SITE_INFO.keywords;
   const siteUrl = url || SITE_INFO.url;
 
   const baseUrl = 'https://web-start-studio.netlify.app';
-  const rawImage = image || '/web-start-studio-og.jpg'; // Змінено на JPG
+  const rawImage = image || '/web-start-studio-og.jpg';
   const siteImage = rawImage.startsWith('http')
     ? rawImage
     : `${baseUrl}${rawImage}`;
@@ -33,11 +41,11 @@ const SEO = ({ title, description, keywords, image, url }) => {
       <meta property="og:description" content={siteDescription} />
       <meta property="og:image" content={siteImage} />
       <meta property="og:image:secure_url" content={siteImage} />
-      <meta property="og:image:type" content="image/jpeg" /> {/* Змінено тип */}
+      <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="WebStart Studio" />
-      <meta property="og:locale" content="uk_UA" /> {/* Додано локаль */}
+      <meta property="og:locale" content="uk_UA" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
