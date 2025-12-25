@@ -1,4 +1,5 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
 import SEO from '../../SEO/SEO';
 import { Mail, Phone, MessageCircle, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import './Contact.css';
@@ -189,6 +190,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="Ваше ім'я"
+                  autoComplete="name"
                 />
               </div>
 
@@ -202,6 +204,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="your@email.com"
+                  autoComplete="email"
                 />
               </div>
 
@@ -214,6 +217,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+38 (___) ___ __ __"
+                  autoComplete="tel"
                 />
               </div>
 
@@ -225,6 +229,7 @@ const Contact = () => {
                   value={formData.service}
                   onChange={handleChange}
                   required
+                  autoComplete="off"
                 >
                   <option value="">Оберіть послугу</option>
                   <option value="Лендінг">Лендінг</option>
@@ -254,6 +259,7 @@ const Contact = () => {
                   rows={5}
                   required
                   placeholder="Розкажіть детальніше про ваш проєкт..."
+                  autoComplete="off"
                 />
               </div>
 

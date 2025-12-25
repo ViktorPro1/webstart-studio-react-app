@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import type { ChangeEvent, KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, Search, Moon, Check, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -29,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
     i18n.changeLanguage(lng);
   };
 
-  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleSearch = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter') return;
     const value = query.trim().toLowerCase();
     if (!value) return;
@@ -75,10 +76,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
           <div className="search-bar">
             <Search size={20} color="#667eea" />
             <input
-              type="text"
+              type="search"
+              id="header-search"
+              name="search"
               placeholder={t('header.search')}
               value={query}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
               onKeyDown={handleSearch}
             />
           </div>
@@ -86,8 +89,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
 
         <div className="header-right">
           <select
+            id="language-selector"
+            name="language"
             value={i18n.language}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => changeLanguage(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) => changeLanguage(e.target.value)}
             className="language-selector"
             aria-label={t('header.selectLanguage')}
           >
@@ -182,3 +187,4 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
 };
 
 export default Header;
+
