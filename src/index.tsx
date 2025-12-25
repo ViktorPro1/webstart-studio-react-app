@@ -16,15 +16,20 @@ window.addEventListener('error', (e: ErrorEvent) => {
 });
 
 // ----------------------
-// Root rendering з перевіркою
+// Root rendering з future flags
 // ----------------------
 const container = document.getElementById('root');
 if (container != null) {
-  const root = ReactDOM.createRoot(container); // ✅ Тепер TypeScript знає, що container не null
+  const root = ReactDOM.createRoot(container);
   
   root.render(
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true
+        }}
+      >
         <App />
       </BrowserRouter>
     </HelmetProvider>

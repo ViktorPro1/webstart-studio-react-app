@@ -35,7 +35,7 @@
 
 ### Microsoft Clarity
 
-- **Project ID**: `ulapiy4iws`
+- **Project ID**:
 - Запис сесій користувачів
 - Теплові карти (heatmaps)
 - Аналіз поведінки відвідувачів

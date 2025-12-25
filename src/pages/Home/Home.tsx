@@ -58,7 +58,6 @@ const Home: React.FC = () => {
               className="hero-image"
               width={546}
               height={546}
-              fetchPriority="high"
               loading="eager"
             />
           </div>
@@ -102,3 +101,4 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
