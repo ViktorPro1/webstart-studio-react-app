@@ -6,12 +6,14 @@
     .assistant-hero {
         padding: 60px 20px;
         min-height: auto;
+        box-sizing: border-box;
     }
 
     .assistant-hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
+        box-sizing: border-box;
     }
 
     .assistant-title {
@@ -33,6 +35,7 @@
     /* Features */
     .assistant-features {
         padding: 60px 20px;
+        box-sizing: border-box;
     }
 
     .section-title {
@@ -43,16 +46,19 @@
     .features-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+        box-sizing: border-box;
     }
 
     /* Steps */
     .assistant-how-it-works {
         padding: 60px 20px;
+        box-sizing: border-box;
     }
 
     .steps-container {
         grid-template-columns: 1fr;
         gap: 32px;
+        box-sizing: border-box;
     }
 
     .step-number {
@@ -64,15 +70,22 @@
     /* FAQ */
     .assistant-faq {
         padding: 60px 20px;
+        box-sizing: border-box;
     }
 
     .faq-item {
         padding: 24px;
+        box-sizing: border-box;
     }
 
     /* CTA */
     .assistant-cta {
         padding: 60px 20px;
+        box-sizing: border-box;
+    }
+
+    .cta-content {
+        box-sizing: border-box;
     }
 
     .cta-content h2 {
@@ -85,19 +98,24 @@
 
     .cta-buttons {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .cta-button {
         width: 100%;
         max-width: 300px;
-        margin: 0 auto;
+        margin: 0;
+        box-sizing: border-box;
     }
 }
 
 @media (max-width: 480px) {
     .assistant-hero {
         padding: 40px 15px;
+        box-sizing: border-box;
     }
 
     .assistant-title {
@@ -118,9 +136,20 @@
 
     .feature-card {
         padding: 24px;
+        box-sizing: border-box;
     }
 
     .faq-item {
         padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .cta-buttons {
+        gap: 0.875rem;
+    }
+
+    .cta-button {
+        max-width: 100%;
+        padding: 0.875rem 1.5rem;
     }
 }

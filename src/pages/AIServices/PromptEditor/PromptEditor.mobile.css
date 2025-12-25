@@ -44,6 +44,7 @@
 
     .prompt-editor-link {
         min-width: 100%;
+        width: 100%;
     }
 }
 
@@ -105,5 +106,7 @@
     .prompt-editor-link {
         padding: 0.875rem 1.5rem;
         font-size: 1rem;
+        min-width: 100%;
+        width: 100%;
     }
 }

@@ -5,18 +5,18 @@
         padding: 15px;
         box-sizing: border-box;
         overflow-x: hidden;
-        /* прибирає горизонтальний скрол */
     }
 
     .google-ads-comparison__container {
-        max-width: 95%;
-        /* звужує контент */
+        max-width: 100%;
         margin: 0 auto;
         border-radius: 10px;
+        box-sizing: border-box;
     }
 
     .google-ads-comparison__header {
         padding: 20px 15px;
+        box-sizing: border-box;
     }
 
     .google-ads-comparison__header h1 {
@@ -25,17 +25,66 @@
 
     .google-ads-comparison__content {
         padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .google-ads-comparison__quiz-card {
+        box-sizing: border-box;
+    }
+
+    .google-ads-comparison__option {
+        box-sizing: border-box;
     }
 
     .google-ads-comparison__table-wrapper {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         font-size: 13px;
+        box-sizing: border-box;
     }
 
     .google-ads-comparison__table {
         width: 100%;
         table-layout: auto;
+    }
+
+    /* Summary адаптація */
+    .google-ads-comparison__summary {
+        padding: 25px 15px;
+        box-sizing: border-box;
+    }
+
+    .google-ads-comparison__summary h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .google-ads-comparison__summary-content {
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .google-ads-comparison__summary-content p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .google-ads-comparison__summary-content ul {
+        margin: 15px 0;
+    }
+
+    .google-ads-comparison__summary-content li {
+        padding: 10px 0 10px 30px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .google-ads-comparison__summary-cta {
+        font-size: 15px;
+        padding: 18px 15px;
+        margin-top: 20px;
+        box-sizing: border-box;
     }
 }
 
@@ -51,6 +100,11 @@
     .google-ads-comparison__container {
         max-width: 100%;
         border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    .google-ads-comparison__header {
+        box-sizing: border-box;
     }
 
     .google-ads-comparison__header h1 {
@@ -62,24 +116,30 @@
         font-size: 13px;
     }
 
+    .google-ads-comparison__content {
+        box-sizing: border-box;
+    }
+
     .google-ads-comparison__quiz-card {
         padding: 12px;
+        box-sizing: border-box;
     }
 
     .google-ads-comparison__option {
         padding: 8px;
         font-size: 12px;
+        box-sizing: border-box;
     }
 
     .google-ads-comparison__table-wrapper {
         overflow-x: auto;
         font-size: 11px;
+        box-sizing: border-box;
     }
 
     .google-ads-comparison__table {
         width: 100%;
         min-width: unset;
-        /* прибираємо жорстке 600px */
         table-layout: auto;
     }
 
@@ -87,6 +147,49 @@
     .google-ads-comparison__table td {
         padding: 6px 4px;
         word-break: break-word;
-        /* перенос довгих слів */
+    }
+
+    /* Summary адаптація для малих екранів */
+    .google-ads-comparison__summary {
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+
+    .google-ads-comparison__summary h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .google-ads-comparison__summary-content {
+        padding: 15px 12px;
+        box-sizing: border-box;
+    }
+
+    .google-ads-comparison__summary-content p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .google-ads-comparison__summary-content ul {
+        margin: 12px 0;
+    }
+
+    .google-ads-comparison__summary-content li {
+        padding: 8px 0 8px 28px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .google-ads-comparison__summary-content li::before {
+        font-size: 16px;
+    }
+
+    .google-ads-comparison__summary-cta {
+        font-size: 13px;
+        padding: 15px 12px;
+        margin-top: 15px;
+        box-sizing: border-box;
+        line-height: 1.5;
     }
 }

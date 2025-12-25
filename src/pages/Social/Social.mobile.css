@@ -1,74 +1,131 @@
 @media (max-width: 768px) {
+    .socials {
+        padding: 3rem 1.5rem;
+    }
+
+    .socials h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
     .social-list {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 1rem;
+        max-width: 100%;
+    }
+
+    .social-list li {
+        width: 100%;
+        max-width: 400px;
+        min-width: auto;
     }
 
     .social-list a {
         width: 100%;
-        max-width: 300px;
-        font-size: 16px;
-        /* Вирівнюємо текст по лівому краю, але саму кнопку по центру */
-        display: flex;
-        justify-content: flex-start;
-        padding: 12px 20px;
-        box-sizing: border-box;
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+        justify-content: center;
+    }
+
+    .social-subscribe {
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 100%;
+    }
+
+    .social-subscribe li {
+        width: 100%;
+        max-width: 400px;
+        min-width: auto;
+    }
+
+    .social-subscribe a {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .share-platform {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+    }
+
+    .share-platform h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .share-buttons {
-        display: grid;
-        /* Міняємо на grid, щоб нічого не налазіло */
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 12px;
-        width: 100%;
-        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
     }
 
     .share-btn {
-        width: 100%;
-        /* Кнопка підлаштовується під колонку */
-        max-width: 90px;
-        height: auto;
-        /* ПРИБРАВ ФІКСОВАНУ ВИСОТУ */
-        min-height: 70px;
-        font-size: 11px;
-        padding: 10px 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        word-break: break-word;
-        /* Щоб довгі слова не розпирали кнопку */
+        padding: 1.25rem 0.75rem;
+        min-height: 100px;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
+    .socials {
+        padding: 2rem 1rem;
+    }
+
+    .socials h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
     .social-list {
-        flex-direction: column;
-        /* На малих екранах краще в стовпчик, щоб не тиснути в боки */
-        align-items: center;
-        gap: 10px;
+        gap: 0.875rem;
+    }
+
+    .social-list li {
+        max-width: 100%;
     }
 
     .social-list a {
+        font-size: 0.95rem;
+        padding: 0.875rem 1.25rem;
+    }
+
+    .social-subscribe {
+        gap: 0.875rem;
+    }
+
+    .social-subscribe li {
         max-width: 100%;
-        /* На всю ширину екрана */
-        font-size: 15px;
+    }
+
+    .social-subscribe a {
+        font-size: 0.95rem;
+        padding: 0.875rem 1.25rem;
+    }
+
+    .share-platform {
+        padding: 1.5rem 1rem;
+    }
+
+    .share-platform h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1.25rem;
     }
 
     .share-buttons {
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 рівні колонки */
-        gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.875rem;
     }
 
     .share-btn {
-        width: 100%;
-        max-width: none;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        /* Робимо кнопку квадратною без жорстких пікселів */
-        font-size: 10px;
+        padding: 1rem 0.5rem;
+        min-height: 90px;
+        font-size: 0.85rem;
+    }
+
+    .share-btn svg {
+        width: 28px;
+        height: 28px;
     }
 }

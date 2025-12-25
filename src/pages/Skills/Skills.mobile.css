@@ -1,92 +1,143 @@
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .skills-page {
-        border-radius: 15px;
-        padding: 0.8rem;
+        padding: 3rem 1.5rem;
     }
 
-    .skills-container {
-        gap: 1rem;
+    .skills-hero h1 {
+        font-size: 2.5rem;
     }
 
-    .skills-skill {
-        width: 120px;
-        padding: 0.8rem 1rem;
-    }
-
-    .skills-main {
-        margin: 1rem auto 3rem;
-    }
-
-    .skills-h1 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 420px) {
-    .skills-page {
-        border-radius: 12px;
-        padding: 0.5rem;
-    }
-
-    .skills-container {
-        gap: 0.8rem;
-    }
-
-    .skills-skill {
-        width: 100px;
-        padding: 0.6rem 0.8rem;
-    }
-
-    .skills-icon {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 0.3rem;
-    }
-
-    .skills-text {
-        font-size: 1rem;
-    }
-
-    .skills-time {
-        font-size: 0.75rem;
-    }
-
-    .skills-main {
-        padding: 0 0.5rem;
-        margin: 0.8rem auto 2rem;
-    }
-
-    .skills-h1 {
-        font-size: 1.6rem;
-        letter-spacing: 0.05em;
-        margin-bottom: 1.2rem;
-    }
-
-    .skills-description {
-        font-size: 1rem;
-        min-height: 2rem;
-    }
-
-    .skills-quote {
-        font-size: 1rem;
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
         padding: 0 0.5rem;
     }
 
-    .skills-modal-content {
-        padding: 1.5rem 1.2rem;
+    .skill-card {
+        padding: 2rem 1.5rem;
     }
 
-    .skills-modal-content h2 {
+    .skill-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .skill-card h3 {
         font-size: 1.5rem;
     }
 
-    .skills-modal-content p {
+    .skill-time {
+        font-size: 0.95rem;
+    }
+
+    .skills-hover-description {
+        bottom: 2rem;
+        padding: 1.25rem 2rem;
+        max-width: 90%;
+        font-size: 1rem;
+    }
+
+    .skills-philosophy {
+        padding: 2rem 1rem;
+    }
+
+    .skills-philosophy p {
+        font-size: 1.2rem;
+    }
+
+    .skill-modal {
+        padding: 2.5rem 2rem;
+        max-width: 90%;
+    }
+
+    .modal-icon {
+        font-size: 4rem;
+    }
+
+    .skill-modal h2 {
+        font-size: 2rem;
+    }
+
+    .skill-modal p {
+        font-size: 1.1rem;
+    }
+
+    .modal-time {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-page {
+        padding: 2rem 1rem;
+    }
+
+    .skills-hero h1 {
+        font-size: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .skill-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .skill-icon {
+        font-size: 3rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .skill-time {
         font-size: 0.9rem;
     }
 
-    .skills-close-modal {
-        font-size: 1.6rem;
-        top: 0.3rem;
-        right: 0.5rem;
+    .skills-hover-description {
+        bottom: 1.5rem;
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .skills-philosophy {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .skills-philosophy p {
+        font-size: 1.1rem;
+    }
+
+    .skill-modal {
+        padding: 2rem 1.5rem;
+    }
+
+    .modal-close {
+        font-size: 2rem;
+        width: 35px;
+        height: 35px;
+    }
+
+    .modal-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .skill-modal h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .skill-modal p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-time {
+        font-size: 0.95rem;
+        padding: 0.875rem;
     }
 }

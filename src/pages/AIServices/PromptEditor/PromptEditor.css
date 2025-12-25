@@ -137,6 +137,9 @@
     border-radius: 20px;
     border: 2px solid #38bdf8;
     box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
 }
 
 .prompt-editor-details {
@@ -201,6 +204,8 @@
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .prompt-editor-link {
@@ -215,6 +220,7 @@
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
+    box-sizing: border-box;
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
 }
 
