@@ -1,12 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom'; // Додано для навігації
+import { Link } from 'react-router-dom';
 import { Facebook, Send } from 'lucide-react';
-import { SiViber } from 'react-icons/si';
 import './Footer.css';
 import './Footer.mobile.css';
 
-const Footer = ({ isSidebarOpen }) => {
+interface FooterProps {
+  isSidebarOpen: boolean;
+}
+
+const Footer: React.FC<FooterProps> = ({ isSidebarOpen }) => {
   const { t } = useTranslation();
 
   return (
@@ -17,17 +20,22 @@ const Footer = ({ isSidebarOpen }) => {
             © 2025 Web<span className="highlight-footer">Start</span> Studio.
           </p>
           <p className="footer-subtitle">
-            {t('footer.subtitle', { defaultValue: 'Створюємо веб-рішення для вашого успіху' })}
+            {t('footer.subtitle', {
+              defaultValue: 'Створюємо веб-рішення для вашого успіху',
+            })}
           </p>
 
-          {/* Додані посилання на юридичні документи */}
           <div className="footer-links">
             <Link to="/privacy-policy" className="footer-link">
-              {t('footer.privacyPolicy', { defaultValue: 'Політика конфіденційності' })}
+              {t('footer.privacyPolicy', {
+                defaultValue: 'Політика конфіденційності',
+              })}
             </Link>
             <span className="footer-separator">|</span>
             <Link to="/terms-of-use" className="footer-link">
-              {t('footer.termsOfUse', { defaultValue: 'Умови використання' })}
+              {t('footer.termsOfUse', {
+                defaultValue: 'Умови використання',
+              })}
             </Link>
           </div>
         </div>
@@ -50,7 +58,16 @@ const Footer = ({ isSidebarOpen }) => {
             aria-label="Відкрити нашу Viber спільноту у новому вікні"
             className="social-link viber"
           >
-            <SiViber size={20} color="white" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="white"
+              style={{ minWidth: '20px', minHeight: '20px' }}
+            >
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 1.78.42 3.46 1.18 4.97L0 24l6.99-1.84C9.47 22.86 10.79 23.24 12 23.24c6.63 0 12-5.37 12-12S18.63 0 12 0zm5.47 15.11c-.42.21-2.38.95-2.75 1.07-.37.12-.62.09-.84-.12-.22-.21-.86 0-1.66.48-1.24.74-2.08 1.14-2.3 1.26-.22.12-.13.06-.24-.12-.11-.18-.5-.6-.94-1.22-2.69-3.78-4.1-6.12-4.2-6.44-.1-.32.05-.5.22-.66.17-.16.39-.48.58-.7.19-.22.24-.4.28-.6.04-.2-.02-.46-.14-.62-.6-.78-1.24-1.56-1.32-1.66-.08-.1-.14-.04-.2 0-.06 0-.15.08-.24.23-.09.15-.84 1.65-.84 1.65-.47.9-.72 1.93-.72 2.95 0 .98.35 2.09 1.01 3.36 1.02 1.93 2.58 3.35 4.48 4.37 1.82 1 3.53 1.38 4.27 1.55.74.17 1.36.1 1.85-.2.49-.3 1.32-1.17 1.5-1.3.18-.13.18-.2.12-.32-.06-.12-.27-.21-.54-.37z"/>
+            </svg>
           </a>
 
           <a

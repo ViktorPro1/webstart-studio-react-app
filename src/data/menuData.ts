@@ -1,5 +1,3 @@
-// src/data/menuData.js
-
 import {
     Boxes,
     Palette,

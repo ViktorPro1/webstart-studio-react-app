@@ -10,11 +10,32 @@ import {
 import './Sidebar.css';
 import './Sidebar.mobile.css';
 
-const Sidebar = ({ isOpen, toggleSidebar }) => {
-  const location = useLocation();
-  const [openDropdowns, setOpenDropdowns] = useState({});
+interface SidebarProps {
+  isOpen: boolean;
+  toggleSidebar: () => void;
+}
 
-  const toggleDropdown = (id) => {
+interface MenuItem {
+  id: string;
+  path?: string;
+  icon: React.ComponentType<{ size?: number }>;
+  label: string;
+  submenu?: SubmenuItem[];
+}
+
+interface SubmenuItem {
+  path: string;
+  label: string;
+  description?: string;
+}
+
+type DropdownState = Record<string, boolean>;
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
+  const location = useLocation();
+  const [openDropdowns, setOpenDropdowns] = useState<DropdownState>({});
+
+  const toggleDropdown = (id: string) => {
     setOpenDropdowns(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
@@ -24,7 +45,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     }
   };
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { id: 'home', path: '/', icon: Home, label: 'Головна' },
     { id: 'for-whom', path: '/for-whom', icon: Users, label: 'Для кого ми' },
 
@@ -109,7 +130,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { id: 'briefs', path: '/briefs', icon: FileDown, label: 'Отримати проект' },
   ];
 
-  const additionalItems = [
+  const additionalItems: MenuItem[] = [
     { id: 'security', path: '/security-tips', icon: Lock, label: 'Кібербезпека' },
 
     {
@@ -173,7 +194,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     }
   ];
 
-  const aboutItems = [
+  const aboutItems: MenuItem[] = [
     { id: 'about', path: '/about', icon: Users, label: 'Про нас' },
     { id: 'testimonials', path: '/testimonials', icon: MessageCircle, label: 'Відгуки' },
     { id: 'skills', path: '/skills', icon: Code2, label: 'Наші навички' },
@@ -239,10 +260,50 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     {
       id: 'innovations',
       path: '/innovations',
-      icon: Lightbulb, // або Sparkles, Rocket
+      icon: Lightbulb,
       label: 'Новації'
     }
   ];
+
+  const renderMenuItem = (item: MenuItem) => (
+    <div key={item.id}>
+      {item.submenu ? (
+        <div className="nav-item-wrapper">
+          <div
+            className={`nav-item dropdown-item ${openDropdowns[item.id] ? 'open' : ''}`}
+            onClick={() => toggleDropdown(item.id)}
+          >
+            <div className="nav-item-content">
+              <item.icon size={20} />
+              <span>{item.label}</span>
+            </div>
+            {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+          </div>
+          <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
+            {item.submenu.map((subItem, index) => (
+              <Link
+                key={index}
+                to={subItem.path}
+                className={`submenu-item ${location.pathname === subItem.path ? 'active' : ''}`}
+                onClick={handleLinkClick}
+              >
+                {subItem.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <Link
+          to={item.path!}
+          className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+          onClick={handleLinkClick}
+        >
+          <item.icon size={20} />
+          <span>{item.label}</span>
+        </Link>
+      )}
+    </div>
+  );
 
   return (
     <>
@@ -255,141 +316,19 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         </div>
 
         <nav className="sidebar-nav">
-
-          {menuItems.map(item => (
-            <div key={item.id}>
-              {item.submenu ? (
-                <div className="nav-item-wrapper">
-                  <div
-                    className={`nav-item dropdown-item ${openDropdowns[item.id] ? 'open' : ''}`}
-                    onClick={() => toggleDropdown(item.id)}
-                  >
-                    <div className="nav-item-content">
-                      <item.icon size={20} />
-                      <span>{item.label}</span>
-                    </div>
-
-                    {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                  </div>
-
-                  <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
-                    {item.submenu.map((subItem, index) => (
-                      <Link
-                        key={index}
-                        to={subItem.path}
-                        className={`submenu-item ${location.pathname === subItem.path ? 'active' : ''}`}
-                        onClick={handleLinkClick}
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  to={item.path}
-                  className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
-                  onClick={handleLinkClick}
-                >
-                  <item.icon size={20} />
-                  <span>{item.label}</span>
-                </Link>
-              )}
-            </div>
-          ))}
+          {menuItems.map(renderMenuItem)}
 
           <div className="menu-divider"></div>
 
           <div className="menu-section-title">Додаткові можливості</div>
 
-          {additionalItems.map(item => (
-            <div key={item.id}>
-              {item.submenu ? (
-                <div className="nav-item-wrapper">
-                  <div
-                    className={`nav-item dropdown-item ${openDropdowns[item.id] ? 'open' : ''}`}
-                    onClick={() => toggleDropdown(item.id)}
-                  >
-                    <div className="nav-item-content">
-                      <item.icon size={20} />
-                      <span>{item.label}</span>
-                    </div>
-
-                    {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                  </div>
-
-                  <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
-                    {item.submenu.map((subItem, index) => (
-                      <Link
-                        key={index}
-                        to={subItem.path}
-                        className={`submenu-item ${location.pathname === subItem.path ? 'active' : ''}`}
-                        onClick={handleLinkClick}
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  to={item.path}
-                  className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
-                  onClick={handleLinkClick}
-                >
-                  <item.icon size={20} />
-                  <span>{item.label}</span>
-                </Link>
-              )}
-            </div>
-          ))}
+          {additionalItems.map(renderMenuItem)}
 
           <div className="menu-divider"></div>
 
           <div className="menu-section-title">Платформа</div>
 
-          {aboutItems.map(item => (
-            <div key={item.id}>
-              {item.submenu ? (
-                <div className="nav-item-wrapper">
-                  <div
-                    className={`nav-item dropdown-item ${openDropdowns[item.id] ? 'open' : ''}`}
-                    onClick={() => toggleDropdown(item.id)}
-                  >
-                    <div className="nav-item-content">
-                      <item.icon size={20} />
-                      <span>{item.label}</span>
-                    </div>
-
-                    {openDropdowns[item.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                  </div>
-
-                  <div className={`submenu ${openDropdowns[item.id] ? 'open' : ''}`}>
-                    {item.submenu.map((subItem, index) => (
-                      <Link
-                        key={index}
-                        to={subItem.path}
-                        className={`submenu-item ${location.pathname === subItem.path ? 'active' : ''}`}
-                        onClick={handleLinkClick}
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  to={item.path}
-                  className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
-                  onClick={handleLinkClick}
-                >
-                  <item.icon size={20} />
-                  <span>{item.label}</span>
-                </Link>
-              )}
-            </div>
-          ))}
-
+          {aboutItems.map(renderMenuItem)}
         </nav>
       </aside>
     </>

@@ -7,23 +7,33 @@ import { searchIndex } from '../../data/searchIndex';
 import './Header.css';
 import './Header.mobile.css';
 
-const Header = ({ toggleSidebar, isSidebarOpen }) => {
+interface HeaderProps {
+  toggleSidebar: () => void;
+  isSidebarOpen: boolean;
+}
+
+interface SearchItem {
+  label: string;
+  path: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
   const { t, i18n } = useTranslation();
   const { darkMode, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
 
-  const [query, setQuery] = useState('');
-  const [showPortalPopup, setShowPortalPopup] = useState(false);
+  const [query, setQuery] = useState<string>('');
+  const [showPortalPopup, setShowPortalPopup] = useState<boolean>(false);
 
-  const changeLanguage = (lng) => {
+  const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter') return;
     const value = query.trim().toLowerCase();
     if (!value) return;
-    const result = searchIndex.find((item) =>
+    const result = (searchIndex as SearchItem[]).find((item) =>
       item.label.toLowerCase().includes(value)
     );
     if (result) {
@@ -68,7 +78,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
               type="text"
               placeholder={t('header.search')}
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
               onKeyDown={handleSearch}
             />
           </div>
@@ -77,7 +87,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
         <div className="header-right">
           <select
             value={i18n.language}
-            onChange={(e) => changeLanguage(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => changeLanguage(e.target.value)}
             className="language-selector"
             aria-label={t('header.selectLanguage')}
           >
@@ -93,7 +103,6 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
             {t('header.orderProject')}
           </button>
 
-          {/* Іконка особистого кабінету */}
           <button
             className="header-theme-btn"
             onClick={togglePortalPopup}
@@ -113,13 +122,12 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
         </div>
       </header>
 
-      {/* Popup особистого кабінету */}
       {showPortalPopup && (
         <>
           <div
             className="portal-popup-overlay"
             onClick={() => setShowPortalPopup(false)}
-          ></div>
+          />
           <div className="portal-popup">
             <button
               className="portal-popup-close"
