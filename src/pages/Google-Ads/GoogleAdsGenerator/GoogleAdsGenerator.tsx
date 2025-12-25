@@ -2,8 +2,32 @@ import React, { useState } from 'react';
 import './GoogleAdsGenerator.css';
 import './GoogleAdsGenerator.mobile.css';
 
-const GoogleAdsGenerator = () => {
-    const [formData, setFormData] = useState({
+interface FormData {
+    businessName: string;
+    keywords: string;
+    usp: string;
+    offer: string;
+    cta: string;
+    location: string;
+}
+
+interface Results {
+    headlines: string[];
+    descriptions: string[];
+}
+
+interface Template {
+    businessName: string;
+    keywords: string;
+    usp: string;
+    offer: string;
+    location: string;
+}
+
+type TemplateType = 'ecommerce' | 'services' | 'restaurant';
+
+const GoogleAdsGenerator: React.FC = () => {
+    const [formData, setFormData] = useState<FormData>({
         businessName: '',
         keywords: '',
         usp: '',
@@ -12,9 +36,9 @@ const GoogleAdsGenerator = () => {
         location: ''
     });
 
-    const [results, setResults] = useState(null);
+    const [results, setResults] = useState<Results | null>(null);
 
-    const templates = {
+    const templates: Record<TemplateType, Template> = {
         ecommerce: {
             businessName: 'ТехноМаркет',
             keywords: 'ноутбуки, техніка, купити',
@@ -38,12 +62,12 @@ const GoogleAdsGenerator = () => {
         }
     };
 
-    const loadTemplate = (templateType) => {
+    const loadTemplate = (templateType: TemplateType): void => {
         const template = templates[templateType];
-        setFormData(template);
+        setFormData({ ...template, cta: 'Замовити зараз' });
     };
 
-    const generateAds = () => {
+    const generateAds = (): void => {
         const { businessName, keywords, usp, offer, cta, location } = formData;
 
         if (!businessName || !keywords) {
@@ -54,7 +78,7 @@ const GoogleAdsGenerator = () => {
         const keywordsList = keywords.split(',').map(k => k.trim()).filter(k => k);
         const mainKeyword = keywordsList[0] || '';
 
-        const headlines = [];
+        const headlines: string[] = [];
         if (mainKeyword) {
             headlines.push(`${businessName} - ${mainKeyword.charAt(0).toUpperCase() + mainKeyword.slice(1)}`);
         } else {
@@ -79,7 +103,7 @@ const GoogleAdsGenerator = () => {
 
         const finalHeadlines = headlines.map(h => h.substring(0, 30));
 
-        const descriptions = [];
+        const descriptions: string[] = [];
         if (usp) {
             descriptions.push(`${usp}. ${cta}!`.substring(0, 90));
         } else {
@@ -100,7 +124,7 @@ const GoogleAdsGenerator = () => {
         setResults({ headlines: finalHeadlines, descriptions });
     };
 
-    const copyToClipboard = (text) => {
+    const copyToClipboard = (text: string): void => {
         navigator.clipboard.writeText(text);
     };
 
@@ -138,7 +162,7 @@ const GoogleAdsGenerator = () => {
                                     type="text"
                                     id="businessName"
                                     placeholder="Наприклад: Супер Піца"
-                                    maxLength="50"
+                                    maxLength={50}
                                     value={formData.businessName}
                                     onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
                                 />
@@ -161,7 +185,7 @@ const GoogleAdsGenerator = () => {
                                     type="text"
                                     id="usp"
                                     placeholder="Наприклад: Доставка за 30 хвилин або безкоштовно"
-                                    maxLength="100"
+                                    maxLength={100}
                                     value={formData.usp}
                                     onChange={(e) => setFormData({ ...formData, usp: e.target.value })}
                                 />
@@ -173,7 +197,7 @@ const GoogleAdsGenerator = () => {
                                     type="text"
                                     id="offer"
                                     placeholder="Наприклад: Знижка 20% на перше замовлення"
-                                    maxLength="80"
+                                    maxLength={80}
                                     value={formData.offer}
                                     onChange={(e) => setFormData({ ...formData, offer: e.target.value })}
                                 />
@@ -200,7 +224,7 @@ const GoogleAdsGenerator = () => {
                                     type="text"
                                     id="location"
                                     placeholder="Наприклад: Київ, Україна"
-                                    maxLength="30"
+                                    maxLength={30}
                                     value={formData.location}
                                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                                 />
@@ -219,7 +243,7 @@ const GoogleAdsGenerator = () => {
 
                                     <div className="google-ads-generator__result-block">
                                         <h4>Заголовки (Headlines)</h4>
-                                        {results.headlines.map((headline, index) => (
+                                        {results.headlines.map((headline: string, index: number) => (
                                             <div key={index} className="google-ads-generator__result-item">
                                                 <span className="google-ads-generator__result-text">{headline}</span>
                                                 <button
@@ -234,7 +258,7 @@ const GoogleAdsGenerator = () => {
 
                                     <div className="google-ads-generator__result-block">
                                         <h4>Описи (Descriptions)</h4>
-                                        {results.descriptions.map((description, index) => (
+                                        {results.descriptions.map((description: string, index: number) => (
                                             <div key={index} className="google-ads-generator__result-item">
                                                 <span className="google-ads-generator__result-text">{description}</span>
                                                 <button

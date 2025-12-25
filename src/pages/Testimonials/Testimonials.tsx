@@ -3,9 +3,36 @@ import SEO from '../../SEO/SEO';
 import './Testimonials.css';
 import './Testimonials.mobile.css';
 
-const Testimonials = () => {
-  // ✅ робимо дані стабільними
-  const testimonialsData = useMemo(() => ({
+interface Testimonial {
+  img: string;
+  alt: string;
+  name: string;
+  text: string;
+  cite: string;
+  time: string;
+}
+
+type TestimonialsData = {
+  testimonial1: Testimonial[];
+  testimonial2: Testimonial[];
+  testimonial3: Testimonial[];
+};
+
+type CurrentIndexes = {
+  testimonial1: number;
+  testimonial2: number;
+  testimonial3: number;
+};
+
+type ImageLoaded = {
+  testimonial1: boolean;
+  testimonial2: boolean;
+  testimonial3: boolean;
+};
+
+const Testimonials: React.FC = () => {
+  // ✅ Типізовані стабільні дані
+  const testimonialsData: TestimonialsData = useMemo(() => ({
     testimonial1: [
       {
         img: "/images/testimonials/olena.webp",
@@ -84,15 +111,15 @@ const Testimonials = () => {
         time: "17:20"
       }
     ]
-  }), []); // ✅ useMemo без залежностей → стабільний об'єкт
+  }), []);
 
-  const [currentIndexes, setCurrentIndexes] = useState({
+  const [currentIndexes, setCurrentIndexes] = useState<CurrentIndexes>({
     testimonial1: 0,
     testimonial2: 0,
     testimonial3: 0
   });
 
-  const [imageLoaded, setImageLoaded] = useState({
+  const [imageLoaded, setImageLoaded] = useState<ImageLoaded>({
     testimonial1: false,
     testimonial2: false,
     testimonial3: false
@@ -100,22 +127,22 @@ const Testimonials = () => {
 
   // Ротація відгуків кожні 20 секунд
   useEffect(() => {
-    const intervals = Object.keys(testimonialsData).map(key => {
+    const intervals: NodeJS.Timeout[] = Object.keys(testimonialsData).map((key) => {
       return setInterval(() => {
         setCurrentIndexes(prev => ({
           ...prev,
-          [key]: (prev[key] + 1) % testimonialsData[key].length
+          [key as keyof CurrentIndexes]: (prev[key as keyof CurrentIndexes]! + 1) % testimonialsData[key as keyof TestimonialsData]!.length
         }));
 
         setImageLoaded(prev => ({
           ...prev,
-          [key]: false
+          [key as keyof ImageLoaded]: false
         }));
 
         setTimeout(() => {
           setImageLoaded(prev => ({
             ...prev,
-            [key]: true
+            [key as keyof ImageLoaded]: true
           }));
         }, 100);
       }, 20000);
@@ -131,10 +158,11 @@ const Testimonials = () => {
     }, 100);
 
     return () => intervals.forEach(clearInterval);
-  }, [testimonialsData]); // тепер ESLint задоволений
+  }, [testimonialsData]);
 
-  const handleImageError = (e) => {
-    e.target.src = '/images/testimonials/placeholder.webp';
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>): void => {
+    const target = e.target as HTMLImageElement;
+    target.src = '/images/testimonials/placeholder.webp';
   };
 
   return (
@@ -149,14 +177,18 @@ const Testimonials = () => {
           <h2 id="testimonials-title">Відгуки про нас</h2>
           <div className="testimonials-container">
             {Object.keys(testimonialsData).map((key) => {
-              const currentData = testimonialsData[key][currentIndexes[key]];
+              const testimonialKey = key as keyof TestimonialsData;
+              const indexKey = key as keyof CurrentIndexes;
+              const imageKey = key as keyof ImageLoaded;
+              
+              const currentData = testimonialsData[testimonialKey][currentIndexes[indexKey]];
               
               return (
                 <div className="testimonial" key={key} id={key}>
                   <img 
                     src={currentData.img} 
                     alt={currentData.alt}
-                    className={`testimonial-photo ${imageLoaded[key] ? 'visible' : ''}`}
+                    className={`testimonial-photo ${imageLoaded[imageKey] ? 'visible' : ''}`}
                     onError={handleImageError}
                   />
                   <div className="testimonial-header-name">{currentData.name}</div>
@@ -180,3 +212,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

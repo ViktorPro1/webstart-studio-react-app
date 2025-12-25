@@ -2,23 +2,44 @@ import React, { useState } from 'react';
 import './GoogleAdsComparison.css';
 import './GoogleAdsComparison.mobile.css';
 
-const GoogleAdsComparison = () => {
-    const [quizAnswers, setQuizAnswers] = useState({
+interface QuizAnswers {
+    q1: string | null;
+    q2: string | null;
+    q3: string | null;
+    q4: string | null;
+}
+
+interface QuizResult {
+    icon: string;
+    platform: string;
+    why: string;
+    steps?: string[];
+    budget?: {
+        facebook: string;
+        google: string;
+        remarketing: string;
+    };
+    minBudget?: string;
+    roi?: string;
+}
+
+const GoogleAdsComparison: React.FC = () => {
+    const [quizAnswers, setQuizAnswers] = useState<QuizAnswers>({
         q1: null,
         q2: null,
         q3: null,
         q4: null
     });
-    const [quizResult, setQuizResult] = useState(null);
+    const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
 
-    const handleQuizChange = (question, value) => {
+    const handleQuizChange = (question: keyof QuizAnswers, value: string): void => {
         setQuizAnswers(prev => ({
             ...prev,
             [question]: value
         }));
     };
 
-    const getRecommendation = () => {
+    const getRecommendation = (): void => {
         const { q1, q2, q3, q4 } = quizAnswers;
 
         if (!q1 || !q2 || !q3 || !q4) {
@@ -29,7 +50,7 @@ const GoogleAdsComparison = () => {
         const googleScore = [q1, q2, q3, q4].filter(q => q === 'google').length;
         const facebookScore = 4 - googleScore;
 
-        let recommendation = {};
+        let recommendation: QuizResult;
 
         if (googleScore > facebookScore) {
             recommendation = {
@@ -82,7 +103,6 @@ const GoogleAdsComparison = () => {
                 </div>
 
                 <div className="google-ads-comparison__content">
-                    {/* Quiz Section */}
                     <div className="google-ads-comparison__quiz-section">
                         <h2>🎯 Швидкий тест: Що підходить саме вам?</h2>
                         <div className="google-ads-comparison__quiz-card">
@@ -202,7 +222,7 @@ const GoogleAdsComparison = () => {
                                         <>
                                             <p><strong>Наступні кроки:</strong></p>
                                             <ol>
-                                                {quizResult.steps.map((step, index) => (
+                                                {quizResult.steps.map((step: string, index: number) => (
                                                     <li key={index}>{step}</li>
                                                 ))}
                                             </ol>
@@ -226,7 +246,6 @@ const GoogleAdsComparison = () => {
                         </div>
                     </div>
 
-                    {/* Comparison Table */}
                     <div className="google-ads-comparison__table-section">
                         <h2>📊 Детальне порівняння</h2>
                         <div className="google-ads-comparison__table-wrapper">
@@ -284,7 +303,6 @@ const GoogleAdsComparison = () => {
                         </div>
                     </div>
 
-                    {/* Summary */}
                     <div className="google-ads-comparison__summary">
                         <h2>📝 Підсумок</h2>
                         <div className="google-ads-comparison__summary-content">

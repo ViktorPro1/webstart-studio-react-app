@@ -1,4 +1,11 @@
-export const initGoogleAnalytics = () => {
+declare global {
+    interface Window {
+        dataLayer: any[];
+        gtag: (...args: any[]) => void;
+    }
+}
+
+export const initGoogleAnalytics = (): void => {
     const measurementId = process.env.REACT_APP_GA4_MEASUREMENT_ID;
 
     if (!measurementId) {
@@ -12,8 +19,8 @@ export const initGoogleAnalytics = () => {
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        window.dataLayer.push(arguments);
+    function gtag(...args: any[]): void {
+        window.dataLayer.push(args);
     }
     window.gtag = gtag;
 
@@ -24,7 +31,7 @@ export const initGoogleAnalytics = () => {
     });
 };
 
-export const trackPageView = (url) => {
+export const trackPageView = (url: string): void => {
     if (window.gtag) {
         window.gtag('config', process.env.REACT_APP_GA4_MEASUREMENT_ID, {
             page_path: url,
@@ -32,7 +39,7 @@ export const trackPageView = (url) => {
     }
 };
 
-export const trackEvent = (eventName, params = {}) => {
+export const trackEvent = (eventName: string, params: Record<string, any> = {}): void => {
     if (window.gtag) {
         window.gtag('event', eventName, params);
     }

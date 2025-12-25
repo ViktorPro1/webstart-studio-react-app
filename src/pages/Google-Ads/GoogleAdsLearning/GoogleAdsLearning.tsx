@@ -4,8 +4,22 @@ import { BookOpen, Calculator, GitCompare, Book, Sparkles, Search, ArrowRight, G
 import './GoogleAdsLearning.css';
 import './GoogleAdsLearning.mobile.css';
 
-const GoogleAdsLearning = () => {
-    const tools = [
+interface Tool {
+    path: string;
+    icon: React.ElementType;
+    title: string;
+    description: string;
+    color: string;
+}
+
+interface Benefit {
+    icon: React.ElementType;
+    title: string;
+    description: string;
+}
+
+const GoogleAdsLearning: React.FC = () => {
+    const tools: Tool[] = [
         {
             path: '/google-ads/calculator',
             icon: Calculator,
@@ -43,7 +57,7 @@ const GoogleAdsLearning = () => {
         }
     ];
 
-    const benefits = [
+    const benefits: Benefit[] = [
         {
             icon: Target,
             title: 'Точне таргетування',
@@ -135,7 +149,7 @@ const GoogleAdsLearning = () => {
                                 key={index}
                                 to={tool.path}
                                 className="google-ads-learning__tool-card"
-                                style={{ '--tool-color': tool.color }}
+                                style={{ '--tool-color': tool.color } as React.CSSProperties}
                             >
                                 <div className="google-ads-learning__tool-icon" style={{ backgroundColor: `${tool.color}15` }}>
                                     <Icon size={32} style={{ color: tool.color }} />

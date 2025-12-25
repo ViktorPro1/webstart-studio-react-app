@@ -1,16 +1,23 @@
 import React from 'react';
 import SEO from '../../SEO/SEO';
-import { FileText, Briefcase, Users, } from 'lucide-react';
+import { FileText, Briefcase, Users } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import PromoPopup from '../Promo/PromoPopup';
 import './Home.css';
 import './Home.mobile.css';
 
-const Home = () => {
-  const services = [
+interface Service {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const Home: React.FC = () => {
+  const services: Service[] = [
     {
       icon: FileText,
       title: 'Лендінги',
-      description: 'Створюємо ефективні одностороінкові сайти для вашого бізнесу з сучасним дизайном та високою конверсією.'
+      description: 'Створюємо ефективні односторонні сайти для вашого бізнесу з сучасним дизайном та високою конверсією.'
     },
     {
       icon: Briefcase,
@@ -49,9 +56,9 @@ const Home = () => {
               src="/assets/hero-image.webp"
               alt="Професійний бізнесмен з ноутбуком"
               className="hero-image"
-              width="546"
-              height="546"
-              fetchpriority="high"
+              width={546}
+              height={546}
+              fetchPriority="high"
               loading="eager"
             />
           </div>

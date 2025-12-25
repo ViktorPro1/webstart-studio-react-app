@@ -8,23 +8,30 @@ import './index.css';
 // ----------------------
 // Chunk load fallback
 // ----------------------
-window.addEventListener('error', (e) => {
+window.addEventListener('error', (e: ErrorEvent) => {
   if (/Loading chunk \d+ failed/.test(e.message)) {
     console.log('Chunk load failed, перезавантаження сторінки...');
     window.location.reload();
   }
 });
 
+// ----------------------
+// Root rendering з перевіркою
+// ----------------------
 const container = document.getElementById('root');
-const root = ReactDOM.createRoot(container);
-
-root.render(
-  <HelmetProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </HelmetProvider>
-);
+if (container != null) {
+  const root = ReactDOM.createRoot(container); // ✅ Тепер TypeScript знає, що container не null
+  
+  root.render(
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
+  );
+} else {
+  console.error('Root element не знайдено!');
+}
 
 // ----------------------
 // Service Worker

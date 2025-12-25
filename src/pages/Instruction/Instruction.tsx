@@ -3,27 +3,30 @@ import SEO from '../../SEO/SEO';
 import './Instruction.css';
 import './Instruction.mobile.css';
 
-const Instruction = () => {
-  const tabs = ['registration', 'deployment', 'settings'];
-  const [activeTab, setActiveTab] = useState('registration');
+const Instruction: React.FC = () => {
+  const tabs = ['registration', 'deployment', 'settings'] as const;
+  type TabType = typeof tabs[number];
+  const [activeTab, setActiveTab] = useState<TabType>('registration');
+  
   const progress = ((tabs.indexOf(activeTab) + 1) / tabs.length) * 100;
 
-  const [expandedSteps, setExpandedSteps] = useState({});
-  const toggleStep = (tab, step) => {
+  const [expandedSteps, setExpandedSteps] = useState<Record<string, boolean>>({});
+  const toggleStep = (tab: string, step: number): void => {
     setExpandedSteps(prev => ({
       ...prev,
       [`${tab}-${step}`]: !prev[`${tab}-${step}`]
     }));
   };
 
-  const checklistItems = [
+  const checklistItems: string[] = [
     'Є головний файл index.html',
     'Всі CSS та JS файли на місці',
     'Зображення оптимізовані',
     'Шляхи до файлів коректні'
   ];
-  const [checkedItems, setCheckedItems] = useState([]);
-  const toggleCheck = (item) => {
+  
+  const [checkedItems, setCheckedItems] = useState<string[]>([]);
+  const toggleCheck = (item: string): void => {
     setCheckedItems(prev =>
       prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]
     );
@@ -204,7 +207,10 @@ const Instruction = () => {
                         <li
                           key={item}
                           className={checkedItems.includes(item) ? 'checked' : ''}
-                          onClick={(e) => { e.stopPropagation(); toggleCheck(item); }}
+                          onClick={(e: React.MouseEvent) => { 
+                            e.stopPropagation(); 
+                            toggleCheck(item); 
+                          }}
                         >
                           <div className="checkbox"></div>
                           <span>{item}</span>
@@ -414,7 +420,3 @@ const Instruction = () => {
 };
 
 export default Instruction;
-
-
-
-

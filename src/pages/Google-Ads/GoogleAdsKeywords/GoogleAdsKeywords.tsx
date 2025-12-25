@@ -2,18 +2,24 @@ import React, { useState } from 'react';
 import './GoogleAdsKeywords.css';
 import './GoogleAdsKeywords.mobile.css';
 
-const GoogleAdsKeywords = () => {
-    const [seedKeyword, setSeedKeyword] = useState('');
-    const [location, setLocation] = useState('');
-    const [modifiers, setModifiers] = useState(['купити', 'замовити']);
-    const [keywords, setKeywords] = useState(null);
+interface Keywords {
+    broad: string[];
+    phrase: string[];
+    exact: string[];
+}
 
-    const modifierOptions = [
+const GoogleAdsKeywords: React.FC = () => {
+    const [seedKeyword, setSeedKeyword] = useState<string>('');
+    const [location, setLocation] = useState<string>('');
+    const [modifiers, setModifiers] = useState<string[]>(['купити', 'замовити']);
+    const [keywords, setKeywords] = useState<Keywords | null>(null);
+
+    const modifierOptions: string[] = [
         'купити', 'замовити', 'ціна', 'вартість',
         'недорого', 'швидко', 'терміново', 'доставка'
     ];
 
-    const toggleModifier = (modifier) => {
+    const toggleModifier = (modifier: string): void => {
         if (modifiers.includes(modifier)) {
             setModifiers(modifiers.filter(m => m !== modifier));
         } else {
@@ -21,13 +27,13 @@ const GoogleAdsKeywords = () => {
         }
     };
 
-    const generateKeywords = () => {
+    const generateKeywords = (): void => {
         if (!seedKeyword) {
             alert('Будь ласка, введіть основне ключове слово');
             return;
         }
 
-        const generated = {
+        const generated: Keywords = {
             broad: [],
             phrase: [],
             exact: []
@@ -62,7 +68,7 @@ const GoogleAdsKeywords = () => {
         setKeywords(generated);
     };
 
-    const copyAllKeywords = () => {
+    const copyAllKeywords = (): void => {
         if (!keywords) return;
 
         const all = [
@@ -140,7 +146,7 @@ const GoogleAdsKeywords = () => {
                             <div className="google-ads-keywords__results-grid">
                                 <div className="google-ads-keywords__result-group">
                                     <h4>Широка відповідність</h4>
-                                    {keywords.broad.map((kw, index) => (
+                                    {keywords.broad.map((kw: string, index: number) => (
                                         <div key={index} className="google-ads-keywords__keyword-item">
                                             {kw}
                                         </div>
@@ -149,7 +155,7 @@ const GoogleAdsKeywords = () => {
 
                                 <div className="google-ads-keywords__result-group">
                                     <h4>Фразова відповідність</h4>
-                                    {keywords.phrase.map((kw, index) => (
+                                    {keywords.phrase.map((kw: string, index: number) => (
                                         <div key={index} className="google-ads-keywords__keyword-item">
                                             {kw}
                                         </div>
@@ -158,7 +164,7 @@ const GoogleAdsKeywords = () => {
 
                                 <div className="google-ads-keywords__result-group">
                                     <h4>Точна відповідність</h4>
-                                    {keywords.exact.map((kw, index) => (
+                                    {keywords.exact.map((kw: string, index: number) => (
                                         <div key={index} className="google-ads-keywords__keyword-item">
                                             {kw}
                                         </div>

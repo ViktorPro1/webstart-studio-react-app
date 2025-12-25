@@ -1,25 +1,51 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import SEO from '../../SEO/SEO';
 import './SecurityTips.css';
 import './SecurityTips.mobile.css';
 
-const SecurityTips = () => {
-  const [activeFaq, setActiveFaq] = useState(null);
+interface Example {
+  type: string;
+  icon: string;
+  title: string;
+  message: string;
+  explanation: string;
+  risk: string;
+  level: string;
+}
 
-  const toggleFaq = (index) => {
+interface Sign {
+  number: number;
+  title: string;
+  description: string;
+}
+
+interface ProtectionTip {
+  title: string;
+  description: string;
+}
+
+interface FaqItem {
+  question: string;
+  answer: React.ReactNode;
+}
+
+const SecurityTips: React.FC = () => {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  const toggleFaq = useCallback((index: number): void => {
     setActiveFaq(activeFaq === index ? null : index);
-  };
+  }, [activeFaq]);
 
   // Анімація при скролі
   useEffect(() => {
-    const observerOptions = {
+    const observerOptions: IntersectionObserverInit = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
+    const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        if (entry.isIntersecting && entry.target instanceof HTMLElement) {
           entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
         }
@@ -30,17 +56,19 @@ const SecurityTips = () => {
       '.security-tips-example-card, .security-tips-sign-card, .security-tips-protection-item, .security-tips-resource-card'
     );
 
-    animatedElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
+    animatedElements.forEach((el: Element) => {
+      if (el instanceof HTMLElement) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      }
     });
 
     return () => observer.disconnect();
   }, []);
 
-  const examples = [
+  const examples: Example[] = [
     {
       type: 'telegram',
       icon: '💬',
@@ -70,7 +98,7 @@ const SecurityTips = () => {
     }
   ];
 
-  const signs = [
+  const signs: Sign[] = [
     {
       number: 1,
       title: 'Терміновість',
@@ -99,11 +127,11 @@ const SecurityTips = () => {
     {
       number: 6,
       title: 'Підозрілий відправник',
-      description: 'Email: support@bankkk.com замість office@bank.com. Завжди перевіряйте адресу!'
+      description: 'Email: [support@bankkk.com](mailto:support@bankkk.com) замість [office@bank.com](mailto:office@bank.com). Завжди перевіряйте адресу!'
     }
   ];
 
-  const protectionTips = [
+  const protectionTips: ProtectionTip[] = [
     {
       title: 'Перевіряй посилання',
       description: 'Наведи курсор, подивись справжню адресу. Або надішли нам для перевірки.'
@@ -126,7 +154,7 @@ const SecurityTips = () => {
     }
   ];
 
-  const faqData = [
+  const faqData: FaqItem[] = [
     {
       question: 'Що робити, якщо я вже натиснув на підозріле посилання?',
       answer: (
@@ -363,8 +391,7 @@ const SecurityTips = () => {
                 <div className="security-tips-resource-card featured">
                   <h3>🔍 VirusTotal</h3>
                   <p className="security-tips-resource-desc">
-                    Найпопулярніший сервіс для перевірки посилань та файлів. Аналізує за
-                    допомогою десятків антивірусів одночасно.
+                    Найпопулярніший сервіс для перевірки посилань та файлів. Аналізує за допомогою десятків антивірусів одночасно.
                   </p>
                   <a
                     href="https://www.virustotal.com"
@@ -375,8 +402,7 @@ const SecurityTips = () => {
                     Перейти на VirusTotal →
                   </a>
                   <div className="security-tips-resource-tip">
-                    <strong>💡 Порада:</strong> Завантажте файл або вставте посилання,
-                    зачекайте результатів сканування від різних антивірусних движків.
+                    <strong>💡 Порада:</strong> Завантажте файл або вставте посилання, зачекайте результатів сканування від різних антивірусних движків.
                   </div>
                 </div>
 
@@ -419,9 +445,7 @@ const SecurityTips = () => {
               <div className="security-tips-professional-help">
                 <h3>🎯 Потрібна допомога?</h3>
                 <p>
-                  Якщо ви не впевнені або потрібен детальний аналіз — ми можемо допомогти з
-                  перевіркою. Ми використовуємо кілька професійних інструментів і надаємо
-                  детальний звіт.
+                  Якщо ви не впевнені або потрібен детальний аналіз — ми можемо допомогти з перевіркою. Ми використовуємо кілька професійних інструментів і надаємо детальний звіт.
                 </p>
               </div>
             </div>

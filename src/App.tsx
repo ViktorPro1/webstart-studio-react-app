@@ -13,11 +13,16 @@ import './App.css';
 import './components/Layout/Layout.css';
 
 // --- ЛІНИВИЙ ІМПОРТ (Оптимізація JavaScript) ---
-// Ці компоненти тепер не гальмують завантаження головної сторінки
 const DjonAssistant = lazy(() => import('./components/DjonAssistant/DjonAssistant'));
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
 const UpdateNotification = lazy(() => import('./components/UpdateNotification'));
 const ChristmasDecorations = lazy(() => import('./components/NewYear/ChristmasDecorations'));
+
+interface LayoutProps {
+  children: React.ReactNode;
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
+}
 
 function AnalyticsTracker() {
   const location = useLocation();
@@ -27,7 +32,7 @@ function AnalyticsTracker() {
   return null;
 }
 
-const Layout = ({ children, isSidebarOpen, toggleSidebar }) => {
+const Layout: React.FC<LayoutProps> = ({ children, isSidebarOpen, toggleSidebar }) => {
   return (
     <div className="app-container">
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
@@ -42,12 +47,10 @@ const Layout = ({ children, isSidebarOpen, toggleSidebar }) => {
 };
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   useEffect(() => {
-    // Відкладаємо важку аналітику на 4 секунди. 
-    // Користувач вже побачить сайт, а Google не зарахує цей код як "невикористаний" на старті.
     const timer = setTimeout(() => {
       initGoogleAnalytics();
       initClarity();
@@ -55,7 +58,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  const showChristmasDecorations = () => {
+  const showChristmasDecorations = (): boolean => {
     const now = new Date();
     const month = now.getMonth();
     const day = now.getDate();
@@ -66,8 +69,6 @@ function App() {
     <ThemeProvider>
       <AnalyticsTracker />
 
-      {/* Suspense fallback={null} гарантує, що якщо компонент ще не завантажився, 
-          сайт не впаде, а просто нічого не покаже в тому місці на секунду */}
       <Suspense fallback={null}>
         {showChristmasDecorations() && <ChristmasDecorations />}
         <UpdateNotification />

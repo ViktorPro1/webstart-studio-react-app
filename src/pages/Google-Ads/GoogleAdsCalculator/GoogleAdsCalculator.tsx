@@ -2,8 +2,28 @@ import React, { useState } from 'react';
 import './GoogleAdsCalculator.css';
 import './GoogleAdsCalculator.mobile.css';
 
-const GoogleAdsCalculator = () => {
-    const [formData, setFormData] = useState({
+interface FormData {
+    businessType: string;
+    clicksPerDay: string;
+    campaignDuration: number;
+    conversionRate: number;
+    avgOrderValue: string;
+}
+
+interface Results {
+    cpcUAH: string;
+    dailyBudget: string;
+    monthlyBudget: string;
+    totalBudget: string;
+    totalClicks: string;
+    conversions: string;
+    revenue: string;
+    roas: string;
+    recommendations: string[];
+}
+
+const GoogleAdsCalculator: React.FC = () => {
+    const [formData, setFormData] = useState<FormData>({
         businessType: '',
         clicksPerDay: '',
         campaignDuration: 30,
@@ -11,9 +31,9 @@ const GoogleAdsCalculator = () => {
         avgOrderValue: ''
     });
 
-    const [results, setResults] = useState(null);
+    const [results, setResults] = useState<Results | null>(null);
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
         const { id, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -21,13 +41,13 @@ const GoogleAdsCalculator = () => {
         }));
     };
 
-    const calculateBudget = (e) => {
+    const calculateBudget = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
 
         const businessType = parseFloat(formData.businessType);
-        const clicksPerDay = parseInt(formData.clicksPerDay);
-        const campaignDuration = parseInt(formData.campaignDuration);
-        const conversionRate = parseFloat(formData.conversionRate);
+        const clicksPerDay = parseInt(formData.clicksPerDay, 10);
+        const campaignDuration = parseInt(formData.campaignDuration.toString(), 10);
+        const conversionRate = parseFloat(formData.conversionRate.toString());
         const avgOrderValue = parseFloat(formData.avgOrderValue);
 
         // Розрахунки
@@ -42,7 +62,7 @@ const GoogleAdsCalculator = () => {
         const roas = revenue / totalBudget;
 
         // Рекомендації
-        const recommendations = [];
+        const recommendations: string[] = [];
 
         if (roas < 2) {
             recommendations.push('ROAS нижче 2x - рекомендуємо збільшити коефіцієнт конверсії або середній чек');
@@ -235,7 +255,7 @@ const GoogleAdsCalculator = () => {
                             <div className="google-ads-calculator__recommendations">
                                 <h3>💡 Рекомендації</h3>
                                 <ul>
-                                    {results.recommendations.map((rec, index) => (
+                                    {results.recommendations.map((rec: string, index: number) => (
                                         <li key={index}>{rec}</li>
                                     ))}
                                 </ul>
