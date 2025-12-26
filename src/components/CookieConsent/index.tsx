@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import CookieSettings, { CookieSettingsState } from './CookieSettings';
+import CookieSettings, { type CookieSettingsState } from './CookieSettings';
 import './CookieConsent.css';
 
 export default function CookieConsent() {

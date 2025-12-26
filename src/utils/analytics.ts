@@ -6,7 +6,7 @@ declare global {
 }
 
 export const initGoogleAnalytics = (): void => {
-    const measurementId = process.env.REACT_APP_GA4_MEASUREMENT_ID;
+    const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID;
 
     if (!measurementId) {
         console.warn('GA Measurement ID not found');
@@ -33,7 +33,7 @@ export const initGoogleAnalytics = (): void => {
 
 export const trackPageView = (url: string): void => {
     if (window.gtag) {
-        window.gtag('config', process.env.REACT_APP_GA4_MEASUREMENT_ID, {
+        window.gtag('config', import.meta.env.VITE_GA4_MEASUREMENT_ID, {
             page_path: url,
         });
     }

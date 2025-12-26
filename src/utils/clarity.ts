@@ -1,5 +1,5 @@
 export const initClarity = (): void => {
-    const clarityId = process.env.REACT_APP_CLARITY_ID;
+    const clarityId = import.meta.env.VITE_CLARITY_ID;
 
     if (!clarityId) {
         console.warn('Clarity ID not found');
