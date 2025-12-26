@@ -18,7 +18,7 @@ const UTMGenerator = () => {
             return;
         }
 
-        let utmParams = [];
+        const utmParams = [];
         if (source) utmParams.push(`utm_source=${encodeURIComponent(source)}`);
         if (medium) utmParams.push(`utm_medium=${encodeURIComponent(medium)}`);
         if (campaign) utmParams.push(`utm_campaign=${encodeURIComponent(campaign)}`);

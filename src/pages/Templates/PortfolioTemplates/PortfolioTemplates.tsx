@@ -139,7 +139,7 @@ const PortfolioTemplates: React.FC = () => {
                 onMouseEnter={() => setActiveTemplate(template.id)}
                 onMouseLeave={() => setActiveTemplate(null)}
                 style={{ 
-                  ['--card-color' as any]: template.color 
+                  '--card-color': template.color 
                 } as React.CSSProperties}
               >
                 <div className="portfolio-templates__card-header">

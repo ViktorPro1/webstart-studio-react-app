@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-globals */
+ 
 
 const CACHE_NAME = "webstart-cache-v40"; // Оновив версію для активації змін
 

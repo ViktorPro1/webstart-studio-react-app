@@ -112,7 +112,7 @@ const InteractiveQuiz: React.FC = () => {
   };
 
   const calculateResults = (): void => {
-    let tempScores: Weight = { landing: 0, portfolio: 0, resume: 0 };
+    const tempScores: Weight = { landing: 0, portfolio: 0, resume: 0 };
     let timeline = '';
     let budget = '';
 

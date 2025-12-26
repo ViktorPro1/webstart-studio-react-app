@@ -1,7 +1,7 @@
 declare global {
     interface Window {
-        dataLayer: any[];
-        gtag: (...args: any[]) => void;
+        dataLayer: unknown[];
+        gtag: (...args: unknown[]) => void;
     }
 }
 
@@ -19,7 +19,7 @@ export const initGoogleAnalytics = (): void => {
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]): void {
+    function gtag(...args: unknown[]): void {
         window.dataLayer.push(args);
     }
     window.gtag = gtag;
@@ -39,7 +39,7 @@ export const trackPageView = (url: string): void => {
     }
 };
 
-export const trackEvent = (eventName: string, params: Record<string, any> = {}): void => {
+export const trackEvent = (eventName: string, params: Record<string, unknown> = {}): void => {
     if (window.gtag) {
         window.gtag('event', eventName, params);
     }

@@ -1,18 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CookieSettings, { type CookieSettingsState } from './CookieSettings';
 import './CookieConsent.css';
 
 export default function CookieConsent() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [showSettings, setShowSettings] = useState<boolean>(false);
-
-  useEffect(() => {
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      setIsVisible(true);
+  // Тільки виправлення ініціалізації стейту, без useEffect
+  const [isVisible, setIsVisible] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const consent = localStorage.getItem('cookieConsent');
+      return !consent;
     }
-  }, []);
+    return false;
+  });
+
+  const [showSettings, setShowSettings] = useState<boolean>(false);
 
   const handleAccept = () => {
     const settings: CookieSettingsState = {

@@ -1,3 +1,12 @@
+declare global {
+    interface Window {
+        clarity?: {
+            (...args: unknown[]): void;
+            q?: unknown[];
+        };
+    }
+}
+
 export const initClarity = (): void => {
     const clarityId = import.meta.env.VITE_CLARITY_ID;
 
@@ -6,14 +15,27 @@ export const initClarity = (): void => {
         return;
     }
 
-    (function (c: any, l: Document, a: string, r: string, i: string) {
-        c[a] = c[a] || function (...args: any[]) {
-            (c[a].q = c[a].q || []).push(args);
-        };
-        const t = l.createElement(r) as HTMLScriptElement;
-        t.async = true;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        const y = l.getElementsByTagName(r)[0];
-        y.parentNode!.insertBefore(t, y);
-    })(window, document, "clarity", "script", clarityId);
+    // Створюємо функцію-обробник черги
+    const clarityFunc = (...args: unknown[]) => {
+        const c = window.clarity;
+        if (c) {
+            c.q = c.q || [];
+            c.q.push(args);
+        }
+    };
+
+    // Ініціалізуємо чергу, якщо її ще немає
+    clarityFunc.q = window.clarity?.q || [];
+    window.clarity = clarityFunc;
+
+    const doc = document;
+    const scriptTag = "script" as const;
+    const t = doc.createElement(scriptTag);
+    t.async = true;
+    t.src = `https://www.clarity.ms/tag/${clarityId}`;
+
+    const firstScript = doc.getElementsByTagName(scriptTag)[0];
+    if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(t, firstScript);
+    }
 };

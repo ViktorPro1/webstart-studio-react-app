@@ -19,22 +19,22 @@ type Message = {
 const DjonAssistant: React.FC = () => {
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>(() => {
+    const saved = localStorage.getItem('djonChatHistory');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  });
   const [input, setInput] = useState<string>('');
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const saved = localStorage.getItem('djonChatHistory');
-    if (saved) {
-      try {
-        const parsed: Message[] = JSON.parse(saved);
-        setMessages(parsed);
-      } catch {
-        // якщо раптом формат зламається — просто ігноруємо
-      }
-    }
-
     const seen = localStorage.getItem('djonPopupSeen');
     if (!seen) {
       setTimeout(() => setIsPopupOpen(true), 2500);
@@ -152,7 +152,7 @@ const DjonAssistant: React.FC = () => {
         userText.includes('чистка') ||
         userText.includes('пк')
       ) {
-        addMessage('Твій комп’ютер буде як новий! 🚀', 'bot', [
+        addMessage("Твій комп'ютер буде як новий! 🚀", 'bot', [
           { label: 'Чистка ПК віддалено 🖥️', path: '/pc-service' },
         ]);
       } else if (userText.includes('факт')) {

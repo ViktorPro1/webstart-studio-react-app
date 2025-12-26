@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Package, Download, CreditCard, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 import './ClientPortal.css';
 import './ClientPortal.mobile.css';
@@ -14,44 +14,39 @@ interface ClientParams {
 }
 
 const ClientPortal = () => {
-    const [params, setParams] = useState<ClientParams>({
-        id: 'demo-123',
-        name: 'Клієнт',
-        project: 'Веб-проєкт',
-        step: 1,
-        zip: '',
-        price: '500',
-        status: 'waiting'
-    });
-    const [step, setStep] = useState(1);
-    const [selectedOption, setSelectedOption] = useState<'zip' | 'hosting' | null>(null);
-
-    useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const paramsObj: ClientParams = {
+    // 1. Ініціалізуємо параметри з URL відразу при створенні стейту
+    const [params] = useState<ClientParams>(() => {
+        // Оскільки ми в браузері, window доступний
+        const urlParams = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+        return {
             id: urlParams.get('id') || 'demo-123',
             name: urlParams.get('name') || 'Клієнт',
             project: urlParams.get('project') || 'Веб-проєкт',
-            step: parseInt(urlParams.get('step') || '1') || 1,
+            step: parseInt(urlParams.get('step') || '1', 10) || 1,
             zip: urlParams.get('zip') || '',
             price: urlParams.get('price') || '500',
             status: urlParams.get('status') || 'waiting'
         };
-        setParams(paramsObj);
-        setStep(paramsObj.step);
+    });
 
-        const storageKey = `client_${paramsObj.id}`;
-        const existingData = localStorage.getItem(storageKey);
+    // 2. Крок беремо безпосередньо з обчислених параметрів
+    const [step] = useState(params.step);
+
+    // 3. Ініціалізуємо вибрану опцію з localStorage
+    const [selectedOption, setSelectedOption] = useState<'zip' | 'hosting' | null>(() => {
+        const storageKey = `client_${params.id}`;
+        const existingData = typeof window !== 'undefined' ? localStorage.getItem(storageKey) : null;
         if (existingData) {
             try {
-                const data = JSON.parse(existingData) as {
-                    selectedOption: 'zip' | 'hosting' | null;
-                };
-                setSelectedOption(data.selectedOption);
-            } catch {
+                const data = JSON.parse(existingData);
+                return data.selectedOption || null;
+            } catch (e) {
+                console.error("Failed to parse storage data", e);
+                return null;
             }
         }
-    }, []);
+        return null;
+    });
 
     const handleOptionSelect = (option: 'zip' | 'hosting'): void => {
         setSelectedOption(option);
@@ -95,7 +90,6 @@ const ClientPortal = () => {
 
                 <div className="client-portal-progress">
                     <div className="client-portal-progress-steps">
-
                         <div className="client-portal-progress-line">
                             <div
                                 className="client-portal-progress-line-fill"

@@ -1,15 +1,18 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useState, useEffect, type ReactNode } from 'react';
 
 interface ThemeContextValue {
   darkMode: boolean;
   toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextValue>({
+// Прибираємо export звідси, щоб не сварився react-refresh
+const ThemeContext = createContext<ThemeContextValue>({
   darkMode: false,
-  // дефолтна реалізація, щоб не було undefined
   toggleTheme: () => {},
 });
+
+// Експортуємо сам контекст окремо в кінці, або використовуй цей експорт
+export { ThemeContext };
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -35,4 +38,3 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-

@@ -120,7 +120,6 @@ const LandingTemplates: React.FC = () => {
   return (
     <div className="landing-templates">
       <div className="landing-templates__wrapper">
-        {/* Hero Section */}
         <section className="landing-templates__hero">
           <div className="landing-templates__hero-content">
             <div className="landing-templates__hero-badge">🚀 Лендінги 2025</div>
@@ -150,7 +149,6 @@ const LandingTemplates: React.FC = () => {
           </div>
         </section>
 
-        {/* What is Landing */}
         <section className="landing-templates__info">
           <h2 className="landing-templates__section-title">Що таке landing page?</h2>
           <div className="landing-templates__info-grid">
@@ -177,7 +175,6 @@ const LandingTemplates: React.FC = () => {
           </div>
         </section>
 
-        {/* Categories Filter */}
         <section className="landing-templates__templates">
           <h2 className="landing-templates__section-title">Наші лендінги</h2>
 
@@ -194,15 +191,12 @@ const LandingTemplates: React.FC = () => {
             ))}
           </div>
 
-          {/* Templates Grid */}
           <div className="landing-templates__grid">
             {filteredTemplates.map((template) => (
               <div
                 key={template.id}
                 className="landing-templates__card"
-                style={{ 
-                  ['--card-color' as any]: template.color 
-                } as React.CSSProperties}
+                style={{ '--card-color': template.color } as React.CSSProperties}
               >
                 <div className="landing-templates__card-visual">
                   <div className="landing-templates__card-icon" style={{ background: template.gradient }}>
@@ -245,7 +239,6 @@ const LandingTemplates: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="landing-templates__cta">
           <div className="landing-templates__cta-content">
             <h2 className="landing-templates__cta-title">Готові створити свій лендінг?</h2>
