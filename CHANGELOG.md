@@ -7,6 +7,60 @@
 
 ## [Unreleased]
 
+### Added - Vite Migration & ESLint Integration 🚀
+
+- ⚡ **Міграція на Vite**
+
+  - Vite 6.0.7 - швидкий build tool
+  - @vitejs/plugin-react 4.3.4 - React плагін для Vite
+  - Значно швидша розробка (HMR)
+  - Швидший production build
+  - Нативна підтримка ESM
+
+- 🔍 **ESLint конфігурація**
+
+  - ESLint 9.39.2 з flat config
+  - @eslint/js 9.39.2
+  - @eslint/compat 2.0.0
+  - eslint-plugin-react 7.37.5
+  - eslint-plugin-react-hooks 7.0.1
+  - eslint-plugin-react-refresh 0.4.26
+  - typescript-eslint 8.50.1
+  - globals 16.5.0
+
+- ✅ **Налаштовано правила ESLint**
+
+  - Автоматична перевірка React hooks
+  - Правила для TypeScript
+  - Правила для React компонентів
+  - Підтримка React Fast Refresh
+
+- 🛠️ **Оновлено npm скрипти**
+
+  - `npm run dev` / `npm start` - запуск dev сервера Vite
+  - `npm run build` - production build з Vite
+  - `npm run preview` - перегляд production build
+  - `npm run typecheck` - перевірка TypeScript типів
+  - `npm run lint` - перевірка коду ESLint
+  - `npm run lint:fix` - автоматичне виправлення ESLint
+
+- 🐛 **Виправлено помилки**
+  - setState в useEffect (переведено на lazy initialization)
+  - Видалено TypeScript any типи
+  - Виправлено empty block statements
+  - Math.random в рендері компонентів
+
+### Changed
+
+- ♻️ Перехід з Create React App на Vite
+- ⚡ Покращена швидкість розробки та збірки
+- 🔧 Оновлено конфігураційні файли (vite.config.ts)
+
+### Removed
+
+- ❌ Create React App залежності
+- ❌ react-scripts
+
 ### Planned
 
 - Завершення функціоналу AI Prompting
