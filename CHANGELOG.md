@@ -20,7 +20,9 @@
 - PC Cleaning сервіси
 - Система автентифікації користувачів
 - Темна тема
-- Мультимовність (українська/англійська)
+- Unit та Integration тести з Jest та React Testing Library
+
+---
 
 ## 📊 Аналітика та відстеження
 
@@ -35,7 +37,7 @@
 
 ### Microsoft Clarity
 
-- **Project ID**:
+- **Project ID**: [Project ID]
 - Запис сесій користувачів
 - Теплові карти (heatmaps)
 - Аналіз поведінки відвідувачів
@@ -74,6 +76,62 @@
 ```bash
 REACT_APP_GA4_MEASUREMENT_ID=your_ga_id
 REACT_APP_CLARITY_ID=your_clarity_id
+```
+
+---
+
+## [2.0.0] - 2024-12-26
+
+### Added - TypeScript Migration 🎉
+
+- 🔷 **Повна міграція на TypeScript**
+  - Додано TypeScript 4.9.5
+  - Додано типи для React (@types/react@19.2.7)
+  - Додано типи для React DOM (@types/react-dom@19.2.3)
+  - Додано типи для React Router (@types/react-router-dom@5.3.3)
+  - Додано типи для Node.js (@types/node@25.0.3)
+- 🎨 **Tailwind CSS інтеграція**
+
+  - Tailwind CSS 4.1.17
+  - PostCSS 8.5.6
+  - Autoprefixer 10.4.22
+  - Налаштовано кастомну конфігурацію
+
+- 🌍 **Мультимовність**
+
+  - i18next 23.15.1
+  - react-i18next 14.1.3
+  - Підтримка української та англійської мов
+  - Файли перекладів у `/public/locales`
+
+- 📦 **Нові компоненти та іконки**
+  - React Icons 5.5.0
+  - Lucide React 0.263.1
+  - React Helmet Async 2.0.5 для SEO
+
+### Changed
+
+- ♻️ Всі `.jsx` файли мігровано на `.tsx`
+- ♻️ Всі `.js` файли мігровано на `.ts`
+- 🔧 Оновлено структуру проєкту для TypeScript
+- 📝 Додано інтерфейси та типи для компонентів
+- 🎯 Покращено типобезпеку по всьому проєкту
+
+### Technical
+
+- Створено `tsconfig.json` з оптимальними налаштуваннями
+- Створено `tailwind.config.js`
+- Створено `postcss.config.js`
+- Додано папку `/src/types` для загальних типів
+- Додано папку `/src/contexts` для React Context
+- Додано папку `/src/utils` для утиліт
+- Оновлено `.gitignore` для TypeScript файлів
+
+### Breaking Changes
+
+- Потрібна Node.js >= 14.x
+- Потрібен TypeScript для розробки
+- Змінено розширення файлів з .jsx/.js на .tsx/.ts
 
 ---
 
@@ -149,13 +207,95 @@ REACT_APP_CLARITY_ID=your_clarity_id
 - `Fixed` - виправлення багів
 - `Security` - виправлення безпеки
 - `Technical` - технічні зміни
+- `Breaking Changes` - зміни, що порушують зворотну сумісність
+
+---
+
+## Міграційні ноти
+
+### Міграція з 1.x на 2.x (TypeScript)
+
+#### Що змінилось:
+
+1. **Розширення файлів**:
+
+   - `.jsx` → `.tsx`
+   - `.js` → `.ts`
+
+2. **Імпорти**:
+
+   ```typescript
+   // Старий спосіб
+   import Component from "./Component";
+
+   // Новий спосіб (з типами)
+   import Component from "./Component";
+   import type { ComponentProps } from "./Component.types";
+   ```
+
+3. **Компоненти**:
+
+   ```typescript
+   // Старий спосіб
+   function Button({ onClick, children }) {
+     return <button onClick={onClick}>{children}</button>;
+   }
+
+   // Новий спосіб (з типами)
+   interface ButtonProps {
+     onClick: () => void;
+     children: React.ReactNode;
+   }
+
+   const Button: React.FC<ButtonProps> = ({ onClick, children }) => {
+     return <button onClick={onClick}>{children}</button>;
+   };
+   ```
+
+4. **State та Hooks**:
+
+   ```typescript
+   // Старий спосіб
+   const [count, setCount] = useState(0);
+
+   // Новий спосіб (з типами)
+   const [count, setCount] = useState<number>(0);
+   ```
+
+#### Кроки міграції:
+
+1. Оновіть залежності:
+
+   ```bash
+   npm install
+   ```
+
+2. Перейменуйте файли:
+
+   ```bash
+   # Автоматично перейменувати всі .jsx файли
+   find src -name "*.jsx" -exec sh -c 'mv "$1" "${1%.jsx}.tsx"' _ {} \;
+
+   # Автоматично перейменувати всі .js файли
+   find src -name "*.js" -exec sh -c 'mv "$1" "${1%.js}.ts"' _ {} \;
+   ```
+
+3. Додайте типи до компонентів
+
+4. Запустіть TypeScript compiler:
+
+   ```bash
+   npm start
+   ```
+
+5. Виправте помилки типізації
 
 ---
 
 ## Посилання
 
-[Unreleased]: https://github.com/ViktorPro1/webstart-studio-react-app/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/ViktorPro1/webstart-studio-react-app/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/ViktorPro1/webstart-studio-react-app/releases/tag/v2.0.0
 [1.0.0]: https://github.com/ViktorPro1/webstart-studio-react-app/releases/tag/v1.0.0
 [0.5.0]: https://github.com/ViktorPro1/webstart-studio-react-app/compare/v0.1.0...v0.5.0
 [0.1.0]: https://github.com/ViktorPro1/webstart-studio-react-app/releases/tag/v0.1.0
-```
