@@ -10,7 +10,11 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "seo:init": "ts-node src/seo/utils/index.ts --initialize",
+    "seo:generate": "npm run seo:generate-sitemap && npm run seo:generate-robots",
+    "seo:generate-sitemap": "ts-node scripts/generate-sitemap.ts",
+    "seo:generate-robots": "ts-node scripts/generate-robots.ts"
   },
   "dependencies": {
     "i18next": "^23.15.1",
