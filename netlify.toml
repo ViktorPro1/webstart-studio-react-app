@@ -2,6 +2,10 @@
   publish = "dist"
   command = "npm run build"
 
+[build.environment]
+  VITE_GA4_MEASUREMENT_ID = "G-XVSQYMRYWH"
+  VITE_CLARITY_ID = "ulapiy4iws"
+
 # Redirects (резервний, якщо _redirects не спрацює)
 [[redirects]]
   from = "/*"
