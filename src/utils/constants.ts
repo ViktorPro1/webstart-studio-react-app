@@ -16,7 +16,7 @@ export const COLORS = {
 export const SITE_INFO = {
     title: 'WebStart Studio',
     description: 'Створення лендінгів, портфоліо та резюме. Професійні веб-рішення для вашого бізнесу.',
-    url: 'https://yourwebsite.com',
+    url: 'https://web-start-studio.netlify.app',
     image: '/images/og-image.jpg',
     keywords: 'лендінги, портфоліо, резюме, веб-дизайн, веб-розробка'
 };

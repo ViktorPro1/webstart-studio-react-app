@@ -14,7 +14,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, url }) =
   const siteTitle = title ? `${title} | ${SITE_INFO.title}` : SITE_INFO.title;
   const siteDescription = description || SITE_INFO.description;
   const siteKeywords = keywords || SITE_INFO.keywords;
-  const siteUrl = url || window.location.href;
+  const siteUrl = url || SITE_INFO.url; // ✅ ВИПРАВЛЕНО!
 
   const baseUrl = 'https://web-start-studio.netlify.app';
   const rawImage = image || '/web-start-studio-og.jpg';
