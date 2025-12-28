@@ -1,8 +1,8 @@
-// src/seo/SEO.tsx (виправлений)
+// src/seo/SEO.tsx
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { SITE_INFO } from '../utils/constants';
-import { getSEOData } from './seoData'; // 👈 Виправлений імпорт
+import { getSEOData } from './seoData';
 
 interface SEOProps {
   path?: string;
@@ -11,15 +11,6 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   schemaType?: string;
-}
-
-interface FinalSEO {
-  title: string;
-  description: string;
-  keywords: string;
-  url: string;
-  schemaType: string;
-  ogImage?: string;
 }
 
 const SEO: React.FC<SEOProps> = ({ 
@@ -32,13 +23,10 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const baseUrl = 'https://web-start-studio.netlify.app';
   
-  // Якщо передали path - використовуємо нову систему
-  let finalSeo: FinalSEO;
+  let finalSeo;
   
   if (path) {
-    const seoData = getSEOData(path); // Отримуємо дані з централізованої системи
-    
-    // Перетворюємо PageSEO в FinalSEO
+    const seoData = getSEOData(path);
     finalSeo = {
       title: seoData.title,
       description: seoData.description,
@@ -50,7 +38,6 @@ const SEO: React.FC<SEOProps> = ({
       ogImage: seoData.ogImage
     };
   } else {
-    // Стара система для сумісності
     finalSeo = {
       title: title ? `${title} | ${SITE_INFO.title}` : SITE_INFO.title,
       description: description || SITE_INFO.description,
@@ -75,16 +62,19 @@ const SEO: React.FC<SEOProps> = ({
       url: finalSeo.url
     };
 
-    // Додаткові поля залежно від типу
-    if (finalSeo.schemaType === 'LocalBusiness') {
+    // 👇 ВИПРАВЛЕНО ТУТ
+    if (finalSeo.schemaType === 'Organization') {  // 👈 ЗМІНЕНО
       return {
         ...baseSchema,
-        '@type': 'LocalBusiness',
-        address: {
-          '@type': 'PostalAddress',
-          addressCountry: 'UA'
-        },
-        telephone: '+380661391932'
+        '@type': 'Organization',  // 👈 ЗМІНЕНО
+        name: 'WebStart Studio',
+        url: baseUrl,
+        telephone: '+380661391932',
+        email: 'webstartstudio978@gmail.com',
+        // ❌ БЕЗ address
+        areaServed: [
+          { '@type': 'Country', name: 'Україна' }
+        ]
       };
     }
 
@@ -93,13 +83,10 @@ const SEO: React.FC<SEOProps> = ({
 
   return (
     <Helmet>
-      {/* Основні мета-теги */}
       <html lang="uk" />
       <title>{finalSeo.title}</title>
       <meta name="description" content={finalSeo.description} />
       <meta name="keywords" content={finalSeo.keywords} />
-
-      {/* Canonical URL */}
       <link rel="canonical" href={finalSeo.url} />
 
       {/* Open Graph */}

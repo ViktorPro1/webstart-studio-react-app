@@ -814,28 +814,37 @@ const generateSchemaMarkup = (seoData: PageSEO) => {
     }
   };
   
-  // Додаткові схеми за типом сторінки
-  switch (seoData.schemaType) {
-    case 'LocalBusiness':
-    case 'ProfessionalService':
-      return [baseSchema, {
-        '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
-        'name': 'WebStart Studio',
-        'description': 'Веб-студія розробки сайтів та цифрових послуг',
-        'url': baseUrl,
-        'telephone': '+380XXXXXXXXX',
-        'address': {
-          '@type': 'PostalAddress',
-          'addressCountry': 'UA',
-          'addressLocality': 'Київ'
+// Додаткові схеми за типом сторінки
+switch (seoData.schemaType) {
+  case 'LocalBusiness':
+  case 'Organization':  // 👈 ЗМІНЕНО
+    return [baseSchema, {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',  // 👈 ЗМІНЕНО
+      'name': 'WebStart Studio',
+      'description': 'Веб-студія розробки сайтів та цифрових технологій',
+      'url': baseUrl,
+      'telephone': '+380661391932',
+      'email': 'webstartstudio978@gmail.com',
+      // ❌ ВИДАЛЕНО 'address' повністю
+      'areaServed': [
+        {
+          '@type': 'Country',
+          'name': 'Україна'
         },
-        'areaServed': ['Україна', 'Європа'],
-        'serviceType': ['Веб-розробка', 'SEO', 'Дизайн', 'Маркетинг'],
-        'openingHours': 'Mo-Fr 09:00-18:00',
-        'priceRange': '$$'
-      }];
-      
+        {
+          '@type': 'Country',
+          'name': 'Європа'
+        }
+      ],
+      'knowsAbout': ['Веб-розробка', 'SEO', 'Дизайн', 'Маркетинг'],  // 👈 ЗМІНЕНО
+      'sameAs': [
+        'https://t.me/+IleSiwteF2NlOWVi', 
+        'https://invite.viber.com/?g2=AQB%2FfR4KvKip91SwMbV0bYMLZbEbchx7bj7gNYwkp7xEy3eZ8%2BIvyHL9YpqymDtE',
+        'https://www.facebook.com/profile.php?id=61575866647011',
+        'https://chat.whatsapp.com/H5Mz1CTwCwDJAXvyhPKUka'
+      ]
+    }];
     case 'Service':
       return [baseSchema, {
         '@context': 'https://schema.org',
