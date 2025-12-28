@@ -89,15 +89,24 @@ const SEO_CONFIG: Record<string, PageSEO> = {
     schemaType: 'FAQPage'
   },
 
-  '/security-tips': {
-    path: '/security-tips',
-    title: 'Безпека Сайту | WebStart Studio - Поради, Захист, HTTPS',
-    description: 'Повний гайд по безпеці сайтів: HTTPS, захист від атак, резервне копіювання, оновлення, моніторинг.',
-    keywords: ['безпека сайту', 'HTTPS', 'захист від хакерів', 'резервне копіювання', 'безпечний хостинг', 'SSL'],
-    priority: 0.7,
-    changefreq: 'monthly',
-    schemaType: 'Article'
-  },
+'/security-tips': {
+  path: '/security-tips',
+  title: 'Антифішинг | WebStart Studio — Захист від шахрайства та перевірка посилань',
+  description: 'Гайд із захисту від фішингу та шахрайства: приклади з Telegram, Viber, email і соцмереж. Перевірка посилань та файлів, поради з 2FA, паролів і антивірусів.',
+  keywords: [
+    'антифішинг',
+    'фішинг',
+    'захист від шахраїв',
+    'перевірка посилань',
+    'перевірка файлів',
+    'двохфакторна автентифікація',
+    'менеджер паролів',
+    'антивірус'
+  ],
+  priority: 0.7,
+  changefreq: 'monthly',
+  schemaType: 'Article'
+},
 
   '/testimonials': {
     path: '/testimonials',
@@ -131,7 +140,7 @@ const SEO_CONFIG: Record<string, PageSEO> = {
 
   '/pricing': {
     path: '/pricing',
-    title: 'Ціни | WebStart Studio - Тарифи, Вартість Можливості',
+    title: 'Пакети | WebStart Studio - Тарифи, Вартість Можливості',
     description: 'Прозорі ціни на всі послуги: лендінги, портфоліо, веб-додатки, SEO. Пакетні пропозиції та індивідуальні розрахунки.',
     keywords: ['ціни', 'тарифи', 'вартість', 'прайс', 'послуги веб розробки', 'пакети послуг'],
     priority: 0.9,
