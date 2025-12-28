@@ -40,7 +40,8 @@
         https://www.google-analytics.com 
         https://cdn.clarity.ms 
         https://www.clarity.ms 
-        https://o.clarity.ms;
+        https://o.clarity.ms 
+        https://f.clarity.ms;
       img-src 'self' 
         https://www.google-analytics.com 
         https://c.clarity.ms 
@@ -77,7 +78,8 @@
         https://www.google-analytics.com 
         https://cdn.clarity.ms 
         https://www.clarity.ms 
-        https://o.clarity.ms;
+        https://o.clarity.ms 
+        https://f.clarity.ms;
       img-src 'self' 
         https://www.google-analytics.com 
         https://c.clarity.ms 
