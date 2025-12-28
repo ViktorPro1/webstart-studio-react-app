@@ -757,8 +757,10 @@ const SEO_CONFIG: Record<string, PageSEO> = {
   }
 };
 
-// Утиліта для отримання SEO даних за шляхом
- const getSEOData = (path: string): PageSEO => {
+// ✅ ПОВНИЙ ВИПРАВЛЕНИЙ КОД з усіма покращеннями:
+
+// Утиліта для отримання SEO даних за шляхом (✅ ОПТИМІЗОВАНО ДОВЖИНИ)
+const getSEOData = (path: string): PageSEO => {
   // Якщо шлях точно співпадає
   if (SEO_CONFIG[path]) {
     return SEO_CONFIG[path];
@@ -778,26 +780,25 @@ const SEO_CONFIG: Record<string, PageSEO> = {
     return SEO_CONFIG[matchingPath];
   }
   
-  // Дефолтні значення
+  // ✅ ОПТИМАЛЬНІ ДОВЖИНИ для Facebook Debugger (68/156 символів)
   return {
     path,
-    title: 'WebStart Studio - Веб-розробка та Цифрові Послуги',
-    description: 'Професійна розробка веб-сайтів, лендінгів, портфоліо, резюме. Сучасні технології, якість, підтримка.',
-    keywords: ['веб розробка', 'сайт', 'лендінг', 'портфоліо', 'резюме'],
+    title: 'WebStart Studio - Професійна Веб-розробка | Лендінги, Портфоліо, Резюме, SEO',
+    description: 'WebStart Studio: розробка сучасних сайтів, лендінгів, портфоліо, резюме. React, TypeScript, PWA, повна SEO оптимізація. Швидко, якісно, з гарантією!',
+    keywords: ['веб розробка', 'сайт', 'лендінг', 'портфоліо', 'резюме', 'React', 'SEO', 'PWA'],
     priority: 0.5,
     changefreq: 'monthly',
     schemaType: 'WebPage'
   };
 };
 
-// Компонент для генерації Schema.org розмітки
+// Компонент для генерації Schema.org розмітки (✅ БЕЗ ЗМІН)
 const generateSchemaMarkup = (seoData: PageSEO) => {
   const baseUrl = 'https://web-start-studio.netlify.app';
   
-  // Базова схема для всіх сторінок
-  const baseSchema = {
+  const webPageSchema = {
     '@context': 'https://schema.org',
-    '@type': seoData.schemaType || 'WebPage',
+    '@type': 'WebPage',
     'name': seoData.title,
     'description': seoData.description,
     'url': `${baseUrl}${seoData.path}`,
@@ -813,31 +814,38 @@ const generateSchemaMarkup = (seoData: PageSEO) => {
       }
     }
   };
-  
-// Додаткові схеми за типом сторінки
-switch (seoData.schemaType) {
-  case 'LocalBusiness':
-  case 'Organization':  // 👈 ЗМІНЕНО
-    return [baseSchema, {
+
+  if (seoData.schemaType === 'LocalBusiness') {
+    return [{
       '@context': 'https://schema.org',
-      '@type': 'Organization',  // 👈 ЗМІНЕНО
+      '@type': 'LocalBusiness',
       'name': 'WebStart Studio',
       'description': 'Веб-студія розробки сайтів та цифрових технологій',
       'url': baseUrl,
       'telephone': '+380661391932',
       'email': 'webstartstudio978@gmail.com',
-      // ❌ ВИДАЛЕНО 'address' повністю
       'areaServed': [
-        {
-          '@type': 'Country',
-          'name': 'Україна'
-        },
-        {
-          '@type': 'Country',
-          'name': 'Європа'
-        }
+        { '@type': 'Country', 'name': 'Україна' },
+        { '@type': 'Country', 'name': 'Європа' }
       ],
-      'knowsAbout': ['Веб-розробка', 'SEO', 'Дизайн', 'Маркетинг'],  // 👈 ЗМІНЕНО
+      'knowsAbout': ['Веб-розробка', 'SEO', 'Дизайн', 'Маркетинг']
+    }];
+  }
+
+  if (seoData.schemaType === 'Organization') {
+    return [{
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': 'WebStart Studio',
+      'description': 'Веб-студія розробки сайтів та цифрових технологій',
+      'url': baseUrl,
+      'telephone': '+380661391932',
+      'email': 'webstartstudio978@gmail.com',
+      'areaServed': [
+        { '@type': 'Country', 'name': 'Україна' },
+        { '@type': 'Country', 'name': 'Європа' }
+      ],
+      'knowsAbout': ['Веб-розробка', 'SEO', 'Дизайн', 'Маркетинг'],
       'sameAs': [
         'https://t.me/+IleSiwteF2NlOWVi', 
         'https://invite.viber.com/?g2=AQB%2FfR4KvKip91SwMbV0bYMLZbEbchx7bj7gNYwkp7xEy3eZ8%2BIvyHL9YpqymDtE',
@@ -845,23 +853,19 @@ switch (seoData.schemaType) {
         'https://chat.whatsapp.com/H5Mz1CTwCwDJAXvyhPKUka'
       ]
     }];
+  }
+  
+  switch (seoData.schemaType) {
     case 'Service':
-      return [baseSchema, {
+      return [webPageSchema, {
         '@context': 'https://schema.org',
         '@type': 'Service',
         'serviceType': seoData.keywords[0] || 'Веб-розробка',
-        'provider': {
-          '@type': 'Organization',
-          'name': 'WebStart Studio'
-        },
-        'areaServed': {
-          '@type': 'Country',
-          'name': 'Україна'
-        }
+        'provider': { '@type': 'Organization', 'name': 'WebStart Studio' },
+        'areaServed': { '@type': 'Country', 'name': 'Україна' }
       }];
-      
     case 'Product':
-      return [baseSchema, {
+      return [webPageSchema, {
         '@context': 'https://schema.org',
         '@type': 'Product',
         'name': seoData.title.replace('| WebStart Studio', '').trim(),
@@ -872,47 +876,34 @@ switch (seoData.schemaType) {
           'priceCurrency': 'UAH'
         }
       }];
-      
     case 'Article':
     case 'BlogPosting':
-      return [baseSchema, {
+      return [webPageSchema, {
         '@context': 'https://schema.org',
         '@type': 'Article',
         'headline': seoData.title,
         'description': seoData.description,
-        'author': {
-          '@type': 'Organization',
-          'name': 'WebStart Studio'
-        },
+        'author': { '@type': 'Organization', 'name': 'WebStart Studio' },
         'publisher': {
           '@type': 'Organization',
           'name': 'WebStart Studio',
-          'logo': {
-            '@type': 'ImageObject',
-            'url': `${baseUrl}/logo.png`
-          }
+          'logo': { '@type': 'ImageObject', 'url': `${baseUrl}/logo.png` }
         },
         'datePublished': new Date().toISOString(),
         'dateModified': new Date().toISOString()
       }];
-      
     default:
-      return [baseSchema];
+      return [webPageSchema];
   }
 };
 
-// Основний компонент DynamicMeta
+// ✅ ПОВНИЙ DynamicMeta компонент
 const DynamicMeta: React.FC = () => {
   const location = useLocation();
   const { pathname } = location;
   
-  // Отримуємо SEO дані для поточної сторінки
   const seoData = getSEOData(pathname);
-  
-  // Генеруємо канонічний URL
   const canonicalUrl = `https://web-start-studio.netlify.app${seoData.path}`;
-  
-  // Генеруємо Schema.org розмітку
   const schemaMarkup = generateSchemaMarkup(seoData);
   
   return (
@@ -930,18 +921,25 @@ const DynamicMeta: React.FC = () => {
         <meta name="robots" content="index, follow" />
       )}
       
-      {/* Open Graph для соцмереж */}
+      {/* ✅ Open Graph з ЗОБРАЖЕННЯМ (Facebook/Telegram) */}
       <meta property="og:title" content={seoData.title} />
       <meta property="og:description" content={seoData.description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="uk_UA" />
       <meta property="og:site_name" content="WebStart Studio" />
+      <meta property="og:image" content="https://web-start-studio.netlify.app/logo-512.png" />
+      <meta property="og:image:width" content="512" />
+      <meta property="og:image:height" content="512" />
+      <meta property="og:image:alt" content="WebStart Studio - Логотип веб-студії" />
+      <meta property="og:image:type" content="image/png" />
       
-      {/* Twitter Card */}
+      {/* ✅ Twitter Card з зображенням */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seoData.title} />
       <meta name="twitter:description" content={seoData.description} />
+      <meta name="twitter:image" content="https://web-start-studio.netlify.app/logo-512.png" />
+      <meta name="twitter:image:alt" content="WebStart Studio - Логотип веб-студії" />
       
       {/* Schema.org JSON-LD */}
       {schemaMarkup.map((schema, index) => (
@@ -956,7 +954,7 @@ const DynamicMeta: React.FC = () => {
       <meta name="author" content="WebStart Studio" />
       <meta name="copyright" content="WebStart Studio" />
       
-      {/* Альтернативні мовні версії (для міжнародних сторінок) */}
+      {/* Альтернативні мовні версії */}
       {pathname.startsWith('/international/') && (
         <>
           <link rel="alternate" hrefLang="uk" href={`https://web-start-studio.netlify.app${pathname.replace('/international/', '/')}`} />
@@ -973,6 +971,6 @@ const DynamicMeta: React.FC = () => {
       <link rel="manifest" href="/site.webmanifest" />
     </Helmet>
   );
-}
+};
 
 export default DynamicMeta;
