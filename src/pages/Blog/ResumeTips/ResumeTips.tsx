@@ -1,16 +1,10 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import './ResumeTips.css';
 import './ResumeTips.mobile.css';
 
 const ResumeTips = () => {
   return (
     <>
-      <SEO
-        title="Топ-5 порад для ефективного резюме"
-        description="Практичні поради для пошуку роботи"
-        keywords="резюме, кар'єра, пошук роботи, HR"
-      />
       <div className="blog-resume-tips">
         <header className="blog-resume-tips-header">
           <h1 className="blog-resume-tips-h1">🔥 Топ-5 порад для ефективного резюме</h1>

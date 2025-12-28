@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../SEO/SEO';
 import './PlatformComparison.css';
 import './PlatformComparison.mobile.css';
 
@@ -51,11 +50,7 @@ const PlatformComparison = () => {
 
   return (
     <>
-      <SEO 
-        title="Порівняння платформ"
-        description="Порівняльний аналіз WebStart Studio з популярними конструкторами Webstudio та WebStarts"
-        keywords="порівняння платформ, webstart studio, webstudio, webstarts, конструктори сайтів"
-      />
+
       <div className="platform-comparison-page">
         <section className="comparison-section">
           <h2 className="centered-header">Порівняльний аналіз платформ</h2>

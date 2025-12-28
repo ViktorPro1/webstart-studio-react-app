@@ -17,6 +17,7 @@ const DjonAssistant = lazy(() => import('./components/DjonAssistant/DjonAssistan
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
 const UpdateNotification = lazy(() => import('./components/UpdateNotification'));
 const ChristmasDecorations = lazy(() => import('./components/NewYear/ChristmasDecorations'));
+const DynamicMeta = lazy(() => import('./SEO/DynamicMeta')); // 👈 ДОДАВ
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -67,6 +68,11 @@ function App() {
 
   return (
     <ThemeProvider>
+      {/* 👇 DynamicMeta має бути ПЕРШИМ всередині ThemeProvider */}
+      <Suspense fallback={null}>
+        <DynamicMeta /> {/* 👈 АВТОМАТИЧНІ SEO ДЛЯ ВСІХ СТОРІНОК */}
+      </Suspense>
+
       <AnalyticsTracker />
 
       <Suspense fallback={null}>

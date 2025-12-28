@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../SEO/SEO';
 import './FAQ.css';
 import './FAQ.mobile.css';
 
@@ -58,11 +57,7 @@ const FAQ = () => {
 
   return (
     <>
-      <SEO
-        title="Поширені запитання"
-        description="FAQ — відповіді на найчастіші запитання користувачів WebStart Studio"
-        keywords="faq, поширені запитання, webstart studio"
-      />
+
       <section id="faq" className="faq-section">
         <h2 id="faq-title">Поширені запитання</h2>
         {faqItems.map((item, index) => (

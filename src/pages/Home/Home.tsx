@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../SEO/SEO';
 import { FileText, Briefcase, Users } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import PromoPopup from '../Promo/PromoPopup';
@@ -34,11 +33,7 @@ const Home: React.FC = () => {
   return (
     <>
       <PromoPopup />
-      <SEO
-        title="Головна"
-        description="Створення професійних лендінгів, портфоліо та резюме"
-        keywords="веб студія, лендінги, портфоліо, резюме"
-      />
+
       <div className="home-page">
         <section className="hero-section">
           <div className="hero-content">

@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import { Film, Sparkles, MousePointer, Zap } from 'lucide-react';
 import './Animations.css';
 import './Animations.mobile.css';
@@ -7,11 +6,6 @@ import './Animations.mobile.css';
 const Animations = () => {
     return (
         <>
-            <SEO
-                title="Динамічні анімації"
-                description="Створюємо анімації для елементів на сайті, щоб він виглядав яскраво та інтерактивно"
-                keywords="динамічні анімації, веб-анімації, CSS, JavaScript, UI, UX"
-            />
 
             <div className="animations-page">
                 <div className="animations-container">

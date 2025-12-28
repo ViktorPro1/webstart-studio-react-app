@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../SEO/SEO';
 import { Download, FileText, Briefcase, Globe } from 'lucide-react';
 import './Briefs.css';
 import './Briefs.mobile.css';
@@ -31,12 +30,7 @@ const Briefs = () => {
 
   return (
     <>
-      <SEO 
-        title="Замовити проект - Завантажити бриф"
-        description="Оберіть напрям і завантажте короткий бриф для створення резюме, портфоліо або сайту"
-        keywords="замовити проект, бриф, резюме, портфоліо, сайт, веб-розробка"
-      />
-      
+
       <div className="briefs-page">
         <section className="briefs">
           <div className="briefs-container">

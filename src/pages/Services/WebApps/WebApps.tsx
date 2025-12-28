@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import { Code, MessageSquare, Calculator, Calendar } from 'lucide-react';
 import './WebApps.css';
 import './WebApps.mobile.css';
@@ -7,11 +6,6 @@ import './WebApps.mobile.css';
 const WebApps = () => {
     return (
         <>
-            <SEO
-                title="Веб-додатки"
-                description="Розробка інтерактивних веб-додатків: калькулятори, чат-боти, інтерактивні інтерфейси"
-                keywords="веб-додатки, web apps, розробка веб-додатків, онлайн-сервіси"
-            />
 
             <div className="webapp-page">
                 <div className="webapp-container">

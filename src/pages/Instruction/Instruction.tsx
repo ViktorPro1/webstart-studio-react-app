@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SEO from '../../SEO/SEO';
 import './Instruction.css';
 import './Instruction.mobile.css';
 
@@ -34,11 +33,6 @@ const Instruction: React.FC = () => {
 
   return (
     <>
-      <SEO
-        title="Інструкція: Як зареєструватися на Netlify"
-        description="Покрокова інструкція, як зареєструватися на Netlify та почати розміщувати свої веб-проекти онлайн"
-        keywords="Netlify, реєстрація, інструкція, хостинг, веб-проекти"
-      />
 
       <div className="instruction-root">
         <div className="container">

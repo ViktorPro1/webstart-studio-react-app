@@ -1,4 +1,6 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState } from 'react';
+import type { ChangeEvent } from 'react';
+
 import './Pricing.css';
 import './Pricing.mobile.css';
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import SEO from '../../SEO/SEO';
 import './SecurityTips.css';
 import './SecurityTips.mobile.css';
 
@@ -200,11 +199,6 @@ const SecurityTips: React.FC = () => {
 
   return (
     <>
-      <SEO
-        title="Кібербезпека та захист від фішингу"
-        description="Дізнайтесь, як захистити себе від фішингу, шахрайства та кіберзагроз. Безкоштовна перевірка посилань від WebStart Studio"
-        keywords="кібербезпека, фішинг, шахрайство, кіберзагрози, безпека онлайн, перевірка посилань"
-      />
 
       <div className="security-tips-page">
         <main className="security-tips-main-content">

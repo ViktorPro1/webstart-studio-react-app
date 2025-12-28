@@ -1,5 +1,4 @@
 import React from "react";
-import SEO from '../../SEO/SEO';
 import { MessageCircle, Send, Facebook, Linkedin } from 'lucide-react';
 import './Social.css';
 import './Social.mobile.css';
@@ -36,11 +35,6 @@ const Social: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title="Соціальні мережі"
-        description="Підписуйтесь на нас у соцмережах"
-        keywords="соцмережі, telegram, viber, facebook, instagram"
-      />
       <div className="socials">
         <h3>Ми в соцмережах</h3>
         

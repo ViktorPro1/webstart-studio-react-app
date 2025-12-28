@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import { Share2, RefreshCw, Smartphone, Radio } from 'lucide-react';
 import './SocialMedia.css';
 import './SocialMedia.mobile.css';
@@ -7,11 +6,6 @@ import './SocialMedia.mobile.css';
 const SocialMedia = () => {
     return (
         <>
-            <SEO
-                title="Інтеграція з соцмережами"
-                description="Автоматичне публікування контенту та додавання віджетів соцмереж на сайт для більшої взаємодії"
-                keywords="інтеграція соцмереж, Facebook, Instagram, веб-розробка"
-            />
 
             <div className="social-media-page">
                 <div className="social-media-container">

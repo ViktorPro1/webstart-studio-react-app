@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SEO from '../../SEO/SEO';
 import './TechnicalDetails.css';
 import './TechnicalDetails.mobile.css';
 
@@ -12,11 +11,7 @@ const TechnicalDetails = () => {
 
   return (
     <>
-      <SEO 
-        title="Технічні можливості — CSP та PWA"
-        description="Дізнайтеся про технічні можливості WebStart Studio: CSP (Content Security Policy) та PWA (Progressive Web Apps), їх переваги та застосування для сучасних веб-сайтів."
-        keywords="CSP, PWA, технічні можливості, веб-розробка, безпека сайту, прогресивні веб-додатки"
-      />
+
       <div className="technical-details-page">
         <header className="tech-header">
           <h1>Технічні можливості для вашого лендінгу</h1>

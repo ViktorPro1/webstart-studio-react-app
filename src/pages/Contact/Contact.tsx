@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
-import SEO from '../../SEO/SEO';
 import { Mail, Phone, MessageCircle, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import './Contact.css';
 import './Contact.mobile.css';
@@ -95,11 +94,6 @@ const Contact = () => {
 
   return (
     <>
-      <SEO
-        title="Контакти"
-        description="Зв'яжіться з WebStart Studio - email, телефон, Viber. Ми завжди на зв'язку!"
-        keywords="контакти, webstart studio, email, телефон, viber, зв'язок"
-      />
 
       <div className="contact-page">
         <section id="contact-gift-wrapper">

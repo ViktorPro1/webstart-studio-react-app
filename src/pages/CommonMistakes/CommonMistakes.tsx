@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../SEO/SEO';
 import './CommonMistakes.css';
 import './CommonMistakes.mobile.css';
 
@@ -54,11 +53,7 @@ const CommonMistakes = () => {
 
   return (
     <>
-      <SEO
-        title="Часті помилки при створенні резюме/портфоліо"
-        description="Топ-5 помилок при створенні резюме/портфоліо та як їх уникнути"
-        keywords="помилки, резюме, портфоліо, UX, дизайн"
-      />
+
       <section className="mistakes-section" id="common-mistakes">
         <h2>❌ Топ-5 помилок при створенні <br />резюме/портфоліо</h2>
         <p className="mistakes-intro">Багато людей роблять ці помилки. Натисніть на кожну, щоб дізнатися деталі:</p>

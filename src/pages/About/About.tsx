@@ -1,16 +1,10 @@
 import React from 'react';
-import SEO from '../../SEO/SEO';
 import './About.css';
 import './About.mobile.css';
 
 const About = () => {
   return (
     <>
-      <SEO
-        title="Про нас"
-        description="WebStart Studio — створення лендінгів, портфоліо та резюме"
-        keywords="про нас, webstart studio, команда, історія"
-      />
       <div className="about-page">
         <section className="about-section">
           <h2 className="about-centered">Про нас</h2>

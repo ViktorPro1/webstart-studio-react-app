@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SEO from '../../SEO/SEO';
 import './Skills.css';
 import './Skills.mobile.css';
 
@@ -35,11 +34,7 @@ const Skills: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title="Навички та технології"
-        description="Наші навички у веб-розробці, дизайні та маркетингу"
-        keywords="навички, веб-розробка, React, frontend, skills"
-      />
+
       <div className="skills-page">
         <section className="skills-hero">
           <h1>Наші навички в дії</h1>

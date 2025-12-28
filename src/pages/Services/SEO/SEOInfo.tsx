@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import { Search, TrendingUp, Target, BarChart } from 'lucide-react';
 import './SEOInfo.css';
 import './SEOInfo.mobile.css';
@@ -7,11 +6,6 @@ import './SEOInfo.mobile.css';
 const SEOInfo = () => {
     return (
         <>
-            <SEO
-                title="SEO-оптимізація"
-                description="Покращення видимості вашого сайту в пошукових системах для залучення більшої аудиторії"
-                keywords="SEO, пошукова оптимізація, оптимізація сайту, трафік, веб-розробка"
-            />
 
             <div className="seo-info-page">
                 <div className="seo-info-container">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import SEO from '../../SEO/SEO';
 import './Testimonials.css';
 import './Testimonials.mobile.css';
 
@@ -167,11 +166,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title="Відгуки клієнтів"
-        description="Реальні відгуки наших клієнтів про створення лендінгів, портфоліо та резюме"
-        keywords="відгуки клієнтів, testimonials, відгуки про webstart studio"
-      />
+
       <div className="testimonials-page">
         <section id="testimonials">
           <h2 id="testimonials-title">Відгуки про нас</h2>

@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import { ShoppingCart, CreditCard, Package, TrendingUp } from 'lucide-react';
 import './Ecommerce.css';
 import './Ecommerce.mobile.css';
@@ -7,11 +6,6 @@ import './Ecommerce.mobile.css';
 const Ecommerce = () => {
     return (
         <>
-            <SEO
-                title="Інтернет-магазини"
-                description="Розробка та налаштування онлайн-магазинів для продажу товарів або послуг"
-                keywords="інтернет-магазини, e-commerce, онлайн-магазин, продажі, веб-дизайн"
-            />
 
             <div className="ecommerce-page">
                 <div className="ecommerce-container">

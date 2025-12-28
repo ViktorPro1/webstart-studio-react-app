@@ -1,16 +1,10 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import './PortfolioTips.css';
 import './PortfolioTips.mobile.css';
 
 const PortfolioTips = () => {
   return (
     <>
-      <SEO
-        title="Як зробити портфоліо, яке продає"
-        description="Практичні поради для дизайнерів і фрілансерів"
-        keywords="портфоліо, дизайн, фріланс, UX, UI"
-      />
       <div className="blog-portfolio-tips">
         <header className="blog-portfolio-tips-header">
           <h1 className="blog-portfolio-tips-h1">⚡ Як зробити портфоліо, яке продає</h1>

@@ -1,16 +1,10 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import './LandingTrends.css';
 import './LandingTrends.mobile.css';
 
 const LandingTrends = () => {
   return (
     <>
-      <SEO
-        title="Тренди створення лендінгів у 2025 році"
-        description="Сучасний дизайн, адаптивна верстка, UX/UI та AI інтеграції"
-        keywords="лендінг, тренди 2025, дизайн, UX, UI, AI"
-      />
       <div className="blog-page-trends">
         <header className="blog-page-trends-header">
           <h1 className="blog-page-trends-h1">🚀 Тренди створення лендінгів у 2025 році</h1>

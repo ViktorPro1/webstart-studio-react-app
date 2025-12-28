@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import { BookOpen, MessageCircle, Share2 } from 'lucide-react';
 import './BlogInfo.css';
 import './BlogInfo.mobile.css';
@@ -7,11 +6,6 @@ import './BlogInfo.mobile.css';
 const BlogInfo = () => {
     return (
         <>
-            <SEO
-                title="Що таке блоги та новини"
-                description="Дізнайся, що таке блоги та новини, як створювати цікавий контент для веб-сайтів та залучати аудиторію. Поради та практичні приклади."
-                keywords="блоги, новини, контент, веб-сайт, публікації, статті, SEO, маркетинг"
-            />
 
             <div className="blog-info-page">
                 <div className="blog-info-container">

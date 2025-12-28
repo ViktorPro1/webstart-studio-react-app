@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import SEO from '../../SEO/SEO';
 import './Achievements.css';
 import './Achievements.mobile.css';
 
@@ -102,12 +101,6 @@ const Achievements = () => {
 
   return (
     <>
-      <SEO 
-        title="Наші досягнення"
-        description="Переглянь досягнення WebStart Studio — успішні кейси, реалізовані проєкти та результати співпраці з клієнтами"
-        keywords="досягнення, WebStart Studio, портфоліо, веброзробка, кейси, проєкти"
-      />
-      
       <div className="achievements-page">
         <section 
           className="achievement-stats-section" 

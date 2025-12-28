@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../../../SEO/SEO';
 import { Heart, Palette, Video, Sparkles } from 'lucide-react';
 import './PersonalizedLanding.css';
 import './PersonalizedLanding.mobile.css';
@@ -7,11 +6,6 @@ import './PersonalizedLanding.mobile.css';
 const PersonalizedLanding = () => {
     return (
         <>
-            <SEO
-                title="Що таке персоналізовані лендінги"
-                description="Дізнайтеся, що таке персоналізовані лендінги, як вони підвищують конверсію та залучають клієнтів. Практичні поради для ефективного маркетингу."
-                keywords="персоналізовані лендінги, landing page, конверсія, маркетинг, таргетована реклама, веб-дизайн, онлайн продажі"
-            />
 
             <div className="personalized-landing-page">
                 <div className="personalized-landing-container">
