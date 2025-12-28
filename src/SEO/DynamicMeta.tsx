@@ -818,7 +818,7 @@ const generateSchemaMarkup = (seoData: PageSEO) => {
   if (seoData.schemaType === 'LocalBusiness') {
     return [{
       '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
+      '@type': 'Organization',
       'name': 'WebStart Studio',
       'description': 'Веб-студія розробки сайтів та цифрових технологій',
       'url': baseUrl,
