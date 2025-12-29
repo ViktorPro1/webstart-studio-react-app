@@ -1,18 +1,3 @@
-/**
- * ThemeContext.tsx
- * 
- * Контекст темної/світлої теми для React.
- * 
- * ThemeContext:
- * - darkMode: поточна тема (true = темна, false = світла)
- * - toggleTheme: функція для перемикання теми
- * 
- * ThemeProvider:
- * - Обгортає компонентну структуру і надає доступ до теми через контекст
- * - При зміні darkMode автоматично додає/видаляє клас 'dark-theme' на body
- */
-
-
 import React, { createContext, useState, useEffect, type ReactNode } from 'react';
 
 interface ThemeContextValue {

@@ -1,5 +1,3 @@
-// src/SEO/utils/schema-generator.ts
-// Варіант 1: Оголосити тип локально (якщо не вдається імпортувати)
 interface PageSEO {
   path: string;
   title: string;

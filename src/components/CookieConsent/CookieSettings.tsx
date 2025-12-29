@@ -1,13 +1,3 @@
-/**
- * CookieSettings component
- * Модальне вікно керування згодою на використання файлів cookie.
- * Дозволяє користувачу окремо увімкнути або вимкнути аналітичні,
- * маркетингові та персоналізаційні cookie (необхідні — завжди активні).
- * Відповідає вимогам GDPR / ePrivacy.
- */
-
-
-
 import { useState } from 'react';
 import './CookieConsent.css';
 import './CookieConsent.mobile.css';

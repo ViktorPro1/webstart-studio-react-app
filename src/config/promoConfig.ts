@@ -1,20 +1,3 @@
-/**
- * promoConfig.js
- * 
- * Конфігурація новорічної промо-акції для сайту WebStart Studio.
- * 
- * Поля:
- * - isActive: чи активна акція
- * - startDate / endDate: терміни проведення
- * - title / dateRange / intro: загальні тексти акції
- * - offers: масив пропозицій з emoji, заголовком та описом
- * - gift: опис подарунку
- * - ctaText / ctaLink: текст та посилання кнопки заклику до дії
- * - popup: тексти для попапу
- * - seo: мета-дані для SEO
- */
-
-
 const promoConfig = {
     // Активність акції
     isActive: true,

@@ -1,11 +1,3 @@
-// Файл формує плоский масив для пошуку по всіх пунктах меню.
-// Використовуються три групи меню: servicesItems, additionalItems, aboutItems.
-// Функція flattenMenu проходить по кожному пункту та підпункту (submenu)
-// і додає їх до масиву SearchEntry з label та path.
-// Результат – searchIndex, який можна використовувати для автокомпліту або пошуку по сайту.
-
-
-
 import { servicesItems, additionalItems, aboutItems } from './menuData';
 
 interface MenuItem {

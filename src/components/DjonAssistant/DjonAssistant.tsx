@@ -1,17 +1,3 @@
-/**
- * DjonAssistant component
- * Інтерактивний чат-асистент для сайту WebStart Studio.
- *
- * Функціональність:
- * – відкриваний чат та промо-popup;
- * – збереження історії повідомлень у localStorage;
- * – базова обробка текстових запитів користувача;
- * – навігаційні кнопки для переходу до сервісів сайту;
- * – адаптація під мобільні пристрої.
- *
- * Асистент використовується як гід по сервісах, цінах та прикладах робіт.
- */
-
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

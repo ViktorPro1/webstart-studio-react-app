@@ -1,5 +1,3 @@
-// src/SEO/utils/robots-generator.ts
-// Локально оголошуємо інтерфейс PageSEO оскільки не можемо імпортувати
 interface PageSEO {
   path: string;
   title: string;

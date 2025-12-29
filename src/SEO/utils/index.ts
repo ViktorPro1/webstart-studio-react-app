@@ -1,6 +1,3 @@
-// src/SEO/utils/index.ts
-// Експорт всіх утиліт
-
 // Sitemap утиліти
 export {
   generateSitemapXML,

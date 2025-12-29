@@ -1,11 +1,3 @@
-/**
- * Footer component
- * Підвальний блок сайту з копірайтом, навігаційними посиланнями
- * та іконками соціальних мереж.
- * Підтримує багатомовність через i18n та адаптується до стану сайдбару.
- */
-
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';

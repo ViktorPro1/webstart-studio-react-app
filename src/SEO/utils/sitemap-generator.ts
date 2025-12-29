@@ -1,4 +1,3 @@
-// src/SEO/utils/sitemap-generator.ts
 import { SEO_CONFIG } from '../seoData';
 import type { PageSEO } from '../seoData'; // type-only import
 import { SITE_INFO } from '../../utils/constants';
