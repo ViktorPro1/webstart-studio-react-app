@@ -1,3 +1,19 @@
+/**
+ * UpdateNotification component
+ * 
+ * Відображає повідомлення про доступне оновлення веб-додатку.
+ * 
+ * Логіка:
+ * - Слухає кастомну подію 'swUpdate', яка сповіщає про новий Service Worker.
+ * - Показує сповіщення з кнопками:
+ *     - "Оновити зараз" – активує новий SW і перезавантажує сторінку.
+ *     - "Пізніше" – приховує повідомлення.
+ *
+ * Використовується для PWA або сайтів із Service Worker для оновлень.
+ */
+
+
+
 import React, { useEffect, useState, useCallback } from 'react';
 import './UpdateNotification.css';
 

@@ -1,4 +1,11 @@
-// src/SEO/DynamicMeta.tsx
+// Цей файл централізує SEO-настройки для всіх сторінок сайту.
+// Містить конфігурацію <title>, <meta description>, ключові слова, 
+// OpenGraph, schema.org та налаштування для sitemap.
+// Використовується компонентом <DynamicMeta /> для динамічного 
+// підставляння мета-тегів на сторінках.
+
+
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';

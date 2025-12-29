@@ -1,3 +1,10 @@
+/**
+ * Файл для роботи з медіа-запитами та визначення розмірів екрану.
+ * Містить:
+ * - Хук `useMediaQuery` для реактивного відстеження зміни медіа-запитів.
+ * - Функції `isMobile`, `isTablet`, `isDesktop` для перевірки ширини вікна.
+ */
+
 import React from "react";
 
 export const useMediaQuery = (query: string) => {

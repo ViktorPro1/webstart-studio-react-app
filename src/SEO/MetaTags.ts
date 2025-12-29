@@ -1,3 +1,6 @@
+// Визначає мета-теги для ключових сторінок сайту (title, description, keywords, og:image).
+// Експортує функцію getMetaTags для отримання тегів по ключу сторінки.
+
 type PageKey = 'home' | 'services' | 'portfolio' | 'about' | 'contact';
 
 interface MetaTags {

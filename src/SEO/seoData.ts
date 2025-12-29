@@ -1,4 +1,12 @@
-// src/seo/seoData.ts
+// Містить конфігурацію SEO для всіх сторінок сайту.
+// Кожна сторінка описується об'єктом PageSEO з:
+// - path: URL сторінки
+// - title, description, keywords: метатеги для SEO
+// - ogImage: зображення для Open Graph (опційно)
+// - priority, changefreq: для sitemap
+// - noindex: заборона індексації (опційно)
+// - schemaType: тип Schema.org для JSON-LD (опційно)
+
 export interface PageSEO {
   path: string;
   title: string;

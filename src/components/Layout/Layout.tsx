@@ -1,4 +1,21 @@
-import React, { ReactNode } from 'react';
+/**
+ * Layout component
+ * Базовий макет застосунку.
+ *
+ * Відповідає за структуру сторінки:
+ * – Sidebar (бічна навігація);
+ * – Header (верхня панель);
+ * – основний контент сторінки;
+ * – Footer (підвал).
+ *
+ * Використовується як обгортка для всіх сторінок сайту.
+ */
+
+
+
+import React from 'react';
+import type { ReactNode } from 'react';
+
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 import Footer from '../Footer/Footer';

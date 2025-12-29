@@ -1,6 +1,6 @@
 
 
-const CACHE_NAME = "webstart-cache-v54"; // Оновив версію для активації змін
+const CACHE_NAME = "webstart-cache-v55"; // Оновив версію для активації змін
 
 self.addEventListener("install", (event) => {
     console.log('[SW] Install');

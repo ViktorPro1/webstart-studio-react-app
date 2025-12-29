@@ -1,4 +1,8 @@
-// src/seo/SEO.tsx
+// Компонент SEO для React з використанням react-helmet-async.
+// Формує <title>, мета-теги (description, keywords), Open Graph, Twitter Card
+// та JSON-LD Schema.org розмітку на основі переданих пропсів або даних сторінки.
+
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { SITE_INFO } from '../utils/constants';

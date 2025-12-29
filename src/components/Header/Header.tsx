@@ -1,3 +1,18 @@
+/**
+ * Header component
+ * Головна панель навігації сайту.
+ *
+ * Функціональність:
+ * – керування сайдбаром (burger menu);
+ * – пошук по сайту через індекс;
+ * – перемикання мов (i18n);
+ * – перемикання світлої / темної теми;
+ * – швидкий перехід до контактів;
+ * – попап «Особистий кабінет».
+ */
+
+
+
 import React, { useContext, useState } from 'react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';

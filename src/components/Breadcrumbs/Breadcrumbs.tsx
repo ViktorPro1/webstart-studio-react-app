@@ -1,3 +1,11 @@
+/**
+ * Breadcrumbs component
+ * Відображає навігаційні «хлібні крихти» на основі поточного URL.
+ * Автоматично перетворює сегменти шляху в зрозумілі українські назви.
+ * Використовується для покращення UX та навігації по сайту.
+ */
+
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
