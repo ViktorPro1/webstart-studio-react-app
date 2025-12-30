@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Facebook, Send } from 'lucide-react';
 import './Footer.css';
 import './Footer.mobile.css';
+import ShareButton from '../UI/ShareButton';
 
 interface FooterProps {
   isSidebarOpen: boolean;
@@ -41,6 +42,7 @@ const Footer: React.FC<FooterProps> = ({ isSidebarOpen }) => {
         </div>
 
         <div className="social-links">
+          <ShareButton />
           <a
             href="https://t.me/+IleSiwteF2NlOWVi"
             target="_blank"
