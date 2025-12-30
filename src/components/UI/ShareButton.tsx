@@ -231,13 +231,13 @@ export default function ShareButton() {
       <style>
         {`@media (max-width: 768px) {
           .share-button {
-            width: 43px !important;
-            height: 43px !important;
+            width: 44px !important;
+            height: 44px !important;
           }
           
           .share-icon {
-            width: 21px !important;
-            height: 21px !important;
+            width: 22px !important;
+            height: 22px !important;
           }
         }
       `}</style>
