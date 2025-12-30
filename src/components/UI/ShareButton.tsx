@@ -24,7 +24,6 @@ export default function ShareButton() {
     url: currentUrl
   };
 
-  // 👇 ВИПРАВЛЕНО: закриваємо меню при кліку, а не в useEffect
   const handleClick = async () => {
     if (isOpen) {
       setIsOpen(false);
@@ -35,7 +34,7 @@ export default function ShareButton() {
       try {
         await navigator.share(shareData);
       } catch {
-        // Користувач закрив меню - нічого не робимо
+        // Користувач закрив меню
       }
     } else {
       setIsOpen(true);
@@ -77,6 +76,7 @@ export default function ShareButton() {
     <div style={{ position: 'relative', display: 'inline-block' }}>
       <button
         onClick={handleClick}
+        className="share-button"
         style={{
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           color: 'white',
@@ -91,11 +91,9 @@ export default function ShareButton() {
           transition: 'all 0.3s',
           padding: '0'
         }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
         aria-label="Поділитись сторінкою"
       >
-        <Share2 size={20} />
+        <Share2 size={20} className="share-icon" />
       </button>
 
       {isOpen && (
@@ -229,6 +227,20 @@ export default function ShareButton() {
           </div>
         </>
       )}
+      
+      <style>
+        {`@media (max-width: 768px) {
+          .share-button {
+            width: 43px !important;
+            height: 43px !important;
+          }
+          
+          .share-icon {
+            width: 21px !important;
+            height: 21px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
