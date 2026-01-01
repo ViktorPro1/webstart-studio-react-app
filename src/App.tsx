@@ -19,6 +19,8 @@ const CookieConsent = lazy(() => import('./components/CookieConsent'));
 const UpdateNotification = lazy(() => import('./components/UpdateNotification'));
 const ChristmasDecorations = lazy(() => import('./components/NewYear/ChristmasDecorations'));
 const DynamicMeta = lazy(() => import('./SEO/DynamicMeta'));
+const WelcomeModal = lazy(() => import('./components/UI/WelcomeModal'));
+const ExitIntentModal = lazy(() => import('./components/UI/ExitIntentModal'));
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -50,6 +52,8 @@ const Layout: React.FC<LayoutProps> = ({ children, isSidebarOpen, toggleSidebar 
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [showWelcome, setShowWelcome] = useState<boolean>(false);
+  
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   useEffect(() => {
@@ -60,11 +64,22 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const welcomeTimer = setTimeout(() => {
+      setShowWelcome(true);
+    }, 500);
+    return () => clearTimeout(welcomeTimer);
+  }, []);
+
   const showChristmasDecorations = (): boolean => {
     const now = new Date();
     const month = now.getMonth();
     const day = now.getDate();
     return (month === 11 && day >= 15) || (month === 0 && day <= 15);
+  };
+
+  const handleCloseWelcome = () => {
+    setShowWelcome(false);
   };
 
   return (
@@ -78,6 +93,14 @@ function App() {
       <AnalyticsTracker />
 
       <Suspense fallback={null}>
+        <WelcomeModal 
+          isOpen={showWelcome} 
+          onClose={handleCloseWelcome}
+          autoCloseDuration={4000}
+        />
+
+        <ExitIntentModal enabled={true} />
+
         {showChristmasDecorations() && <ChristmasDecorations />}
         <UpdateNotification />
 

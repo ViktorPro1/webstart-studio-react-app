@@ -1,0 +1,1 @@
+export { WelcomeModal, default } from './WelcomeModal';

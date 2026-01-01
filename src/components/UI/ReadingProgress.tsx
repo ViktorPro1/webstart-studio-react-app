@@ -25,7 +25,6 @@ export default function ReadingProgress() {
         left: 0,
         width: '100%',
         height: '4px',
-        backgroundColor: '#e5e7eb',
         zIndex: 99999
       }}
     >
