@@ -1,0 +1,1 @@
+export { SocialProofNotification, default } from './SocialProofNotification';

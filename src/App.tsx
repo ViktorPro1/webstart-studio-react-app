@@ -21,6 +21,8 @@ const ChristmasDecorations = lazy(() => import('./components/NewYear/ChristmasDe
 const DynamicMeta = lazy(() => import('./SEO/DynamicMeta'));
 const WelcomeModal = lazy(() => import('./components/UI/WelcomeModal'));
 const ExitIntentModal = lazy(() => import('./components/UI/ExitIntentModal'));
+const CopyProtectionModal = lazy(() => import('./components/UI/CopyProtectionModal'));
+const SocialProofNotification = lazy(() => import('./components/UI/SocialProofNotification'));
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -100,6 +102,10 @@ function App() {
         />
 
         <ExitIntentModal enabled={true} />
+
+        <CopyProtectionModal enabled={true} showShareButton={true} />
+
+        <SocialProofNotification enabled={true} />
 
         {showChristmasDecorations() && <ChristmasDecorations />}
         <UpdateNotification />

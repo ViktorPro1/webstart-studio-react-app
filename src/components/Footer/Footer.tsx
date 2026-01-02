@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ isSidebarOpen }) => {
       <div className="footer-content">
         <div className="footer-text">
           <p>
-            © 2025 Web<span className="highlight-footer">Start</span> Studio.
+            © 2026 Web<span className="highlight-footer">Start</span> Studio.
           </p>
           <p className="footer-subtitle">
             {t('footer.subtitle', {

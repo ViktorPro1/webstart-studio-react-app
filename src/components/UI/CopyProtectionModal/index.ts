@@ -1,0 +1,1 @@
+export { CopyProtectionModal, default } from './CopyProtectionModal';
