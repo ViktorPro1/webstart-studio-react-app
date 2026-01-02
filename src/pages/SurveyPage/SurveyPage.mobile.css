@@ -1,0 +1,204 @@
+/* Survey Page - Mobile Styles */
+
+@media (max-width: 768px) {
+    .surveyPage {
+        padding: 40px 16px;
+    }
+
+    .surveyPage__header {
+        margin-bottom: 32px;
+    }
+
+    .surveyPage__title {
+        font-size: 32px;
+    }
+
+    .surveyPage__subtitle {
+        font-size: 16px;
+    }
+
+    .surveyPage__form {
+        padding: 32px 24px;
+        border-radius: 20px;
+    }
+
+    .surveyPage__section {
+        margin-bottom: 32px;
+    }
+
+    .surveyPage__section-header {
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .surveyPage__section-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .surveyPage__section-title {
+        font-size: 18px;
+    }
+
+    .surveyPage__rating {
+        gap: 8px;
+    }
+
+    .surveyPage__star {
+        padding: 4px;
+    }
+
+    .surveyPage__star svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .surveyPage__rating-text {
+        font-size: 16px;
+    }
+
+    .surveyPage__textarea {
+        padding: 14px;
+        font-size: 15px;
+        min-height: 100px;
+        box-sizing: border-box;
+    }
+
+    .surveyPage__input {
+        padding: 12px 14px;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    .surveyPage__button {
+        padding: 16px 28px;
+        font-size: 16px;
+    }
+
+    .surveyPage__thankYou-modal {
+        padding: 32px 24px;
+    }
+
+    .surveyPage__thankYou-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+
+    .surveyPage__thankYou-icon svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .surveyPage__thankYou-title {
+        font-size: 26px;
+    }
+
+    .surveyPage__thankYou-text {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .surveyPage {
+        padding: 24px 12px;
+    }
+
+    .surveyPage__header {
+        margin-bottom: 24px;
+    }
+
+    .surveyPage__title {
+        font-size: 28px;
+    }
+
+    .surveyPage__subtitle {
+        font-size: 14px;
+    }
+
+    .surveyPage__form {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .surveyPage__section {
+        margin-bottom: 28px;
+    }
+
+    .surveyPage__section-title {
+        font-size: 16px;
+    }
+
+    .surveyPage__rating {
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .surveyPage__star svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .surveyPage__textarea {
+        padding: 12px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .surveyPage__input {
+        padding: 11px 12px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .surveyPage__button {
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    .surveyPage__thankYou-modal {
+        padding: 28px 20px;
+    }
+
+    .surveyPage__thankYou-title {
+        font-size: 24px;
+    }
+
+    .surveyPage__thankYou-text {
+        font-size: 14px;
+    }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .surveyPage {
+        padding: 20px 16px;
+    }
+
+    .surveyPage__header {
+        margin-bottom: 20px;
+    }
+
+    .surveyPage__title {
+        font-size: 24px;
+    }
+
+    .surveyPage__subtitle {
+        font-size: 14px;
+    }
+
+    .surveyPage__form {
+        padding: 20px;
+    }
+
+    .surveyPage__section {
+        margin-bottom: 20px;
+    }
+
+    .surveyPage__textarea {
+        min-height: 80px;
+        box-sizing: border-box;
+    }
+}

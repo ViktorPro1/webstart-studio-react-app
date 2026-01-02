@@ -1,0 +1,1 @@
+export { SurveyPage, default } from './SurveyPage';

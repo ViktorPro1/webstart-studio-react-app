@@ -34,6 +34,7 @@ const PcService = lazy(() => import('../pages/PcService/PcService'));
 const PolandTax = lazy(() => import('../pages/PolandTax/PolandTax'));
 const Innovations = lazy(() => import('../pages/Innovations/Innovations'));
 const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
+const SurveyPage = lazy(() => import('../pages/SurveyPage/SurveyPage'));
 
 /* ===== Client Portal ===== */
 const ClientPortal = lazy(() => import('../pages/ClientPortal/ClientPortal'));
@@ -128,6 +129,7 @@ const AppRoutes = () => (
             <Route path="/pc-service" element={<PcService />} />
             <Route path="/poland-tax" element={<PolandTax />} />
             <Route path="/innovations" element={<Innovations />} />
+            <Route path="/survey" element={<SurveyPage />} />
 
             {/* Client Portal */}
             <Route path="/client-portal" element={<ClientPortal />} />
