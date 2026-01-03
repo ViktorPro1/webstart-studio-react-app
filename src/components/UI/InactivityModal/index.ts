@@ -1,0 +1,1 @@
+export { InactivityModal, default } from './InactivityModal';

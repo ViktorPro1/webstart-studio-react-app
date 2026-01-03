@@ -23,6 +23,7 @@ const WelcomeModal = lazy(() => import('./components/UI/WelcomeModal'));
 const ExitIntentModal = lazy(() => import('./components/UI/ExitIntentModal'));
 const CopyProtectionModal = lazy(() => import('./components/UI/CopyProtectionModal'));
 const SocialProofNotification = lazy(() => import('./components/UI/SocialProofNotification'));
+const InactivityModal = lazy(() => import('./components/UI/InactivityModal'));
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -106,6 +107,8 @@ function App() {
         <CopyProtectionModal enabled={true} showShareButton={true} />
 
         <SocialProofNotification enabled={true} />
+
+        <InactivityModal enabled={true} inactivityTime={300000} />
 
         {showChristmasDecorations() && <ChristmasDecorations />}
         <UpdateNotification />

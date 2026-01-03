@@ -1,0 +1,221 @@
+/* Inactivity Modal - Desktop */
+.inactivityModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: inactivityModalFadeIn 0.3s ease;
+}
+
+@keyframes inactivityModalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.inactivityModal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.inactivityModal__content {
+    position: relative;
+    background: white;
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    animation: inactivityModalSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes inactivityModalSlideUp {
+    from {
+        transform: translateY(30px) scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Avatar */
+.inactivityModal__avatar {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 4px solid white;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+    animation: inactivityModalBounce 2s ease-in-out infinite;
+}
+
+@keyframes inactivityModalBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.inactivityModal__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Message */
+.inactivityModal__message {
+    margin-bottom: 32px;
+}
+
+.inactivityModal__title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #1f2937;
+    margin: 0 0 12px;
+}
+
+.inactivityModal__text {
+    font-size: 18px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.inactivityModal__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.inactivityModal__button {
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.inactivityModal__button--primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.inactivityModal__button--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.inactivityModal__button--secondary {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.inactivityModal__button--secondary:hover {
+    background: #e5e7eb;
+    color: #4b5563;
+}
+
+/* Hint */
+.inactivityModal__hint {
+    font-size: 14px;
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Care Emoji Notification */
+.inactivityModal__careEmoji {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 10001;
+    animation: inactivityModalCareEmojiSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes inactivityModalCareEmojiSlideIn {
+    from {
+        transform: translateX(120%) scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.inactivityModal__careEmoji-content {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 280px;
+    border-left: 4px solid #ec4899;
+}
+
+.inactivityModal__careEmoji-icon {
+    color: #ec4899;
+    animation: inactivityModalHeartbeat 1.5s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes inactivityModalHeartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+.inactivityModal__careEmoji-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.4;
+}

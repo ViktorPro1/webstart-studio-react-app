@@ -1,0 +1,146 @@
+/* Inactivity Modal - Mobile Styles */
+
+@media (max-width: 768px) {
+    .inactivityModal__content {
+        padding: 40px 28px;
+        max-width: 90%;
+    }
+
+    .inactivityModal__avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        border-width: 3px;
+    }
+
+    .inactivityModal__message {
+        margin-bottom: 28px;
+    }
+
+    .inactivityModal__title {
+        font-size: 24px;
+    }
+
+    .inactivityModal__text {
+        font-size: 16px;
+    }
+
+    .inactivityModal__buttons {
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .inactivityModal__button {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+
+    .inactivityModal__hint {
+        font-size: 13px;
+    }
+
+    .inactivityModal__careEmoji {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+    }
+
+    .inactivityModal__careEmoji-content {
+        padding: 16px 20px;
+        min-width: auto;
+        width: 100%;
+    }
+
+    .inactivityModal__careEmoji-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .inactivityModal__careEmoji-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inactivityModal__content {
+        padding: 32px 24px;
+    }
+
+    .inactivityModal__avatar {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 16px;
+    }
+
+    .inactivityModal__message {
+        margin-bottom: 24px;
+    }
+
+    .inactivityModal__title {
+        font-size: 22px;
+    }
+
+    .inactivityModal__text {
+        font-size: 15px;
+    }
+
+    .inactivityModal__button {
+        padding: 13px 24px;
+        font-size: 14px;
+    }
+
+    .inactivityModal__careEmoji {
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
+    }
+
+    .inactivityModal__careEmoji-content {
+        padding: 14px 18px;
+        gap: 12px;
+    }
+
+    .inactivityModal__careEmoji-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .inactivityModal__careEmoji-text {
+        font-size: 13px;
+    }
+}
+
+/* Landscape */
+@media (max-height: 600px) and (orientation: landscape) {
+    .inactivityModal__content {
+        padding: 24px 32px;
+    }
+
+    .inactivityModal__avatar {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 12px;
+    }
+
+    .inactivityModal__title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .inactivityModal__text {
+        font-size: 14px;
+    }
+
+    .inactivityModal__message {
+        margin-bottom: 20px;
+    }
+
+    .inactivityModal__buttons {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .inactivityModal__button {
+        padding: 12px 24px;
+    }
+}

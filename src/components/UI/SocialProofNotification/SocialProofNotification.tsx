@@ -111,10 +111,10 @@ export const SocialProofNotification = ({
     <div className="jondNotification">
       {/* Аватар Джона */}
       <div className="jondNotification__avatar">
-<img 
-  src="/nasha_komanda/assistant.webp"  
-  alt="Jond" 
-/>
+        <img 
+           src="/nasha_komanda/assistant.webp"  
+           alt="Jond" 
+          />
       </div>
 
       {/* Бульбашка повідомлення */}
