@@ -1,0 +1,168 @@
+/* Updates Page - Mobile Styles - Fixed Version */
+
+@media (max-width: 1024px) {
+    .updates-content {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        margin-top: 1rem;
+        /* Прибираємо сильний від'ємний марджин */
+    }
+
+    .updates-sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .updates-version-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .updates-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .updates-header {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .updates-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .updates-title-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .updates-subtitle {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .updates-content {
+        margin-top: 0.5rem;
+        padding: 0 0.75rem;
+        gap: 1.5rem;
+        overflow-x: hidden;
+        /* Захист від виїзду контенту за межі */
+    }
+
+    .updates-timeline {
+        gap: 2rem;
+    }
+
+    .updates-version-block {
+        border-radius: 12px;
+    }
+
+    .updates-version-header {
+        padding: 1.25rem;
+        flex-direction: column;
+        /* Вертикальне розташування для запобігання зсуву */
+        align-items: flex-start;
+    }
+
+    .updates-version-badge {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .updates-version-title {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        word-wrap: break-word;
+        /* Перенос довгих назв, як Vite Migration */
+    }
+
+    .updates-sections {
+        padding: 1.25rem;
+        gap: 1.5rem;
+    }
+
+    .updates-section {
+        padding-left: 1rem;
+        border-left-width: 3px;
+    }
+
+    .updates-item {
+        padding: 0.75rem;
+        transform: none !important;
+        /* Вимикаємо translateX, щоб не було зсуву за екран */
+    }
+
+    .updates-item-text {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    .updates-info-card {
+        padding: 1.25rem;
+    }
+
+    .updates-stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .updates-header {
+        padding: 2.5rem 0.75rem 1.5rem;
+    }
+
+    .updates-title {
+        font-size: 1.75rem;
+    }
+
+    .updates-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .updates-version-header {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    .updates-version-badge {
+        width: fit-content;
+        /* Не розтягуємо на всю ширину */
+        justify-content: center;
+    }
+
+    .updates-version-title {
+        font-size: 1.2rem;
+    }
+
+    .updates-section-header {
+        flex-wrap: nowrap;
+        /* Тримаємо іконку та назву в рядку */
+        align-items: center;
+    }
+
+    .updates-section-title {
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .updates-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Landscape & Small Adjustments */
+@media (max-width: 360px) {
+    .updates-version-title {
+        font-size: 1.1rem;
+    }
+
+    .updates-item-text {
+        font-size: 0.85rem;
+    }
+}

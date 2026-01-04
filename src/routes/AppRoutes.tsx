@@ -104,6 +104,9 @@ const Deutsch = lazy(() => import('../pages/international/Deutsch/Deutsch'));
 /* ===== Assistant ===== */
 const Assistant = lazy(() => import('../pages/Assistant/Assistant'));
 
+/* ===== Updates ===== */
+const Updates = lazy(() => import('../pages/Updates/Updates'));
+
 const AppRoutes = () => (
     <Suspense fallback={<Loader />}>
         <Routes>
@@ -214,6 +217,8 @@ const AppRoutes = () => (
             {/*Assistant*/}
             <Route path="/assistant" element={<Assistant />} />
 
+            {/* Updates */}
+            <Route path="/updates" element={<Updates />} />
 
             <Route path="*" element={<NotFound />} />
         </Routes>

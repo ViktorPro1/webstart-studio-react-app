@@ -1,0 +1,338 @@
+.updates-container {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+/* Header Section - БЕЗ ФОНУ, АЛЕ З БІЛИМ ТЕКСТОМ */
+.updates-header {
+    background: transparent;
+    /* Видалено фон */
+    box-shadow: none;
+    /* Видалено "квадрат" (тінь) */
+    padding: 4rem 2rem 2rem;
+    color: white;
+    /* ПОВЕРНУТО БІЛИЙ КОЛІР */
+    text-align: center;
+}
+
+.updates-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.updates-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: white;
+    /* ПОВЕРНУТО БІЛИЙ КОЛІР */
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.updates-title-icon {
+    width: 48px;
+    height: 48px;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.updates-subtitle {
+    font-size: 1.25rem;
+    color: white;
+    /* ПОВЕРНУТО БІЛИЙ КОЛІР */
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeIn 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Content Layout - ВИПРАВЛЕНО ВІДСТУП */
+.updates-content {
+    max-width: 1400px;
+    /* Змінено з -2rem на 1.5rem, щоб білі картки не налізали на білий текст */
+    margin: 1.5rem auto 0;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Timeline */
+.updates-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Version Block */
+.updates-version-block {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.updates-version-block:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+/* Version Header */
+.updates-version-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    border-bottom: 3px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.updates-version-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    flex-shrink: 0;
+}
+
+.updates-badge-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.updates-version-info {
+    flex: 1;
+}
+
+.updates-version-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.updates-version-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #718096;
+    font-size: 1rem;
+}
+
+/* Sections */
+.updates-sections {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.updates-section {
+    border-left: 4px solid transparent;
+    padding-left: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.updates-section:hover {
+    border-left-color: #667eea;
+}
+
+.updates-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.updates-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Category Colors */
+.updates-category-added {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+}
+
+.updates-category-changed {
+    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+    color: #0c5460;
+}
+
+.updates-category-removed {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+}
+
+.updates-category-fixed {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+}
+
+.updates-category-security {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+}
+
+.updates-category-technical {
+    background: linear-gradient(135deg, #e2e3e5 0%, #d6d8db 100%);
+    color: #383d41;
+}
+
+/* Items List */
+.updates-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.updates-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.updates-item:hover {
+    background: #e9ecef;
+    transform: translateX(8px);
+}
+
+.updates-item-text {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Sidebar & Cards */
+.updates-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.updates-info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.updates-info-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.updates-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.updates-stat {
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.updates-stat:hover {
+    background: #667eea;
+    color: white;
+}
+
+.updates-stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #667eea;
+}
+
+.updates-stat:hover .updates-stat-number {
+    color: white;
+}
+
+.updates-roadmap-item {
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}

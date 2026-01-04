@@ -4,7 +4,7 @@ import {
   Home, Palette, FileText, BarChart, BarChart2, XCircle, Settings, Users,
   Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
   Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
-  BookOpen, Monitor, Globe, Globe2, Book, Layout, ClipboardList , Star, Lightbulb, Youtube, Zap, Sparkles, CreditCard, Search,
+  BookOpen, Monitor, Globe, Globe2, Book, Layout, ClipboardList ,RefreshCw, Star, Lightbulb, Youtube, Zap, Sparkles, CreditCard, Search,
 } from 'lucide-react';
 
 import './Sidebar.css';
@@ -265,6 +265,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     }, 
     
     { id: 'survey', path: '/survey', icon: ClipboardList, label: 'Як ми тобі?' },
+    { id: 'updates', path: '/updates', icon: RefreshCw, label: 'Оновлення' },
   ];
 
   const renderMenuItem = (item: MenuItem) => (
