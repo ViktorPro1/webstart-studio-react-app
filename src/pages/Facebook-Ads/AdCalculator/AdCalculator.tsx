@@ -5,14 +5,14 @@ import './AdCalculator.css';
 import './AdCalculator.mobile.css';
 
 const AdCalculator = () => {
-    const [days, setDays] = useState<number>(5);
-    const [adBudget, setAdBudget] = useState<number>(100);
+    const [days, setDays] = useState<number | ''>(5);
+    const [adBudget, setAdBudget] = useState<number | ''>(100);
     const [myFee, setMyFee] = useState<string>('');
     const [total, setTotal] = useState<string>('');
 
     const calculate = () => {
-        const daysNum = parseInt(days.toString());
-        const adBudgetNum = parseFloat(adBudget.toString());
+        const daysNum = typeof days === 'number' ? days : parseInt(days.toString());
+        const adBudgetNum = typeof adBudget === 'number' ? adBudget : parseFloat(adBudget.toString());
 
         if (isNaN(daysNum) || isNaN(adBudgetNum) || daysNum < 1 || adBudgetNum < 0) {
             alert('Введіть коректні значення.');
@@ -32,13 +32,27 @@ const AdCalculator = () => {
     };
 
     const handleDaysChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const value = parseInt(e.target.value) || 5;
-        setDays(value);
+        const value = e.target.value;
+        if (value === '') {
+            setDays('');
+        } else {
+            const parsed = parseInt(value);
+            if (!isNaN(parsed) && parsed >= 0) {
+                setDays(parsed);
+            }
+        }
     };
 
     const handleBudgetChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const value = parseFloat(e.target.value) || 100;
-        setAdBudget(value);
+        const value = e.target.value;
+        if (value === '') {
+            setAdBudget('');
+        } else {
+            const parsed = parseFloat(value);
+            if (!isNaN(parsed) && parsed >= 0) {
+                setAdBudget(parsed);
+            }
+        }
     };
 
     return (
@@ -112,7 +126,7 @@ const AdCalculator = () => {
                             className="ad-calculator-button primary"
                             onClick={calculate}
                         >
-                            Розрахувати
+                            Розраховувати
                         </button>
                     </div>
                 </div>
