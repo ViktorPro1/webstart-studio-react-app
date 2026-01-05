@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Briefcase, Users } from 'lucide-react';
+import { FileText, Briefcase, Users, Search, Megaphone, Bot,Shield, Layout,Info, Code, TrendingUp } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import PromoPopup from '../Promo/PromoPopup';
 import './Home.css';
@@ -9,6 +9,12 @@ interface Service {
   icon: LucideIcon;
   title: string;
   description: string;
+}
+
+interface TickerItem {
+  icon: LucideIcon;
+  text: string;
+  color: string;
 }
 
 const Home: React.FC = () => {
@@ -30,11 +36,48 @@ const Home: React.FC = () => {
     }
   ];
 
+  const tickerItems: TickerItem[] = [
+    { icon: Info, text: 'Додаткові можливості', color: '#ce1313' },
+    { icon: Search, text: 'Google Ads • Інструменти контекстної реклами', color: '#4285f4' },
+    { icon: Megaphone, text: 'Facebook Ads • Таргетована реклама в соцмережах', color: '#1877f2' },
+    { icon: Bot, text: 'AI Сервіси • Автоматизація,написання промптів для ваших-процесів', color: '#667eea' },
+    { icon: Layout, text: 'Canva • Створення шаблонів та банерів', color: '#00c4cc' },
+    { icon: Shield, text: 'Кібербезпека • Перевіряємо твої посилання і файли', color: '#2e7d32' },
+    { icon: Code, text: 'Чистка ПК • Віддалена перевірка комп\'ютерів', color: '#f59e0b' },
+    { icon: TrendingUp, text: 'PIT - 11 • Повернення податків з Польщі', color: '#8b5cf6' },
+  ];
+
   return (
     <>
       <PromoPopup />
 
       <div className="home-page">
+        {/* Бігучий рядок */}
+        <div className="home-ticker-wrapper">
+          <div className="home-ticker-track">
+            {/* Перша копія */}
+            {tickerItems.map((item, index) => (
+              <div key={`first-${index}`} className="home-ticker-item">
+                <div className="home-ticker-icon" style={{ backgroundColor: item.color }}>
+                  <item.icon size={20} />
+                </div>
+                <span className="home-ticker-text">{item.text}</span>
+                <span className="home-ticker-separator">•</span>
+              </div>
+            ))}
+            {/* Друга копія для безшовної анімації */}
+            {tickerItems.map((item, index) => (
+              <div key={`second-${index}`} className="home-ticker-item">
+                <div className="home-ticker-icon" style={{ backgroundColor: item.color }}>
+                  <item.icon size={20} />
+                </div>
+                <span className="home-ticker-text">{item.text}</span>
+                <span className="home-ticker-separator">•</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <section className="hero-section">
           <div className="hero-content">
             <h1 className="hero-title">

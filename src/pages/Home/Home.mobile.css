@@ -1,6 +1,3 @@
-/* ===================== ADAPTIVE STYLES ===================== */
-
-/* Tablet: 1024px ↓ */
 @media (max-width: 1024px) {
     .hero-section {
         grid-template-columns: 1fr;
@@ -88,6 +85,59 @@
     .hero-content {
         padding: 0;
     }
+
+    /* Ticker Mobile Styles */
+    .home-ticker-wrapper {
+        padding: 0.75rem 0;
+        position: relative;
+        overflow: hidden;
+        /* тримаємо локально */
+    }
+
+    .home-ticker-track {
+        position: absolute;
+        /* ключовий фікс і на мобільному */
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: nowrap;
+        animation: tickerScroll 30s linear infinite;
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .home-ticker-item {
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+
+    .home-ticker-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .home-ticker-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .home-ticker-text {
+        font-size: 0.9rem;
+    }
+
+    .home-ticker-separator {
+        font-size: 1rem;
+        margin-left: 0.75rem;
+    }
+
+    .home-ticker-wrapper::before,
+    .home-ticker-wrapper::after {
+        width: 50px;
+    }
 }
 
 /* Small Mobile: 480px ↓ */
@@ -116,5 +166,56 @@
 
     .hero-image {
         max-height: 220px;
+    }
+
+    /* Ticker XS */
+    .home-ticker-wrapper {
+        padding: 0.6rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .home-ticker-track {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+        animation: tickerScroll 25s linear infinite;
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .home-ticker-item {
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    .home-ticker-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .home-ticker-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .home-ticker-text {
+        font-size: 0.85rem;
+    }
+
+    .home-ticker-separator {
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+    }
+
+    .home-ticker-wrapper::before,
+    .home-ticker-wrapper::after {
+        width: 30px;
     }
 }

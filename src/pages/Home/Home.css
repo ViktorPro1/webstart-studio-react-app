@@ -1,4 +1,3 @@
-/* ==================== HOME PAGE ==================== */
 .home-page {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #222;
@@ -188,4 +187,103 @@ section {
     font-size: 17px;
     color: #555;
     line-height: 1.6;
+}
+
+/* ==================== Ticker - Бігучий рядок ==================== */
+.home-ticker-wrapper {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Градієнтні краї для fade ефекту */
+.home-ticker-wrapper::before,
+.home-ticker-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.home-ticker-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #667eea, transparent);
+}
+
+.home-ticker-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #764ba2, transparent);
+}
+
+.home-ticker-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: nowrap;
+    animation: tickerScroll 50s linear infinite;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes tickerScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* Pause on hover */
+.home-ticker-wrapper:hover .home-ticker-track {
+    animation-play-state: paused;
+}
+
+.home-ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    white-space: nowrap;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.home-ticker-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.home-ticker-item:hover .home-ticker-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.home-ticker-text {
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+.home-ticker-separator {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    margin-left: 1rem;
 }
