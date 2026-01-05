@@ -88,15 +88,13 @@
 
     /* Ticker Mobile Styles */
     .home-ticker-wrapper {
-        padding: 0.75rem 0;
+        padding: 0.95rem 0;
         position: relative;
         overflow: hidden;
-        /* тримаємо локально */
     }
 
     .home-ticker-track {
         position: absolute;
-        /* ключовий фікс і на мобільному */
         top: 0;
         left: 0;
         height: 100%;
@@ -104,7 +102,7 @@
         align-items: center;
         gap: 2rem;
         flex-wrap: nowrap;
-        animation: tickerScroll 30s linear infinite;
+        animation: tickerScroll 40s linear infinite;
         will-change: transform;
         transform: translate3d(0, 0, 0);
     }
@@ -170,7 +168,7 @@
 
     /* Ticker XS */
     .home-ticker-wrapper {
-        padding: 0.6rem 0;
+        padding: 0.9rem 0;
         position: relative;
         overflow: hidden;
     }
@@ -184,7 +182,7 @@
         align-items: center;
         gap: 1.5rem;
         flex-wrap: nowrap;
-        animation: tickerScroll 25s linear infinite;
+        animation: tickerScroll 50s linear infinite;
         will-change: transform;
         transform: translate3d(0, 0, 0);
     }

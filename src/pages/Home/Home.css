@@ -229,7 +229,7 @@ section {
     align-items: center;
     gap: 3rem;
     flex-wrap: nowrap;
-    animation: tickerScroll 50s linear infinite;
+    animation: tickerScroll 70s linear infinite;
     will-change: transform;
     transform: translate3d(0, 0, 0);
 }
