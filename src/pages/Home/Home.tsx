@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Briefcase, Users, Search, Megaphone, Bot,Shield, Layout,Info, Code, TrendingUp } from 'lucide-react';
+import { FileText, Briefcase, Users, Search, PieChart, Megaphone, Bot,Shield, Layout,Info, Code, TrendingUp } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import PromoPopup from '../Promo/PromoPopup';
 import './Home.css';
@@ -45,6 +45,7 @@ const Home: React.FC = () => {
     { icon: Shield, text: 'Кібербезпека • Перевіряємо твої посилання і файли', color: '#2e7d32' },
     { icon: Code, text: 'Чистка ПК • Віддалена перевірка комп\'ютерів', color: '#f59e0b' },
     { icon: TrendingUp, text: 'PIT - 11 • Повернення податків з Польщі', color: '#8b5cf6' },
+    { icon: PieChart, text: 'Data Analytics • Аналітика даних та графіки', color: '#ff5722' },
   ];
 
   return (
