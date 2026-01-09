@@ -1,0 +1,274 @@
+.DataAnalytics {
+    width: 100%;
+    min-height: 100vh;
+    color: #1e293b;
+    border-radius: 20px;
+}
+
+/* Container */
+.DataAnalytics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.DataAnalytics-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    color: #1e293b;
+}
+
+.DataAnalytics-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #065f46 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.DataAnalytics-subtitle {
+    font-size: 1.25rem;
+    color: #1b1f25;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* About Section */
+.DataAnalytics-about {
+    padding: 4rem 0;
+}
+
+.DataAnalytics-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1e293b;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.DataAnalytics-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #a78bfa, #f472b6);
+    border-radius: 2px;
+}
+
+.DataAnalytics-about-content p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 1.5rem;
+}
+
+/* Journey Section */
+.DataAnalytics-journey {
+    padding: 4rem 0;
+    background: rgba(243, 232, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 32px;
+}
+
+.DataAnalytics-journey-content p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1.5rem;
+}
+
+/* Skills Section */
+.DataAnalytics-skills {
+    padding: 4rem 0;
+}
+
+.DataAnalytics-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.DataAnalytics-skill-card {
+    background: rgba(243, 232, 255, 0.8);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 28px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.DataAnalytics-skill-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(167, 139, 250, 0.6);
+    box-shadow: 0 12px 32px rgba(167, 139, 250, 0.25);
+}
+
+.DataAnalytics-skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #a78bfa;
+}
+
+.DataAnalytics-skill-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4c1d95;
+    margin-bottom: 0.75rem;
+}
+
+.DataAnalytics-skill-description {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* SQL Section */
+.DataAnalytics-sql {
+    padding: 4rem 0;
+    border-radius: 32px;
+}
+
+.DataAnalytics-section-description {
+    font-size: 1.125rem;
+    color: #202429;
+    margin-bottom: 2rem;
+}
+
+.DataAnalytics-sql-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.DataAnalytics-sql-example {
+    background: rgba(243, 232, 255, 0.9);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    border-radius: 28px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.DataAnalytics-sql-example:hover {
+    border-color: rgba(167, 139, 250, 0.7);
+    box-shadow: 0 12px 32px rgba(167, 139, 250, 0.25);
+}
+
+.DataAnalytics-example-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #9333ea;
+    margin-bottom: 0.75rem;
+}
+
+.DataAnalytics-example-description {
+    color: #374151;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.DataAnalytics-code-block {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+}
+
+.DataAnalytics-code-block code {
+    color: #1e293b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Tools Section */
+.DataAnalytics-tools {
+    padding: 4rem 0;
+}
+
+.DataAnalytics-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.DataAnalytics-tool-card {
+    background: linear-gradient(135deg, rgba(224, 231, 255, 0.6) 0%, rgba(243, 232, 255, 0.8) 100%);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 28px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.DataAnalytics-tool-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(167, 139, 250, 0.6);
+    box-shadow: 0 12px 32px rgba(167, 139, 250, 0.25);
+}
+
+.DataAnalytics-tool-header h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #9333ea;
+    margin-bottom: 1rem;
+}
+
+.DataAnalytics-tool-card p {
+    color: #374151;
+    line-height: 1.7;
+}
+
+/* CTA Section */
+.DataAnalytics-cta {
+    padding: 5rem 0;
+    text-align: center;
+    background: linear-gradient(180deg, transparent 0%, rgba(224, 231, 255, 0.4) 100%);
+    border-radius: 32px;
+}
+
+.DataAnalytics-cta h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.DataAnalytics-cta p {
+    font-size: 1.125rem;
+    color: #262d36;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

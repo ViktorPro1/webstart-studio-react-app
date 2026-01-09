@@ -1,0 +1,156 @@
+/* DataAnalytics.mobile.css — ВИПРАВЛЕНО ЗСУВ СТОРІНКИ */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .DataAnalytics-title {
+        font-size: 3rem;
+    }
+
+    .DataAnalytics-section-title {
+        font-size: 2rem;
+    }
+
+    .DataAnalytics-skills-grid,
+    .DataAnalytics-tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    .DataAnalytics-container,
+    .DataAnalytics-hero,
+    .DataAnalytics-about,
+    .DataAnalytics-journey,
+    .DataAnalytics-skills,
+    .DataAnalytics-sql,
+    .DataAnalytics-tools,
+    .DataAnalytics-cta {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .DataAnalytics-container {
+        padding: 0 1.25rem;
+    }
+
+    .DataAnalytics-hero {
+        padding: 4rem 0 3rem;
+        text-align: center;
+    }
+
+    .DataAnalytics-title {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+
+    .DataAnalytics-subtitle {
+        font-size: 1rem;
+    }
+
+    .DataAnalytics-section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .DataAnalytics-section-title::after {
+        max-width: 100%;
+    }
+
+    .DataAnalytics-about-content p,
+    .DataAnalytics-journey-content p {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .DataAnalytics-skills-grid,
+    .DataAnalytics-tools-grid,
+    .DataAnalytics-sql-examples {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .DataAnalytics-skill-card,
+    .DataAnalytics-tool-card,
+    .DataAnalytics-sql-example {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .DataAnalytics-section-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .DataAnalytics-example-title {
+        font-size: 1.25rem;
+    }
+
+    .DataAnalytics-example-description {
+        font-size: 0.95rem;
+    }
+
+    /* 🔧 Виправлення зсуву */
+    .DataAnalytics-code-block {
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .DataAnalytics-code-block code {
+        white-space: inherit;
+        line-height: 1.5;
+    }
+
+    .DataAnalytics-tool-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .DataAnalytics-tool-card p {
+        font-size: 0.95rem;
+    }
+
+    .DataAnalytics-cta h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .DataAnalytics-cta p {
+        font-size: 1rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+    .DataAnalytics-container {
+        padding: 0 1rem;
+    }
+
+    .DataAnalytics-title {
+        font-size: 1.875rem;
+    }
+
+    .DataAnalytics-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .DataAnalytics-code-block {
+        font-size: 0.75rem;
+        padding: 0.875rem;
+    }
+}

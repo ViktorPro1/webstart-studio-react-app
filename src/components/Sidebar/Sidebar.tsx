@@ -159,6 +159,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       ],
     },
 
+    { 
+      id: 'data-analytics', 
+      path: '/data-analytics', 
+      icon: BarChart,
+      label: 'Data Analytics' 
+    },
+
     {
       id: 'ai-services',
       icon: Bot,
