@@ -78,6 +78,7 @@ const pathToUkrainian: Record<string, string> = {
   innovations: 'Новації',
   survey: 'Як ми тобі?',
   updates: 'Оновлення платформи',
+  'data-analytics': 'Аналітика даних',
 };
 
 const Breadcrumbs: React.FC = () => {

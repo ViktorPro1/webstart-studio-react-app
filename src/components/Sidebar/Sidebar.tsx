@@ -4,7 +4,7 @@ import {
   Home, Palette, FileText, BarChart, BarChart2, XCircle, Settings, Users,
   Boxes, HelpCircle, Newspaper, Mail, ChevronDown, ChevronUp, Bot, Code,
   Code2, Award, FileDown, Megaphone, MessageCircle, Lock, Gift, GiftIcon,
-  BookOpen, Monitor, Globe, Globe2, Book, Layout, ClipboardList ,RefreshCw, Star, Lightbulb, Youtube, Zap, Sparkles, CreditCard, Search,
+  BookOpen, Monitor, Globe,AreaChart, Globe2, Book, Layout, ClipboardList ,RefreshCw, Star, Lightbulb, Youtube, Zap, Sparkles, CreditCard, Search,
 } from 'lucide-react';
 
 import './Sidebar.css';
@@ -162,7 +162,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     { 
       id: 'data-analytics', 
       path: '/data-analytics', 
-      icon: BarChart,
+      icon: AreaChart,
       label: 'Data Analytics' 
     },
 
