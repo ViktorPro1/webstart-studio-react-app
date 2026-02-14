@@ -87,9 +87,9 @@ const PromoPopup: React.FC = () => {
         className="promo-popup-circle"
         onClick={handleClose}
       >
-        <div className="promo-popup-content">
-          <div className="promo-popup-emoji">🎆</div>
-          <div className="promo-popup-title">Відкрий 2026</div>
+<div className="promo-popup-content">
+          <div className="promo-popup-emoji">💰</div>
+          <div className="promo-popup-title">Розлічення PIT-11</div>
           <div className="promo-popup-subtitle">{promoConfig.popup.subtitle}</div>
           <div className="promo-popup-validity">
             ⏰ {timeLeft.days} дн {timeLeft.hours} год
