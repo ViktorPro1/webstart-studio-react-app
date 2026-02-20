@@ -12,10 +12,10 @@ router.get('/', (req, res) => {
 
 // Додати заявку
 router.post('/', (req, res) => {
-    const { name, email, phone, message } = req.body;
+    const { name, email, phone, service, message } = req.body;
     db.query(
-        'INSERT INTO contacts (name, email, phone, message) VALUES (?, ?, ?, ?)',
-        [name, email, phone, message],
+        'INSERT INTO contacts (name, email, phone, service, message) VALUES (?, ?, ?, ?, ?)',
+        [name, email, phone, service, message],
         (err, result) => {
             if (err) return res.status(500).json({ error: err.message });
             res.json({ success: true, id: result.insertId });

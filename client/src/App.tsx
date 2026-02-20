@@ -12,6 +12,7 @@ import './i18n';
 import './App.css';
 import './components/Layout/Layout.css';
 import ReadingProgress from './components/UI/ReadingProgress';
+import { AuthProvider } from './contexts/AuthContext';
 
 // --- ЛІНИВИЙ ІМПОРТ ---
 const DjonAssistant = lazy(() => import('./components/DjonAssistant/DjonAssistant'));
@@ -86,6 +87,7 @@ function App() {
   };
 
   return (
+    <AuthProvider>   
     <ThemeProvider>
       <ReadingProgress />
 
@@ -121,7 +123,8 @@ function App() {
         <CookieConsent />
       </Suspense>
 
-    </ThemeProvider>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 
