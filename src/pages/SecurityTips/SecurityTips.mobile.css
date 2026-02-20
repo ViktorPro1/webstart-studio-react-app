@@ -82,4 +82,27 @@
         padding: 20px;
         margin-top: 20px;
     }
+
+    /* === ФІКС СКРОЛУ === */
+    .security-tips-warning-card,
+    .security-tips-example-card,
+    .security-tips-sign-card,
+    .security-tips-service-card,
+    .security-tips-faq-question {
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .security-tips-warning-section::before,
+    .security-tips-warning-section::after,
+    .security-tips-examples-section::before,
+    .security-tips-examples-section::after,
+    .security-tips-signs-section::before,
+    .security-tips-signs-section::after,
+    .security-tips-protection-section::before,
+    .security-tips-protection-section::after,
+    .security-tips-faq-section::before,
+    .security-tips-faq-section::after {
+        pointer-events: none;
+    }
 }

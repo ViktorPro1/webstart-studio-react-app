@@ -67,7 +67,6 @@
 }
 
 .mistake-item summary::after {
-    content: '▼';
     font-size: 1.2rem;
     color: #c41e3a;
     transition: transform 0.3s;

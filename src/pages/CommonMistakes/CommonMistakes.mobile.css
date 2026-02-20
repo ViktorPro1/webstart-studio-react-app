@@ -37,4 +37,14 @@
     .mistake-content {
         padding: 0 15px 20px 15px;
     }
+
+    /* Прибираємо стандартну стрілку браузера */
+    .mistake-item summary {
+        list-style: none;
+    }
+
+    /* Для Firefox та старих браузерів */
+    .mistake-item summary::-webkit-details-marker {
+        display: none;
+    }
 }

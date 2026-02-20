@@ -58,26 +58,31 @@
    ========================= */
 @media (max-width: 480px) {
 
-    /* === КОНТЕЙНЕР === */
+    /* === КОНТЕЙНЕР — ГОЛОВНИЙ ФІКС === */
     .landing-templates {
-        width: 80vw !important;
-        max-width: 480px;
-        margin: 0 auto;
-        padding: 0 0.5rem;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .landing-templates__wrapper {
-        padding: 0.5rem;
+        width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
     }
 
-    /* === HERO (ГОЛОВНИЙ ФІКС) === */
+    /* === HERO === */
     .landing-templates__hero {
         padding: 1.4rem 0;
     }
 
     .landing-templates__hero-content {
-        max-width: 80vw;
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .landing-templates__hero-badge {
@@ -93,7 +98,7 @@
 
     .landing-templates__hero-description {
         font-size: 0.95rem;
-        line-height: 1.0;
+        line-height: 1.5;
         margin-bottom: 0.8rem;
     }
 
@@ -103,6 +108,7 @@
         grid-template-columns: 1fr;
         gap: 0.75rem;
         margin-top: 1rem;
+        width: 100%;
     }
 
     .landing-templates__stat-item {
@@ -117,7 +123,52 @@
         font-size: 0.8rem;
     }
 
-    /* === КАРТКИ === */
+    /* === INFO СЕКЦІЯ (Одна мета, Швидка конверсія і т.д.) === */
+    .landing-templates__info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .landing-templates__info-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .landing-templates__info-card {
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 1.2rem 1.4rem;
+    }
+
+    .landing-templates__info-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* === КАРТКИ ШАБЛОНІВ === */
+    .landing-templates__grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .landing-templates__card {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .landing-templates__card-content {
+        padding: 1.2rem 1.4rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .landing-templates__card-name {
         font-size: 1.1rem;
         margin-bottom: 0.3rem;
@@ -137,20 +188,40 @@
         margin-bottom: 0.5rem;
     }
 
-    .landing-templates__card-content {
-        padding: 0.9rem;
+    /* === КАТЕГОРІЇ === */
+    .landing-templates__categories-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    /* === КНОПКИ === */
     .landing-templates__category-btn {
         padding: 0.35rem 0.75rem;
         font-size: 0.85rem;
     }
 
-    .landing-templates__card-link,
-    .landing-templates__cta-btn {
+    /* === КНОПКИ === */
+    .landing-templates__card-link {
+        width: 100%;
+        box-sizing: border-box;
         padding: 0.65rem 0.9rem;
         font-size: 0.95rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* === CTA СЕКЦІЯ === */
+    .landing-templates__cta {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .landing-templates__cta-content {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .landing-templates__cta-title {
@@ -163,11 +234,21 @@
         line-height: 1.5;
     }
 
+    .landing-templates__cta-btn {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.65rem 0.9rem;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
     .landing-templates__price-amount {
         font-size: 1.25rem;
     }
 
     .landing-templates__price-card {
-        padding: 0.9rem;
+        padding: 0.9rem 1.4rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 }

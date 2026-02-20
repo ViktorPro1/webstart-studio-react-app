@@ -9,9 +9,11 @@
     .about-section,
     .about-history-section,
     .about-team-section {
-        padding: 20px 15px;
+        padding: 24px 15px;
+        /* однаковий відступ скрізь */
+        margin: 0 0 24px 0;
+        /* однаковий відступ між секціями */
         max-width: 100%;
-        margin: 0 auto;
         box-sizing: border-box;
     }
 
@@ -23,7 +25,8 @@
     .about-team-member {
         width: 100%;
         max-width: 300px;
-        margin: 0 auto;
+        margin: 0 auto 20px;
+        /* відступ між картками команди */
         box-sizing: border-box;
     }
 
@@ -43,9 +46,10 @@
     .about-section,
     .about-history-section,
     .about-team-section {
-        padding: 15px 12px;
+        padding: 20px 12px;
+        /* пропорційно менше ніж 768px */
+        margin: 0 0 20px 0;
         max-width: 100%;
-        margin: 0 auto;
         box-sizing: border-box;
     }
 
@@ -57,7 +61,7 @@
         padding: 12px;
         width: 100%;
         max-width: 300px;
-        margin: 0 auto;
+        margin: 0 auto 16px;
         box-sizing: border-box;
     }
 
@@ -84,16 +88,17 @@
     .about-section,
     .about-history-section,
     .about-team-section {
-        padding: 12px 10px;
+        padding: 16px 10px;
+        /* пропорційно менше ніж 480px */
+        margin: 0 0 16px 0;
         max-width: 100%;
-        margin: 0 auto;
         box-sizing: border-box;
     }
 
     .about-team-member {
         width: 100%;
         max-width: 280px;
-        margin: 0 auto;
+        margin: 0 auto 12px;
         box-sizing: border-box;
     }
 
