@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import type { ChangeEvent, KeyboardEvent, FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X, Search, Moon, Check, User, LogOut } from "lucide-react";
@@ -40,6 +40,21 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
     password: "",
   });
 
+  // ─── Слухач події від Sidebar ───
+  useEffect(() => {
+    const handler = () => {
+      setShowPortalPopup(true);
+      setAuthMode("info");
+      setAuthError("");
+    };
+    window.addEventListener("openAuthModal", handler);
+    return () => window.removeEventListener("openAuthModal", handler);
+  }, []);
+
+  const closePopup = () => {
+    setShowPortalPopup(false);
+  };
+
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
@@ -60,19 +75,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
   const goToContact = () => navigate("/contact");
 
   const togglePortalPopup = () => {
-    setShowPortalPopup(!showPortalPopup);
+    const next = !showPortalPopup;
+    setShowPortalPopup(next);
     setAuthMode("info");
     setAuthError("");
-  };
-
-  const handleOrderProject = () => {
-    setShowPortalPopup(false);
-    navigate("/briefs");
-  };
-
-  const handleContactUs = () => {
-    setShowPortalPopup(false);
-    navigate("/contact");
   };
 
   const handleLogin = async (e: FormEvent) => {
@@ -81,7 +87,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
     setAuthError("");
     try {
       await login(loginData.email, loginData.password);
-      setShowPortalPopup(false);
+      closePopup();
       setLoginData({ email: "", password: "" });
     } catch (error: any) {
       setAuthError(error.response?.data?.error || "Помилка входу");
@@ -100,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
         registerData.email,
         registerData.password,
       );
-      setShowPortalPopup(false);
+      closePopup();
       setRegisterData({ name: "", email: "", password: "" });
     } catch (error: any) {
       setAuthError(error.response?.data?.error || "Помилка реєстрації");
@@ -111,7 +117,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
 
   const handleLogout = () => {
     logout();
-    setShowPortalPopup(false);
+    closePopup();
   };
 
   return (
@@ -204,14 +210,11 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
 
       {showPortalPopup && (
         <>
-          <div
-            className="portal-popup-overlay"
-            onClick={() => setShowPortalPopup(false)}
-          />
+          <div className="portal-popup-overlay" onClick={closePopup} />
           <div className="portal-popup">
             <button
               className="portal-popup-close"
-              onClick={() => setShowPortalPopup(false)}
+              onClick={closePopup}
               aria-label="Закрити"
             >
               <X size={20} />
@@ -252,13 +255,13 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                     </span>
                   </p>
 
-                  {/* Кнопка для адміна */}
+                  {/* ─── АДМІН ─── */}
                   {user.role === "admin" && (
                     <button
                       className="portal-popup-btn primary"
                       onClick={() => {
                         navigate("/admin");
-                        setShowPortalPopup(false);
+                        closePopup();
                       }}
                       style={{ marginBottom: 8 }}
                     >
@@ -266,18 +269,30 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                     </button>
                   )}
 
-                  {/* Кнопка для клієнта */}
+                  {/* ─── КЛІЄНТ ─── */}
                   {user.role === "client" && (
-                    <button
-                      className="portal-popup-btn primary"
-                      onClick={() => {
-                        navigate("/my-account");
-                        setShowPortalPopup(false);
-                      }}
-                      style={{ marginBottom: 8 }}
-                    >
-                      📋 Моє замовлення
-                    </button>
+                    <>
+                      <button
+                        className="portal-popup-btn primary"
+                        onClick={() => {
+                          navigate("/my-account");
+                          closePopup();
+                        }}
+                        style={{ marginBottom: 8 }}
+                      >
+                        📋 Моє замовлення
+                      </button>
+                      <button
+                        className="portal-popup-btn secondary"
+                        onClick={() => {
+                          navigate("/messages");
+                          closePopup();
+                        }}
+                        style={{ marginBottom: 8 }}
+                      >
+                        💬 Написати команді
+                      </button>
+                    </>
                   )}
 
                   <button
@@ -295,7 +310,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                 </>
               ) : (
                 <>
-                  {/* ─── INFO режим (оновлений) ─── */}
+                  {/* ─── INFO режим ─── */}
                   {authMode === "info" && (
                     <>
                       <h2 className="portal-popup-title">
@@ -349,7 +364,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           fontSize: 13,
                         }}
                         onClick={() => {
-                          setShowPortalPopup(false);
+                          closePopup();
                           navigate("/contact");
                         }}
                       >
@@ -358,7 +373,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                     </>
                   )}
 
-                  {/* LOGIN форма */}
+                  {/* ─── LOGIN форма ─── */}
                   {authMode === "login" && (
                     <>
                       <h2 className="portal-popup-title">🔑 Вхід</h2>
@@ -368,6 +383,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                             color: "#ef4444",
                             textAlign: "center",
                             marginBottom: 8,
+                            fontSize: 14,
                           }}
                         >
                           {authError}
@@ -415,6 +431,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           border: "none",
                           color: "#667eea",
                           cursor: "pointer",
+                          fontSize: 14,
                         }}
                         onClick={() => {
                           setAuthMode("info");
@@ -426,7 +443,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                     </>
                   )}
 
-                  {/* REGISTER форма */}
+                  {/* ─── REGISTER форма ─── */}
                   {authMode === "register" && (
                     <>
                       <h2 className="portal-popup-title">📝 Реєстрація</h2>
@@ -436,6 +453,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                             color: "#ef4444",
                             textAlign: "center",
                             marginBottom: 8,
+                            fontSize: 14,
                           }}
                         >
                           {authError}
@@ -470,7 +488,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                         />
                         <input
                           type="password"
-                          placeholder="Пароль"
+                          placeholder="Пароль (мінімум 6 символів)"
                           value={registerData.password}
                           onChange={(e) =>
                             setRegisterData({
@@ -496,6 +514,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           border: "none",
                           color: "#667eea",
                           cursor: "pointer",
+                          fontSize: 14,
                         }}
                         onClick={() => {
                           setAuthMode("info");

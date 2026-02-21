@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Home,
   Palette,
@@ -42,6 +42,7 @@ import {
   CreditCard,
   Search,
 } from "lucide-react";
+import { useAuth } from "../../contexts/AuthContext";
 
 import "./Sidebar.css";
 import "./Sidebar.mobile.css";
@@ -69,6 +70,9 @@ type DropdownState = Record<string, boolean>;
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user } = useAuth();
+
   const [openDropdowns, setOpenDropdowns] = useState<DropdownState>({});
 
   const toggleDropdown = (id: string) => {
@@ -79,6 +83,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     if (window.innerWidth <= 768) {
       toggleSidebar();
     }
+  };
+
+  // ─── Завжди переходить на /messages ───
+  // Сторінка сама показує вміст залежно від авторизації
+  const handleProtectedClick = () => {
+    navigate("/messages");
+    handleLinkClick();
   };
 
   const menuItems: MenuItem[] = [
@@ -180,26 +191,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       label: "Редагування проекту у VSCode",
     },
     { id: "bonus", path: "/bonus", icon: Gift, label: "Бонус" },
-
     {
       id: "interactiveQuiz",
       path: "/interactive-quiz",
       icon: Star,
       label: "Вікторина",
     },
-    {
-      id: "promo",
-      path: "/promo",
-      icon: Zap,
-      label: "Акція",
-    },
-    {
-      id: "pricing",
-      path: "/pricing",
-      icon: CreditCard,
-      label: "Пакети",
-    },
-
+    { id: "promo", path: "/promo", icon: Zap, label: "Акція" },
+    { id: "pricing", path: "/pricing", icon: CreditCard, label: "Пакети" },
     { id: "briefs", path: "/briefs", icon: FileDown, label: "Отримати проект" },
   ];
 
@@ -216,36 +215,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       icon: Search,
       label: "Реклама в Google",
       submenu: [
-        {
-          path: "/google-ads/learning",
-          label: "Навчання",
-          description: "Вивчайте Google Ads з нами",
-        },
-        {
-          path: "/google-ads/calculator",
-          label: "Калькулятор бюджету",
-          description: "Розрахуйте бюджет кампанії",
-        },
-        {
-          path: "/google-ads/comparison",
-          label: "Порівняння",
-          description: "Google Ads vs Facebook/Instagram",
-        },
-        {
-          path: "/google-ads/glossary",
-          label: "Глосарій",
-          description: "Всі терміни контекстної реклами",
-        },
-        {
-          path: "/google-ads/generator",
-          label: "Генератор",
-          description: "Створіть ефективні оголошення",
-        },
-        {
-          path: "/google-ads/keywords",
-          label: "Ключові слова",
-          description: "Підбір та аналіз",
-        },
+        { path: "/google-ads/learning", label: "Навчання" },
+        { path: "/google-ads/calculator", label: "Калькулятор бюджету" },
+        { path: "/google-ads/comparison", label: "Порівняння" },
+        { path: "/google-ads/glossary", label: "Глосарій" },
+        { path: "/google-ads/generator", label: "Генератор" },
+        { path: "/google-ads/keywords", label: "Ключові слова" },
       ],
     },
 
@@ -293,14 +268,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       icon: Layout,
       label: "Банери та Шаблони",
     },
-
     {
       id: "poland-tax",
       path: "/poland-tax",
       icon: FileText,
       label: "Повернення податків з Польщі",
     },
-
     {
       id: "pc-service",
       path: "/pc-service",
@@ -318,44 +291,27 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       label: "Відгуки",
     },
     { id: "skills", path: "/skills", icon: Code2, label: "Наші навички" },
-
     {
       id: "achievements",
       path: "/achievements",
       icon: Award,
       label: "Досягнення",
     },
-
     { id: "contact", path: "/contact", icon: Mail, label: "Контакти" },
-
-    {
-      id: "social",
-      path: "/social",
-      icon: Globe,
-      label: "Соцмережі",
-    },
-
+    { id: "social", path: "/social", icon: Globe, label: "Соцмережі" },
     {
       id: "certificate-gift",
       path: "/certificate-gift",
       icon: GiftIcon,
       label: "Сертифікат-сувенір",
     },
-
-    {
-      id: "assistant",
-      path: "/assistant",
-      icon: Bot,
-      label: "Гід Djon",
-    },
-
+    { id: "assistant", path: "/assistant", icon: Bot, label: "Гід Djon" },
     {
       id: "webstart-lab",
       path: "/webstart-lab",
       icon: Book,
       label: "WebStart LAB",
     },
-
     {
       id: "youtube",
       icon: Youtube,
@@ -383,7 +339,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       icon: Lightbulb,
       label: "Новації",
     },
-
     {
       id: "survey",
       path: "/survey",
@@ -453,16 +408,30 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           {menuItems.map(renderMenuItem)}
 
           <div className="menu-divider"></div>
-
           <div className="menu-section-title">Додаткові можливості</div>
 
           {additionalItems.map(renderMenuItem)}
 
           <div className="menu-divider"></div>
-
           <div className="menu-section-title">Платформа</div>
 
           {aboutItems.map(renderMenuItem)}
+
+          {/* ─── ОСОБИСТИЙ КАБІНЕТ ─── */}
+          <div className="menu-divider"></div>
+          <div className="menu-section-title">Особистий кабінет</div>
+
+          <div
+            className={`nav-item ${location.pathname === "/messages" ? "active" : ""}`}
+            onClick={handleProtectedClick}
+            style={{ cursor: "pointer" }}
+          >
+            <MessageCircle size={20} />
+            <span>💬 Чат з командою</span>
+            {!user && (
+              <Lock size={14} style={{ marginLeft: "auto", opacity: 0.4 }} />
+            )}
+          </div>
         </nav>
       </aside>
     </>

@@ -17,4 +17,29 @@ router.get('/my-orders', (req, res) => {
     );
 });
 
+// Отримати повідомлення
+router.get('/messages', (req, res) => {
+    db.query(
+        'SELECT * FROM messages WHERE user_id = ? ORDER BY created_at ASC',
+        [req.user.id],
+        (err, results) => {
+            if (err) return res.status(500).json({ error: err.message });
+            res.json(results);
+        }
+    );
+});
+
+// Відправити повідомлення
+router.post('/messages', (req, res) => {
+    const { text } = req.body;
+    db.query(
+        'INSERT INTO messages (user_id, sender, text) VALUES (?, "client", ?)',
+        [req.user.id, text],
+        (err, result) => {
+            if (err) return res.status(500).json({ error: err.message });
+            res.json({ success: true, id: result.insertId });
+        }
+    );
+});
+
 module.exports = router;

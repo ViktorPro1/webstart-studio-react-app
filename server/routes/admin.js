@@ -89,4 +89,30 @@ router.delete('/orders/:id', (req, res) => {
     });
 });
 
+// Всі повідомлення (для адміна)
+router.get('/messages', (req, res) => {
+    db.query(
+        `SELECT messages.*, users.name as user_name, users.email as user_email
+     FROM messages JOIN users ON messages.user_id = users.id
+     ORDER BY messages.created_at DESC`,
+        (err, results) => {
+            if (err) return res.status(500).json({ error: err.message });
+            res.json(results);
+        }
+    );
+});
+
+// Відповідь адміна конкретному клієнту
+router.post('/messages/:userId', (req, res) => {
+    const { text } = req.body;
+    db.query(
+        'INSERT INTO messages (user_id, sender, text) VALUES (?, "admin", ?)',
+        [req.params.userId, text],
+        (err, result) => {
+            if (err) return res.status(500).json({ error: err.message });
+            res.json({ success: true, id: result.insertId });
+        }
+    );
+});
+
 module.exports = router;
