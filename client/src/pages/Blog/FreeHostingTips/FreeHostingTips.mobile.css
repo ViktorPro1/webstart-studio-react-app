@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+    .FreeHostingTips-article {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .FreeHostingTips-h1 {
+        font-size: 1.6rem;
+    }
+
+    .FreeHostingTips-h2 {
+        font-size: 1.3rem;
+    }
+
+    .FreeHostingTips-p,
+    .FreeHostingTips-li {
+        font-size: 0.95rem;
+    }
+
+    .FreeHostingTips-services {
+        grid-template-columns: 1fr;
+    }
+
+    .FreeHostingTips-cta-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}

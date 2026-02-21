@@ -122,6 +122,9 @@ const PortfolioTips = lazy(
   () => import("../pages/Blog/PortfolioTips/PortfolioTips"),
 );
 const ResumeTips = lazy(() => import("../pages/Blog/ResumeTips/ResumeTips"));
+const FreeHostingTips = lazy(
+  () => import("../pages/Blog/FreeHostingTips/FreeHostingTips"),
+);
 
 /* ===== AI ===== */
 const AIAutomation = lazy(
@@ -214,6 +217,7 @@ const AppRoutes = () => (
       <Route path="/innovations" element={<Innovations />} />
       <Route path="/survey" element={<SurveyPage />} />
       <Route path="/data-analytics" element={<DataAnalytics />} />
+      <Route path="/blog/free-hosting-tips" element={<FreeHostingTips />} />
 
       {/* Client Portal */}
       <Route path="/client-portal" element={<ClientPortal />} />

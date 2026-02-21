@@ -1,0 +1,121 @@
+.FreeHostingTips {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background: #f0f8ff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.FreeHostingTips-header {
+    background: #2196F3;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.FreeHostingTips-h1 {
+    margin: 0;
+    font-size: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.FreeHostingTips-article {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.FreeHostingTips-h2 {
+    color: #333;
+    margin-top: 30px;
+    font-size: 1.6rem;
+}
+
+.FreeHostingTips-p {
+    margin-bottom: 18px;
+}
+
+.FreeHostingTips-ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.FreeHostingTips-li {
+    margin-bottom: 10px;
+}
+
+.FreeHostingTips-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.FreeHostingTips-service-card {
+    display: block;
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #0d47a1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.FreeHostingTips-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.FreeHostingTips-service-name {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+}
+
+.FreeHostingTips-service-desc {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.FreeHostingTips-cta {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.FreeHostingTips-cta-text {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.FreeHostingTips-cta-btn {
+    display: inline-block;
+    background: #ff9800;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.FreeHostingTips-cta-btn:hover {
+    background: #fb8c00;
+    transform: scale(1.05);
+}
+
+/* анімація */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
