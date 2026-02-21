@@ -82,4 +82,11 @@ router.get('/orders', (req, res) => {
     );
 });
 
+router.delete('/orders/:id', (req, res) => {
+    db.query('DELETE FROM orders WHERE id = ?', [req.params.id], (err) => {
+        if (err) return res.status(500).json({ error: err.message });
+        res.json({ success: true });
+    });
+});
+
 module.exports = router;
