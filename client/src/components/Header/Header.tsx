@@ -1,13 +1,13 @@
-import React, { useContext, useState } from 'react';
-import type { ChangeEvent, KeyboardEvent, FormEvent } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Menu, X, Search, Moon, Check, User, LogOut } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { ThemeContext } from '../../contexts/ThemeContext';
-import { useAuth } from '../../contexts/AuthContext';
-import { searchIndex } from '../../data/searchIndex';
-import './Header.css';
-import './Header.mobile.css';
+import React, { useContext, useState } from "react";
+import type { ChangeEvent, KeyboardEvent, FormEvent } from "react";
+import { useTranslation } from "react-i18next";
+import { Menu, X, Search, Moon, Check, User, LogOut } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { useAuth } from "../../contexts/AuthContext";
+import { searchIndex } from "../../data/searchIndex";
+import "./Header.css";
+import "./Header.mobile.css";
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -19,7 +19,7 @@ interface SearchItem {
   path: string;
 }
 
-type AuthMode = 'info' | 'login' | 'register';
+type AuthMode = "info" | "login" | "register";
 
 const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
   const { t, i18n } = useTranslation();
@@ -27,60 +27,64 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
   const { user, login, register, logout } = useAuth();
   const navigate = useNavigate();
 
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState<string>("");
   const [showPortalPopup, setShowPortalPopup] = useState<boolean>(false);
-  const [authMode, setAuthMode] = useState<AuthMode>('info');
-  const [authError, setAuthError] = useState<string>('');
+  const [authMode, setAuthMode] = useState<AuthMode>("info");
+  const [authError, setAuthError] = useState<string>("");
   const [authLoading, setAuthLoading] = useState<boolean>(false);
 
-  const [loginData, setLoginData] = useState({ email: '', password: '' });
-  const [registerData, setRegisterData] = useState({ name: '', email: '', password: '' });
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [registerData, setRegisterData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
 
   const handleSearch = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key !== 'Enter') return;
+    if (e.key !== "Enter") return;
     const value = query.trim().toLowerCase();
     if (!value) return;
     const result = (searchIndex as SearchItem[]).find((item) =>
-      item.label.toLowerCase().includes(value)
+      item.label.toLowerCase().includes(value),
     );
     if (result) {
       navigate(result.path);
-      setQuery('');
+      setQuery("");
     }
   };
 
-  const goToContact = () => navigate('/contact');
+  const goToContact = () => navigate("/contact");
 
   const togglePortalPopup = () => {
     setShowPortalPopup(!showPortalPopup);
-    setAuthMode('info');
-    setAuthError('');
+    setAuthMode("info");
+    setAuthError("");
   };
 
   const handleOrderProject = () => {
     setShowPortalPopup(false);
-    navigate('/briefs');
+    navigate("/briefs");
   };
 
   const handleContactUs = () => {
     setShowPortalPopup(false);
-    navigate('/contact');
+    navigate("/contact");
   };
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     setAuthLoading(true);
-    setAuthError('');
+    setAuthError("");
     try {
       await login(loginData.email, loginData.password);
       setShowPortalPopup(false);
-      setLoginData({ email: '', password: '' });
+      setLoginData({ email: "", password: "" });
     } catch (error: any) {
-      setAuthError(error.response?.data?.error || 'Помилка входу');
+      setAuthError(error.response?.data?.error || "Помилка входу");
     } finally {
       setAuthLoading(false);
     }
@@ -89,13 +93,17 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
   const handleRegister = async (e: FormEvent) => {
     e.preventDefault();
     setAuthLoading(true);
-    setAuthError('');
+    setAuthError("");
     try {
-      await register(registerData.name, registerData.email, registerData.password);
+      await register(
+        registerData.name,
+        registerData.email,
+        registerData.password,
+      );
       setShowPortalPopup(false);
-      setRegisterData({ name: '', email: '', password: '' });
+      setRegisterData({ name: "", email: "", password: "" });
     } catch (error: any) {
-      setAuthError(error.response?.data?.error || 'Помилка реєстрації');
+      setAuthError(error.response?.data?.error || "Помилка реєстрації");
     } finally {
       setAuthLoading(false);
     }
@@ -108,12 +116,14 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
 
   return (
     <>
-      <header className={`header ${isSidebarOpen ? '' : 'full-width'}`}>
+      <header className={`header ${isSidebarOpen ? "" : "full-width"}`}>
         <div className="header-left">
           <button
             className="burger-menu"
             onClick={toggleSidebar}
-            aria-label={isSidebarOpen ? t('header.closeMenu') : t('header.openMenu')}
+            aria-label={
+              isSidebarOpen ? t("header.closeMenu") : t("header.openMenu")
+            }
           >
             {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -124,9 +134,11 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
               type="search"
               id="header-search"
               name="search"
-              placeholder={t('header.search')}
+              placeholder={t("header.search")}
               value={query}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setQuery(e.target.value)
+              }
               onKeyDown={handleSearch}
             />
           </div>
@@ -137,9 +149,11 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
             id="language-selector"
             name="language"
             value={i18n.language}
-            onChange={(e: ChangeEvent<HTMLSelectElement>) => changeLanguage(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+              changeLanguage(e.target.value)
+            }
             className="language-selector"
-            aria-label={t('header.selectLanguage')}
+            aria-label={t("header.selectLanguage")}
           >
             <option value="ua">🇺🇦 UA</option>
             <option value="en">🇬🇧 EN</option>
@@ -150,29 +164,38 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
           </select>
 
           <button className="header-btn" onClick={goToContact}>
-            {t('header.orderProject')}
+            {t("header.orderProject")}
           </button>
 
           <button
             className="header-theme-btn"
             onClick={togglePortalPopup}
             aria-label="Особистий кабінет"
-            style={{ position: 'relative' }}
+            style={{ position: "relative" }}
           >
             <User size={20} />
             {user && (
-              <span style={{
-                position: 'absolute', top: -4, right: -4,
-                width: 10, height: 10, borderRadius: '50%',
-                background: '#22c55e', border: '2px solid white'
-              }} />
+              <span
+                style={{
+                  position: "absolute",
+                  top: -4,
+                  right: -4,
+                  width: 10,
+                  height: 10,
+                  borderRadius: "50%",
+                  background: "#22c55e",
+                  border: "2px solid white",
+                }}
+              />
             )}
           </button>
 
           <button
             className="header-theme-btn"
             onClick={toggleTheme}
-            aria-label={darkMode ? t('header.switchToLight') : t('header.switchToDark')}
+            aria-label={
+              darkMode ? t("header.switchToLight") : t("header.switchToDark")
+            }
           >
             {darkMode ? <Check size={20} /> : <Moon size={20} />}
           </button>
@@ -202,98 +225,165 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
               {/* ✅ ЗАЛОГІНЕНИЙ */}
               {user ? (
                 <>
-                  <h2 className="portal-popup-title">👋 Вітаємо, {user.name}!</h2>
-                  <p style={{ textAlign: 'center', color: '#666', marginBottom: 8 }}>
+                  <h2 className="portal-popup-title">
+                    👋 Вітаємо, {user.name}!
+                  </h2>
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#666",
+                      marginBottom: 8,
+                    }}
+                  >
                     {user.email}
                   </p>
-                  <p style={{ textAlign: 'center', marginBottom: 16 }}>
-                    <span style={{
-                      background: user.role === 'admin' ? '#7c3aed' : '#667eea',
-                      color: 'white', padding: '2px 10px', borderRadius: 12, fontSize: 12
-                    }}>
-                      {user.role === 'admin' ? '👑 Адмін' : '👤 Клієнт'}
+                  <p style={{ textAlign: "center", marginBottom: 16 }}>
+                    <span
+                      style={{
+                        background:
+                          user.role === "admin" ? "#7c3aed" : "#667eea",
+                        color: "white",
+                        padding: "2px 10px",
+                        borderRadius: 12,
+                        fontSize: 12,
+                      }}
+                    >
+                      {user.role === "admin" ? "👑 Адмін" : "👤 Клієнт"}
                     </span>
                   </p>
 
-                  {user.role === 'admin' && (
+                  {/* Кнопка для адміна */}
+                  {user.role === "admin" && (
                     <button
                       className="portal-popup-btn primary"
-                      onClick={() => { navigate('/admin'); setShowPortalPopup(false); }}
+                      onClick={() => {
+                        navigate("/admin");
+                        setShowPortalPopup(false);
+                      }}
                       style={{ marginBottom: 8 }}
                     >
                       👑 Адмін-панель
                     </button>
                   )}
 
+                  {/* Кнопка для клієнта */}
+                  {user.role === "client" && (
+                    <button
+                      className="portal-popup-btn primary"
+                      onClick={() => {
+                        navigate("/my-account");
+                        setShowPortalPopup(false);
+                      }}
+                      style={{ marginBottom: 8 }}
+                    >
+                      📋 Моє замовлення
+                    </button>
+                  )}
+
                   <button
                     className="portal-popup-btn secondary"
                     onClick={handleLogout}
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 8,
+                    }}
                   >
                     <LogOut size={16} /> Вийти
                   </button>
                 </>
               ) : (
                 <>
-                  {/* INFO режим */}
-                  {authMode === 'info' && (
+                  {/* ─── INFO режим (оновлений) ─── */}
+                  {authMode === "info" && (
                     <>
-                      <h2 className="portal-popup-title">🔐 Особистий кабінет</h2>
+                      <h2 className="portal-popup-title">
+                        🔐 Особистий кабінет
+                      </h2>
+
+                      <p
+                        style={{
+                          textAlign: "center",
+                          color: "#666",
+                          fontSize: 14,
+                          marginBottom: 16,
+                        }}
+                      >
+                        Увійди або зареєструйся щоб отримати доступ до свого
+                        проєкту
+                      </p>
 
                       <div className="portal-popup-section">
-                        <h3>Вже з нами?</h3>
-                        <p>Шукай посилання у своїх повідомленнях — ми надсилали!</p>
-                      </div>
-
-                      <div className="portal-popup-section">
-                        <h3>Тільки плануєш сайт?</h3>
-                        <p>Після оформлення ти зможеш:</p>
                         <ul className="portal-popup-features">
-                          <li>✅ Дивитись прогрес в реальному часі</li>
-                          <li>✅ Скачувати файли</li>
-                          <li>✅ Бачити всі етапи</li>
+                          <li>✅ Відстежувати статус свого проєкту</li>
+                          <li>✅ Завантажувати файли від нас</li>
+                          <li>✅ Спілкуватись напряму з командою</li>
+                          <li>✅ Бачити всі етапи роботи</li>
                         </ul>
                       </div>
 
                       <div className="portal-popup-buttons">
                         <button
                           className="portal-popup-btn primary"
-                          onClick={() => setAuthMode('login')}
+                          onClick={() => setAuthMode("login")}
                         >
                           🔑 Увійти
                         </button>
                         <button
                           className="portal-popup-btn secondary"
-                          onClick={() => setAuthMode('register')}
+                          onClick={() => setAuthMode("register")}
                         >
                           📝 Реєстрація
                         </button>
                       </div>
 
                       <button
-                        style={{ background: 'none', border: 'none', color: '#667eea', cursor: 'pointer', marginTop: 8, width: '100%' }}
-                        onClick={handleOrderProject}
+                        style={{
+                          background: "none",
+                          border: "none",
+                          color: "#667eea",
+                          cursor: "pointer",
+                          marginTop: 8,
+                          width: "100%",
+                          fontSize: 13,
+                        }}
+                        onClick={() => {
+                          setShowPortalPopup(false);
+                          navigate("/contact");
+                        }}
                       >
-                        🚀 Замовити проєкт
+                        💬 Є питання? Напишіть нам
                       </button>
                     </>
                   )}
 
                   {/* LOGIN форма */}
-                  {authMode === 'login' && (
+                  {authMode === "login" && (
                     <>
                       <h2 className="portal-popup-title">🔑 Вхід</h2>
                       {authError && (
-                        <p style={{ color: '#ef4444', textAlign: 'center', marginBottom: 8 }}>
+                        <p
+                          style={{
+                            color: "#ef4444",
+                            textAlign: "center",
+                            marginBottom: 8,
+                          }}
+                        >
                           {authError}
                         </p>
                       )}
-                      <form onSubmit={handleLogin} style={{ width: '100%' }}>
+                      <form onSubmit={handleLogin} style={{ width: "100%" }}>
                         <input
                           type="email"
                           placeholder="Email"
                           value={loginData.email}
-                          onChange={e => setLoginData({ ...loginData, email: e.target.value })}
+                          onChange={(e) =>
+                            setLoginData({
+                              ...loginData,
+                              email: e.target.value,
+                            })
+                          }
                           required
                           style={inputStyle}
                         />
@@ -301,7 +391,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           type="password"
                           placeholder="Пароль"
                           value={loginData.password}
-                          onChange={e => setLoginData({ ...loginData, password: e.target.value })}
+                          onChange={(e) =>
+                            setLoginData({
+                              ...loginData,
+                              password: e.target.value,
+                            })
+                          }
                           required
                           style={inputStyle}
                         />
@@ -309,14 +404,22 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           type="submit"
                           className="portal-popup-btn primary"
                           disabled={authLoading}
-                          style={{ width: '100%', marginBottom: 8 }}
+                          style={{ width: "100%", marginBottom: 8 }}
                         >
-                          {authLoading ? 'Входжу...' : '🔑 Увійти'}
+                          {authLoading ? "Входжу..." : "🔑 Увійти"}
                         </button>
                       </form>
                       <button
-                        style={{ background: 'none', border: 'none', color: '#667eea', cursor: 'pointer' }}
-                        onClick={() => { setAuthMode('info'); setAuthError(''); }}
+                        style={{
+                          background: "none",
+                          border: "none",
+                          color: "#667eea",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          setAuthMode("info");
+                          setAuthError("");
+                        }}
                       >
                         ← Назад
                       </button>
@@ -324,20 +427,31 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                   )}
 
                   {/* REGISTER форма */}
-                  {authMode === 'register' && (
+                  {authMode === "register" && (
                     <>
                       <h2 className="portal-popup-title">📝 Реєстрація</h2>
                       {authError && (
-                        <p style={{ color: '#ef4444', textAlign: 'center', marginBottom: 8 }}>
+                        <p
+                          style={{
+                            color: "#ef4444",
+                            textAlign: "center",
+                            marginBottom: 8,
+                          }}
+                        >
                           {authError}
                         </p>
                       )}
-                      <form onSubmit={handleRegister} style={{ width: '100%' }}>
+                      <form onSubmit={handleRegister} style={{ width: "100%" }}>
                         <input
                           type="text"
                           placeholder="Ваше ім'я"
                           value={registerData.name}
-                          onChange={e => setRegisterData({ ...registerData, name: e.target.value })}
+                          onChange={(e) =>
+                            setRegisterData({
+                              ...registerData,
+                              name: e.target.value,
+                            })
+                          }
                           required
                           style={inputStyle}
                         />
@@ -345,7 +459,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           type="email"
                           placeholder="Email"
                           value={registerData.email}
-                          onChange={e => setRegisterData({ ...registerData, email: e.target.value })}
+                          onChange={(e) =>
+                            setRegisterData({
+                              ...registerData,
+                              email: e.target.value,
+                            })
+                          }
                           required
                           style={inputStyle}
                         />
@@ -353,7 +472,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           type="password"
                           placeholder="Пароль"
                           value={registerData.password}
-                          onChange={e => setRegisterData({ ...registerData, password: e.target.value })}
+                          onChange={(e) =>
+                            setRegisterData({
+                              ...registerData,
+                              password: e.target.value,
+                            })
+                          }
                           required
                           style={inputStyle}
                         />
@@ -361,14 +485,22 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           type="submit"
                           className="portal-popup-btn primary"
                           disabled={authLoading}
-                          style={{ width: '100%', marginBottom: 8 }}
+                          style={{ width: "100%", marginBottom: 8 }}
                         >
-                          {authLoading ? 'Реєструю...' : '📝 Зареєструватись'}
+                          {authLoading ? "Реєструю..." : "📝 Зареєструватись"}
                         </button>
                       </form>
                       <button
-                        style={{ background: 'none', border: 'none', color: '#667eea', cursor: 'pointer' }}
-                        onClick={() => { setAuthMode('info'); setAuthError(''); }}
+                        style={{
+                          background: "none",
+                          border: "none",
+                          color: "#667eea",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          setAuthMode("info");
+                          setAuthError("");
+                        }}
                       >
                         ← Назад
                       </button>
@@ -385,14 +517,14 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
 };
 
 const inputStyle: React.CSSProperties = {
-  width: '100%',
-  padding: '10px 12px',
+  width: "100%",
+  padding: "10px 12px",
   marginBottom: 10,
-  border: '1px solid #e2e8f0',
+  border: "1px solid #e2e8f0",
   borderRadius: 8,
   fontSize: 14,
-  boxSizing: 'border-box',
-  outline: 'none',
+  boxSizing: "border-box",
+  outline: "none",
 };
 
 export default Header;
