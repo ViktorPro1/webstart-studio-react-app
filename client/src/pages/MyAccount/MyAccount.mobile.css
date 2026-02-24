@@ -1,0 +1,85 @@
+@media (max-width: 768px) {
+    .myaccount-container {
+        padding: 20px;
+    }
+
+    .myaccount-header {
+        padding: 24px;
+    }
+
+    .myaccount-header h1 {
+        font-size: 22px;
+    }
+
+    .myaccount-title {
+        font-size: 19px;
+        margin-bottom: 18px;
+    }
+
+    .order-card {
+        padding: 20px;
+    }
+
+    .order-header h3 {
+        font-size: 17px;
+    }
+
+    .step-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 12.5px;
+    }
+
+    .step-label {
+        font-size: 11px;
+    }
+
+    .btn-order,
+    .btn-download {
+        font-size: 13px;
+        padding: 11px 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .myaccount-container {
+        padding: 16px;
+    }
+
+    .myaccount-header {
+        padding: 20px;
+    }
+
+    .myaccount-header h1 {
+        font-size: 20px;
+    }
+
+    .myaccount-title {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .order-card {
+        padding: 16px;
+    }
+
+    .order-header h3 {
+        font-size: 16px;
+    }
+
+    .step-circle {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .step-label {
+        font-size: 10px;
+    }
+
+    .btn-order,
+    .btn-download {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+}

@@ -1,0 +1,126 @@
+/* ─── AdminPanelMobile.css ─── */
+
+/* Загальні налаштування для мобільних пристроїв */
+@media (max-width: 1024px) {
+
+    /* Статистика переходить у 2 колонки */
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    /* Контейнер */
+    .admin-container {
+        padding: 16px;
+    }
+
+    /* Статистика */
+    .admin-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* Таби */
+    .admin-tabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .admin-tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Карточки (заявки, замовлення, користувачі) */
+    .card {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .card-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        min-width: auto;
+        margin-top: 8px;
+    }
+
+    /* Кнопки */
+    .btn,
+    .btn-create {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    /* Форма створення/редагування */
+    .form-input {
+        width: 100%;
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    textarea.form-input {
+        font-size: 13px;
+    }
+
+    /* Списки замовлень */
+    .order-list {
+        gap: 12px;
+    }
+}
+
+/* ─── Для дуже маленьких екранів (мобільні телефони до 420px) ─── */
+@media (max-width: 420px) {
+
+    /* Контейнер */
+    .admin-container {
+        padding: 12px;
+    }
+
+    /* Таби */
+    .admin-tabs {
+        gap: 6px;
+    }
+
+    .admin-tab-btn {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+    /* Карточки (заявки, замовлення, користувачі) */
+    .card {
+        padding: 12px;
+    }
+
+    /* Поля форми та textarea */
+    .form-input {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    textarea.form-input {
+        font-size: 12px;
+    }
+
+    /* Кнопки */
+    .btn,
+    .btn-create {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+    /* Статистика */
+    .admin-stats {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    /* Списки замовлень */
+    .order-list {
+        gap: 8px;
+    }
+}

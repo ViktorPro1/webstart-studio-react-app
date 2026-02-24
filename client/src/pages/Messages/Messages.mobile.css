@@ -1,0 +1,31 @@
+@media (max-width: 768px) {
+    .messages-wrapper {
+        padding: 12px;
+        height: calc(100vh - 80px);
+    }
+
+    .messages-header {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .messages-body {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .message-bubble {
+        max-width: 85%;
+        font-size: 13px;
+    }
+
+    .message-input-wrapper {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .message-send-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}

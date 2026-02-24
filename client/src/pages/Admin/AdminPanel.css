@@ -1,0 +1,153 @@
+.admin-container {
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: system-ui;
+}
+
+.admin-container h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.admin-container p {
+    color: #0c0c0c;
+    margin-bottom: 24px;
+}
+
+/* Статистика */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.admin-stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--stat-color);
+}
+
+.admin-stat-card p:first-child {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.admin-stat-card p:last-child {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Таби */
+.admin-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.admin-tab-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.admin-tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.admin-tab-btn.inactive {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+/* Заявки та замовлення */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card-left {
+    flex: 1;
+}
+
+.card-left p {
+    margin: 0;
+}
+
+.card-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 160px;
+}
+
+/* Статуси замовлень */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Кнопки */
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-delete {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.btn-edit {
+    background: #e0e7ff;
+    color: #667eea;
+}
+
+.btn-create {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* Форми */
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    background: #f8fafc;
+}
+
+textarea.form-input {
+    resize: vertical;
+}
