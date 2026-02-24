@@ -422,22 +422,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           <div className="menu-section-title">Особистий кабінет</div>
 
           <div
-            className={`nav-item ${location.pathname === "/forum" ? "active" : ""}`}
+            className={`nav-item ${location.pathname === "/user-permissions" ? "active" : ""}`}
             onClick={() => {
-              if (!user) {
-                window.dispatchEvent(new Event("openAuthModal"));
-              } else {
-                navigate("/forum");
-                handleLinkClick();
-              }
+              navigate("/user-permissions");
+              handleLinkClick();
             }}
             style={{ cursor: "pointer" }}
           >
             <Users size={20} />
             <span>🗣 Форум користувачів</span>
-            {!user && (
-              <Lock size={14} style={{ marginLeft: "auto", opacity: 0.4 }} />
-            )}
           </div>
 
           <div

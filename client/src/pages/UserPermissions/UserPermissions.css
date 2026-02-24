@@ -1,0 +1,59 @@
+.permissions-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: system-ui, sans-serif;
+}
+
+.permissions-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.permissions-subtitle {
+    font-size: 16px;
+    text-align: center;
+    color: #222121;
+    margin-bottom: 32px;
+}
+
+.permissions-table-wrapper {
+    overflow-x: auto;
+}
+
+.permissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.permissions-table th,
+.permissions-table td {
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.permissions-table th {
+    background: #f1f5f9;
+    font-weight: 600;
+}
+
+.permissions-table td.allowed {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.permissions-table td.denied {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.permissions-table tr:last-child td {
+    border-bottom: none;
+}

@@ -60,6 +60,9 @@ const DataAnalytics = lazy(
 const ClientPortal = lazy(() => import("../pages/ClientPortal/ClientPortal"));
 const MyAccount = lazy(() => import("../pages/MyAccount/MyAccount"));
 const Messages = lazy(() => import("../pages/Messages/Messages"));
+const UserPermissions = lazy(
+  () => import("../pages/UserPermissions/UserPermissions"),
+);
 
 /* ===== Admin ===== */
 const AdminPanel = lazy(() => import("../pages/Admin/AdminPanel"));
@@ -224,6 +227,7 @@ const AppRoutes = () => (
       <Route path="/client-portal" element={<ClientPortal />} />
       <Route path="/my-account" element={<MyAccount />} />
       <Route path="/messages" element={<Messages />} />
+      <Route path="/user-permissions" element={<UserPermissions />} />
 
       {/* Admin Panel */}
       <Route
