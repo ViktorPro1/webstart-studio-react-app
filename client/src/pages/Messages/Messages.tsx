@@ -123,7 +123,9 @@ const Messages: React.FC = () => {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => {
+                window.dispatchEvent(new Event("openAuthModal"));
+              }}
               style={{
                 padding: "13px",
                 borderRadius: 10,
@@ -254,7 +256,7 @@ const Messages: React.FC = () => {
             <p style={{ fontSize: 40, marginBottom: 12 }}>👋</p>
             <p style={{ color: "#666", fontSize: 15 }}>Привіт, {user.name}!</p>
             <p style={{ color: "#aaa", fontSize: 14, marginTop: 4 }}>
-              Напиши своє перше повідомлення — ми відповімо якнайшвидше
+              Напиши своє перше повідомлення — ми відповімо як найшвидше
             </p>
           </div>
         ) : (
