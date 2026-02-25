@@ -1,0 +1,734 @@
+/* ─── Forum.css ─── */
+
+.forum-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    font-family: system-ui;
+}
+
+/* ─── Банер гостя ─── */
+.forum-guest-banner {
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border: 1px solid #667eea44;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.forum-guest-banner-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.forum-guest-banner-emoji {
+    font-size: 28px;
+}
+
+.forum-guest-banner-title {
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 2px;
+}
+
+.forum-guest-banner-sub {
+    font-size: 13px;
+    color: #666;
+}
+
+.forum-guest-banner-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ─── Заголовок списку ─── */
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.forum-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.forum-subtitle {
+    color: #2c2c2c;
+    font-size: 14px;
+}
+
+.forum-new-topic-btn {
+    padding: 11px 22px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.forum-new-topic-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.forum-new-topic-btn.cancel {
+    background: #f1f5f9;
+    color: #666;
+}
+
+/* ─── Форма нової теми ─── */
+.forum-new-topic-form {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #667eea;
+    margin-bottom: 20px;
+}
+
+.forum-new-topic-form h3 {
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1a1a2e;
+}
+
+/* ─── Стан завантаження / порожній ─── */
+.forum-loading {
+    text-align: center;
+    color: #aaa;
+    padding: 40px;
+}
+
+.forum-empty {
+    text-align: center;
+    padding: 60px;
+    color: #aaa;
+}
+
+.forum-empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+/* ─── Список тем ─── */
+.forum-topics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ─── Картка теми ─── */
+.forum-topic-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f0f0;
+    transition: box-shadow 0.2s;
+}
+
+.forum-topic-card:hover {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.12);
+}
+
+.forum-topic-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.forum-topic-card-content {
+    flex: 1;
+}
+
+/* ─── Автор ─── */
+.forum-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.forum-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.forum-avatar.large {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+}
+
+.forum-avatar.small {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+}
+
+.forum-author-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1a1a2e;
+}
+
+.forum-author-date {
+    font-size: 11px;
+    color: #aaa;
+}
+
+/* ─── Значок адміна ─── */
+.forum-admin-badge {
+    background: linear-gradient(135deg, #7c3aed, #764ba2);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 8px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.3px;
+}
+
+/* ─── Заголовок теми ─── */
+.forum-topic-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.forum-topic-title:hover {
+    color: #667eea;
+}
+
+.forum-topic-preview {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ─── Кнопки дій (редагувати/видалити) ─── */
+.forum-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn-edit {
+    background: #e0e7ff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-edit:hover {
+    background: #c7d2fe;
+}
+
+.btn-delete {
+    background: #fee2e2;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover {
+    background: #fecaca;
+}
+
+/* ─── Футер картки ─── */
+.forum-topic-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ─── Кнопка реакції ─── */
+.forum-react-btn {
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.forum-react-btn.reacted {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.forum-react-btn.not-reacted {
+    background: #f8f9ff;
+    color: #888;
+}
+
+.forum-react-btn.large {
+    padding: 7px 16px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.forum-react-btn.small {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+/* ─── Кнопка коментарів ─── */
+.forum-comments-btn {
+    background: #f8f9ff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #667eea;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.forum-read-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #667eea;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.forum-read-btn:hover {
+    opacity: 0.7;
+}
+
+/* ─── Форма редагування ─── */
+.forum-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.forum-edit-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-save {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    color: #666;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ─── Кнопка "Назад" ─── */
+.forum-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.forum-back-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* ─── Картка повної теми ─── */
+.forum-topic-detail {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    border-top: 4px solid #667eea;
+}
+
+.forum-topic-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.forum-topic-detail-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a2e;
+    flex: 1;
+}
+
+.forum-topic-body {
+    color: #444;
+    line-height: 1.8;
+    font-size: 15px;
+    white-space: pre-wrap;
+}
+
+.forum-topic-reaction {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ─── Коментарі ─── */
+.forum-comments-title {
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 14px;
+    color: #1a1a2e;
+}
+
+.forum-no-comments {
+    color: #aaa;
+    text-align: center;
+    padding: 20px 0 24px;
+    font-size: 14px;
+}
+
+.forum-comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.forum-comment-card {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.forum-comment-card.admin-comment {
+    border-left: 3px solid #7c3aed;
+}
+
+.forum-comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.forum-comment-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.forum-comment-name {
+    font-weight: 700;
+    font-size: 13px;
+    color: #1a1a2e;
+}
+
+.forum-comment-date {
+    font-size: 11px;
+    color: #aaa;
+    margin-left: 8px;
+}
+
+.forum-comment-text {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+
+/* ─── Форма коментаря ─── */
+.forum-comment-form {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+}
+
+.forum-comment-form-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #1a1a2e;
+}
+
+.forum-send-btn {
+    padding: 10px 22px;
+    border-radius: 9px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.forum-send-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.forum-send-btn.disabled {
+    background: #e2e8f0;
+    color: #aaa;
+    cursor: default;
+}
+
+.forum-publish-btn {
+    padding: 10px 24px;
+    border-radius: 9px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.forum-publish-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.forum-publish-btn.disabled {
+    background: #e2e8f0;
+    color: #aaa;
+    cursor: default;
+}
+
+/* ─── Блок для незалогінених (коментар) ─── */
+.forum-login-prompt {
+    background: #f8f9ff;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    border: 1px dashed #667eea44;
+}
+
+.forum-login-prompt p {
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.forum-login-prompt-btn {
+    padding: 10px 22px;
+    border-radius: 9px;
+    border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ─── Інпути ─── */
+.forum-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+    background: #f8fafc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-family: system-ui;
+    transition: border-color 0.2s;
+}
+
+.forum-input:focus {
+    border-color: #667eea;
+}
+
+.forum-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+    background: #f8fafc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-family: system-ui;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.forum-textarea:focus {
+    border-color: #667eea;
+}
+
+/* ─── Реакція рукостискання ─── */
+.forum-react-btn.handshake-reacted {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+.forum-comment-reactions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.forum-topic-reaction {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ─── Група реакцій ─── */
+.forum-reactions-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.forum-reactions-group.large {
+    gap: 10px;
+}
+
+/* ─── Кнопка реакції ─── */
+.forum-react-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background: #f1f5f9;
+    color: #666;
+}
+
+.forum-react-btn.small {
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+.forum-react-btn.large {
+    padding: 9px 18px;
+    font-size: 15px;
+}
+
+.forum-react-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+/* ─── Активні стани ─── */
+.forum-react-btn.reaction-heart.active {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.forum-react-btn.reaction-thumbsup.active {
+    background: #dbeafe;
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.forum-react-btn.reaction-handshake.active {
+    background: #d1fae5;
+    border-color: #22c55e;
+    color: #22c55e;
+}
+
+.reaction-emoji {
+    font-size: 1em;
+}
+
+.reaction-count {
+    font-size: 0.85em;
+    font-weight: 700;
+}
+
+/* ─── Підпис "Ваша реакція" ─── */
+.forum-reaction-label {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.forum-topic-reaction {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.forum-comment-reactions {
+    margin-top: 8px;
+}

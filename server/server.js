@@ -13,6 +13,7 @@ app.use('/api/contacts', require('./routes/contacts'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/client', require('./routes/client'));
+app.use('/api/forum', require('./routes/forum'));
 
 // Health check
 app.get('/api/health', (req, res) => {

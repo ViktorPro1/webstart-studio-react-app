@@ -430,7 +430,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             style={{ cursor: "pointer" }}
           >
             <Users size={20} />
-            <span>🗣 Форум користувачів</span>
+            <span>🗣 Форум платформи</span>
           </div>
 
           <div

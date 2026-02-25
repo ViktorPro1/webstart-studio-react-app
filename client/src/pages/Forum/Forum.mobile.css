@@ -1,0 +1,145 @@
+/* ─── Forum.mobile.css ─── */
+
+@media (max-width: 768px) {
+    .forum-wrapper {
+        padding: 16px 12px;
+    }
+
+    .forum-guest-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .forum-guest-banner-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .forum-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .forum-title {
+        font-size: 22px;
+    }
+
+    .forum-new-topic-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .forum-topic-card {
+        padding: 14px 14px;
+    }
+
+    .forum-topic-card-body {
+        flex-direction: column;
+    }
+
+    .forum-actions {
+        align-self: flex-end;
+    }
+
+    .forum-topic-footer {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .forum-read-btn {
+        margin-left: 0;
+        width: 100%;
+        text-align: right;
+    }
+
+    .forum-topic-detail {
+        padding: 16px;
+    }
+
+    .forum-topic-detail-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .forum-topic-detail-title {
+        font-size: 18px;
+    }
+
+    .forum-back-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .forum-comment-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .forum-comment-form {
+        padding: 12px;
+    }
+
+    .forum-send-btn,
+    .forum-publish-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .forum-login-prompt-btn {
+        width: 100%;
+    }
+
+    .forum-edit-actions {
+        flex-direction: column;
+    }
+
+    .btn-save,
+    .btn-cancel {
+        width: 100%;
+        text-align: center;
+    }
+
+    .forum-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .forum-avatar.large {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .forum-comments-title {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .forum-wrapper {
+        padding: 12px 8px;
+    }
+
+    .forum-title {
+        font-size: 20px;
+    }
+
+    .forum-topic-title {
+        font-size: 15px;
+    }
+
+    .forum-topic-detail-title {
+        font-size: 16px;
+    }
+
+    .forum-admin-badge {
+        font-size: 9px;
+        padding: 1px 5px;
+    }
+
+    .forum-react-btn {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
