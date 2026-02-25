@@ -57,7 +57,6 @@ const DataAnalytics = lazy(
 );
 
 /* ===== Client Portal ===== */
-const ClientPortal = lazy(() => import("../pages/ClientPortal/ClientPortal"));
 const MyAccount = lazy(() => import("../pages/MyAccount/MyAccount"));
 const Messages = lazy(() => import("../pages/Messages/Messages"));
 const Forum = lazy(() => import("../pages/Forum/Forum"));
@@ -222,7 +221,6 @@ const AppRoutes = () => (
       <Route path="/blog/free-hosting-tips" element={<FreeHostingTips />} />
 
       {/* Client Portal */}
-      <Route path="/client-portal" element={<ClientPortal />} />
       <Route path="/my-account" element={<MyAccount />} />
       <Route path="/messages" element={<Messages />} />
       <Route path="/user-permissions" element={<Forum />} />
