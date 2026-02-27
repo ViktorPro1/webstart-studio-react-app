@@ -1,7 +1,7 @@
 [build]
   base = "client"
   command = "npm run build"
-  publish = "client/dist"
+  publish = "dist"
 
 [build.environment]
   VITE_GA4_MEASUREMENT_ID = "G-XVSQYMRYWH"
