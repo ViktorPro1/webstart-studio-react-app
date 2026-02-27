@@ -38,6 +38,7 @@
         https://www.clarity.ms 
         https://scripts.clarity.ms;
       connect-src 'self' 
+        https://webstart-studio-react-app-production.up.railway.app
         https://www.google-analytics.com 
         https://cdn.clarity.ms 
         https://www.clarity.ms 
@@ -76,6 +77,7 @@
         https://www.clarity.ms 
         https://scripts.clarity.ms;
       connect-src 'self' 
+        https://webstart-studio-react-app-production.up.railway.app
         https://www.google-analytics.com 
         https://cdn.clarity.ms 
         https://www.clarity.ms 
