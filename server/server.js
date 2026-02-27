@@ -5,7 +5,14 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+        'http://localhost:5173',
+        'https://web-start-studio.netlify.app'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 // Routes
