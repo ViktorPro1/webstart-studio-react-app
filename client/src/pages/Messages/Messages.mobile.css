@@ -1,7 +1,14 @@
 @media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
     .messages-wrapper {
         padding: 12px;
         height: calc(100vh - 80px);
+        overflow-x: hidden;
     }
 
     .messages-header {
@@ -29,27 +36,29 @@
         font-size: 13px;
     }
 
-    /* ── Адмін розкладка ── */
     .admin-layout {
-        flex-direction: column !important;
-        overflow: visible !important;
-        gap: 8px !important;
+        flex-direction: column;
+        overflow: hidden;
+        gap: 8px;
+        width: 100%;
     }
 
     .admin-sidebar {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 100%;
+        max-width: 100vw;
         max-height: 200px;
-        flex-shrink: 1;
-        border-radius: 12px !important;
-        box-sizing: border-box !important;
+        border-radius: 12px;
+        padding: 8px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     .admin-chat {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
+        width: 100%;
+        flex: 1;
+        overflow: hidden;
     }
 }
 
@@ -88,5 +97,6 @@
 
     .admin-sidebar {
         max-height: 150px;
+        padding: 6px;
     }
 }

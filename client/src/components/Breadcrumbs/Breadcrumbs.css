@@ -3,9 +3,7 @@
     padding: 8px 16px;
     display: block;
     position: relative;
-    /* щоб бути у нормальному потоці */
     margin-top: 0;
-    /* якщо Header fixed, можна додати потрібний margin-top */
 }
 
 @media (min-width: 768px) {
@@ -48,18 +46,13 @@
 
     .Breadcrumbs-inner {
         flex-wrap: nowrap;
-        /* не переносити */
         overflow-x: auto;
-        /* горизонтальний скрол */
         white-space: nowrap;
-        /* текст в один ряд */
         scrollbar-width: none;
-        /* Firefox */
     }
 
     .Breadcrumbs-inner::-webkit-scrollbar {
         display: none;
-        /* Chrome */
     }
 
     .Breadcrumbs-link {
