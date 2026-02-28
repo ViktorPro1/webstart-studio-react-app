@@ -1,6 +1,13 @@
+const CACHE_NAME = "webstart-cache-v82";
 
+// ── URL які НЕ кешуємо ──
+const NEVER_CACHE = [
+    'railway.app',
+    '/api/',
+];
 
-const CACHE_NAME = "webstart-cache-v81"; // Оновив версію для активації змін
+const shouldSkipCache = (url) =>
+    NEVER_CACHE.some((pattern) => url.includes(pattern));
 
 self.addEventListener("install", (event) => {
     console.log('[SW] Install');
@@ -23,6 +30,12 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
     if (event.request.method !== 'GET') return;
 
+    // ── API запити — завжди мережа, без кешу ──
+    if (shouldSkipCache(event.request.url)) {
+        event.respondWith(fetch(event.request));
+        return;
+    }
+
     // Для HTML - завжди спочатку мережа
     const acceptHeader = event.request.headers.get('accept');
     if (acceptHeader && acceptHeader.includes('text/html')) {
@@ -35,7 +48,7 @@ self.addEventListener("fetch", (event) => {
                     });
                     return response;
                 })
-                .catch(() => caches.match(event.request)) // Тут catch вже був, це добре
+                .catch(() => caches.match(event.request))
         );
         return;
     }
@@ -51,7 +64,7 @@ self.addEventListener("fetch", (event) => {
                     });
                     return response;
                 })
-                .catch(() => caches.match(event.request)) // Додано для CSS
+                .catch(() => caches.match(event.request))
         );
         return;
     }
@@ -59,24 +72,19 @@ self.addEventListener("fetch", (event) => {
     // Для JS, зображень - спочатку кеш
     event.respondWith(
         caches.match(event.request).then((response) => {
-            if (response) {
-                return response;
-            }
+            if (response) return response;
 
             return fetch(event.request)
                 .then(response => {
                     if (!response || response.status !== 200 || response.type === 'error') {
                         return response;
                     }
-
                     const responseToCache = response.clone();
                     caches.open(CACHE_NAME).then(cache => {
                         cache.put(event.request, responseToCache);
                     });
-
                     return response;
                 })
-                /* ОСНОВНЕ ВИПРАВЛЕННЯ: додаємо цей catch, щоб прибрати "Uncaught TypeError" */
                 .catch(() => {
                     return new Response('Offline', { status: 408, statusText: 'Network failed' });
                 });
