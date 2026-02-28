@@ -8,11 +8,24 @@ router.use(authMiddleware);
 // Мої замовлення
 router.get('/my-orders', (req, res) => {
     db.query(
-        'SELECT * FROM orders WHERE client_id = ? ORDER BY created_at DESC',
+        'SELECT * FROM orders WHERE user_id = ? ORDER BY created_at DESC',
         [req.user.id],
         (err, results) => {
             if (err) return res.status(500).json({ error: err.message });
             res.json(results);
+        }
+    );
+});
+
+// Створити замовлення
+router.post('/orders', (req, res) => {
+    const { service, notes } = req.body;
+    db.query(
+        'INSERT INTO orders (user_id, title, status, notes) VALUES (?, ?, "new", ?)',
+        [req.user.id, service, notes || ''],
+        (err, result) => {
+            if (err) return res.status(500).json({ error: err.message });
+            res.json({ success: true, id: result.insertId });
         }
     );
 });

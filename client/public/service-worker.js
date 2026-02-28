@@ -1,4 +1,4 @@
-const CACHE_NAME = "webstart-cache-v82";
+const CACHE_NAME = "webstart-cache-v83";
 
 // ── URL які НЕ кешуємо ──
 const NEVER_CACHE = [

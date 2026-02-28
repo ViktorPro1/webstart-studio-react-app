@@ -233,18 +233,7 @@ const Messages: React.FC = () => {
 
         <div className="admin-layout">
           {/* ─── Список клієнтів ─── */}
-          <div
-            className="admin-sidebar"
-            style={{
-              background: "#f8f9ff",
-              borderRadius: 16,
-              overflow: "auto",
-              padding: 12,
-              display: "flex",
-              flexDirection: "column",
-              gap: 8,
-            }}
-          >
+          <div className="admin-sidebar">
             {loading ? (
               <p style={{ color: "#aaa", textAlign: "center", padding: 20 }}>
                 Завантаження...
@@ -309,15 +298,7 @@ const Messages: React.FC = () => {
           </div>
 
           {/* ─── Чат з клієнтом ─── */}
-          <div
-            className="admin-chat"
-            style={{
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-              minWidth: 0,
-            }}
-          >
+          <div className="admin-chat">
             {!selectedUserId ? (
               <div
                 style={{

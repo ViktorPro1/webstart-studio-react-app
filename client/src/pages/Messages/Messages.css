@@ -312,6 +312,9 @@
     flex-direction: column;
     gap: 8px;
     box-sizing: border-box;
+    background: #f8f9ff;
+    border-radius: 16px;
+    overflow: auto;
 }
 
 .admin-chat {

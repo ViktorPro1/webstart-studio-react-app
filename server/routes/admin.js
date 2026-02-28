@@ -43,12 +43,25 @@ router.delete('/contacts/:id', (req, res) => {
     });
 });
 
+// Всі замовлення
+router.get('/orders', (req, res) => {
+    db.query(
+        `SELECT orders.*, users.name as client_name, users.email as client_email 
+         FROM orders JOIN users ON orders.user_id = users.id 
+         ORDER BY orders.created_at DESC`,
+        (err, results) => {
+            if (err) return res.status(500).json({ error: err.message });
+            res.json(results);
+        }
+    );
+});
+
 // Створити замовлення для клієнта
 router.post('/orders', (req, res) => {
-    const { client_id, service, notes, file_url } = req.body;
+    const { user_id, title, notes, file_url } = req.body;
     db.query(
-        'INSERT INTO orders (client_id, service, notes, file_url) VALUES (?, ?, ?, ?)',
-        [client_id, service, notes, file_url],
+        'INSERT INTO orders (user_id, title, status, notes, file_url) VALUES (?, ?, "new", ?, ?)',
+        [user_id, title, notes || '', file_url || ''],
         (err, result) => {
             if (err) return res.status(500).json({ error: err.message });
             res.json({ success: true, id: result.insertId });
@@ -69,19 +82,7 @@ router.patch('/orders/:id', (req, res) => {
     );
 });
 
-// Всі замовлення
-router.get('/orders', (req, res) => {
-    db.query(
-        `SELECT orders.*, users.name as client_name, users.email as client_email 
-     FROM orders JOIN users ON orders.client_id = users.id 
-     ORDER BY orders.created_at DESC`,
-        (err, results) => {
-            if (err) return res.status(500).json({ error: err.message });
-            res.json(results);
-        }
-    );
-});
-
+// Видалити замовлення
 router.delete('/orders/:id', (req, res) => {
     db.query('DELETE FROM orders WHERE id = ?', [req.params.id], (err) => {
         if (err) return res.status(500).json({ error: err.message });
@@ -93,8 +94,8 @@ router.delete('/orders/:id', (req, res) => {
 router.get('/messages', (req, res) => {
     db.query(
         `SELECT messages.*, users.name as user_name, users.email as user_email
-     FROM messages JOIN users ON messages.user_id = users.id
-     ORDER BY messages.created_at DESC`,
+         FROM messages JOIN users ON messages.user_id = users.id
+         ORDER BY messages.created_at DESC`,
         (err, results) => {
             if (err) return res.status(500).json({ error: err.message });
             res.json(results);

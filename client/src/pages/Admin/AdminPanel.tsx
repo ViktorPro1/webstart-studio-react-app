@@ -24,10 +24,10 @@ interface User {
 
 interface Order {
   id: number;
-  client_id: number;
+  user_id: number;
   client_name: string;
   client_email: string;
-  service: string;
+  title: string;
   status: "new" | "in_progress" | "review" | "done";
   notes: string;
   file_url: string;
@@ -58,8 +58,8 @@ const AdminPanel: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [showOrderForm, setShowOrderForm] = useState(false);
   const [newOrder, setNewOrder] = useState({
-    client_id: "",
-    service: "",
+    user_id: "",
+    title: "",
     notes: "",
     file_url: "",
   });
@@ -73,19 +73,24 @@ const AdminPanel: React.FC = () => {
 
   const fetchAll = async () => {
     try {
-      const [c, u, o] = await Promise.all([
-        API.get("/admin/contacts"),
-        API.get("/admin/users"),
-        API.get("/admin/orders"),
-      ]);
+      const c = await API.get("/admin/contacts");
       setContacts(c.data);
+    } catch (e) {
+      console.error("contacts:", e);
+    }
+    try {
+      const u = await API.get("/admin/users");
       setUsers(u.data);
+    } catch (e) {
+      console.error("users:", e);
+    }
+    try {
+      const o = await API.get("/admin/orders");
       setOrders(o.data);
     } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
+      console.error("orders:", e);
     }
+    setLoading(false);
   };
 
   const updateContactStatus = async (id: number, status: string) => {
@@ -104,12 +109,12 @@ const AdminPanel: React.FC = () => {
   };
 
   const createOrder = async () => {
-    if (!newOrder.client_id || !newOrder.service) {
+    if (!newOrder.user_id || !newOrder.title) {
       alert("Вкажіть клієнта і послугу!");
       return;
     }
     await API.post("/admin/orders", newOrder);
-    setNewOrder({ client_id: "", service: "", notes: "", file_url: "" });
+    setNewOrder({ user_id: "", title: "", notes: "", file_url: "" });
     setShowOrderForm(false);
     fetchAll();
   };
@@ -224,20 +229,12 @@ const AdminPanel: React.FC = () => {
                       <p className="card-date">{formatDate(c.created_at)}</p>
                     </div>
                     <div className="card-actions">
-                      <label
-                        htmlFor={`contact-status-${c.id}`}
-                        className="sr-only"
-                      >
-                        Статус заявки
-                      </label>
                       <select
-                        id={`contact-status-${c.id}`}
                         value={c.status}
                         onChange={(e) =>
                           updateContactStatus(c.id, e.target.value)
                         }
                         className="form-input"
-                        name={`contact-status-${c.id}`}
                       >
                         <option value="new">🆕 Нова</option>
                         <option value="in_progress">⚙️ В роботі</option>
@@ -271,16 +268,11 @@ const AdminPanel: React.FC = () => {
                   <h3>📦 Нове замовлення</h3>
                   <div className="grid-2">
                     <div>
-                      <label htmlFor="new-order-client">Клієнт *</label>
+                      <label>Клієнт *</label>
                       <select
-                        id="new-order-client"
-                        name="client_id"
-                        value={newOrder.client_id}
+                        value={newOrder.user_id}
                         onChange={(e) =>
-                          setNewOrder({
-                            ...newOrder,
-                            client_id: e.target.value,
-                          })
+                          setNewOrder({ ...newOrder, user_id: e.target.value })
                         }
                         className="form-input"
                       >
@@ -293,13 +285,11 @@ const AdminPanel: React.FC = () => {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="new-order-service">Послуга *</label>
+                      <label>Послуга *</label>
                       <select
-                        id="new-order-service"
-                        name="service"
-                        value={newOrder.service}
+                        value={newOrder.title}
                         onChange={(e) =>
-                          setNewOrder({ ...newOrder, service: e.target.value })
+                          setNewOrder({ ...newOrder, title: e.target.value })
                         }
                         className="form-input"
                       >
@@ -318,12 +308,8 @@ const AdminPanel: React.FC = () => {
                     </div>
                   </div>
 
-                  <label htmlFor="new-order-notes">
-                    Повідомлення для клієнта
-                  </label>
+                  <label>Повідомлення для клієнта</label>
                   <textarea
-                    id="new-order-notes"
-                    name="notes"
                     value={newOrder.notes}
                     onChange={(e) =>
                       setNewOrder({ ...newOrder, notes: e.target.value })
@@ -333,10 +319,8 @@ const AdminPanel: React.FC = () => {
                     placeholder="Наприклад: Ваш проєкт прийнятий в роботу..."
                   />
 
-                  <label htmlFor="new-order-file">Посилання на файл</label>
+                  <label>Посилання на файл</label>
                   <input
-                    id="new-order-file"
-                    name="file_url"
                     type="url"
                     value={newOrder.file_url}
                     onChange={(e) =>
@@ -360,7 +344,6 @@ const AdminPanel: React.FC = () => {
                 </div>
               )}
 
-              {/* Список замовлень */}
               <div className="list-container">
                 {orders.length === 0 && (
                   <p className="empty-text">
@@ -375,7 +358,118 @@ const AdminPanel: React.FC = () => {
                       borderLeft: `4px solid ${statusColors[o.status]}`,
                     }}
                   >
-                    {/* Логіка редагування та відображення замовлення */}
+                    {editingOrder?.id === o.id ? (
+                      <div className="edit-form">
+                        <p className="card-title">
+                          {o.title} — {o.client_name}
+                        </p>
+                        <label>Статус</label>
+                        <select
+                          value={editingOrder.status}
+                          onChange={(e) =>
+                            setEditingOrder({
+                              ...editingOrder,
+                              status: e.target.value as Order["status"],
+                            })
+                          }
+                          className="form-input"
+                        >
+                          <option value="new">🆕 Нова</option>
+                          <option value="in_progress">⚙️ В роботі</option>
+                          <option value="review">👀 На перевірці</option>
+                          <option value="done">✅ Готово</option>
+                        </select>
+                        <label>Повідомлення клієнту</label>
+                        <textarea
+                          value={editingOrder.notes}
+                          onChange={(e) =>
+                            setEditingOrder({
+                              ...editingOrder,
+                              notes: e.target.value,
+                            })
+                          }
+                          className="form-input"
+                          rows={3}
+                        />
+                        <label>Посилання на файл</label>
+                        <input
+                          type="url"
+                          value={editingOrder.file_url}
+                          onChange={(e) =>
+                            setEditingOrder({
+                              ...editingOrder,
+                              file_url: e.target.value,
+                            })
+                          }
+                          className="form-input"
+                          placeholder="https://drive.google.com/..."
+                        />
+                        <div className="form-buttons">
+                          <button
+                            onClick={updateOrder}
+                            className="btn btn-save"
+                          >
+                            💾 Зберегти
+                          </button>
+                          <button
+                            onClick={() => setEditingOrder(null)}
+                            className="btn btn-cancel"
+                          >
+                            Скасувати
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="card-content">
+                        <div>
+                          <p className="card-title">
+                            {o.title} —{" "}
+                            <span className="highlight">{o.client_name}</span>
+                          </p>
+                          <p className="card-subtext">📧 {o.client_email}</p>
+                          {o.notes && <p className="card-text">💬 {o.notes}</p>}
+                          <p className="card-date">
+                            {formatDate(o.created_at)}
+                          </p>
+                          {o.file_url && (
+                            <a
+                              href={o.file_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="file-link"
+                            >
+                              📎 Файл
+                            </a>
+                          )}
+                        </div>
+                        <div className="card-actions">
+                          <span
+                            style={{
+                              background: statusColors[o.status],
+                              color: "white",
+                              padding: "4px 10px",
+                              borderRadius: 20,
+                              fontSize: 12,
+                              fontWeight: 600,
+                            }}
+                          >
+                            {orderStatusLabels[o.status]}
+                          </span>
+                          <button
+                            onClick={() => setEditingOrder(o)}
+                            className="btn btn-edit"
+                          >
+                            ✏️ Редагувати
+                          </button>
+                          <button
+                            onClick={() => deleteOrder(o.id)}
+                            className="btn btn-delete"
+                          >
+                            🗑 Видалити
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -385,6 +479,9 @@ const AdminPanel: React.FC = () => {
           {/* ─── КОРИСТУВАЧІ ─── */}
           {tab === "users" && (
             <div className="list-container">
+              {users.length === 0 && (
+                <p className="empty-text">Користувачів поки немає</p>
+              )}
               {users.map((u) => (
                 <div key={u.id} className="card user-card">
                   <div>
