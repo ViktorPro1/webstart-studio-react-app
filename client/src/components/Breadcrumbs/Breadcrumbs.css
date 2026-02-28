@@ -40,3 +40,33 @@
     color: #888;
     font-size: 14px;
 }
+
+@media (max-width: 420px) {
+    .Breadcrumbs {
+        padding: 6px 12px;
+    }
+
+    .Breadcrumbs-inner {
+        flex-wrap: nowrap;
+        /* не переносити */
+        overflow-x: auto;
+        /* горизонтальний скрол */
+        white-space: nowrap;
+        /* текст в один ряд */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .Breadcrumbs-inner::-webkit-scrollbar {
+        display: none;
+        /* Chrome */
+    }
+
+    .Breadcrumbs-link {
+        font-size: 13px;
+    }
+
+    .Breadcrumbs-crumb {
+        font-size: 13px;
+    }
+}
