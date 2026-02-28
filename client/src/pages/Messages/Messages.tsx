@@ -233,7 +233,18 @@ const Messages: React.FC = () => {
 
         <div className="admin-layout">
           {/* ─── Список клієнтів ─── */}
-          <div className="admin-sidebar">
+          <div
+            className="admin-sidebar"
+            style={{
+              background: "#f8f9ff",
+              borderRadius: 16,
+              overflow: "auto",
+              padding: 12,
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+            }}
+          >
             {loading ? (
               <p style={{ color: "#aaa", textAlign: "center", padding: 20 }}>
                 Завантаження...
@@ -298,26 +309,23 @@ const Messages: React.FC = () => {
           </div>
 
           {/* ─── Чат з клієнтом ─── */}
-          <div className="admin-chat">
+          <div
+            className="admin-chat"
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              minWidth: 0,
+            }}
+          >
             {!selectedUserId ? (
-              <div
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: "#f8f9ff",
-                  borderRadius: 16,
-                  color: "#aaa",
-                  fontSize: 15,
-                }}
-              >
+              <div className="admin-chat-empty">
                 👈 Оберіть клієнта зі списку
               </div>
             ) : (
               <>
                 {/* Повідомлення */}
-                <div className="messages-body" style={{ flex: 1 }}>
+                <div className="messages-body admin-messages-body">
                   {adminMessages.map((msg) => (
                     <div key={msg.id} className={`message-row ${msg.sender}`}>
                       {msg.sender === "admin" && (
