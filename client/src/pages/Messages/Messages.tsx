@@ -231,20 +231,11 @@ const Messages: React.FC = () => {
           </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flex: 1,
-            gap: 16,
-            overflow: "hidden",
-            padding: "0 0 16px",
-          }}
-        >
+        <div className="admin-layout">
           {/* ─── Список клієнтів ─── */}
           <div
+            className="admin-sidebar"
             style={{
-              width: 280,
-              flexShrink: 0,
               background: "#f8f9ff",
               borderRadius: 16,
               overflow: "auto",
@@ -319,6 +310,7 @@ const Messages: React.FC = () => {
 
           {/* ─── Чат з клієнтом ─── */}
           <div
+            className="admin-chat"
             style={{
               flex: 1,
               display: "flex",

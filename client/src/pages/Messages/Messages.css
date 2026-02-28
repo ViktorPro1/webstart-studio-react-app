@@ -292,3 +292,32 @@
     font-size: 12px;
     margin-top: 8px;
 }
+
+/* ================= ADMIN LAYOUT ================= */
+.admin-layout {
+    display: flex;
+    flex: 1;
+    gap: 16px;
+    overflow: hidden;
+    padding: 0 0 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.admin-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.admin-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    box-sizing: border-box;
+}

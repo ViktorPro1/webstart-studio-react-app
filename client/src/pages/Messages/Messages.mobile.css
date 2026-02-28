@@ -28,4 +28,65 @@
         padding: 8px 14px;
         font-size: 13px;
     }
+
+    /* ── Адмін розкладка ── */
+    .admin-layout {
+        flex-direction: column !important;
+        overflow: visible !important;
+        gap: 8px !important;
+    }
+
+    .admin-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 200px;
+        flex-shrink: 1;
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .admin-chat {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .messages-wrapper {
+        padding: 6px;
+        height: calc(100vh - 70px);
+    }
+
+    .messages-header {
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .messages-body {
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .message-bubble {
+        max-width: 90%;
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .message-input-wrapper {
+        padding: 8px;
+        border-radius: 8px;
+        gap: 6px;
+    }
+
+    .message-send-btn {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .admin-sidebar {
+        max-height: 150px;
+    }
 }
