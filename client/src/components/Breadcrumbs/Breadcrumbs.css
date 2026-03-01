@@ -1,15 +1,17 @@
 .Breadcrumbs {
     width: 100%;
+    max-width: 100%;
     padding: 8px 16px;
     display: block;
     position: relative;
     margin-top: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 @media (min-width: 768px) {
     .Breadcrumbs {
         display: none;
-        /* ховаємо на десктопі */
     }
 }
 
@@ -19,12 +21,22 @@
     gap: 4px;
     font-size: 14px;
     font-weight: 500;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    max-width: 100%;
+}
+
+.Breadcrumbs-inner::-webkit-scrollbar {
+    display: none;
 }
 
 .Breadcrumbs-link {
     color: #444;
     text-decoration: none;
     transition: color 0.2s;
+    flex-shrink: 0;
 }
 
 .Breadcrumbs-link:hover {
@@ -37,22 +49,12 @@
     gap: 4px;
     color: #888;
     font-size: 14px;
+    flex-shrink: 0;
 }
 
 @media (max-width: 420px) {
     .Breadcrumbs {
         padding: 6px 12px;
-    }
-
-    .Breadcrumbs-inner {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
-    }
-
-    .Breadcrumbs-inner::-webkit-scrollbar {
-        display: none;
     }
 
     .Breadcrumbs-link {

@@ -1,6 +1,5 @@
 /* ================= WRAPPER ================= */
-
-.messages-wrapper {
+.msg-wrapper {
     max-width: 760px;
     margin: 0 auto;
     padding: 24px;
@@ -8,11 +7,12 @@
     height: calc(100vh - 120px);
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* ================= HEADER ================= */
-
-.messages-header {
+.msg-header {
     background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 16px;
     padding: 20px 24px;
@@ -21,9 +21,10 @@
     align-items: center;
     gap: 16px;
     color: white;
+    box-sizing: border-box;
 }
 
-.messages-header-icon {
+.msg-header-icon {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -32,21 +33,22 @@
     align-items: center;
     justify-content: center;
     font-size: 22px;
+    flex-shrink: 0;
 }
 
-.messages-title {
+.msg-title {
     font-size: 18px;
     font-weight: 700;
     margin: 0 0 2px 0;
 }
 
-.messages-subtitle {
+.msg-subtitle {
     font-size: 13px;
     opacity: 0.85;
     margin: 0;
 }
 
-.messages-status {
+.msg-status {
     margin-left: auto;
     display: flex;
     align-items: center;
@@ -55,18 +57,19 @@
     opacity: 0.9;
 }
 
-.status-dot {
+.msg-status-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: #22c55e;
+    flex-shrink: 0;
 }
 
 /* ================= BODY ================= */
-
-.messages-body {
+.msg-body {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 16px;
     background: #f8f9ff;
     border-radius: 16px;
@@ -74,45 +77,46 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    box-sizing: border-box;
 }
 
-.messages-loading {
+.msg-loading {
     text-align: center;
     color: #aaa;
     padding: 40px;
 }
 
-.messages-empty {
+.msg-empty {
     text-align: center;
     padding: 40px;
 }
 
-.messages-empty-icon {
+.msg-empty-icon {
     font-size: 40px;
     margin-bottom: 12px;
 }
 
-.messages-empty-sub {
+.msg-empty-sub {
     color: #aaa;
     font-size: 14px;
     margin-top: 4px;
 }
 
 /* ================= MESSAGE ================= */
-
-.message-row {
+.msg-row {
     display: flex;
+    max-width: 100%;
 }
 
-.message-row.client {
+.msg-row.client {
     justify-content: flex-end;
 }
 
-.message-row.admin {
+.msg-row.admin {
     justify-content: flex-start;
 }
 
-.admin-avatar {
+.msg-avatar {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -125,51 +129,51 @@
     flex-shrink: 0;
 }
 
-.admin-label {
+.msg-sender-label {
     font-size: 11px;
     color: #667eea;
     font-weight: 600;
     margin-bottom: 3px;
 }
 
-.message-bubble {
+.msg-bubble {
     padding: 10px 14px;
     font-size: 14px;
     line-height: 1.5;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     max-width: 70%;
     word-wrap: break-word;
+    word-break: break-word;
 }
 
-.message-bubble.client {
+.msg-bubble.client {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     border-radius: 16px 16px 4px 16px;
 }
 
-.message-bubble.admin {
+.msg-bubble.admin {
     background: white;
     color: #333;
     border-radius: 16px 16px 16px 4px;
 }
 
-.message-time {
+.msg-time {
     font-size: 11px;
     color: #aaa;
     margin-top: 4px;
 }
 
-.time-right {
+.msg-time.right {
     text-align: right;
 }
 
-.time-left {
+.msg-time.left {
     text-align: left;
 }
 
 /* ================= INPUT ================= */
-
-.message-input-wrapper {
+.msg-input-wrapper {
     display: flex;
     gap: 10px;
     align-items: flex-end;
@@ -177,9 +181,10 @@
     border-radius: 16px;
     padding: 12px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
-.message-textarea {
+.msg-textarea {
     flex: 1;
     border: none;
     outline: none;
@@ -188,83 +193,92 @@
     font-family: system-ui;
     line-height: 1.5;
     background: transparent;
+    min-width: 0;
 }
 
-.message-send-btn {
+.msg-send-btn {
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
     font-weight: 700;
     font-size: 14px;
     transition: 0.2s;
+    flex-shrink: 0;
 }
 
-.message-send-btn.active {
+.msg-send-btn.active {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     cursor: pointer;
 }
 
-.message-send-btn.disabled {
+.msg-send-btn.disabled {
     background: #e2e8f0;
     color: #aaa;
     cursor: default;
 }
 
-/* ================= LOCKED (НЕ ЗАЛОГІНЕНИЙ) ================= */
+.msg-hint {
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 8px;
+}
 
-.messages-locked-wrapper {
+/* ================= LOCKED ================= */
+.msg-locked-wrapper {
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: system-ui;
     padding: 24px;
+    box-sizing: border-box;
 }
 
-.messages-locked-card {
+.msg-locked-card {
     background: white;
     border-radius: 20px;
     padding: 48px 40px;
     text-align: center;
     max-width: 440px;
+    width: 100%;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
-.messages-locked-icon {
+.msg-locked-icon {
     font-size: 64px;
     margin-bottom: 16px;
 }
 
-.messages-locked-title {
+.msg-locked-title {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 12px;
     color: #1a1a2e;
 }
 
-.messages-locked-text {
+.msg-locked-text {
     color: #666;
     font-size: 15px;
     line-height: 1.6;
     margin-bottom: 28px;
 }
 
-.messages-locked-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.messages-locked-note {
+.msg-locked-note {
     color: #aaa;
     font-size: 13px;
     margin-top: 20px;
 }
 
-/* ================= BUTTONS ================= */
+.msg-locked-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-.btn-primary {
+.msg-btn-primary {
     padding: 13px;
     border-radius: 10px;
     border: none;
@@ -273,9 +287,10 @@
     font-weight: 700;
     cursor: pointer;
     font-size: 15px;
+    width: 100%;
 }
 
-.btn-outline {
+.msg-btn-outline {
     padding: 13px;
     border-radius: 10px;
     border: 2px solid #667eea;
@@ -284,17 +299,11 @@
     font-weight: 600;
     cursor: pointer;
     font-size: 15px;
-}
-
-.messages-hint {
-    text-align: center;
-    color: #aaa;
-    font-size: 12px;
-    margin-top: 8px;
+    width: 100%;
 }
 
 /* ================= ADMIN LAYOUT ================= */
-.admin-layout {
+.msg-admin-layout {
     display: flex;
     flex: 1;
     gap: 16px;
@@ -302,28 +311,36 @@
     padding: 0 0 16px;
     box-sizing: border-box;
     width: 100%;
+    min-width: 0;
 }
 
-.admin-sidebar {
+.msg-admin-sidebar {
     width: 280px;
+    min-width: 280px;
+    max-width: 280px;
     flex-shrink: 0;
     padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     box-sizing: border-box;
+    background: #f8f9ff;
+    border-radius: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.admin-chat {
+.msg-admin-chat {
     flex: 1;
     display: flex;
     flex-direction: column;
     min-width: 0;
+    max-width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* ── Адмін: пустий стан чату ── */
-.admin-chat-empty {
+.msg-admin-empty {
     flex: 1;
     display: flex;
     align-items: center;
@@ -335,7 +352,61 @@
     min-height: 200px;
 }
 
-/* ── Адмін: тіло повідомлень ── */
-.admin-messages-body {
-    flex: 1;
+/* ================= ADMIN THREAD ITEM ================= */
+.msg-thread-item {
+    padding: 12px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.msg-thread-item.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.msg-thread-item.inactive {
+    background: white;
+    color: #333;
+}
+
+.msg-thread-name {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.msg-thread-email {
+    font-size: 12px;
+    margin-bottom: 4px;
+    opacity: 0.6;
+}
+
+.msg-thread-item.active .msg-thread-email {
+    opacity: 0.85;
+}
+
+.msg-thread-preview {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.7;
+}
+
+.msg-thread-item.active .msg-thread-preview {
+    opacity: 0.9;
+}
+
+.msg-thread-time {
+    font-size: 11px;
+    margin-top: 4px;
+    opacity: 0.5;
+}
+
+.msg-thread-item.active .msg-thread-time {
+    opacity: 0.7;
 }

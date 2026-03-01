@@ -105,6 +105,27 @@ const MyAccount: React.FC = () => {
   const getStepIndex = (status: string) =>
     steps.findIndex((s) => s.key === status);
 
+  // ── Захист: не залогінений ──
+  if (!user) {
+    return (
+      <div className="myaccount-container">
+        <div style={{ textAlign: "center", padding: "60px 24px" }}>
+          <p style={{ fontSize: 56, marginBottom: 16 }}>🔐</p>
+          <h2 style={{ marginBottom: 12 }}>Доступ обмежено</h2>
+          <p style={{ color: "#666", marginBottom: 28 }}>
+            Увійдіть або зареєструйтесь щоб переглянути кабінет
+          </p>
+          <button
+            onClick={() => window.dispatchEvent(new Event("openAuthModal"))}
+            className="btn-order"
+          >
+            🔑 Увійти / Зареєструватись
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="myaccount-container">
       <div className="myaccount-header">
