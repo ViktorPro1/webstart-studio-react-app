@@ -106,6 +106,7 @@
 .msg-row {
     display: flex;
     max-width: 100%;
+    overflow: hidden;
 }
 
 .msg-row.client {
@@ -135,11 +136,11 @@
     line-height: 1.5;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     max-width: 85%;
-    /* КРИТИЧНІ ПРАВИЛА ДЛЯ ПЕРЕНЕСЕННЯ ТЕКСТУ */
     word-wrap: break-word;
-    word-break: break-word;
+    word-break: break-all;
     overflow-wrap: anywhere;
-    white-space: pre-wrap;
+    white-space: normal;
+    overflow: hidden;
 }
 
 .msg-bubble.client {
