@@ -1,6 +1,7 @@
 /* ================= WRAPPER ================= */
 .msg-wrapper {
-    max-width: 760px;
+    /* Збільшено до 1200px, щоб вмістити сайдбар + чат */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 24px;
     font-family: system-ui;
@@ -8,7 +9,16 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    /* Заборона будь-якого горизонтального скролу на рівні обгортки */
     overflow-x: hidden;
+    width: 100%;
+}
+
+/* Гарантований border-box для всіх елементів */
+.msg-wrapper *,
+.msg-wrapper *::before,
+.msg-wrapper *::after {
+    box-sizing: border-box;
 }
 
 /* ================= HEADER ================= */
@@ -21,7 +31,7 @@
     align-items: center;
     gap: 16px;
     color: white;
-    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .msg-header-icon {
@@ -77,7 +87,8 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    box-sizing: border-box;
+    /* Захист від розпирання внутрішнім текстом */
+    min-width: 0;
 }
 
 .msg-loading {
@@ -89,17 +100,6 @@
 .msg-empty {
     text-align: center;
     padding: 40px;
-}
-
-.msg-empty-icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-}
-
-.msg-empty-sub {
-    color: #aaa;
-    font-size: 14px;
-    margin-top: 4px;
 }
 
 /* ================= MESSAGE ================= */
@@ -129,21 +129,17 @@
     flex-shrink: 0;
 }
 
-.msg-sender-label {
-    font-size: 11px;
-    color: #667eea;
-    font-weight: 600;
-    margin-bottom: 3px;
-}
-
 .msg-bubble {
     padding: 10px 14px;
     font-size: 14px;
     line-height: 1.5;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    max-width: 70%;
+    max-width: 85%;
+    /* КРИТИЧНІ ПРАВИЛА ДЛЯ ПЕРЕНЕСЕННЯ ТЕКСТУ */
     word-wrap: break-word;
     word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
 }
 
 .msg-bubble.client {
@@ -158,20 +154,6 @@
     border-radius: 16px 16px 16px 4px;
 }
 
-.msg-time {
-    font-size: 11px;
-    color: #aaa;
-    margin-top: 4px;
-}
-
-.msg-time.right {
-    text-align: right;
-}
-
-.msg-time.left {
-    text-align: left;
-}
-
 /* ================= INPUT ================= */
 .msg-input-wrapper {
     display: flex;
@@ -181,7 +163,7 @@
     border-radius: 16px;
     padding: 12px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .msg-textarea {
@@ -194,6 +176,130 @@
     line-height: 1.5;
     background: transparent;
     min-width: 0;
+    /* Дозволяє textarea стискатися */
+}
+
+/* ================= ADMIN LAYOUT ================= */
+.msg-admin-layout {
+    display: flex;
+    flex: 1;
+    gap: 16px;
+    overflow: hidden;
+    /* Обрізає виступи */
+    padding: 0 0 16px;
+    width: 100%;
+    min-width: 0;
+}
+
+.msg-admin-sidebar {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #f8f9ff;
+    border-radius: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.msg-admin-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* ГАРАНТІЯ, що блок не роздується від тексту */
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* ================= ADMIN THREAD ITEM ================= */
+.msg-thread-item {
+    padding: 12px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s;
+    overflow: hidden;
+}
+
+.msg-thread-email {
+    font-size: 12px;
+    margin-bottom: 4px;
+    opacity: 0.6;
+    /* Якщо email занадто довгий - обрізаємо крапками */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.msg-thread-preview {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.7;
+}
+
+/* ================= ІНШІ СТИЛІ (БЕЗ ЗМІН) ================= */
+.msg-locked-wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui;
+    padding: 24px;
+}
+
+.msg-locked-card {
+    background: white;
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+    max-width: 440px;
+    width: 100%;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+}
+
+.msg-btn-primary {
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+}
+
+.msg-btn-outline {
+    padding: 13px;
+    border-radius: 10px;
+    border: 2px solid #667eea;
+    background: transparent;
+    color: #667eea;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+}
+
+.msg-time {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+.msg-time.right {
+    text-align: right;
+}
+
+.msg-time.left {
+    text-align: left;
 }
 
 .msg-send-btn {
@@ -223,190 +329,4 @@
     color: #aaa;
     font-size: 12px;
     margin-top: 8px;
-}
-
-/* ================= LOCKED ================= */
-.msg-locked-wrapper {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: system-ui;
-    padding: 24px;
-    box-sizing: border-box;
-}
-
-.msg-locked-card {
-    background: white;
-    border-radius: 20px;
-    padding: 48px 40px;
-    text-align: center;
-    max-width: 440px;
-    width: 100%;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.msg-locked-icon {
-    font-size: 64px;
-    margin-bottom: 16px;
-}
-
-.msg-locked-title {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #1a1a2e;
-}
-
-.msg-locked-text {
-    color: #666;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 28px;
-}
-
-.msg-locked-note {
-    color: #aaa;
-    font-size: 13px;
-    margin-top: 20px;
-}
-
-.msg-locked-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.msg-btn-primary {
-    padding: 13px;
-    border-radius: 10px;
-    border: none;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 15px;
-    width: 100%;
-}
-
-.msg-btn-outline {
-    padding: 13px;
-    border-radius: 10px;
-    border: 2px solid #667eea;
-    background: transparent;
-    color: #667eea;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 15px;
-    width: 100%;
-}
-
-/* ================= ADMIN LAYOUT ================= */
-.msg-admin-layout {
-    display: flex;
-    flex: 1;
-    gap: 16px;
-    overflow: hidden;
-    padding: 0 0 16px;
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 0;
-}
-
-.msg-admin-sidebar {
-    width: 280px;
-    min-width: 280px;
-    max-width: 280px;
-    flex-shrink: 0;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    box-sizing: border-box;
-    background: #f8f9ff;
-    border-radius: 16px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.msg-admin-chat {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.msg-admin-empty {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9ff;
-    border-radius: 16px;
-    color: #aaa;
-    font-size: 15px;
-    min-height: 200px;
-}
-
-/* ================= ADMIN THREAD ITEM ================= */
-.msg-thread-item {
-    padding: 12px 14px;
-    border-radius: 12px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transition: all 0.2s;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.msg-thread-item.active {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-}
-
-.msg-thread-item.inactive {
-    background: white;
-    color: #333;
-}
-
-.msg-thread-name {
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 2px;
-}
-
-.msg-thread-email {
-    font-size: 12px;
-    margin-bottom: 4px;
-    opacity: 0.6;
-}
-
-.msg-thread-item.active .msg-thread-email {
-    opacity: 0.85;
-}
-
-.msg-thread-preview {
-    font-size: 13px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    opacity: 0.7;
-}
-
-.msg-thread-item.active .msg-thread-preview {
-    opacity: 0.9;
-}
-
-.msg-thread-time {
-    font-size: 11px;
-    margin-top: 4px;
-    opacity: 0.5;
-}
-
-.msg-thread-item.active .msg-thread-time {
-    opacity: 0.7;
 }

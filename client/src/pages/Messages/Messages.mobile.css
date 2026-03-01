@@ -2,6 +2,8 @@
     .msg-wrapper {
         padding: 12px;
         height: calc(100vh - 80px);
+        width: 100%;
+        overflow-x: hidden;
     }
 
     .msg-header {
@@ -12,11 +14,16 @@
     .msg-body {
         padding: 12px;
         border-radius: 12px;
+        min-width: 0;
     }
 
     .msg-bubble {
         max-width: 85%;
         font-size: 13px;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
     }
 
     .msg-input-wrapper {
@@ -29,12 +36,12 @@
         font-size: 13px;
     }
 
-    /* ── Адмін: вертикальна розкладка ── */
     .msg-admin-layout {
         flex-direction: column;
         overflow: visible;
         gap: 8px;
         height: auto;
+        width: 100%;
     }
 
     .msg-admin-sidebar {
@@ -44,6 +51,7 @@
         max-height: 220px;
         border-radius: 12px;
         padding: 8px;
+        overflow-x: hidden;
     }
 
     .msg-admin-chat {
@@ -51,11 +59,19 @@
         min-width: 0;
         max-width: 100%;
         overflow: visible;
+        display: flex;
+        flex-direction: column;
     }
 
     .msg-admin-empty {
         min-height: 120px;
         border-radius: 12px;
+    }
+
+    .msg-thread-email {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
@@ -68,6 +84,11 @@
     .msg-header {
         padding: 12px;
         border-radius: 8px;
+        gap: 8px;
+    }
+
+    .msg-title {
+        font-size: 16px;
     }
 
     .msg-body {

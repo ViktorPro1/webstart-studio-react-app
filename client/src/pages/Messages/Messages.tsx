@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import API from "../../api/api";
@@ -31,14 +31,12 @@ const Messages: React.FC = () => {
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
-  const bottomRef = useRef<HTMLDivElement>(null);
 
   const [threads, setThreads] = useState<ClientThread[]>([]);
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
   const [adminMessages, setAdminMessages] = useState<Message[]>([]);
   const [adminText, setAdminText] = useState("");
   const [adminSending, setAdminSending] = useState(false);
-  const adminBottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -54,14 +52,6 @@ const Messages: React.FC = () => {
       return () => clearInterval(interval);
     }
   }, [user]);
-
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
-  useEffect(() => {
-    adminBottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [adminMessages]);
 
   useEffect(() => {
     if (selectedUserId) {
@@ -169,7 +159,6 @@ const Messages: React.FC = () => {
       month: "2-digit",
     });
 
-  // ───────── НЕ ЗАЛОГІНЕНИЙ ─────────
   if (!user) {
     return (
       <div className="msg-locked-wrapper">
@@ -202,7 +191,6 @@ const Messages: React.FC = () => {
     );
   }
 
-  // ───────── АДМІН ─────────
   if (user.role === "admin") {
     return (
       <div className="msg-wrapper">
@@ -217,7 +205,6 @@ const Messages: React.FC = () => {
         </div>
 
         <div className="msg-admin-layout">
-          {/* ─── Список клієнтів ─── */}
           <div className="msg-admin-sidebar">
             {loading ? (
               <p className="msg-loading">Завантаження...</p>
@@ -241,12 +228,9 @@ const Messages: React.FC = () => {
             )}
           </div>
 
-          {/* ─── Чат з клієнтом ─── */}
           <div className="msg-admin-chat">
             {!selectedUserId ? (
-              <div className="msg-admin-empty">
-                👈 Оберіть клієнта зі списку
-              </div>
+              <div className="msg-admin-empty">Оберіть клієнта зі списку</div>
             ) : (
               <>
                 <div className="msg-body">
@@ -281,7 +265,6 @@ const Messages: React.FC = () => {
                       </div>
                     </div>
                   ))}
-                  <div ref={adminBottomRef} />
                 </div>
 
                 <div className="msg-input-wrapper">
@@ -312,7 +295,6 @@ const Messages: React.FC = () => {
     );
   }
 
-  // ───────── КЛІЄНТ ─────────
   return (
     <div className="msg-wrapper">
       <div className="msg-header">
@@ -358,7 +340,6 @@ const Messages: React.FC = () => {
             </div>
           ))
         )}
-        <div ref={bottomRef} />
       </div>
 
       <div className="msg-input-wrapper">
