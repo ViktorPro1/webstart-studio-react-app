@@ -157,3 +157,36 @@
     font-size: 24px;
     color: #053897;
 }
+
+/* Fix horizontal scroll */
+.Pricing-section {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.Pricing-calculator {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+}
+
+.Pricing-group select {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Pricing-description {
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.Pricing-serviceItemDescription p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}

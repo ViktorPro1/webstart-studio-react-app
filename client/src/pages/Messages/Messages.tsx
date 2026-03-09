@@ -239,7 +239,7 @@ const Messages: React.FC = () => {
                       {msg.sender === "admin" && (
                         <div className="msg-avatar">👑</div>
                       )}
-                      <div>
+                      <div className="msg-bubble-wrapper">
                         {msg.sender === "admin" && (
                           <p className="msg-sender-label">
                             Ти (WebStart Studio)
@@ -326,7 +326,7 @@ const Messages: React.FC = () => {
           messages.map((msg) => (
             <div key={msg.id} className={`msg-row ${msg.sender}`}>
               {msg.sender === "admin" && <div className="msg-avatar">👑</div>}
-              <div>
+              <div className="msg-bubble-wrapper">
                 {msg.sender === "admin" && (
                   <p className="msg-sender-label">WebStart Studio</p>
                 )}

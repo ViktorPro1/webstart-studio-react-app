@@ -33,4 +33,21 @@
     .Pricing-resultPrice {
         font-size: 20px;
     }
+
+    .Pricing-calculator {
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .Pricing-group select {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .Pricing-checkboxGroup label {
+        font-size: 13px;
+        word-break: break-word;
+    }
 }
