@@ -1,0 +1,63 @@
+@media (max-width: 420px) {
+    .wp-hero {
+        padding: 40px 16px 32px;
+    }
+
+    .wp-hero__title {
+        font-size: 24px;
+    }
+
+    .wp-container {
+        padding: 24px 16px 48px;
+    }
+
+    .wp-persona-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wp-persona {
+        padding: 16px;
+    }
+
+    .wp-persona__emoji {
+        font-size: 26px;
+    }
+
+    .wp-persona__title {
+        font-size: 15px;
+    }
+
+    .wp-persona__text {
+        font-size: 13px;
+    }
+
+    .wp-filter {
+        gap: 6px;
+    }
+
+    .wp-filter__btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .wp-nav-buttons {
+        flex-direction: column;
+    }
+
+    .wp-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+    .wp-hero__title {
+        font-size: 28px;
+    }
+
+    .wp-persona-grid {
+        grid-template-columns: 1fr;
+    }
+}

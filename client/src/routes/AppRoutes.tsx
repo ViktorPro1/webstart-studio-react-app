@@ -115,6 +115,24 @@ const PersonalizedLanding = lazy(
   () => import("../pages/Services/PersonalizedLanding/PersonalizedLanding"),
 );
 
+/* ===== WordPress ===== */
+const WhatIsWordPress = lazy(
+  () => import("../pages/WordPress/WhatIs/WhatIsWordPress"),
+);
+const WordPressDifferences = lazy(
+  () => import("../pages/WordPress/Differences/WordPressDifferences"),
+);
+const WordPressForWhom = lazy(
+  () => import("../pages/WordPress/ForWhom/WordPressForWhom"),
+);
+const WordPressHosting = lazy(
+  () => import("../pages/WordPress/Hosting/WordPressHosting"),
+);
+const WordPressFAQ = lazy(() => import("../pages/WordPress/FAQ/WordPressFAQ"));
+const WordPressInProgress = lazy(
+  () => import("../pages/WordPress/InProgress/WordPressInProgress"),
+);
+
 /* ===== Blog ===== */
 const LandingTrends = lazy(
   () => import("../pages/Blog/LandingTrends/LandingTrends"),
@@ -197,7 +215,6 @@ const AppRoutes = () => (
     <Routes>
       {/* Home Page */}
       <Route path="/" element={<Home />} />
-
       {/* Info Pages */}
       <Route path="/for-whom" element={<ForWhom />} />
       <Route path="/technical-details" element={<TechnicalDetails />} />
@@ -219,12 +236,10 @@ const AppRoutes = () => (
       <Route path="/survey" element={<SurveyPage />} />
       <Route path="/data-analytics" element={<DataAnalytics />} />
       <Route path="/blog/free-hosting-tips" element={<FreeHostingTips />} />
-
       {/* Client Portal */}
       <Route path="/my-account" element={<MyAccount />} />
       <Route path="/messages" element={<Messages />} />
       <Route path="/user-permissions" element={<Forum />} />
-
       {/* Admin Panel */}
       <Route
         path="/admin"
@@ -234,18 +249,15 @@ const AppRoutes = () => (
           </ProtectedRoute>
         }
       />
-
       {/* Legal Pages */}
       <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
       <Route
         path="/legal/third-party-cookies"
         element={<ThirdPartyCookies />}
       />
-
       {/* Added Legal Pages */}
       <Route path="/privacy-policy" element={<PrivacyPolicyFull />} />
       <Route path="/terms-of-use" element={<TermsOfUse />} />
-
       {/* Generators */}
       <Route
         path="/generators/portfolio-text"
@@ -256,12 +268,10 @@ const AppRoutes = () => (
         path="/generators/resume-structure"
         element={<ResumeStructureGenerator />}
       />
-
       {/* Templates */}
       <Route path="/templates/portfolio" element={<PortfolioTemplates />} />
       <Route path="/templates/resume" element={<ResumeTemplates />} />
       <Route path="/templates/landing" element={<LandingTemplates />} />
-
       {/* Services */}
       <Route path="/services/web-apps" element={<WebApps />} />
       <Route path="/services/seo" element={<SEOInfo />} />
@@ -274,27 +284,31 @@ const AppRoutes = () => (
         element={<PersonalizedLanding />}
       />
 
+      {/* WordPress */}
+      <Route path="/wordpress/what-is" element={<WhatIsWordPress />} />
+      <Route path="/wordpress/differences" element={<WordPressDifferences />} />
+      <Route path="/wordpress/wp-for-whom" element={<WordPressForWhom />} />
+      <Route path="/wordpress/hosting" element={<WordPressHosting />} />
+      <Route path="/wordpress/faq" element={<WordPressFAQ />} />
+      <Route path="/wordpress/in-progress" element={<WordPressInProgress />} />
+
       {/* Instructions */}
       <Route path="/instruction" element={<Instruction />} />
       <Route path="/edit-instruction" element={<EditInstruction />} />
       <Route path="/briefs" element={<Briefs />} />
-
       {/* Bonus & Gifts */}
       <Route path="/bonus" element={<Bonus />} />
       <Route path="/certificate-gift" element={<CertificateGift />} />
-
       {/* Blog Posts */}
       <Route path="/blog/landing-trends" element={<LandingTrends />} />
       <Route path="/blog/portfolio-tips" element={<PortfolioTips />} />
       <Route path="/blog/resume-tips" element={<ResumeTips />} />
-
       {/* AI Services */}
       <Route path="/ai-automation" element={<AIAutomation />} />
       <Route path="/ai-prompting" element={<AIPrompting />} />
       <Route path="/prompt-editor" element={<PromptEditor />} />
       <Route path="/prompt-showcase" element={<PromptShowcase />} />
       <Route path="/prompt-studio" element={<PromptStudio />} />
-
       {/* Google Ads */}
       <Route path="/google-ads/learning" element={<GoogleAdsLearning />} />
       <Route path="/google-ads/calculator" element={<GoogleAdsCalculator />} />
@@ -302,7 +316,6 @@ const AppRoutes = () => (
       <Route path="/google-ads/comparison" element={<GoogleAdsComparison />} />
       <Route path="/google-ads/glossary" element={<GoogleAdsGlossary />} />
       <Route path="/google-ads/keywords" element={<GoogleAdsKeywords />} />
-
       {/* Facebook Ads */}
       <Route path="/facebook-ads/ad-calculator" element={<AdCalculator />} />
       <Route
@@ -314,14 +327,12 @@ const AppRoutes = () => (
         element={<TargetExplanation />}
       />
       <Route path="/facebook-ads/utm-generator" element={<UTMGenerator />} />
-
       {/* About & Contact */}
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
       <Route path="/skills" element={<Skills />} />
       <Route path="/achievements" element={<Achievements />} />
       <Route path="/social" element={<Social />} />
-
       {/* International */}
       <Route path="/international/en" element={<English />} />
       <Route path="/international/fr" element={<Francais />} />
@@ -329,13 +340,10 @@ const AppRoutes = () => (
       <Route path="/international/cz" element={<Cestina />} />
       <Route path="/international/sv" element={<Svenska />} />
       <Route path="/international/de" element={<Deutsch />} />
-
       {/* Assistant */}
       <Route path="/assistant" element={<Assistant />} />
-
       {/* Updates */}
       <Route path="/updates" element={<Updates />} />
-
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>

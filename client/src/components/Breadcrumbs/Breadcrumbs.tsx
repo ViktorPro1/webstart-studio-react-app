@@ -83,6 +83,12 @@ const pathToUkrainian: Record<string, string> = {
   messages: "Чат з командою",
   "privacy-policy": "Політика конфіденційності",
   "terms-of-use": "Умови використання",
+  wordpress: "WordPress розробка",
+  "what-is": "Що таке WordPress",
+  differences: "Чим відрізняється",
+  "wp-for-whom": "Для кого підходить",
+  hosting: "Серверна частина",
+  "in-progress": "Ми в процесі",
 };
 
 const Breadcrumbs: React.FC = () => {

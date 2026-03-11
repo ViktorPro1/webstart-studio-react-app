@@ -85,8 +85,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     }
   };
 
-  // ─── Завжди переходить на /messages ───
-  // Сторінка сама показує вміст залежно від авторизації
   const handleProtectedClick = () => {
     navigate("/messages");
     handleLinkClick();
@@ -407,11 +405,71 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         <nav className="sidebar-nav">
           {menuItems.map(renderMenuItem)}
 
+          {/* ─── WORDPRESS ─── */}
+          <div className="menu-divider"></div>
+          <div className="menu-section-title">WordPress розробка</div>
+
+          <Link
+            to="/wordpress/what-is"
+            className={`nav-item ${location.pathname === "/wordpress/what-is" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <Globe size={20} />
+            <span>Що таке WordPress</span>
+          </Link>
+
+          <Link
+            to="/wordpress/differences"
+            className={`nav-item ${location.pathname === "/wordpress/differences" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <BarChart2 size={20} />
+            <span>Чим відрізняється</span>
+          </Link>
+
+          <Link
+            to="/wordpress/wp-for-whom"
+            className={`nav-item ${location.pathname === "/wordpress/wp-for-whom" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <Users size={20} />
+            <span>Для кого підходить</span>
+          </Link>
+
+          <Link
+            to="/wordpress/hosting"
+            className={`nav-item ${location.pathname === "/wordpress/hosting" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <Monitor size={20} />
+            <span>Серверна частина</span>
+          </Link>
+
+          <Link
+            to="/wordpress/faq"
+            className={`nav-item ${location.pathname === "/wordpress/faq" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <HelpCircle size={20} />
+            <span>Часті питання</span>
+          </Link>
+
+          <Link
+            to="/wordpress/in-progress"
+            className={`nav-item ${location.pathname === "/wordpress/in-progress" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <RefreshCw size={20} />
+            <span>Ми в процесі</span>
+          </Link>
+
+          {/* ─── ДОДАТКОВІ МОЖЛИВОСТІ ─── */}
           <div className="menu-divider"></div>
           <div className="menu-section-title">Додаткові можливості</div>
 
           {additionalItems.map(renderMenuItem)}
 
+          {/* ─── ПЛАТФОРМА ─── */}
           <div className="menu-divider"></div>
           <div className="menu-section-title">Платформа</div>
 

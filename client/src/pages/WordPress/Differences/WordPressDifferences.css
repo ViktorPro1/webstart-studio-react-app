@@ -1,0 +1,246 @@
+.wp-page {
+    min-height: 100vh;
+    background: #f7f8fc;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1a1a2e;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.wp-hero {
+    background: linear-gradient(135deg, #3b3486 0%, #6c63ff 100%);
+    padding: 60px 24px 48px;
+    text-align: center;
+    color: #fff;
+}
+
+.wp-hero--green {
+    background: linear-gradient(135deg, #1a6b4a 0%, #34c78a 100%);
+}
+
+.wp-hero__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.wp-hero__title {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.wp-hero__subtitle {
+    font-size: 16px;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.wp-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+}
+
+.wp-section {
+    margin-bottom: 40px;
+}
+
+.wp-section__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3b3486;
+    margin: 0 0 20px;
+    padding-left: 12px;
+    border-left: 4px solid #6c63ff;
+}
+
+/* Card */
+.wp-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(108, 99, 255, 0.08);
+    border: 1px solid #ece9ff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(108, 99, 255, 0.15);
+}
+
+.wp-card--highlight {
+    background: linear-gradient(135deg, #f0eeff, #e8f4ff);
+    border: 1px solid #c5bbff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wp-card__icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.wp-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3b3486;
+    margin: 0 0 8px;
+}
+
+.wp-card__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+.wp-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Tabs */
+.wp-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.wp-tab {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #e0dcff;
+    background: #fff;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wp-tab:hover {
+    border-color: #6c63ff;
+    color: #6c63ff;
+}
+
+.wp-tab--active {
+    background: #6c63ff;
+    color: #fff;
+    border-color: #6c63ff;
+}
+
+/* Table */
+.wp-table {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(108, 99, 255, 0.08);
+    border: 1px solid #ece9ff;
+}
+
+.wp-table__header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    background: linear-gradient(135deg, #3b3486, #6c63ff);
+    color: #fff;
+}
+
+/* Хедер — білий текст на фіолетовому */
+.wp-table__header .wp-table__cell {
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.wp-table__row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    background: #fff;
+    border-bottom: 1px solid #f0eeff;
+    transition: background 0.15s;
+}
+
+.wp-table__row:hover {
+    background: #f9f8ff;
+}
+
+.wp-table__row--even {
+    background: #fafaff;
+}
+
+.wp-table__row:last-child {
+    border-bottom: none;
+}
+
+/* Звичайні клітинки — темний текст */
+.wp-table__cell {
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* Колонка "Параметр" — фіолетовий жирний */
+.wp-table__cell--param {
+    color: #3b3486;
+    font-weight: 600;
+    background: rgba(108, 99, 255, 0.05);
+}
+
+/* Колонка WordPress — зелений */
+.wp-table__cell--wp-val {
+    color: #1a6b4a;
+    font-weight: 500;
+}
+
+/* Nav buttons */
+.wp-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.wp-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.wp-btn--primary {
+    background: linear-gradient(135deg, #3b3486, #6c63ff);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+}
+
+.wp-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.4);
+}
+
+.wp-btn--secondary {
+    background: #fff;
+    color: #6c63ff;
+    border: 2px solid #6c63ff;
+}
+
+.wp-btn--secondary:hover {
+    background: #f0eeff;
+}

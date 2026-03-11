@@ -1,0 +1,86 @@
+@media (max-width: 420px) {
+    .wp-hero {
+        padding: 40px 16px 32px;
+    }
+
+    .wp-hero__title {
+        font-size: 24px;
+    }
+
+    .wp-container {
+        padding: 24px 16px 48px;
+    }
+
+    .wp-section__title {
+        font-size: 18px;
+    }
+
+    .wp-faq-item__question {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+
+    .wp-faq-item__text {
+        font-size: 14px;
+    }
+
+    .wp-faq-item__answer {
+        padding: 0 16px 14px 16px;
+        padding-top: 12px;
+        font-size: 13px;
+    }
+
+    .wp-cta {
+        padding: 28px 16px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .wp-cta__title {
+        font-size: 20px;
+    }
+
+    .wp-cta__text {
+        font-size: 14px;
+    }
+
+    .wp-cta__buttons {
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .wp-nav-buttons {
+        flex-direction: column;
+    }
+
+    .wp-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .wp-cta .wp-btn--primary {
+        background: #fff;
+        color: #3b3486;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .wp-cta .wp-btn--secondary {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+    .wp-hero__title {
+        font-size: 28px;
+    }
+
+    .wp-faq-item__answer {
+        padding-left: 20px;
+    }
+}

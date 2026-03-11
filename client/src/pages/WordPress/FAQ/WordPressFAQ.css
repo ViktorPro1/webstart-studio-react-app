@@ -1,0 +1,257 @@
+.wp-page {
+    min-height: 100vh;
+    background: #f7f8fc;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1a1a2e;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.wp-hero {
+    background: linear-gradient(135deg, #3b3486 0%, #6c63ff 100%);
+    padding: 60px 24px 48px;
+    text-align: center;
+    color: #fff;
+}
+
+.wp-hero--purple {
+    background: linear-gradient(135deg, #4a1d8a 0%, #9b59b6 100%);
+}
+
+.wp-hero__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.wp-hero__title {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.wp-hero__subtitle {
+    font-size: 16px;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.wp-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+}
+
+.wp-section {
+    margin-bottom: 40px;
+}
+
+.wp-section__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3b3486;
+    margin: 0 0 20px;
+    padding-left: 12px;
+    border-left: 4px solid #6c63ff;
+}
+
+.wp-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(108, 99, 255, 0.08);
+    border: 1px solid #ece9ff;
+}
+
+.wp-card--highlight {
+    background: linear-gradient(135deg, #f0eeff, #e8f4ff);
+    border: 1px solid #c5bbff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wp-card__icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.wp-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3b3486;
+    margin: 0 0 8px;
+}
+
+.wp-card__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+/* FAQ */
+.wp-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wp-faq-item {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #ece9ff;
+    box-shadow: 0 2px 8px rgba(108, 99, 255, 0.06);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.wp-faq-item--open {
+    border-color: #6c63ff;
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.15);
+}
+
+.wp-faq-item__question {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.wp-faq-item__question:hover {
+    background: #f9f8ff;
+}
+
+.wp-faq-item__num {
+    font-size: 12px;
+    font-weight: 800;
+    color: #6c63ff;
+    background: #f0eeff;
+    border-radius: 8px;
+    padding: 4px 8px;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+}
+
+.wp-faq-item__text {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.4;
+}
+
+.wp-faq-item__icon {
+    font-size: 11px;
+    color: #888;
+    flex-shrink: 0;
+}
+
+.wp-faq-item__answer {
+    padding: 0 20px 18px 52px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #555;
+    border-top: 1px solid #f0eeff;
+    padding-top: 14px;
+}
+
+/* CTA */
+.wp-cta {
+    background: linear-gradient(135deg, #3b3486, #6c63ff);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    color: #fff;
+}
+
+.wp-cta__title {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+
+.wp-cta__text {
+    font-size: 15px;
+    opacity: 0.9;
+    margin: 0 0 24px;
+    line-height: 1.6;
+}
+
+.wp-cta__buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Nav */
+.wp-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.wp-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.wp-btn--primary {
+    background: #fff;
+    color: #3b3486;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.wp-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.wp-btn--secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.wp-btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.wp-btn--ghost {
+    background: #fff;
+    color: #6c63ff;
+    border: 2px solid #6c63ff;
+}
+
+.wp-btn--ghost:hover {
+    background: #f0eeff;
+}
+
+/* Override for nav section (not CTA) */
+.wp-nav-buttons .wp-btn--secondary {
+    background: #fff;
+    color: #6c63ff;
+    border: 2px solid #6c63ff;
+}
+
+.wp-nav-buttons .wp-btn--secondary:hover {
+    background: #f0eeff;
+}

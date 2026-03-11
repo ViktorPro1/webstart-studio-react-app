@@ -1,0 +1,112 @@
+/* ===== WordPressInProgress.mobile.css ===== */
+
+@media (max-width: 420px) {
+    .wp-hero {
+        padding: 40px 16px 32px;
+    }
+
+    .wp-hero__title {
+        font-size: 24px;
+    }
+
+    .wp-container {
+        padding: 24px 16px 48px;
+    }
+
+    .wp-section__title {
+        font-size: 18px;
+    }
+
+    .wip-step {
+        gap: 12px;
+    }
+
+    .wip-step__emoji {
+        font-size: 24px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .wip-step__body {
+        padding: 14px 16px;
+    }
+
+    .wip-step__title {
+        font-size: 14px;
+    }
+
+    .wip-step__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .wip-step__text {
+        font-size: 13px;
+    }
+
+    .wip-service {
+        padding: 14px 16px;
+    }
+
+    .wip-service__emoji {
+        font-size: 24px;
+    }
+
+    .wip-service__title {
+        font-size: 14px;
+    }
+
+    .wp-cta {
+        padding: 28px 16px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .wp-cta__title {
+        font-size: 20px;
+    }
+
+    .wp-cta__text {
+        font-size: 14px;
+    }
+
+    .wp-cta__buttons {
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .wp-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .wp-cta .wp-btn--primary {
+        background: #fff;
+        color: #1a1a2e;
+    }
+
+    .wp-cta .wp-btn--secondary {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .wp-nav-buttons {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+    .wp-hero__title {
+        font-size: 28px;
+    }
+
+    .wip-step__top {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,331 @@
+/* ===== WordPressInProgress.css ===== */
+
+.wp-page {
+    min-height: 100vh;
+    background: #f7f8fc;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1a1a2e;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.wp-hero {
+    background: linear-gradient(135deg, #3b3486 0%, #6c63ff 100%);
+    padding: 60px 24px 48px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 32px 32px;
+}
+
+.wp-hero--dark {
+    background: linear-gradient(135deg, #1a1a2e 0%, #3b3486 100%);
+}
+
+.wp-hero__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.wp-hero__title {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.wp-hero__subtitle {
+    font-size: 16px;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.wp-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+}
+
+.wp-section {
+    margin-bottom: 40px;
+}
+
+.wp-section__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3b3486;
+    margin: 0 0 20px;
+    padding-left: 12px;
+    border-left: 4px solid #6c63ff;
+}
+
+.wp-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(108, 99, 255, 0.08);
+    border: 1px solid #ece9ff;
+}
+
+.wp-card--highlight {
+    background: linear-gradient(135deg, #f0eeff, #e8f4ff);
+    border: 1px solid #c5bbff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wp-card--warning {
+    background: #fffbf0;
+    border: 1px solid #ffd966;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wp-card__icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.wp-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3b3486;
+    margin: 0 0 8px;
+}
+
+.wp-card__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+/* Steps */
+.wip-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.wip-step {
+    display: flex;
+    gap: 16px;
+}
+
+.wip-step__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.wip-step__emoji {
+    font-size: 32px;
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(108, 99, 255, 0.12);
+    border: 2px solid #ece9ff;
+}
+
+.wip-step__line {
+    flex: 1;
+    width: 2px;
+    background: linear-gradient(to bottom, #c5bbff, #ece9ff);
+    margin: 6px 0;
+    min-height: 24px;
+}
+
+.wip-step:last-child .wip-step__line {
+    display: none;
+}
+
+.wip-step__body {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    flex: 1;
+    box-shadow: 0 2px 10px rgba(108, 99, 255, 0.07);
+    border: 1px solid #ece9ff;
+}
+
+.wip-step__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    gap: 10px;
+}
+
+.wip-step__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+}
+
+.wip-step__badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.wip-step__text {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #666;
+    margin: 0;
+}
+
+/* Services */
+.wip-services {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wip-service {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-decoration: none;
+    border: 1px solid #ece9ff;
+    box-shadow: 0 2px 8px rgba(108, 99, 255, 0.06);
+    transition: all 0.2s;
+}
+
+.wip-service:hover {
+    transform: translateX(4px);
+    border-color: #6c63ff;
+    box-shadow: 0 4px 16px rgba(108, 99, 255, 0.15);
+}
+
+.wip-service__emoji {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.wip-service__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.wip-service__sub {
+    font-size: 12px;
+    color: #2ecc71;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.wip-service__arrow {
+    margin-left: auto;
+    font-size: 18px;
+    color: #6c63ff;
+    flex-shrink: 0;
+}
+
+/* CTA */
+.wp-cta {
+    background: linear-gradient(135deg, #1a1a2e, #3b3486);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    color: #fff;
+}
+
+.wp-cta__title {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+
+.wp-cta__text {
+    font-size: 15px;
+    opacity: 0.9;
+    margin: 0 0 24px;
+    line-height: 1.6;
+}
+
+.wp-cta__buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Nav */
+.wp-nav-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.wp-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.wp-btn--primary {
+    background: #fff;
+    color: #1a1a2e;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.wp-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.wp-btn--secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.wp-btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.wp-btn--ghost {
+    background: #fff;
+    color: #6c63ff;
+    border: 2px solid #6c63ff;
+}
+
+.wp-btn--ghost:hover {
+    background: #f0eeff;
+}
+
+.wip-services-desc {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px;
+    line-height: 1.6;
+}

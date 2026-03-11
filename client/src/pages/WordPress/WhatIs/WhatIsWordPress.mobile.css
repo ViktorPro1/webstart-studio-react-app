@@ -1,0 +1,96 @@
+/* Стилі для екранів до 420px */
+@media (max-width: 420px) {
+    .wp-hero {
+        padding: 40px 16px 32px;
+    }
+
+    .wp-hero__title {
+        font-size: 26px;
+    }
+
+    .wp-hero__subtitle {
+        font-size: 14px;
+    }
+
+    .wp-container {
+        padding: 24px 16px 48px;
+    }
+
+    .wp-section__title {
+        font-size: 18px;
+    }
+
+    .wp-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .wp-card {
+        padding: 18px;
+    }
+
+    .wp-card__icon {
+        font-size: 26px;
+    }
+
+    .wp-card__title {
+        font-size: 15px;
+    }
+
+    .wp-card__text {
+        font-size: 13px;
+    }
+
+    .wp-analogy {
+        padding: 20px 16px;
+    }
+
+    .wp-analogy__grid {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .wp-analogy__divider {
+        align-self: center;
+    }
+
+    .wp-analogy__item {
+        font-size: 13px;
+    }
+
+    .wp-analogy__emoji {
+        font-size: 28px;
+    }
+
+    .wp-list__item {
+        font-size: 13px;
+        padding: 14px 16px;
+    }
+
+    .wp-nav-buttons {
+        justify-content: center;
+    }
+
+    .wp-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Середні екрани 421–768px */
+@media (min-width: 421px) and (max-width: 768px) {
+    .wp-cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .wp-hero__title {
+        font-size: 30px;
+    }
+
+    .wp-analogy__grid {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
