@@ -91,27 +91,40 @@ const pathToUkrainian: Record<string, string> = {
   "in-progress": "Ми в процесі",
 };
 
+const hiddenSegments = new Set([
+  "wordpress",
+  "facebook-ads",
+  "google-ads",
+  "services",
+  "templates",
+  "generators",
+  "blog",
+  "international",
+]);
+
 const Breadcrumbs: React.FC = () => {
   const location = useLocation();
   const parts = location.pathname.split("/").filter(Boolean);
 
-  const crumbs = parts.map((part, index) => {
-    const path = "/" + parts.slice(0, index + 1).join("/");
+  const crumbs = parts
+    .filter((part) => !hiddenSegments.has(part))
+    .map((part) => {
+      const originalIndex = parts.indexOf(part);
+      const path = "/" + parts.slice(0, originalIndex + 1).join("/");
+      const decoded = decodeURI(part);
+      const label =
+        pathToUkrainian[part] ??
+        decoded.charAt(0).toUpperCase() + decoded.slice(1);
 
-    const decoded = decodeURI(part);
-    const label =
-      pathToUkrainian[part] ??
-      decoded.charAt(0).toUpperCase() + decoded.slice(1);
-
-    return (
-      <span key={path} className="Breadcrumbs-crumb">
-        <ChevronRight size={14} />
-        <Link to={path} className="Breadcrumbs-link">
-          {label}
-        </Link>
-      </span>
-    );
-  });
+      return (
+        <span key={path} className="Breadcrumbs-crumb">
+          <ChevronRight size={14} />
+          <Link to={path} className="Breadcrumbs-link">
+            {label}
+          </Link>
+        </span>
+      );
+    });
 
   return (
     <div className="Breadcrumbs">
