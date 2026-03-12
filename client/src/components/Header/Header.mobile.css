@@ -45,6 +45,37 @@
         width: 16px;
         height: 16px;
     }
+
+    .portal-popup {
+        left: 50%;
+        padding: 24px;
+        width: 82%;
+        max-width: 360px;
+    }
+
+    .portal-popup-title {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .portal-popup-buttons {
+        flex-direction: column;
+    }
+
+    .portal-popup-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 14px;
+    }
+
+    .portal-popup-section h3 {
+        font-size: 16px;
+    }
+
+    .portal-popup-btn {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 420px) {
@@ -105,58 +136,28 @@
         width: 14px;
         height: 14px;
     }
-}
 
-/* Mobile responsive */
-@media (max-width: 768px) {
     .portal-popup {
         left: 50%;
-        /* Повертаємо по центру на мобільному */
-        padding: 24px;
-        width: 95%;
-    }
-
-    .portal-popup-title {
-        font-size: 24px;
-    }
-
-    .portal-popup-buttons {
-        flex-direction: column;
-    }
-
-    .portal-popup-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .portal-popup-section h3 {
-        font-size: 16px;
-    }
-}
-
-/* Адаптив для маленьких екранів */
-@media (max-width: 420px) {
-    .portal-popup {
-        left: 50%;
-        /* По центру */
         padding: 20px;
-        width: 95%;
+        width: 80%;
+        max-width: 320px;
         max-height: 85vh;
     }
 
     .portal-popup-title {
-        font-size: 22px;
-        margin-bottom: 20px;
+        font-size: 20px;
+        margin-bottom: 14px;
     }
 
     .portal-popup-icon {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 16px;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 12px;
     }
 
     .portal-popup-section {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     .portal-popup-section h3 {
@@ -175,12 +176,12 @@
 
     .portal-popup-buttons {
         gap: 10px;
-        margin-top: 20px;
+        margin-top: 16px;
     }
 
     .portal-popup-btn {
-        padding: 12px 20px;
-        font-size: 15px;
+        padding: 11px 18px;
+        font-size: 14px;
     }
 
     .portal-popup-close {

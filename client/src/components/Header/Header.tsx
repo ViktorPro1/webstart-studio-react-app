@@ -40,7 +40,6 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
     password: "",
   });
 
-  // ─── Слухач події від Sidebar ───
   useEffect(() => {
     const handler = () => {
       setShowPortalPopup(true);
@@ -51,13 +50,8 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
     return () => window.removeEventListener("openAuthModal", handler);
   }, []);
 
-  const closePopup = () => {
-    setShowPortalPopup(false);
-  };
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+  const closePopup = () => setShowPortalPopup(false);
+  const changeLanguage = (lng: string) => i18n.changeLanguage(lng);
 
   const handleSearch = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== "Enter") return;
@@ -271,14 +265,13 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
 
                   {/* ─── КЛІЄНТ ─── */}
                   {user.role === "client" && (
-                    <>
+                    <div className="portal-popup-client-buttons">
                       <button
                         className="portal-popup-btn primary"
                         onClick={() => {
                           navigate("/my-account");
                           closePopup();
                         }}
-                        style={{ marginBottom: 8 }}
                       >
                         📋 Моє замовлення
                       </button>
@@ -288,11 +281,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           navigate("/messages");
                           closePopup();
                         }}
-                        style={{ marginBottom: 8 }}
                       >
                         💬 Написати команді
                       </button>
-                    </>
+                    </div>
                   )}
 
                   <button
@@ -316,7 +308,6 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                       <h2 className="portal-popup-title">
                         🔐 Особистий кабінет
                       </h2>
-
                       <p
                         style={{
                           textAlign: "center",
@@ -328,7 +319,6 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                         Увійди або зареєструйся щоб отримати доступ до свого
                         проєкту
                       </p>
-
                       <div className="portal-popup-section">
                         <ul className="portal-popup-features">
                           <li>✅ Відстежувати статус свого проєкту</li>
@@ -337,7 +327,6 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           <li>✅ Бачити всі етапи роботи</li>
                         </ul>
                       </div>
-
                       <div className="portal-popup-buttons">
                         <button
                           className="portal-popup-btn primary"
@@ -352,7 +341,6 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           📝 Реєстрація
                         </button>
                       </div>
-
                       <button
                         style={{
                           background: "none",
@@ -390,7 +378,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                         </p>
                       )}
                       <form onSubmit={handleLogin} style={{ width: "100%" }}>
+                        <label htmlFor="login-email" style={labelStyle}>
+                          Email
+                        </label>
                         <input
+                          id="login-email"
+                          name="email"
                           type="email"
                           placeholder="Email"
                           value={loginData.email}
@@ -403,7 +396,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           required
                           style={inputStyle}
                         />
+                        <label htmlFor="login-password" style={labelStyle}>
+                          Пароль
+                        </label>
                         <input
+                          id="login-password"
+                          name="password"
                           type="password"
                           placeholder="Пароль"
                           value={loginData.password}
@@ -460,7 +458,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                         </p>
                       )}
                       <form onSubmit={handleRegister} style={{ width: "100%" }}>
+                        <label htmlFor="register-name" style={labelStyle}>
+                          Ваше ім'я
+                        </label>
                         <input
+                          id="register-name"
+                          name="name"
                           type="text"
                           placeholder="Ваше ім'я"
                           value={registerData.name}
@@ -473,7 +476,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           required
                           style={inputStyle}
                         />
+                        <label htmlFor="register-email" style={labelStyle}>
+                          Email
+                        </label>
                         <input
+                          id="register-email"
+                          name="email"
                           type="email"
                           placeholder="Email"
                           value={registerData.email}
@@ -486,7 +494,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                           required
                           style={inputStyle}
                         />
+                        <label htmlFor="register-password" style={labelStyle}>
+                          Пароль
+                        </label>
                         <input
+                          id="register-password"
+                          name="password"
                           type="password"
                           placeholder="Пароль (мінімум 6 символів)"
                           value={registerData.password}
@@ -533,6 +546,15 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
       )}
     </>
   );
+};
+
+const labelStyle: React.CSSProperties = {
+  display: "block",
+  fontSize: 13,
+  fontWeight: 600,
+  color: "#555",
+  marginBottom: 4,
+  textAlign: "left",
 };
 
 const inputStyle: React.CSSProperties = {

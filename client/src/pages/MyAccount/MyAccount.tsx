@@ -35,14 +35,15 @@ const steps = [
 ];
 
 const SERVICES = [
-  "Сайт-візитка",
-  "Лендінг",
-  "Інтернет-магазин",
-  "Корпоративний сайт",
-  "Редизайн сайту",
-  "SEO-оптимізація",
-  "Технічна підтримка",
-  "Інше",
+  { label: "Лендінг", icon: "🖥️" },
+  { label: "Резюме", icon: "📄" },
+  { label: "Портфоліо", icon: "🗂️" },
+  { label: "Запуск реклами", icon: "📢" },
+  { label: "Перевірка посилань", icon: "🔗" },
+  { label: "Чистка ПК", icon: "🧹" },
+  { label: "Повернення податків PIT-11", icon: "💶" },
+  { label: "Дизайн, банери та шаблони", icon: "🎨" },
+  { label: "Промпти для ШІ", icon: "🤖" },
 ];
 
 const MyAccount: React.FC = () => {
@@ -105,7 +106,6 @@ const MyAccount: React.FC = () => {
   const getStepIndex = (status: string) =>
     steps.findIndex((s) => s.key === status);
 
-  // ── Захист: не залогінений ──
   if (!user) {
     return (
       <div className="myaccount-container">
@@ -247,7 +247,6 @@ const MyAccount: React.FC = () => {
         </>
       )}
 
-      {/* ── Модальне вікно замовлення ── */}
       {showModal && (
         <div
           className="order-modal-overlay"
@@ -274,23 +273,26 @@ const MyAccount: React.FC = () => {
                   </button>
                 </div>
 
-                <label className="order-modal-label">Оберіть послугу *</label>
+                <p className="order-modal-label">Оберіть послугу *</p>
                 <div className="order-services-grid">
                   {SERVICES.map((s) => (
                     <button
-                      key={s}
-                      className={`order-service-btn ${orderService === s ? "active" : ""}`}
-                      onClick={() => setOrderService(s)}
+                      key={s.label}
+                      className={`order-service-btn ${orderService === s.label ? "active" : ""}`}
+                      onClick={() => setOrderService(s.label)}
                     >
-                      {s}
+                      <span className="service-icon">{s.icon}</span>
+                      {s.label}
                     </button>
                   ))}
                 </div>
 
-                <label className="order-modal-label">
+                <label className="order-modal-label" htmlFor="order-note">
                   Короткий опис (необов'язково)
                 </label>
                 <textarea
+                  id="order-note"
+                  name="order-note"
                   className="order-modal-textarea"
                   placeholder="Розкажіть коротко що потрібно зробити..."
                   value={orderNote}
