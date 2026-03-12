@@ -51,3 +51,105 @@
         word-break: break-word;
     }
 }
+
+@media (max-width: 420px) {
+    .Pricing-section {
+        padding: 28px 12px;
+        border-radius: 12px;
+    }
+
+    .Pricing-emoji {
+        font-size: 38px;
+    }
+
+    .Pricing-title {
+        font-size: 24px;
+    }
+
+    .Pricing-text {
+        font-size: 14px;
+    }
+
+    .Pricing-toggleBtn {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+
+    .Pricing-titleCategory {
+        font-size: 20px;
+    }
+
+    .Pricing-serviceItemDescription {
+        font-size: 14px;
+    }
+
+    .Pricing-serviceItemDescription p {
+        font-size: 13px;
+    }
+
+    .Pricing-calculator {
+        padding: 14px 12px;
+        border-radius: 10px;
+    }
+
+    .Pricing-mainTitle {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .Pricing-group select {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .Pricing-optionDesc {
+        font-size: 13px;
+        padding: 12px 14px;
+        gap: 8px;
+    }
+
+    .Pricing-optionDesc__icon {
+        font-size: 16px;
+    }
+
+    .Pricing-checkboxGroup label {
+        font-size: 13px;
+    }
+
+    .Pricing-result {
+        padding: 16px 12px;
+    }
+
+    .Pricing-resultLabel {
+        font-size: 14px;
+    }
+
+    .Pricing-resultPrice {
+        font-size: 26px;
+    }
+
+    .Pricing-resultNote {
+        font-size: 11px;
+    }
+
+    .Pricing-cta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Pricing-ctaBtn {
+        width: 100%;
+        font-size: 14px;
+        padding: 13px 16px;
+        box-sizing: border-box;
+    }
+
+    .Pricing-resetBtn {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+}

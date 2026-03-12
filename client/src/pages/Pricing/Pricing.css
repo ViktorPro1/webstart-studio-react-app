@@ -5,6 +5,9 @@
     font-family: 'Arial', sans-serif;
     color: #222;
     border-radius: 20px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .Pricing-container {
@@ -52,6 +55,12 @@
     background-color: #0d36bb;
 }
 
+.Pricing-resetBtn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
 /* Таблиці */
 .Pricing-table {
     width: 100%;
@@ -76,6 +85,9 @@
 .Pricing-description {
     max-width: 1000px;
     margin: 30px auto;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .Pricing-serviceCategory {
@@ -98,6 +110,8 @@
     font-size: 15px;
     color: #444;
     line-height: 1.5;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Калькулятор */
@@ -108,6 +122,8 @@
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .Pricing-mainTitle {
@@ -133,45 +149,6 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
-}
-
-.Pricing-checkboxGroup {
-    display: flex;
-    flex-direction: column;
-}
-
-.Pricing-checkboxGroup label {
-    font-size: 15px;
-    margin-bottom: 6px;
-}
-
-.Pricing-result {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.Pricing-resultPrice {
-    margin-top: 5px;
-    font-size: 24px;
-    color: #053897;
-}
-
-/* Fix horizontal scroll */
-.Pricing-section {
-    overflow-x: hidden;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.Pricing-calculator {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 800px;
-}
-
-.Pricing-group select {
     width: 100%;
     box-sizing: border-box;
     max-width: 100%;
@@ -180,13 +157,125 @@
     text-overflow: ellipsis;
 }
 
-.Pricing-description {
-    box-sizing: border-box;
-    word-break: break-word;
-    overflow-wrap: break-word;
+.Pricing-checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.Pricing-serviceItemDescription p {
-    word-break: break-word;
-    overflow-wrap: break-word;
+.Pricing-checkboxGroup label {
+    font-size: 15px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.Pricing-checkboxGroup input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #3b3486;
+    flex-shrink: 0;
+}
+
+/* Опис обраного варіанту */
+.Pricing-optionDesc {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: #f0eeff;
+    border-left: 3px solid #6c63ff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.Pricing-optionDesc__icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.Pricing-optionDesc p {
+    margin: 0;
+}
+
+/* Результат */
+.Pricing-result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    background: #f7f8fc;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #ece9ff;
+}
+
+.Pricing-resultLabel {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.Pricing-resultPrice {
+    font-size: 32px;
+    font-weight: 800;
+    color: #3b3486;
+    margin-bottom: 6px;
+}
+
+.Pricing-resultNote {
+    font-size: 12px;
+    color: #999;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* CTA після результату */
+.Pricing-cta {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.Pricing-ctaBtn {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.Pricing-ctaBtn--primary {
+    background: linear-gradient(135deg, #3b3486, #6c63ff);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+}
+
+.Pricing-ctaBtn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.4);
+}
+
+.Pricing-ctaBtn--secondary {
+    background: #fff;
+    color: #6c63ff;
+    border: 2px solid #6c63ff;
+}
+
+.Pricing-ctaBtn--secondary:hover {
+    background: #f0eeff;
 }

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import type { ChangeEvent } from 'react';
+import React, { useState } from "react";
+import type { ChangeEvent } from "react";
+import { Link } from "react-router-dom";
 
-import './Pricing.css';
-import './Pricing.mobile.css';
+import "./Pricing.css";
+import "./Pricing.mobile.css";
 
 interface ServiceItem {
   name: string;
@@ -17,49 +18,171 @@ interface ServicesData {
   adaptive: ServiceItem[];
 }
 
+interface AdditionalOption {
+  id: string;
+  label: string;
+  price: number;
+}
+
 const servicesData: ServicesData = {
   portfolio: [
-    { name: 'Базовий (5 сторінок)', price: 500, description: 'Ви отримуєте простий сайт із 5 сторінок: головна, про вас, приклади ваших робіт, відгуки клієнтів та контакти. Ідеально, щоб показати себе онлайн.' },
-    { name: 'Стандарт (+ дизайн та адаптація)', price: 600, description: 'До стандартного варіанту додаємо гарний індивідуальний дизайн для кожної сторінки та зручність перегляду на телефоні чи планшеті.' },
-    { name: 'Преміум (+ анімації та SEO)', price: 700, description: 'Ще краще: додаємо плавні анімації, сайт швидше знаходиться в Google (SEO), і ви отримуєте технічну підтримку після запуску.' }
+    {
+      name: "Базовий (5 сторінок)",
+      price: 2500,
+      description:
+        "Простий сайт із 5 сторінок: головна, про вас, приклади робіт, відгуки та контакти. Ідеально щоб заявити про себе онлайн і мати власну адресу в інтернеті.",
+    },
+    {
+      name: "Стандарт (+ дизайн та адаптація)",
+      price: 4500,
+      description:
+        "До базового варіанту додається індивідуальний дизайн під ваш стиль і повна адаптація під мобільні пристрої. Сайт однаково гарно виглядає на телефоні, планшеті і комп'ютері.",
+    },
+    {
+      name: "Преміум (+ анімації та SEO)",
+      price: 7000,
+      description:
+        "Повний пакет: плавні анімації, базова SEO-оптимізація щоб вас знаходили в Google, і технічна підтримка протягом місяця після запуску.",
+    },
   ],
   resume: [
-    { name: 'Classic', price: 300, description: 'Стандартне резюме у діловому стилі. Ідеально підходить для роботи в офіційних компаніях, держустановах чи банках.' },
-    { name: 'Creative', price: 400, description: 'Яскраве, стильне резюме з візуальними елементами. Гарний вибір для дизайнерів, фотографів чи маркетологів.' },
-    { name: 'Minimal', price: 450, description: 'Просте, лаконічне резюме з чітким текстом і зручною структурою. Підійде для більшості вакансій.' },
-    { name: 'Premium', price: 550, description: 'Все включено: унікальний дизайн, правильне оформлення для систем пошуку резюме (ATS), різні формати (PDF, DOCX), а також персональна порада щодо змісту.' }
+    {
+      name: "Classic",
+      price: 1500,
+      description:
+        "Резюме-сайт у діловому стилі. Чітка структура, зрозуміла навігація. Підходить для роботи в офіційних компаніях, держустановах або банківській сфері.",
+    },
+    {
+      name: "Creative",
+      price: 2500,
+      description:
+        "Яскраве резюме з оригінальним дизайном і візуальними елементами. Гарний вибір для дизайнерів, фотографів, маркетологів — всіх, хто хоче виділитись.",
+    },
+    {
+      name: "Minimal",
+      price: 2000,
+      description:
+        "Лаконічний і сучасний стиль без зайвого. Фокус на змісті — текст, структура, зручність читання. Підійде для більшості вакансій і напрямків.",
+    },
+    {
+      name: "Premium",
+      price: 4000,
+      description:
+        "Все включено: унікальний дизайн, анімації, оптимізація для пошукових систем, різні формати на вибір. Плюс — персональна консультація щодо змісту резюме.",
+    },
   ],
   sites: [
-    { name: 'Landing page', price: 800, description: 'Односторінковий сайт, який коротко і чітко розповідає про вас або ваш продукт. Підійде для реклами послуги, товару чи особистого бренду.' },
-    { name: 'Сайт для рекрутера', price: 1200, description: 'Ідеально для HR-спеціаліста або рекрутера. Містить розділи з вакансіями, контактами, портфоліо кандидатів.' },
-    { name: 'Instagram "Taplink"', price: 500, description: 'Міні-сайт, який відкривається по посиланню з Instagram. Містить кнопки на всі ваші соцмережі, месенджери, послуги чи прайси.' },
-    { name: 'Сайт для мікрокредитування', price: 1000, description: 'Простий сайт із формою заявки, калькулятором та короткою інформацією для залучення клієнтів. Підходить для невеликих фінансових послуг.' },
-    { name: 'Сайт перевезень ЄС', price: 1500, description: 'Сайт для компаній, що займаються пасажирськими перевезеннями Європою. Інформація про маршрути, ціни, бронювання та інтерактивна карта.' }
+    {
+      name: "Landing page",
+      price: 4000,
+      description:
+        "Односторінковий сайт який чітко і переконливо розповідає про вас або ваш продукт. Підійде для реклами послуги, товару чи особистого бренду.",
+    },
+    {
+      name: "Сайт для рекрутера",
+      price: 6000,
+      description:
+        "Спеціалізований сайт для HR-спеціаліста або рекрутера. Розділи з вакансіями, форма для кандидатів, контакти та портфоліо успішних кейсів.",
+    },
+    {
+      name: 'Instagram "Taplink"',
+      price: 2500,
+      description:
+        "Міні-сайт що відкривається по посиланню з Instagram. Кнопки на всі соцмережі, месенджери, прайс або запис — зручний інструмент для блогерів і малого бізнесу.",
+    },
+    {
+      name: "Сайт для мікрокредитування",
+      price: 5500,
+      description:
+        "Сайт з формою заявки, кредитним калькулятором та інформаційними блоками для залучення користувачів. Підходить для невеликих фінансових компаній.",
+    },
+    {
+      name: "Сайт перевезень ЄС",
+      price: 8000,
+      description:
+        "Сайт для компаній що займаються пасажирськими перевезеннями Європою. Маршрути, розклад, онлайн-бронювання та інтерактивна карта напрямків.",
+    },
   ],
   adaptive: [
-    { name: 'Базова', price: 300, description: 'Ваш сайт коректно відображатиметься на телефонах і планшетах. Підходить, якщо дизайн уже готовий.' },
-    { name: 'Розширена', price: 450, description: 'Додатково підлаштуємо кнопки, меню, форми — щоб користуватись сайтом було зручно на будь-якому екрані.' },
-    { name: 'Преміум', price: 600, description: 'Повна адаптація з урахуванням швидкості завантаження, зручності для користувача та пошукової оптимізації.' }
-  ]
+    {
+      name: "Базова",
+      price: 1500,
+      description:
+        "Ваш сайт коректно відображатиметься на телефонах і планшетах. Підходить якщо дизайн вже готовий і потрібна лише мобільна адаптація.",
+    },
+    {
+      name: "Розширена",
+      price: 2500,
+      description:
+        "Адаптуємо кнопки, меню, форми і всі інтерактивні елементи — щоб користуватись сайтом було зручно на будь-якому екрані і з будь-якого пристрою.",
+    },
+    {
+      name: "Преміум",
+      price: 4000,
+      description:
+        "Повна адаптація з урахуванням швидкості завантаження, зручності для користувача (UX) та базової пошукової оптимізації під мобільні пристрої.",
+    },
+  ],
+};
+
+const additionalOptionsByType: Record<string, AdditionalOption[]> = {
+  portfolio: [
+    { id: "opt-seo", label: "SEO оптимізація", price: 800 },
+    { id: "opt-support", label: "Технічна підтримка 1 місяць", price: 600 },
+    {
+      id: "opt-forms",
+      label: "Інтеграція форм зворотного зв'язку",
+      price: 400,
+    },
+    { id: "opt-analytics", label: "Підключення Google Analytics", price: 300 },
+  ],
+  resume: [
+    { id: "opt-pdf", label: "Експорт у PDF формат", price: 200 },
+    { id: "opt-support", label: "Технічна підтримка 1 місяць", price: 600 },
+    { id: "opt-seo", label: "SEO оптимізація", price: 500 },
+  ],
+  sites: [
+    { id: "opt-seo", label: "SEO оптимізація", price: 800 },
+    { id: "opt-support", label: "Технічна підтримка 1 місяць", price: 600 },
+    {
+      id: "opt-forms",
+      label: "Інтеграція форм зворотного зв'язку",
+      price: 400,
+    },
+    { id: "opt-analytics", label: "Підключення Google Analytics", price: 300 },
+    { id: "opt-chat", label: "Онлайн-чат або чат-бот", price: 500 },
+  ],
+  adaptive: [
+    { id: "opt-support", label: "Технічна підтримка 1 місяць", price: 600 },
+    {
+      id: "opt-speed",
+      label: "Оптимізація швидкості завантаження",
+      price: 500,
+    },
+  ],
 };
 
 type ServiceType = keyof ServicesData;
 
 const Pricing: React.FC = () => {
   const [showTable, setShowTable] = useState<boolean>(false);
-  const [serviceType, setServiceType] = useState<ServiceType | ''>('');
-  const [serviceOption, setServiceOption] = useState<string>('');
+  const [serviceType, setServiceType] = useState<ServiceType | "">("");
+  const [selectedOption, setSelectedOption] = useState<ServiceItem | null>(
+    null,
+  );
   const [basePrice, setBasePrice] = useState<number>(0);
   const [showAdditional, setShowAdditional] = useState<boolean>(false);
   const [showResult, setShowResult] = useState<boolean>(false);
-  const [checkboxValues, setCheckboxValues] = useState<Record<string, number>>({});
+  const [checkboxValues, setCheckboxValues] = useState<Record<string, number>>(
+    {},
+  );
 
   const togglePricing = (): void => setShowTable(!showTable);
 
   const handleTypeChange = (e: ChangeEvent<HTMLSelectElement>): void => {
-    const value = e.target.value as ServiceType | '';
+    const value = e.target.value as ServiceType | "";
     setServiceType(value);
-    setServiceOption('');
+    setSelectedOption(null);
     setBasePrice(0);
     setShowAdditional(false);
     setShowResult(false);
@@ -67,26 +190,37 @@ const Pricing: React.FC = () => {
   };
 
   const handleOptionChange = (e: ChangeEvent<HTMLSelectElement>): void => {
-    const price = parseInt(e.target.value);
-    setServiceOption(e.target.value);
-    setBasePrice(price || 0);
-    setShowAdditional(!!price);
-    setShowResult(!!price);
+    const index = parseInt(e.target.value);
+    if (!serviceType || isNaN(index)) {
+      setSelectedOption(null);
+      setBasePrice(0);
+      setShowAdditional(false);
+      setShowResult(false);
+      return;
+    }
+    const option = servicesData[serviceType][index];
+    setSelectedOption(option);
+    setBasePrice(option.price);
+    setShowAdditional(true);
+    setShowResult(true);
     setCheckboxValues({});
   };
 
   const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    setCheckboxValues(prev => ({
+    const val = parseInt(e.target.value);
+    setCheckboxValues((prev) => ({
       ...prev,
-      [e.target.id]: e.target.checked ? parseInt(e.target.value) : 0
+      [e.target.id]: e.target.checked ? val : 0,
     }));
   };
 
-  const totalPrice = basePrice + Object.values(checkboxValues).reduce((acc: number, curr: number) => acc + curr, 0);
+  const totalPrice =
+    basePrice +
+    Object.values(checkboxValues).reduce((acc, curr) => acc + curr, 0);
 
   const resetCalculator = (): void => {
-    setServiceType('');
-    setServiceOption('');
+    setServiceType("");
+    setSelectedOption(null);
     setBasePrice(0);
     setShowAdditional(false);
     setShowResult(false);
@@ -95,13 +229,17 @@ const Pricing: React.FC = () => {
 
   const getCategoryName = (category: ServiceType): string => {
     const names: Record<ServiceType, string> = {
-      portfolio: 'Портфоліо',
-      resume: 'Резюме',
-      sites: 'Сайти',
-      adaptive: 'Адаптація сайту для смартфонів'
+      portfolio: "Портфоліо",
+      resume: "Резюме",
+      sites: "Сайти",
+      adaptive: "Адаптація для смартфонів",
     };
     return names[category];
   };
+
+  const currentOptions = serviceType
+    ? additionalOptionsByType[serviceType]
+    : [];
 
   return (
     <section className="Pricing-section">
@@ -110,18 +248,18 @@ const Pricing: React.FC = () => {
         <div className="Pricing-emoji">💰</div>
         <h2 className="Pricing-title">Пакети</h2>
         <p className="Pricing-text">
-          Щоб детально ознайомитися з усіма актуальними пропозиціями, будь-ласка, перегляньте доступні пакети та їх умови.
-          Кожна пропозиція містить повну інформацію про тарифи, що допоможе вам обрати найзручніший та оптимальний варіант для ваших потреб.
+          Оберіть напрямок і варіант — калькулятор одразу покаже орієнтовну
+          вартість. Всі ціни вказані в гривнях і є відправною точкою для
+          обговорення. Фінальна вартість узгоджується індивідуально після
+          консультації.
         </p>
-
         <button
           className="Pricing-toggleBtn"
           aria-expanded={showTable}
           aria-controls="PricingTable"
-          aria-label="Показати таблицю цін"
           onClick={togglePricing}
         >
-          Знайти найвигідніший пакет
+          {showTable ? "Сховати пакети" : "Переглянути всі пакети"}
         </button>
       </div>
 
@@ -135,7 +273,9 @@ const Pricing: React.FC = () => {
               </h3>
               {items.map((item: ServiceItem, i: number) => (
                 <div key={i} className="Pricing-serviceItemDescription">
-                  <strong>{item.name} — {item.price} грн</strong>
+                  <strong>
+                    {item.name} — {item.price.toLocaleString("uk-UA")} грн
+                  </strong>
                   <p>{item.description}</p>
                 </div>
               ))}
@@ -144,13 +284,18 @@ const Pricing: React.FC = () => {
         </div>
       )}
 
-      {/* ДРУГА СЕКЦІЯ — КАЛЬКУЛЯТОР */}
+      {/* КАЛЬКУЛЯТОР */}
       <div className="Pricing-calculator">
         <h1 className="Pricing-mainTitle">Ми пропонуємо — ви обираєте</h1>
+
         <div className="Pricing-group">
-          <label htmlFor="service-type">Оберіть тип послуги:</label>
-          <select id="service-type" value={serviceType} onChange={handleTypeChange}>
-            <option value="">-- Оберіть пакет --</option>
+          <label htmlFor="service-type">Оберіть напрямок:</label>
+          <select
+            id="service-type"
+            value={serviceType}
+            onChange={handleTypeChange}
+          >
+            <option value="">-- Оберіть напрямок --</option>
             <option value="portfolio">Портфоліо</option>
             <option value="resume">Резюме</option>
             <option value="sites">Сайти</option>
@@ -161,57 +306,78 @@ const Pricing: React.FC = () => {
         {serviceType && (
           <div className="Pricing-group">
             <label htmlFor="service-option">Оберіть варіант:</label>
-            <select id="service-option" value={serviceOption} onChange={handleOptionChange}>
+            <select
+              id="service-option"
+              onChange={handleOptionChange}
+              defaultValue=""
+            >
               <option value="">-- Оберіть варіант --</option>
               {servicesData[serviceType].map((opt: ServiceItem, i: number) => (
-                <option key={i} value={opt.price}>{opt.name} — {opt.price} грн</option>
+                <option key={i} value={i}>
+                  {opt.name} — {opt.price.toLocaleString("uk-UA")} грн
+                </option>
               ))}
             </select>
           </div>
         )}
 
-        {showAdditional && (
+        {/* Опис обраного варіанту */}
+        {selectedOption && (
+          <div className="Pricing-optionDesc">
+            <span className="Pricing-optionDesc__icon">ℹ️</span>
+            <p>{selectedOption.description}</p>
+          </div>
+        )}
+
+        {/* Додаткові опції — залежать від типу */}
+        {showAdditional && currentOptions.length > 0 && (
           <div className="Pricing-group">
             <label>Додаткові опції:</label>
             <div className="Pricing-checkboxGroup">
-              <label>
-                <input 
-                  type="checkbox" 
-                  id="option-seo" 
-                  value={200} 
-                  checked={checkboxValues['option-seo'] > 0} 
-                  onChange={handleCheckboxChange} 
-                />
-                SEO оптимізація (+200 грн)
-              </label>
-              <label>
-                <input 
-                  type="checkbox" 
-                  id="option-support" 
-                  value={150} 
-                  checked={checkboxValues['option-support'] > 0} 
-                  onChange={handleCheckboxChange} 
-                />
-                Технічна підтримка 1 місяць (+150 грн)
-              </label>
-              <label>
-                <input 
-                  type="checkbox" 
-                  id="option-forms" 
-                  value={100} 
-                  checked={checkboxValues['option-forms'] > 0} 
-                  onChange={handleCheckboxChange} 
-                />
-                Інтеграція форм (+100 грн)
-              </label>
+              {currentOptions.map((opt) => (
+                <label key={opt.id}>
+                  <input
+                    type="checkbox"
+                    id={opt.id}
+                    value={opt.price}
+                    checked={!!checkboxValues[opt.id]}
+                    onChange={handleCheckboxChange}
+                  />
+                  {opt.label} (+{opt.price.toLocaleString("uk-UA")} грн)
+                </label>
+              ))}
             </div>
           </div>
         )}
 
+        {/* Результат */}
         {showResult && (
           <div className="Pricing-result">
-            <div className="Pricing-resultLabel">Загальна вартість:</div>
-            <div className="Pricing-resultPrice">{totalPrice} грн</div>
+            <div className="Pricing-resultLabel">Орієнтовна вартість:</div>
+            <div className="Pricing-resultPrice">
+              {totalPrice.toLocaleString("uk-UA")} грн
+            </div>
+            <p className="Pricing-resultNote">
+              Фінальна ціна узгоджується після консультації
+            </p>
+          </div>
+        )}
+
+        {/* CTA після результату */}
+        {showResult && (
+          <div className="Pricing-cta">
+            <Link
+              to="/briefs"
+              className="Pricing-ctaBtn Pricing-ctaBtn--primary"
+            >
+              📋 Заповнити бриф
+            </Link>
+            <Link
+              to="/messages"
+              className="Pricing-ctaBtn Pricing-ctaBtn--secondary"
+            >
+              💬 Обговорити в чаті
+            </Link>
           </div>
         )}
 
