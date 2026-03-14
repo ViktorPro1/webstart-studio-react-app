@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const BACKEND_URL = import.meta.env.VITE_API_URL || 'https://webstart-studio-react-app-production.up.railway.app/';
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'https://webstart-studio-react-app-production.up.railway.app';
 const CHECK_INTERVAL = 30000;
 const TIMEOUT = 5000;
 const IS_DEV = import.meta.env.DEV;
