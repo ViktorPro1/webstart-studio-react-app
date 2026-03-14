@@ -25,7 +25,7 @@ async function checkBackend(): Promise<void> {
   const timer = setTimeout(() => controller.abort(), TIMEOUT);
 
   try {
-    const res = await fetch(`${BACKEND_URL}/health`, {
+    const res = await fetch(`${BACKEND_URL}/api/health`, {
       signal: controller.signal,
       cache: 'no-store',
     });
