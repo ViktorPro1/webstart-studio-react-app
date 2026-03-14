@@ -91,6 +91,7 @@ const pathToUkrainian: Record<string, string> = {
   "in-progress": "Ми в процесі",
   backend: "Бекенд та Бази даних",
   database: "Що таке база даних",
+  "what-is-backend": "Що таке бекенд",
   "how-it-works": "Як вони працюють разом",
   "when-needed": "Коли це потрібно сайту",
 };
@@ -117,9 +118,15 @@ const Breadcrumbs: React.FC = () => {
       const originalIndex = parts.indexOf(part);
       const path = "/" + parts.slice(0, originalIndex + 1).join("/");
       const decoded = decodeURI(part);
-      const label =
-        pathToUkrainian[part] ??
-        decoded.charAt(0).toUpperCase() + decoded.slice(1);
+      const label = (() => {
+        const fullPath =
+          "/" + parts.slice(0, parts.indexOf(part) + 1).join("/");
+        if (fullPath === "/backend/what-is") return "Що таке бекенд";
+        return (
+          pathToUkrainian[part] ??
+          decoded.charAt(0).toUpperCase() + decoded.slice(1)
+        );
+      })();
 
       return (
         <span key={path} className="Breadcrumbs-crumb">
