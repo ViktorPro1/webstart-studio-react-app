@@ -1,0 +1,34 @@
+@media (max-width: 420px) {
+    .what-is-backend {
+        padding: 20px 16px 60px;
+    }
+
+    .wib-hero {
+        padding: 32px 16px 28px;
+        border-radius: 14px;
+    }
+
+    .wib-title {
+        font-size: 1.4rem;
+    }
+
+    .wib-compare {
+        flex-direction: column;
+    }
+
+    .wib-compare-arrow {
+        transform: rotate(90deg);
+    }
+
+    .wib-compare-card {
+        width: 100%;
+    }
+
+    .wib-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .wib-section-title {
+        font-size: 1.05rem;
+    }
+}

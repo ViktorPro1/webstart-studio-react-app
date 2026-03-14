@@ -133,6 +133,20 @@ const WordPressInProgress = lazy(
   () => import("../pages/WordPress/InProgress/WordPressInProgress"),
 );
 
+/* ===== Backend & Databases ===== */
+const WhatIsBackend = lazy(
+  () => import("../pages/Backend/WhatIs/WhatIsBackend"),
+);
+const WhatIsDatabase = lazy(
+  () => import("../pages/Backend/Database/WhatIsDatabase"),
+);
+const HowItWorks = lazy(() => import("../pages/Backend/HowItWorks/HowItWorks"));
+const WhenNeeded = lazy(() => import("../pages/Backend/WhenNeeded/WhenNeeded"));
+const BackendFAQ = lazy(() => import("../pages/Backend/FAQ/BackendFAQ"));
+const BackendLearning = lazy(
+  () => import("../pages/Backend/Learning/BackendLearning"),
+);
+
 /* ===== Blog ===== */
 const LandingTrends = lazy(
   () => import("../pages/Blog/LandingTrends/LandingTrends"),
@@ -291,6 +305,14 @@ const AppRoutes = () => (
       <Route path="/wordpress/hosting" element={<WordPressHosting />} />
       <Route path="/wordpress/faq" element={<WordPressFAQ />} />
       <Route path="/wordpress/in-progress" element={<WordPressInProgress />} />
+
+      {/* Backend & Databases */}
+      <Route path="/backend/what-is" element={<WhatIsBackend />} />
+      <Route path="/backend/database" element={<WhatIsDatabase />} />
+      <Route path="/backend/how-it-works" element={<HowItWorks />} />
+      <Route path="/backend/when-needed" element={<WhenNeeded />} />
+      <Route path="/backend/faq" element={<BackendFAQ />} />
+      <Route path="/backend/learning" element={<BackendLearning />} />
 
       {/* Instructions */}
       <Route path="/instruction" element={<Instruction />} />

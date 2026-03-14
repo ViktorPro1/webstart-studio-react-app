@@ -1,0 +1,23 @@
+@media (max-width: 420px) {
+    .backend-faq {
+        padding: 20px 16px 60px;
+    }
+
+    .bfaq-hero {
+        padding: 32px 16px 28px;
+        border-radius: 14px;
+    }
+
+    .bfaq-title {
+        font-size: 1.4rem;
+    }
+
+    .bfaq-question {
+        font-size: 0.875rem;
+        padding: 14px 16px;
+    }
+
+    .bfaq-answer {
+        padding: 0 16px 14px;
+    }
+}

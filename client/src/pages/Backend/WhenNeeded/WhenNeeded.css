@@ -1,0 +1,165 @@
+.when-needed {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+    font-family: "Segoe UI", sans-serif;
+    color: #1a1a2e;
+}
+
+/* HERO */
+.wn-hero {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 48px 24px 40px;
+    background: linear-gradient(135deg, #b5451b, #d4621d, #e07b39);
+    border-radius: 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.wn-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 25% 60%, rgba(255, 255, 255, 0.08), transparent 55%);
+    pointer-events: none;
+}
+
+.wn-hero-icon {
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #ffe0cc;
+}
+
+.wn-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.wn-subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* SECTIONS */
+.wn-section {
+    margin-bottom: 40px;
+}
+
+.wn-section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wn-icon-yes {
+    color: #2e7d32;
+}
+
+.wn-icon-no {
+    color: #c62828;
+}
+
+/* CARDS */
+.wn-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wn-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid transparent;
+}
+
+.wn-card-emoji {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.wn-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.wn-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.wn-card-yes {
+    background: #f1fdf4;
+    border-color: #c8e6c9;
+}
+
+.wn-card-yes h4 {
+    color: #1b5e20;
+}
+
+.wn-card-yes p {
+    color: #388e3c;
+}
+
+.wn-card-no {
+    background: #fff8f8;
+    border-color: #ffcdd2;
+}
+
+.wn-card-no h4 {
+    color: #b71c1c;
+}
+
+.wn-card-no p {
+    color: #c62828;
+}
+
+/* CTA BOX */
+.wn-cta-box {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    border-radius: 16px;
+    padding: 28px 30px;
+}
+
+.wn-cta-box p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 18px;
+}
+
+.wn-cta-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.wn-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}

@@ -41,6 +41,10 @@ import {
   Sparkles,
   CreditCard,
   Search,
+  Server,
+  Database,
+  Link2,
+  Cpu,
 } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -461,6 +465,63 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           >
             <RefreshCw size={20} />
             <span>Ми в процесі</span>
+          </Link>
+
+          {/* ─── БЕКЕНД ТА БАЗИ ДАНИХ ─── */}
+          <div className="menu-divider"></div>
+          <div className="menu-section-title">Бекенд та Бази даних</div>
+
+          <Link
+            to="/backend/what-is"
+            className={`nav-item ${location.pathname === "/backend/what-is" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <Server size={20} />
+            <span>Що таке бекенд</span>
+          </Link>
+
+          <Link
+            to="/backend/database"
+            className={`nav-item ${location.pathname === "/backend/database" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <Database size={20} />
+            <span>Що таке база даних</span>
+          </Link>
+
+          <Link
+            to="/backend/how-it-works"
+            className={`nav-item ${location.pathname === "/backend/how-it-works" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <Link2 size={20} />
+            <span>Як вони працюють разом</span>
+          </Link>
+
+          <Link
+            to="/backend/when-needed"
+            className={`nav-item ${location.pathname === "/backend/when-needed" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <Cpu size={20} />
+            <span>Коли це потрібно сайту</span>
+          </Link>
+
+          <Link
+            to="/backend/faq"
+            className={`nav-item ${location.pathname === "/backend/faq" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <HelpCircle size={20} />
+            <span>Часті питання</span>
+          </Link>
+          <Link
+            to="/backend/learning"
+            className={`nav-item ${location.pathname === "/backend/learning" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            <BookOpen size={20} />
+            <span> Ми вивчаємо</span>
           </Link>
 
           {/* ─── ДОДАТКОВІ МОЖЛИВОСТІ ─── */}

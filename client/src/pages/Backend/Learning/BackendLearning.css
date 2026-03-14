@@ -1,0 +1,234 @@
+.backend-learning {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+    font-family: "Segoe UI", sans-serif;
+    color: #1a1a2e;
+}
+
+.bl-hero {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 48px 24px 40px;
+    background: linear-gradient(135deg, #1a3a5c, #1e5a8e, #2176bd);
+    border-radius: 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.bl-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.07), transparent 55%);
+    pointer-events: none;
+}
+
+.bl-hero-icon {
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #90caf9;
+}
+
+.bl-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    letter-spacing: -0.5px;
+}
+
+.bl-subtitle {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.bl-section {
+    margin-bottom: 40px;
+}
+
+.bl-section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bl-section p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.bl-intro {
+    background: #f0f7ff;
+    border-left: 4px solid #1e5a8e;
+    border-radius: 0 12px 12px 0;
+    padding: 24px;
+}
+
+.bl-accent {
+    color: #e53935;
+    font-weight: 800;
+}
+
+/* SKILLS */
+.bl-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bl-skill {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+.bl-skill-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bl-skill div {
+    flex: 1;
+    min-width: 0;
+}
+
+.bl-skill h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.bl-skill p {
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.bl-skill-done {
+    background: #f1fdf4;
+    border-color: #c8e6c9;
+}
+
+.bl-skill-done .bl-skill-icon {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.bl-skill-done h4 {
+    color: #1b5e20;
+}
+
+.bl-skill-done p {
+    color: #388e3c;
+}
+
+.bl-skill-progress {
+    background: #fff8e1;
+    border-color: #ffe082;
+}
+
+.bl-skill-progress .bl-skill-icon {
+    background: #fff3cd;
+    color: #f57f17;
+}
+
+.bl-skill-progress h4 {
+    color: #e65100;
+}
+
+.bl-skill-progress p {
+    color: #ef6c00;
+}
+
+.bl-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.bl-badge-done {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.bl-badge-progress {
+    background: #f57f17;
+    color: #fff;
+}
+
+/* RESOURCES */
+.bl-resources {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.bl-resource {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid #e8e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    min-width: 0;
+}
+
+.bl-resource span {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.bl-resource strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.bl-resource p {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
+}
+
+/* SUMMARY */
+.bl-summary {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    padding: 24px;
+    border-radius: 14px;
+}
+
+.bl-summary p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.9);
+}

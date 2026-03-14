@@ -89,6 +89,10 @@ const pathToUkrainian: Record<string, string> = {
   "wp-for-whom": "Для кого підходить",
   hosting: "Серверна частина",
   "in-progress": "Ми в процесі",
+  backend: "Бекенд та Бази даних",
+  database: "Що таке база даних",
+  "how-it-works": "Як вони працюють разом",
+  "when-needed": "Коли це потрібно сайту",
 };
 
 const hiddenSegments = new Set([
@@ -100,6 +104,7 @@ const hiddenSegments = new Set([
   "generators",
   "blog",
   "international",
+  "backend",
 ]);
 
 const Breadcrumbs: React.FC = () => {
