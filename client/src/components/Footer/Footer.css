@@ -109,3 +109,9 @@
     font-size: 11px;
     user-select: none;
 }
+
+.footer-dev-status {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: 12px;
+}

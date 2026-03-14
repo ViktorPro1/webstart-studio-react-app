@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+import ServiceUnavailable from "../backend-status/ServiceUnavailable";
 
 /* ===== Loader ===== */
 const Loader = () => <div className="page-loader">Завантаження…</div>;
@@ -251,9 +252,30 @@ const AppRoutes = () => (
       <Route path="/data-analytics" element={<DataAnalytics />} />
       <Route path="/blog/free-hosting-tips" element={<FreeHostingTips />} />
       {/* Client Portal */}
-      <Route path="/my-account" element={<MyAccount />} />
-      <Route path="/messages" element={<Messages />} />
-      <Route path="/user-permissions" element={<Forum />} />
+      <Route
+        path="/my-account"
+        element={
+          <ProtectedRoute requiresBackend>
+            <MyAccount />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/messages"
+        element={
+          <ProtectedRoute requiresBackend>
+            <Messages />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/user-permissions"
+        element={
+          <ProtectedRoute requiresBackend>
+            <Forum />
+          </ProtectedRoute>
+        }
+      />
       {/* Admin Panel */}
       <Route
         path="/admin"
@@ -366,6 +388,7 @@ const AppRoutes = () => (
       <Route path="/assistant" element={<Assistant />} />
       {/* Updates */}
       <Route path="/updates" element={<Updates />} />
+      <Route path="/service-unavailable" element={<ServiceUnavailable />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>
